@@ -1,0 +1,3001 @@
+��������� ������
+� � ������� �
+� ������������������� ���
+�����������
+�������� �������������������
+��� ������������������������
+������� ����� �������������� �!
+"����������������#���$������%�&����!�"'�!����
+��������('�� ������)�' � ���� �  %��!���������!����� �!*'��+��'
+,���-!�)�!�,�  �"��.�� �����'�����)�� �������)����'��� ���%�/'����%�$0� 1��!���
+,����)��#����!��������'����������� �2�����������  ��)' ����3+��4������
+5eYUCooL &RuJUZ &EJUJon  IUUQUeYUCooLeRuJUZorgEJgJUBllogJD
+3eEJsUrJCuUeE Jn JUs enUJreUZ CZ 5eYUooL &RuJUZ Bs BuUIorJ[eE CZ UIe
+DoQZrJgIU IolEerhs generous lJDense oG $$ #:
+*4#/ 
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+Table of Contents
+Preface............................................................................................................................................................... 6
+0. Introduction.............................................................................................................................8
+1. The transistor and inverter...................................................................................................... 9
+The transistor.................................................................................................................................................... 9
+The breadboard............................................................................................................................................... 10
+The inverter..................................................................................................................................................... 11
+2. Logic gates.............................................................................................................................. 13
+History of logic chips....................................................................................................................................... 13
+Logic symbols.................................................................................................................................................. 14
+Logical functions............................................................................................................................................. 15
+3. Logic simplification................................................................................................................18
+De Morgan's laws............................................................................................................................................ 18
+Karnaugh maps............................................................................................................................................... 19
+Circuit design, construction and debugging.................................................................................................. 23
+4. More logic simplification.......................................................................................................26
+Additional K-map groupings.......................................................................................................................... 26
+Input placement on K-map............................................................................................................................. 27
+Don't care conditions...................................................................................................................................... 27
+5. Multiplexer.............................................................................................................................30
+Background on the “mux”.............................................................................................................................. 30
+Using a multiplexer to implement logical functions...................................................................................... 30
+6. Timers and clocks.................................................................................................................. 35
+Timing in digital circuits................................................................................................................................. 35
+555 timer......................................................................................................................................................... 35
+Timers............................................................................................................................................................. 35
+Clocks.............................................................................................................................................................. 36
+Timing diagrams............................................................................................................................................. 37
+7. Memory ..................................................................................................................................41
+Memory........................................................................................................................................................... 41
+SR latch........................................................................................................................................................... 41
+Flip-flops......................................................................................................................................................... 42
+8. State machines.......................................................................................................................46
+What is a state machine?................................................................................................................................ 46
+State transition diagrams............................................................................................................................... 46
+State machine design...................................................................................................................................... 47
+Debounced switches........................................................................................................................................ 51
+9. More state machines..............................................................................................................53
+How many bits of memory does a state machine need?................................................................................ 53
+What are unused states?................................................................................................................................. 53
+10. What's next?.........................................................................................................................60
+Appendix A: Chip pinouts.........................................................................................................61
+Appendix B: Resistors and capacitors.......................................................................................65
+Resistors.......................................................................................................................................................... 65
+Capacitors....................................................................................................................................................... 66
+Appendix C: Lab notebook........................................................................................................ 67
+Appendix D: Boolean algebra....................................................................................................68
+Appendix E: Equipment list...................................................................................................... 69
+Digital trainer................................................................................................................................................. 69
+7400 series families........................................................................................................................................ 69
+3
+
+--- Page Break ---
+
+Appendix F: Solutions .............................................................................................................. 70
+Chapter 1 review exercises.............................................................................................................................. 70
+Chapter 2 review exercises.............................................................................................................................. 71
+Chapter 3 review exercises.............................................................................................................................. 74
+Chapter 4 review exercises............................................................................................................................. 80
+Chapter 5 review exercises............................................................................................................................. 83
+Chapter 6 review exercises............................................................................................................................. 89
+Chapter 7 review exercises............................................................................................................................. 92
+Chapter 8 review exercises............................................................................................................................. 95
+Chapter 9 review exercises............................................................................................................................. 97
+4
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+About the author and reviewers
+Author: James Feher
+Jim currently teaches Computer Science at McKendree University in Lebanon, Illinois, USA. He is a huge open-
+source software proponent. His research focuses on the use of open source software in the areas of hardware,
+programming and networking. His hobbies include triathlon, hiking, camping and the use of alternative energy. He
+lives with his wife and three kids in St. Louis, Missouri where he built and continues to perfect a solar hot water
+heating system for his home.
+Reviewer: Andrew Van Camp
+Professor Van Camp is a retired electronics professor. In addition, he has extensive experience working and
+consulting in industry. He currently resides in central Missouri where he continues his consulting for industry.
+Reviewer: Kumud Bhandari
+Kumud graduated from McKendree University with degrees in computer science and mathematics. He has
+interned at the University of Texas and the Massachusetts Institute of Technology. He currently is employed as a
+researcher with Argonne National Laboratory.
+Textbook Equity Edition
+www.textbookequity.org
+5
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+Preface
+This lab manual provides an introduction to digital logic, starting with simple gates and building up to state
+machines. Students should have a solid understanding of algebra as well as a rudimentary understanding of basic
+electricity including voltage, current, resistance, capacitance, inductance and how they relate to direct current
+circuits. Labs will be built utilizing the following hardware:
+• breadboards with associated items required such as wire, wire strippers and cutters
+• some basic discrete components such as transistors, resistors and capacitors
+• basic 7400 series logic chips
+• 555 timer
+Discrete components will be included only when necessary, with most of the labs using the standard 7400 series
+logic chips. These items are commonly available and can be obtained relatively inexpensively. Labs will include
+learning objectives, relevant theory, review problems, and suggested procedure. In addition to the labs, several
+appendices of background material are provided.
+Format for each chapter
+Each chapter is a combination of theory followed by review exercises to be completed as traditional homework
+assignments. Full solutions to all of the review exercises are available in the last appendix. Procedures for labs then
+follow that allow the student to implement the concepts in a hands on manner. The materials required for the labs
+were selected due to their ready availability at modest cost. While students would gain from just reading and
+completing the review exercises, it is recommended that the procedures be completed as well. In addition to
+providing another means re-enforcing the material, it helps to develop real world debugging and design skills.
+This manual concentrates on the basic building blocks of digital electronics: logic gates and memory. It focuses
+on these items from the ground up. The reader will first see how logic gates can be constructed from transistors and
+then how digital logic functions are constructed using those gates. The concept of memory is then introduced
+through the construction of an SR latch and then a D flip-flop. A clock is created to be used in a basic state machine
+design that aims to combine logic circuits with memory.
+Target audience
+This text will be geared toward computer science students; however it would be appropriate for any students
+who have the necessary background in algebra and elementary DC electronics. Computer science students learn
+skills in analysis, design and debugging. These skills are also used in the virtual world of programming, where no
+physical devices are ever involved. By requiring the assembly and demonstration of actual circuits, students will not
+only learn about digital logic, but about the intricacies and difficulties that arise when physically implementing
+their designs as well.
+Global Text Project
+Education is the most powerful weapon you can use to change the world - Nelson Mandela
+The goal of this text is to allow more students to gain access to this material by publishing it in the Creative
+Commons as well as specifying inexpensive materials to be used in the labs. For this reason the author chose to
+work with the Global Text project to develop this text. The Global Text Project will create open content electronic
+textbooks that will be freely available from a website. Distribution will also be possible via paper, CD, or DVD. The
+6
+
+--- Page Break ---
+
+Preface
+goal of the Global Text Project initially is to focus on content development and Web distribution, and work with
+relevant authorities to facilitate dissemination by other means when bandwidth is unavailable or inadequate. The
+goal is to make textbooks available to the many who cannot afford them.
+Acknowledgments
+A work such as this would not be possible without the help of many. First, I would like to thank the Global Text
+Project for their vision of providing electronic textbooks for free to everyone. Marisa Drexel, Associate Editor at the
+Global Text Project provided countless suggestions and helpful hints for the document and for the creation of the
+document using OpenOffice. Andrew Van Camp II, retired professor of electronics provided excellent suggestions
+for technical review of the content. Kumud Bhandari, currently a research aide at Argonne National Laboratory,
+also provided technical review of the material. My students Evan VanScoyk, Samantha Barnes, and Ben York all
+provided helpful corrections and review as well as countless diagrams found in the document. I would like to thank
+all of the countless open-source developers who produced such fine software as GNU/Linux, OpenOffice, Gimp,
+and Dia which were all used to create this document. I am grateful to McKendree University for providing support
+in the form of a sabbatical to allow me to complete this work. And I certainly wish to thank Sandy who provided
+excellent review suggestions, support and an extremely patient ear when I ran into trouble trying to incorporate a
+new feature from OpenOffice or attempted to edit a particularly tricky graphic.
+7
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+0. Introduction
+It is nearly impossible to find a part of society that has not been touched by digital electronics. Obvious
+applications such as computers, televisions, digital video reorders and countless other consumer electronics would
+not be possible without them. The Internet is run on a system of computers and routing equipment built with
+digital electronics. Yet even outside of some of these obvious applications we find that our cars and utilitarian home
+appliances such as microwaves, washers, dryers, coffee makers and even refrigerators are all increasingly being
+designed with digital electronic controls. You likely carry some sort of device designed with them with you nearly all
+your waking hours whether it is a watch, cell phone, MP3 player or PDA. Indeed, digital electronics provide the
+foundation upon which we build the infrastructure of modern society.
+You no doubt have heard stories about some of the first computers. Machines built with mechanical relays and
+vacuum tubes that filled entire rooms. In the 1940s John Bardeen, Walter Brattain and William Shockley developed
+the first transistor; it allowed computers to be built cheaper, smaller and more reliable than ever before. The
+integrated circuit, a single package with several transistors along with other circuit components, was developed in
+the late 1950s by Jack Kilby at Texas Instruments. This helped to further advance the digital revolution. Advances
+then became so common that in the 1960s Gordon Moore, co-founder of Intel Corporation, proposed his famous
+law stating that the capacity of computers we use would double every two years. This observation has held up since
+then, even being amended to doubling every eighteen months.
+The quad core microprocessors of today contain millions of components, but the basic building blocks are digital
+logic functions combined with memory. Despite the fact that many of these devices are tremendously complex and
+require vast amounts of engineering in their design, they all share the ubiquitous bit as their fundamental unit of
+data. In essence it all starts with TRUE and FALSE or 0 and 1. And so the next chapter starts with the simplest of
+logic devices, the inverter, built with a single transistor. You then continue your journey into the world of digital
+electronics by examining the NAND and NOR gates. Remember, the digital revolution would not be possible
+without these simple devices.
+8
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+1. The transistor and
+inverter
+Learning objectives:
+• Use the digital trainer and breadboard.
+• Assemble a circuit.
+• Build a logic circuit with discrete components.
+The transistor
+A transistor is a three-terminal device that can be used as an amplifier or as a switch. When the transistor is
+used as an amplifier, it is working in analog mode. When it is being used as an electronic switch, it is functioning in
+digital mode. The transistor will only be used in digital mode in these labs, which means the transistor will either be
+on or off. The terms ground, low, zero, zero volts, open switch, and dark lamp are all equivalent to the boolean value
+false. Likewise five volts, high, one, closed switch, and
+lit lamp (light-emitting diode, LED), are equivalent to
+the boolean value true. We will use false (F or 0) and
+true (T or 1) when speaking of the logical states in this
+manual. Modern computers contain millions of
+transistors combined together in digital mode to create
+advanced circuits.
+Transistors are three pin devices that are similar to
+valves for controlling electricity. The amount of current
+that can flow between the collector and emitter is a
+function of the current flowing through the base of the
+transistor. If no current is flowing through the base of
+the transistor, no current will flow through the
+collector and emitter. With the transistor operating in
+digital mode, it will be configured to carry the
+maximum (if on) or minimum (if off) amount of Exhibit 1.1: Common NPN transistors
+current from the collector to the emitter that the circuit will allow.
+The transistor used in this lab, the pn2222 or 2n2222, is an NPN, bipolar junction transistor which is sometimes
+referred to as a BJT. Other types of transistors exist, and while they differ in how they function, they are used in a
+similar manner in digital circuits. In this lab, a single transistor will be used to create an inverter. The principles
+used to build this inverter could be applied to other circuits with other types of transistors. Pinouts of the two types
+of transistors most likely to be used in these labs are shown in Exhibit 1.1.
+9
+
+--- Page Break ---
+
+�� ��� ���������� ��� ��������
+� ��)� ��+���>����)����  � ��)� ��+3��������������� ����
+��������������
+��������� ��)'�!�� �������'� %������� �!��������#� � �� ���� ���������0����'��!�%��0� ������������' %�!��� ����  ��� �
+������ �J4���K%���� �� �)����)����� 0�!!�)��'���+���#� ��'�� � ����!!�0� ��'����� �'� ��;� � ���� ����� �'� ���� �0��� �
+�����)!���%���)'�����%������)���2������'������'� +�H�'������!��������� ����� ����������'��!�)��'�������!����������%�
+0���%�0�����'  ���%��� ������ ��%�� �+�� ��)� ��+�����0�����������)����)����%�0��!��� ��)� ��+3����0����0�������� �
+������������ ���� ��� �����!�� ������!!�+�� ��)� ��+9����0��������!������!� �����'� �)'�! ������)����)����+����� �����
+!�)�%� ��������� �2�! ����'���������'����������0�!!�)����2��2�! �����L:D����� ���!�0�� �0�!!�)���D�������'��+�
+����0�0����������' �������������� ���'������ ���)����)�����
+�  <���� �����0�������0����0������ �������'� +
+�  ��#���'��� ��#���� ��������� %������'����� �!!������� ��)� ��+9%�� ��������������������� ���� �����!� ����������
+���'! �)������������'! � ����)'�+
+�  ����� �� ������������'!� ����������� ���0�����'���� ����������������+�,����������'���0����� �� �����!�����!!� �
+� ��������� �!�2�!�� ��������� �!!�� �'��������� ���+�,�������� ��������� �����'� +
+�  ����� ��'��� ���0����� ��������� ���������!����� ���)����)�������� ����������'��� 0���������� ����)!���+
+�  ,���0��������)���'������������ �� ���!�� ������'!� ������� ���0������������ ����� �� �0� �� ���
+)����)����%���'�����������������'� +
+�  ,����'���0��������'������� �� �����!�F�� ��'�!��'��������������'�� �'��������� ������������ �� ���
+�������� �!�����!�!�2�!+�,������'���������� �����'� +
+�  A��� ���!�������' �����0������L:D��������������������'������ ���� ��������+
+�  B������0��� �� �������'� ����� �'����������������!���J�������K�����L:D�������� ����J)!��#K��������'��+
+�  �!0������#���'��� ����2�����!���!�����'��� �������'� ���������)��������'�� �� �0������ �������'� +
+��
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+Exhibit 1.4: Complex circuit Exhibit 1.5: Inverter circuit
+The inverter
+The inverter, sometimes referred to as a NOT gate, is a simple digital circuit requiring one transistor and two
+resistors. The circuit should be connected as in Exhibit 1.5. Make sure to start with a neat diagram in your lab
+notebook before you start constructing your circuit! The input is connected to a switch and the output connected to
+an LED. The two resistors are current limiting resistors and are sized to insure that the circuit operates in digital
+mode. If the inverter circuit is altered slightly with the addition of another transistor placed in series with the
+current one, it results in one more input and the creation of a NAND gate. Likewise, if another transistor is added in
+parallel with the transistor in the inverter circuit a NOR gate can be built. These two gates are discussed at greater
+length in the next chapter.
+Review exercises
+1. Sketch your breadboard. Make sure to indicate which portions of the board are electrically connected in
+common.
+2. Construct a truth table for an inverter with x being the input and !x being the output.
+3. Using the color codes, determine the value of each of the resistors. Hint: You may need to review
+Appendix B if you are unfamiliar with using resistors.
+(a) red, orange, red
+(b) brown, black, orange
+(c) orange, orange, orange
+(d) brown, black, green
+4. What is the symbol used for electrical ground or zero volts?
+5. Construct a truth table for a NAND gate.
+6. Construct a truth table for a NOR gate.
+11
+
+--- Page Break ---
+
+1. The transistor and inverter
+Procedure
+1. Write the prelab in your lab notebook for all the circuits required in the steps that follow.
+2. Obtain instructor approval for your prelab.
+3. Draw a diagram of the inverter circuit.
+4. With the power off on your digital trainer, construct your inverter. Upon completion of the circuit, you
+may wish to have your instructor examine it before turning the power on.
+5. Turn power on for your circuit and verify the proper operation of the inverter.
+6. Demonstrate the proper operation of the inverter for your instructor.
+7. Using a 7404 series logic chip, connect one of the inverters to demonstrate its operation. Note that
+Appendix A contains descriptions of the 7400 series chips used in the labs, including the 7404 inverter
+chip.
+Optional exercises
+1. Draw a diagram of a NAND inverter circuit using two NPN transistors.
+2. Construct the NAND circuit.
+3. Verify proper operation of the NAND gate.
+4. Demonstrate the proper operation of the NAND for your instructor.
+12
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+2. Logic gates
+Learning objectives:
+• Use 7400 series chips in designing digital logic functions.
+• Draw complete circuit diagrams.
+• Construct and debug digital logic circuits using 7400 series chips.
+History of logic chips
+Logic gates could be constructed from transistors and resistors just as the inverter was constructed in the last
+lab. However, using discrete transistors to build logic gates can be time consuming and prone to problems as
+increasing the number of connections also increases the possible points of failure. Before the advent of the
+transistor, and today in certain industrial applications, logic gates are created using mechanical relays. Mechanical
+devices suffer from similar problems along with the added complication that such devices generally cannot be
+switched from one state to another quickly enough for modern computer applications. The introduction of the
+integrated circuit in the late 1950s aimed at placing many individual circuit components in a single package that
+had all of the connections self-contained in silicon. This revolutionized the computing industry and has led to CPUs
+today that contain millions of components in a single chip.
+You will use 7400 series logic chips in this manual. This series of
+chips has been manufactured since the 1960s. These chips were used to
+design and build computers during that time; however, they are rarely
+used in computers built today. Despite this, they still have many uses (in
+addition to just teaching students digital logic). They are still produced,
+easy to obtain and are fairly inexpensive. The chips come in various
+packages, but the package used in these labs is a dual in-line package,
+otherwise know as a DIP as shown in Exhibit 2.1. In order to determine
+the polarity of the chip, a notch is put on one side of the chip. From a top
+view, pin one is on the left of the notch with other pins numbered
+sequentially in a counter clockwise manner. Chips may also have a dot
+placed near pin one. Pinouts of the chips that will be used in the labs can
+be found in Appendix A.
+Exhibit 2.1: 7400 NAND DIP
+Chips in the 7400 family are constructed using a variety of different
+circuit configurations that all have different properties. Some utilize BJT and others, field effect transistors (FETs).
+The different series (C, HC, L, S, LS, etc. within the 7400 family) are designed with such considerations as the need
+for low power consumption, switching speed, or reliability under stressful environments that might be incurred in
+military applications. Consult Appendix E for families that are appropriate for these labs.
+13
+
+--- Page Break ---
+
+2. Logic gates
+Logic symbols
+As mentioned in the previous lab, NAND and NOR gates can be constructed with fewer components than AND
+and OR gates. For this reason, the inverter, NAND and NOR make up four of the seven chips used in all of the labs.
+Symbols used to represent the NAND, NOR, AND, OR and inverter or NOT are provided along with the truth tables
+for the NAND and NOR. The truth tables have “0” representing false and ”1” representing true. A circuit that can be
+used to create a NAND gate using two transistors is shown in Exhibit 2.7. Circuit configurations for NAND gates
+provided by the 7400 series chips, while logically equivalent, vary from this design.
+Exhibit 2.4: Inverter
+Exhibit 2.2: NAND Exhibit 2.3: NOR
+A B Y A B Y
+0 0 1 0 0 1
+Exhibit 2.5: AND
+0 1 1 0 1 0
+1 0 1 1 0 0
+1 1 0 1 1 0
+Table 1: NAND table Table 2: NOR table
+Exhibit 2.6: OR
+Exhibit 2.8: A' AND B
+Notice that only the small circle is used to indicate the
+inversion of the AND to produce the NAND instead of using
+the full inverter symbol in Exhibit 2.2. This shorthand is often
+used at the input of a gate, shown in Exhibit 2.8 which is
+equivalent to (A' AND B).
+Exhibit 2.7: NAND circuit
+Since the NAND gate is used more often, how do you obtain a simple AND or OR gate? One way would
+obviously be to simply combine a NAND gate along with an inverter as in Exhibit 2.9. While this works, as each
+chip contains more than one gate, if an extra NAND is available, it may be more advantageous to use a spare gate
+rather than to use an entirely new chip as in Exhibit 2.10.
+14
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+Exhibit 2.10: NAND NAND to yield AND
+Exhibit 2.9: NAND inverter yields AND 
+Logical functions
+Exhibit 2.11 demonstrates how to implement a simple logical expression using the gates provided. Make sure to
+use only those gates that are provided in your kit when designing your circuit. This diagram implements the
+function f(A,B,C) = AB + BC. Since there are three inputs to this function, there are eight possible logical input
+conditions as shown in the truth table.
+A B C f
+0 0 0 0
+0 0 1 0
+0 1 0 0
+0 1 1 1
+1 0 0 0
+1 0 1 0
+Exhibit 2.11: AB + BC
+1 1 0 1
+1 1 1 1
+Table 3: AB + BC
+When building a logical circuit, it is important to document the circuit diagram as shown above. However, even
+this diagram could be made clearer for those attempting to build and debug the circuit. Exhibit 2.12 yields a much
+more detailed description of how the circuit should be built.
+You should include a diagram for every circuit that you build in your lab notebook and you should follow the
+format in Exhibit 2.12. Let us examine the type of information contained here. First, chips are labeled as IC1, IC2
+and IC3. Then a legend is included that specifies the type of chip for each of the IC or integrated circuits. The IC
+numbers should appear in the order that they will appear in your breadboard from left to right or top to bottom,
+depending upon how the breadboard is
+configured in your digital trainer. Second,
+the pins used for each connection on the
+chip are also given, which makes connecting
+the circuit possible without having to
+continually consult the datasheet for that
+logic chip. Third, the switches and LEDs are
+labeled in the order that they are used for
+the respective inputs and outputs. All of this Exhibit 2.12: Detailed wiring diagram for AB+BC
+15
+
+--- Page Break ---
+
+2. Logic gates
+makes it much easier to construct and demonstrate the circuit. But above all, the greatest benefit comes if the
+circuit does not work and needs to be debugged! In this case, with all of the pins clearly labeled on your diagram, it
+is much easier for someone to examine your circuit, compare it to your diagram, trace the various connections and
+hopefully find and correct any problems in the circuit.
+LAB NOTEBOOK TIP: In addition to the circuit diagram, always put a truth table in your lab
+notebook to make it easier to debug and test the operation of your circuit.
+This circuit would require three different 7400 series logic chips and ten different connections, yet if designed
+with individual transistors using the inverter from the last lab, as well as the NAND circuit shown in Exhibit 2.7,
+this would take nine different transistors, fifteen resistors, and many more connections than if just the chips were
+used. It is no wonder that the decrease in complexity of digital circuits that followed the introduction of the 7400
+series chips led to a revolution in the computing industry!
+Let us examine one more simple circuit. This one is used to implement an exclusive or (XOR), which is
+represented by the symbol ⨁ in logical expressions. The truth table for A XOR B follows along with the gate used to
+represent it in circuit diagrams. As no XOR chip is provided in the kit, in order to implement this circuit, the XOR
+must be built by examining the truth table to find the resulting logical function, A'B + AB'. The circuit diagram for
+the XOR is shown in Exhibit 2.14. Remember, a diagram such as this should be included in your lab manual to ease
+construction and debugging of the circuit.
+A B ⨁
+0 0 0
+0 1 1
+Exhibit 2.13: XOR
+1 0 1
+1 1 0
+Table 4: XOR table
+Exhibit 2.14: Circuit diagram for XOR
+We will discuss how to build more complicated circuits in the next chapter, as well as how to logically simplify
+the functions with Boolean algebra. Both circuits designed in this chapter can be simplified significantly with the
+use of De Morgan's law, also discussed in the next chapter.
+16
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+Review exercises
+1. If a logic function has three inputs, how many rows must the truth table have to contain all possible
+states? Justify your answer.
+2. Repeat the last problem for five inputs.
+3. For the following functions, construct a truth table and draw a circuit diagram.
+(a) y(A,B) = (AB)' + B'
+(b) y(A,B,C) = (A + B)' C
+(c) y(A,B,C) = (AC)' + BC
+(d) y(A,B,C) = (A ⨁ B)C'
+(e) y(A,B) = A' + B
+(f) y(A,B,C) = ((A+B)'(B+C)')'
+4. For 3(e) of the previous exercise, design the circuit using 7400 series chips listed in Appendix A. Label the
+pinouts on the circuit diagram. Make sure to label all of the pinouts, just as in Exhibit 2.14.
+5. Repeat exercise 4 using 3(f).
+Procedure
+1. Write the prelab in your lab notebook for all circuits required in the steps that follow.
+2. Obtain instructor approval for your prelab.
+3. Assemble one single NAND gate from a 7400 chip and verify its operation.
+4. Assemble one single NOR gate from a 7402 chip and verify its operation.
+5. Build the circuit required for Exercise 4 from the review exercises. Make sure to have your instructor
+verify that your circuit works correctly before moving on.
+6. Build the circuit required for Exercise 5 from the review exercises.
+Optional procedure
+1. Design, construct, and verify the operation of the circuit from Exercise 5 using only NAND gates.
+17
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+3. Logic simplification
+Learning objectives:
+• Use reduction techniques to obtain minimal functional representations.
+• Design minimal three and four input logical functions.
+• Build and debug three and four input logical functions.
+De Morgan's laws
+As you observed in the previous lab, managing the number of connections (or wires) in your circuit can become
+a challenge. This challenge seems to increase exponentially as the number of components in the circuit increases. In
+order to keep your breadboard as neat as possible and your design as simplified as possible, it is often advantageous
+to spend time examining the logical function for ways to reduce the complexity of the final design. Reducing the
+number of gates in a circuit will generally lead to a reduction in the number of connections, resulting in a simpler
+circuit. Designs with fewer connections and parts have fewer possible points of failure. Less complex circuits are
+generally easier and cheaper to build and debug. In this chapter, techniques will be introduced that can help to
+implement complex circuits in the least complex manner possible.
+It is often possible to implement logical functions correctly in many different ways. The first step in obtaining a
+logically minimal expression should be a clear understanding of the rules of Boolean algebra listed in Appendix D.
+De Morgan's laws in particular can be very helpful when attempting to simplify circuit design. De Morgan's laws are
+listed below.
+(AB)' = A' + B' (A+B)' = A'B'
+Given these two equations, it is easy to see the alternate symbols that are sometimes used for the AND and OR
+gates listed in and . Applying De Morgan's laws to the functions listed yields the following.
+(A' + B')' = (AB')' = AB (A'B')' = ((A + B)')' = A + B
+Exhibit 3.1: Alternate AND symbol Exhibit 3.2: Alternate OR symbol
+An example of using De Morgan's laws for simplification can be found by examining the logical function: AB +
+BC from the previous chapter. This function can actually be implemented with just three NAND gates and one 7400
+chip. Examining the equation AB + BC below and applying De Morgan's law demonstrates that the expression can
+be implemented with only NAND gates.
+AB + BC = ( (AB + BC)' ) ' Double Negative
+= ( (AB)' (BC)' )' De Morgan's law
+Notice that the first expression exactly matches the function that was built in the previous chapter using two
+NANDs, one NOR and three inverters. The new circuit shown in Exhibit 3.3 implements the same expression with
+just three NAND gates. This results in a design using only one 7400 series chip and fewer connections that still
+18
+
+--- Page Break ---
+
+3. Logic simplification
+yields the same result. Designs with fewer chips and wires generally take less time to build, resulting in less
+expensive, more robust circuits. Similarly, the circuit that
+implements the XOR from the last chapter could be built
+with just NAND gates, however as five gates would be
+required, it still would use two chips, one 7400 and a
+7404.
+Karnaugh maps
+Karnaugh maps or K-maps for short, provide another
+means of simplifying and optimizing logical expressions.
+This is a graphical technique that utilizes a sum of product
+Exhibit 3.3: AB + BC (NANDS only)
+(SOP) form. SOP forms combine terms that have been
+ANDed together that then get ORed together. This format lends itself to the use of De Morgan's law which allows
+the final result to be built with only NAND gates. The K-map is best used with logical functions with four or less
+input variables. As the technique generally becomes unwieldy with more than four inputs, other means of
+optimization are generally used for expressions of this complexity. While it can be more instructive for students to
+use Boolean algebra reduction techniques, when minimizing gate circuit; it is less obvious for students to recognize
+when they have reached the simplest circuit configuration. One of the advantages of using K-maps for reduction is
+that it is easier to see when a circuit has been fully simplified. Another advantage is that using K-maps leads to a
+more structured process for minimization.
+In order to use a K-map, the truth table for a logical expression is transferred to a K-map grid. The grid for two,
+three, and four input expressions are provided in the tables below. Each cell corresponds to one row in a truth table
+or one given state in the logical expression. The order of the items in the grid is not random at all; they are set so
+that any adjacent cell differs in value by the change in only one variable. Because of this, items can be grouped
+together easily in rectangular blocks of two, four, and eight to find the minimal number of groupings that can cover
+the entire expression. Note that diagonal cells require that the value of more than two inputs change, and that they
+also do not form rectangles.
+A'B' A'B AB AB'
+A' A
+00 01 11 10 A'B' A'B AB AB'
+0 1 00 01 11 10
+C'D'
+B'
+00 C'
+0 0
+C'D
+B
+01 C
+1 1
+CD
+11
+CD' Table 6: 2 input K-map Table 7: 3 input K-map
+10
+Table 5: 4 input K-map
+Examine the expression f(A,B,C) = ABC + ABC' + A'BC + A'BC'. As listed, it requires four three-input AND gates,
+one four-input OR gate and several inverters. The truth table is copied over to the eight cell K-map below. Notice
+the square of ones in the center of the K-map. These cells all share the fact that they are true when B is true. And
+indeed, the expressions shown below are equivalent.
+19
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+A B C f
+0 0 0 0
+0 0 1 0
+0 1 0 1
+0 1 1 1
+1 0 0 0
+1 0 1 0
+1 1 0 1
+1 1 1 1
+Exhibit 3.4: K-map of f(A,B,C)
+Table 8: f(A,B,C) 
+ABC + ABC' + A'BC + A'BC' = AB(C + C') + A'B(C + C') Distributive Property
+= AB + A'B C + C' is always true
+= (A + A')B Distributive Property
+= B A + A' is always true
+Of course, implementing the logical expression B is much simpler than the previous expression! Although rules
+of logic applied above yield the same result, it is often much easier to note the groupings that result in minimal
+expressions using the graphical representation of the K-map.
+Let us examine the equation g(A,B,C,D) given in the truth table in Table 7 with the associated K-map. The
+expression contains three different terms: A'B', AC, and ABC'D circled in Exhibit 3.5. However, this is not the
+minimal expression because not all of the largest possible groupings are included. In order to obtain the largest
+groupings, it is often necessary to overlap some of the terms. This just causes certain terms to be included in more
+than one grouping as shown in Exhibit 3.6. Notice term ABCD which is actually included in two different groupings,
+ABD and AC, which is perfectly acceptable. Using the new groupings, we obtain the minimal SOP expression
+g(A,B,C,D) = A'B' + AC + ABD. This expression contains the same number of groupings or products, but one less
+term in one of the products. In this case ABC'D from Exhibit 3.5 is replaced with ABD in Exhibit 3.6 yielding a
+simpler expression. While other techniques exist for finding minimal expressions, with some practice, the K-map
+can be used effectively for expressions with four or less inputs.
+Not selecting the largest grouping is a very common error to those just beginning to use K-maps.
+Remember, always select the largest grouping possible, even if it results in some terms being
+double covered. Larger groupings result in simpler expressions.
+20
+
+--- Page Break ---
+
+3. Logic simplification
+A B C D g
+0 0 0 0 1
+0 0 0 1 1
+0 0 1 0 1
+0 0 1 1 1
+0 1 0 0 0
+0 1 0 1 0
+0 1 1 0 0
+0 1 1 1 0
+1 0 0 0 0
+1 0 0 1 0
+1 0 1 0 1 Exhibit 3.5: K-map of g(A,B,C,D)
+1 0 1 1 1
+1 1 0 0 0
+In summary, the procedure for using K-maps to find
+1 1 0 1 1
+minimal logical expressions is given below.
+1 1 1 0 1
+1. Construct the K-map corresponding to the
+1 1 1 1 1
+truth table.
+Table 9: g(A,B,C,D) 2. Circle any 1 that is NOT adjacent (isolated)
+to any other 1.
+3. Find any 1 that is adjacent to only one other.
+Then circle these pairs, even if one in the pair
+has already been circled.
+4. Circle any group of eight (octet), even if a 1
+in the group has already been circled.
+5. Circle any group of four (quad) that contains
+one or more one 1 that is not already circled.
+6. Make sure that every 1 is circled.
+7. Form the OR sum of the terms generated by
+each grouping.
+Exhibit 3.6: K-map of g(A,B,C,D)
+The following example goes through all the steps in order to find the minimal expression for h(A,B,C,D). First,
+the truth table given in Table 8 is transcribed to fit into the K-map given in Table 5.
+21
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+A'B' A'B AB AB' A'B' A'B AB AB'
+00 01 11 10 00 01 11 10
+A B C D g
+C'D' 0 1 1 0 C'D' 0 1 1 0
+0 0 0 0 0 00 00
+0 0 0 1 1 C'D 1 1 1 1 C'D 1 1 1 1
+01 01
+0 0 1 0 0
+CD 0 1 0 0 CD 0 1 0 0
+0 0 1 1 0 11 11
+0 1 0 0 1 CD' 0 0 0 1 CD' 0 0 0 1
+10 10
+0 1 0 1 1
+Table 11: h(w,x,y,z) Table 13: Step 2
+0 1 1 0 0
+0 1 1 1 1 In step 2, above, the 1 in the
+1 0 0 0 0 bottom right is shaded.
+1 0 0 1 1 In step 3, to the left, the pair of
+1 0 1 0 1 two 1s in the second column is
+A'B' A'B AB AB'
+shaded. Note that the bottom item
+1 0 1 1 0 00 01 11 10
+A'BCD dictates that this group is
+1 1 0 0 1 C'D' 0 1 1 0
+00 circled. The top item, A'BC'D has
+1 1 0 1 1
+C'D 1 1 1 1 many different adjacent elements,
+1 1 1 0 0 01
+but the first 1 only has one adjacent
+1 1 1 1 0 CD 0 1 0 0
+11 element. For step 4, no groups of
+Table 10: h(A,B,C,D)
+CD' eight exist, so there is no table. For
+0 0 0 1
+10
+step 5, two groups of four exist, C'D
+Table 12: Step 3 and BC'.
+A'B' A'B AB AB'
+00 01 11 10
+C'D' 0 1 1 0
+00
+C'D 1 1 1 1
+01
+CD 0 1 0 0
+11
+CD' 0 0 0 1
+10
+Table 14: Step 5
+Note that both of these groupings cover elements already covered from step 2 and that both share the group of
+two, BC'D. This overlap is shaded in green. This is not only perfectly acceptable, but required to obtain the
+minimal expression. Now, all of the 1s are covered, yielding the minimal solution.
+h(A,B,C,D) = AB'CD' + A'BD + BC' + C'D
+22
+
+--- Page Break ---
+
+3. Logic simplification
+Circuit design, construction and debugging
+While these techniques are useful in minimizing the logical expression, ultimately the circuits still need to be
+constructed. As the complexity of the circuits increases, it is important to note some of the techniques that can be
+useful in building a complete working circuit.
+DESIGN TIP: The time spent in the design stage can pay huge dividends later! Mistakes made at
+the beginning of the design phase carry through the entire process and can consume countless
+hours trying to debug the final product.
+• Start by making sure that the circuit minimization was correct and copied in your lab notebook. The truth
+table is helpful when testing the final circuit. Building the wrong circuit serves no purpose at all.
+• Verify that the pinouts selected are proper for each gate and chip; these are helpful when debugging as well
+as when building the circuit. Again, time spent here helps cut down on the construction and debugging
+later.
+• Remember the tips given in the chapter “The transistor and the inverter” regarding the use of the
+breadboard.
+• Keep connecting wires neatly and avoid unnecessarily long loops of wire, yet do not spend excessive time
+cutting wires that are exactly the proper length between spans. It may feel like a work of art, but in the end
+you want a neat circuit that works properly.
+If your circuit does not work properly:
+• Attempt to reason out the problem. Does the circuit act reliably?
+• Does it always produce the same wrong result? If so, then the error is likely in the logic.
+• If it yields different results at different times, a loose connection is very likely. If two output lines are
+connected together (which should never be done), it can also result in unpredictable outputs.
+• Test each component of the circuit independently. For example, if you have the expression AB' + ABCD +
+ABC' built with NAND gates and inverters, first test that the input and output of (AB')' is working correctly.
+Then move onto each succeeding term.
+• Verify the circuit has power and ground to all of the appropriate pins for each chip.
+• Verify that all of the pins are connected properly.
+• Make sure that they follow what is specified in your circuit diagrams.
+• Make sure that none of the output pins are tied together. If each of the output pins were to obtain a
+different value, this could result in a logic high being tied directly to a logic low level. At best, this can
+result in an indeterminate value. This will result in further problems if this output is then used as an
+input for another gate.
+• Remember that often things do not work the first time when you build them.
+DEBUGGING TIP: Do not allow yourself to get frustrated! This is easier said than done, but
+getting upset does not serve any purpose in effective troubleshooting.
+If you have done all of the above and the circuit still does not work:
+• Return to the design phase and verify that your minimization and pinouts are correct.
+23
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+• Sometimes errors come from the components or equipment themselves. Errors such as those listed below
+can occur, but are very rare. These should be considered as a last resort and other causes of error should be
+investigated before looking for the following errors:
+• A pin on a DIP can become bent and curl under the chip so that it does not get inserted into the
+breadboard. This is difficult to see without taking the chip out and examining its legs.
+• In general, solid state devices are very reliable when operated under proper temperature ranges, but
+very occasionally a chip may be faulty.
+• Connecting wires can be split inside of the insulation. When this occurs, the insulation will cause the
+wire to look as though it is intact, but if the copper is in two pieces inside the insulation, current will
+not flow and the wire will actually be open.
+• Faulty test equipment can adversely effect the circuit being tested and lead one to believe a circuit is
+malfunctioning when it is not, or give you other false information that leads you down the wrong
+path in your reasoning.
+• Ask for help from fellow classmates and your instructor.
+• Take a break and come back to the problem. No one works at their best when they are totally aggravated.
+Review exercises
+1. Design a 4-input NAND gate using two 2-input NAND gates and one 2-input NOR gate. Hint: Use
+DeMorgan's law.
+2. What are the possible groupings in a 4-input K-map? Sketch their shapes.
+3. Construct a truth table for the following functions:
+(a) f(A,B,C) = AB + A'BC' + AB'C
+(b) g(A,B,C) = A'C + ABC + AB'
+(c) h(A,B,C,D) = A'BC' + (A ⨁ B)C + A'B'C'D + ABCD
+(d) j(A,B,C,D) = A'C'D' + C'D + CD
+4. Construct the K-map for each of the functions from the previous problem and determine the
+minimal expression for each.
+5. For 3(b), design the circuit for the minimal SOP expression found in problem 4 using just NAND
+gates and inverters. Label the pinouts on the circuit diagram.
+6. For 3(c), design the circuit for the minimal SOP expression found in problem 4 using just NAND
+gates and inverters. Label the pinouts on the circuit diagram.
+7. Given each of the K-maps, determine the minimal expression associated with it.
+(a) (b)
+A' A
+A'B' A'B AB AB'
+0 1
+00 01 11 10
+B' 1 1
+C'
+0 1 1 1 1
+0
+B 1 0
+C 0 1 0 0
+1
+1
+24
+
+--- Page Break ---
+
+3. Logic simplification
+(c) (d)
+A'B' A'B AB AB'
+A'B' A'B AB AB'
+00 01 11 10
+00 01 11 10
+C'D' 1 1 1 1
+C'D' 0 0 0 0
+00
+00
+C'D 1 1 1 0
+C'D 1 1 0 1
+01
+01
+CD 0 0 1 1
+CD 0 1 0 1
+11
+11
+CD' 0 0 1 1
+CD' 1 1 0 0
+10
+10
+Procedure
+1. Write the prelab in your lab notebook for all the circuits required in the steps that follow.
+2. Obtain instructor approval for your prelab.
+3. Build the circuit required for Exercise 5 from the review exercises.
+(a) Make sure to test each of the portions of the expression independently. Meaning, test the output of
+each of the first level NAND gates to verify that each works before testing the final output.
+(b) Demonstrate the working circuit for your instructor.
+4. Repeat the steps from the last procedure for Exercise 6 of the review exercises.
+25
+
+--- Page Break ---
+
+,����)��#����!��������'����������� �2�����������  ��)' ����3+��4������
++  '�������  ���  �%�  �  ���
+4���������).�� �2���
+�  &�2��0��!!������)!��<��������'�����+
+�  A���?���; �����@������ ��������������1� ���+
+,�� � �����)-��%�����% ���
+$������� ������ ���'!������'�������!!�0�������<����'�������%��'������ ����������� ��)� �9+�%������� ��)2��'�+�
+��!!�����)��������� '�!!��������.���� � ����!!����� ��������� ��)�����%�0���������'������'������ �� ������� ��������
+��� ��'�'�+�,�������'�������� 0����!!���� '�!!������������� ���!���������� ���)��>;�;%��2��� ��'��� ������� ���!���� �
+��!� +�
+� ��)� �9+���<��������'����
+,��������)�!� �������������)2��'�����'����������������<������0� ����'�����' ��'�� ����+�� ��)� �9+�����0��>;�%���
+��'����!!��('�������'����� �� ������!� ���� ��� 0�������)������+����� ��)� �9+3%� ������� ���!!���� ���'!������'������;�
+������0�+�G������ ������ ������)2��'����'����!!����'������ �� ���� ������!!���'����������������0���� �� ��)� �9+9+�
+,����� ���� ��������������2������ �� � ���������!�� ��������������� ��)� �9+�%�9+3�����9+9�����>;�L�;�L�;>;�%�
+�;L�>;L�;�;�����>;�;L�;>�L�;��������� �'!!�+
+� ��)� �9+���9��!���� ����'�
+� ��)� �9+3��6��!���� ����'�  � ��)� �9+9����'������������'�
+�5
+
+--- Page Break ---
+
+�� ���� ����� ��������������
+��%���%������������)-��%
+�!!���� ���<���������0�����������2������ ������' �2����)!���������>��� �
+�!���� ��� ���0� �� ������' �2����)!������������!���� �������+�,����������� �
+����� ��)�� �������%�)' �� ���� ������2�� ����'��������+�������� ���%� ���
+���' ����2��'���� �����������������P�����P�����P���%�0������������ ������
+��)�� ���������� ���+������ ���!�%� ������' ���('�������'!����2��)�������
+P���P���P�� � 0��!� � � �!! � ��!� � �������� � ��� � ���' � � � � � ���+ � �! ��'���
+�! ����� � ���� � ���2�� ���� � 0�!! � � �!! � !��� � � � �� � � �� � ���� � ������!�
+� ���������%�� ���������'������)���'���0����2������������'! �%�� ������� ���
+!���� ������'����+�>���! ������ ������2�� ���%���'���'!����'��� ����� ������
+������� ���'� ���������  ��� ����0����� ����������'��0��#+�,�����!!�0����
+� ��)� �9+:��6����' �<��������'����
+� ���!���!!'� �� �����0� ���������������� � ����0�!!�)���) ����������� ��
+��������������� ������' �2����)!��+����� ��)� �9+:� ���������'�� ��������������� ���������� ��)� �9+3+���� ��������%�
+��������������!��� ��������;�������� ������ 0��)�'�������%�0��!�� ������'����������;�;��������� ��������� +������%�� �
+����)�����0�� �� � ��������������!�� �������������) ��������;�L��;>�L��;�;+
+���(����������� � ���
+B��!���!!����' �������������!�����!��'�� �����'� �)������������%��������� '�!��������� ��� ������'��� �� ���� ��� �
+��������2���� �� +�������� ����%������ ��'!�����'� ��� �� ����!��� ���'��� ���� � ���1���� ���'�����2��0�'!����2�� �
+������� � ����� �J���K�������2���J���K+�����'��������%�� �����)����2�� ����'�� ����!! � ������ ��0� ��� ����; ������
+����� ��� � J�K+ � ,�� ����; � ����� ��� � ��� � )� � ���!'��� � 0� � � � � ���'����� �� � � � ��!�� � � � ������1� � �� � ����! � !�����!�
+�������� � ���%�� ���0��� �� �����)�� ��� �� ��� ���!��+���������� ���� ���!���� �� ��)� � 9+5+��� ���!� � ��� ���������
+���'���%� ���������!�� �������������;�;�L��;>�;�L�>�;+�8�0�2��%���� �� ����; ������ ����� ����������!!�0��� ��)��
+���'����0� ������%� ������'! ����������!�� ������������>�L��;�;+�
+&����)��� �� � ���������������� ����; ������ ����� ����������� ���('���� �� � ������!!�)����2�������� �������!�
+�' �' + �� ��)� � 9+=� ������ �� �� � ��� � ����+ � E� �% � 0� � �� � �� ����; � ����� � ��� � ���!'��� � � � ���!� � � � ������!�
+�������� � ��������;+�,������; �������!���� ���)�  �������� ����!'����� ��!!+
+� ��)� �9+=�����; �������� ���2����
+� ��)� �9+5�����; ����������� ����
+�=
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+Review exercises
+1. Given each of the K-maps, determine the minimal SOP expression. d represents a don't care condition.
+(a) (b)
+A'B' A'B AB AB' A'B' A'B AB AB'
+00 01 11 10 00 01 11 10
+C' d 0 1 1 C' 0 0 1 1
+0 0
+C 1 0 0 d C 1 d d 1
+1 1
+(c) (d)
+A'B' A'B AB AB' A'B' A'B AB AB'
+00 01 11 10 00 01 11 10
+C'D' 0 0 0 1 C'D' 1 1 0 1
+00 00
+C'D 0 0 1 1 C'D 0 1 0 0
+01 01
+CD 1 0 1 1 CD 0 1 0 0
+11 11
+CD' 1 0 0 1 CD' 1 1 0 1
+10 10
+(e) (f)
+A'B' A'B AB AB' A'B' A'B AB AB'
+00 01 11 10 00 01 11 10
+C' 1 1 0 1 C'D' 1 1 0 0
+0 00
+C 0 1 1 0 C'D 1 1 1 1
+1 01
+CD 0 0 0 0
+11
+CD' 1 1 0 0
+10
+2. For the functions listed below, construct a K-map and determine the minimal SOP expression.
+(a) f(a,b,c) = a'b'c' + a'bc' + abc' + abc
+(b)g(a,b,c) = ab'c' + abc' + abc + don't cares(a'bc + ab'c)
+(c) k(a,b,c,d) = abc'd + ab'c'd + a'bc'd + a'b'cd' + don't cares(a'b'cd+ a'bcd + ab'cd + abcd)
+(d)m(a,b,c,d) = a'b'cd' + a'bcd' + abc'd' + abcd' + ab'c'd' + ab'cd' + don't cares(a'bc'd + abc'd)
+Procedure
+1. Write the prelab in your lab notebook for all the circuits required in the steps that follow.
+2. Obtain instructor approval for your prelab.
+28
+
+--- Page Break ---
+
+4. More logic simplification
+3. Build the circuit required for Exercise 2(b) from the review exercises.
+4. Demonstrate the working circuit for your instructor.
+5. Repeat the steps from the last procedure for Exercise 2(c) from the review exercises.
+29
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+5. Multiplexer
+Learning objective:
+• Use the multiplexer to implement complex logical functions.
+Background on the “mux”
+A multiplexer, often just called a mux, is a device that can select its output from a number of inputs. This device
+is useful in computer systems that use a bus architecture, where several devices share the same communication
+path. A 2-to-1 multiplexer is shown in Exhibit 5.1. In this case the two inputs are D0 and D1. If the select line is low,
+then the output will reflect the state of D0. Likewise, if the select line is high, the output is the state of D1. Hence,
+the output is switched between two different devices connected to D0 and D1 using the select line. In this way, only
+one device will be active or connected to the bus at any given time.
+Exhibit 5.1: 2-to-1 multiplexer
+With an increase in the number of select lines, multiplexers allow for more than just two input lines. If two select
+lines are used, then the output can be selected from four different inputs forming a 4-to-1 mux. The 74151 provided
+in your kit is an 8-to-1 mux that uses three select lines to chose from 8 different input lines. A diagram of the 74151
+chip is given in Appendix A. The 8-to-1 multiplexer can be used to take a byte of parallel data on the input lines and
+determine which of the input lines to display at the output. This is useful with bus architectures in order to convert
+the parallel data that most often comes in bytes into a serial stream of bits.
+Using a multiplexer to implement logical functions
+Another use for the mux is to implement fairly complicated logic functions without the aid of other logic gates.
+As an example, examine the following function along with its K-map, and the resulting minimal SOP expression.
+g(a,b,c) = a'b'c' + a'bc + ab'c' + ab'c + abc'
+= a'bc + b'c' + ac' + ab'
+In order to implement the circuit of this function for even the minimal SOP representation, five NAND gates are
+required. However, a single mux can be used to implement the same expression. The key is to use the input
+variables for the function as the input for each select line and set the data lines to the value for each of the
+corresponding outputs. Note that the value of data lines D0, D3, D4, D5, and D6, which also are found on pins 4, 1,
+15, 14, and 13 are set to high with the remaining data lines set low. In this manner, any three input logical functions
+30
+
+--- Page Break ---
+
+�� �����������
+����)��)'�! �0� ��������!���' +�E� �� �� ������� ���������2��'�!�%� ���� ��)��������� ����!�0����� ������������ �� �
+���' ������� ����'�� ���������������� ������������ ������' �!��������� ���=9�:������+
+���� ��� �� ���
+�� �� �� ��
+�� �  �  �  �
+�
+� �  �  �  �
+�
+,�)!���:���J�%)%�K
+�  �  �  �
+�  �  �  �
+�  �  �  �
+�  �  �  �
+�  �  �  �
+�  �  �  �
+�  �  �  �
+�  �  �  �
+�  �  �  �
+,�)!���5���J�%)%�K
+� ��)� �:+�������'� ������J�%)%�K
+B����'������� ����������%� ���=9�:������� ������������ �������)��!�����'�� ���������� ��+�,��������'� ���'!��)� �
+�2���������!� �)!����� ����� �����' �!����%���� ���'����=%���'!��)���������+ �,����'�� ���� �� � �� ��'! ��!� ���
+���!���� �����'!��)� ���������0��!�� �������'� �����'������0� �� ���'������������ ������+�,��� ��������� ���� �
+���������2�!'������� ������' �!����� ������ ���� �'!�����������)!��)��!�����'�� ���������� ��+
+B����'����� ���=9�:���'! ��!� ����
+��J�K���#���'��� ��������!����!�� � ���� ��)��!���+
+��J�K�E� �� �� �2�!'���������������%�>%����������������������� �������2������ ��� �' �� �)!��
+���������������� ��+�������� ������'���� �� ������ ������ ����������� ����' �!���%�0�����������
+������)�� �������������'��������+
+�'� ���� ������ �������'��������6� �����' �����)��'���� �����!���� �����3����' ��'�� ����0� ��.'� ���������%�
+����9����' ��'�� ��������)��)'�! �0� �����5� �����' +�8�0�2��%� ���#� ����2�����0� �� ����!�)���!����� ����� ���6� ��
+���' +�,�������������� ������)!���0����������!� ���'�����' ��'�� ����0�'!����('������2���!��������� � =9����������
+������ �����!���� %��'������ ����'�� �����J�%)%�%�K���'������ ���<��������� �' �� �)!�� �� ���!!�0+�,0���������� �
+������!�$G"�� ����������� �� ����� �����'�� ���+�$���)�!�0+
+�J�%)%�%�K�N��;)�;�L��;);��L����;�L��);�;��L��;�*�*
+�J�%)%�%�K�N��;)�;�L��;);��L����;�L��);�;��L��;"�*
+3�
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+Either of the terms at the end of each expression could be used to obtain a minimal expression. Yet, either would
+require four 3-input NAND gates, one 4-input NAND gate and one 5-input NAND gate, assuming that your kit even
+provided NAND gates with four or five inputs.
+It may not be obvious how to use the multiplexer in cases such as this to implement the function. One approach
+would be to use two mux chips along with some additional gates. One trick is to use two 8-to-1 multiplexers along
+with one 2-to-1 mux as shown in Exhibit 5.1. Each half of the function is implemented with an 8-to-1 mux and the
+output of each is selected using the remaining input as the select line for the 2-to-1 mux. Luckily, a simple trick can
+be used with an 8-to-1 mux. First take the function given in the K-map for h(a,b,c,d) produce the truth table, but
+add one column for the multiplexer input of each data element.
+a'b' a'b ab ab' a b c d h(a,b,c,d) Input
+00 01 11 10
+0 0 0 0 0 D0=d
+c'd' 1 1 0 0
+00 0 0 0 1 1 D0=d
+c'd 0 1 0 1 0 0 1 0 0 D1=0
+01
+0 0 1 1 0 D1=0
+cd 1 0 0 0
+0 1 0 0 1 D2=1
+11
+0 1 0 1 1 D2=1
+cd' 1 0 1 1
+10
+0 1 1 0 0 D3=d
+Table 17: h(a,b,c,d) 0 1 1 1 1 D3=d
+1 0 0 0 0 D4=d
+Each of the two rows in the sixth column now represent one of
+1 0 0 1 1 D4=d
+the input lines. Instead of the input lines taking just true or false
+1 0 1 0 1 D5=d'
+to implement the truth table directly, the input lines will take the
+1 0 1 1 0 D5=d'
+value of true, false, d, or d'. In this way, only one multiplexer
+1 1 0 0 1 D6=1
+needs to be used along with possibly one inverter gate. As a, b, and
+c are used to select the data line, each set of two rows that share 1 1 0 1 1 D6=1
+the same input values for a, b, and c are grouped together in the 1 1 1 0 0 D7=0
+table. Then by comparing the output value of h for these two rows, 1 1 1 1 0 D7=0
+it can be determined what value the data line should take. For Table 18: h(a,b,c,d)
+example, since h matches input d for the first two rows, the input
+value for D0 should be tied to input d. The circuit that implements
+h(a,b,c,d) is given in Exhibit 5.3. It is assumed that the inverse of
+the input d is available somewhere in the circuit, if not, an inverter
+would need to be added to this circuit.
+32
+
+--- Page Break ---
+
+�� �����������
+� ��)� �:+3���J�%)%�%�K����!���� ���0� ��6� �����'
+�� � �� � �'  � ��� � ���!���� � !�����! � �'�� ���� � ����� !� � ���� � �� � �' � � �)!�� 0� ��' � �� � ���� � ��� � ��� � !�����
+������1� ���%�� ������ ��� ��� ���� ��'��� ����' � �����!���� ��2�����'�� ������������!���#��� ���������1� ����
+�����('���������)������!���+�&���� � ���� ��� � ���M�G� ��� ���������!�$G"����!���� � ����0�!!���('������0��� �� �
+���'! �������������!���������0� ��' ����' +�������� ���%�0������������ ��'�� �����������('�������������2�������'� %����
+��!� ��'! ��!� ����0����'���%����' �0�'!��)�����������������������2�����'�� ���+�8�0�2��%� ���������!�$G"�
+� �������������� ����������� ��'�� �����0�!!����� ������������������!�����!� ����+�� ������ ��� 0���'�� ���� �
+)�!�0� �� �������('�������������2�������'� +�
+�J %�%1K�N� ;�1
+�J %�%1K�N�1;�L� ;�1
+,���������� ��� ���� ;�1%����� ������� �0�'!����!������� ��)��)'�! ������������'!��)��'��������)� ���'�� ����%�
+��2������ ��+�$���������� �������� ���������������� ������)!��0����'����� ����'  � �����!���� ��'�� ����+�$���� �
+������ �����'��� �� � �������!�� �����'� ������������� �����!���� � ����'�� ���%� ���!�����������1� ���� �����('���
+������)������!�������'!��)��� ����������� �)����������� ���� �� ����' � �����!���� ����'�� ���+
+&�2��0�� �������
+��+����� �'� � ��� �' �� �)!������<����������������� �����!!�0�����'�� ����������� ������� ���������!�$G"�
+� ��������+
+33
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+(a) f1(a,b,c) = a'b'c' + a'bc' + a'bc + ab'c'
+(b) f2(a,b,c) = a'b'c + a'bc + abc' + ab'c
+(c) f3(a,b,c,d) = a'b'c'd' + a'bcd + abcd + ab'c'd' + ab'c'd
+(d) f4(a,b,c,d) =a'b'c'd' + a'bc'd + abcd + a'b'cd' + a'b'cd + a'bcd' + ab'c'd
+2. Design the implementation of expression 1(b) using an 8-to-1 mux.
+3. Design the circuit that will implement 1(d) using an 8-to-1 mux chip along with any necessary circuitry.
+4. Examine the following four-input functions and design a circuit that will implement each.
+(a) g1(a,b,c,d) = a'b'c'd + abcd + a'bcd + a'bc'd + ab'c'd + a'b'cd + abc'd + ab'cd
+(b) g2(a,b,c,d) = a'bc'd + a'b'cd' + ab'cd
+(c) g3(a,b,c,d) = abc'd' + abc'd + abcd + abcd' + a'bc'd + a'bcd
+(d) g4(a,b,c,d) = a'bc'd' + abc'd' + abcd' + ab'cd' + a'bc'd + abc'd + abcd + ab'cd
+Procedure
+1. Write the prelab in your lab notebook for all the circuits required in the steps that follow.
+2. Obtain instructor approval for your prelab.
+3. Build the circuit required for Exercise 2 from the review exercises. Demonstrate the working circuit for
+your instructor.
+4. Repeat the steps from the last procedure for Exercise 3 from the review exercises.
+34
+
+--- Page Break ---
+
+,����)��#����!��������'����������� �2�����������  ��)' ����3+��4������
+4  �  �������������0�
+4���������).�� �2���
+�  &�2��0���!� ����)� 0���� �����������('����+
+�  ���� �'� � ����������!��#�����'� �+
+�  "���'����� �����������������������'� +
+� � ��� ��� � ����� ��� ��
+,����������'� �������� �����('���������2����'�����!��� ����+�G������������ ������'��� ���!��� ����� ���� �� ���
+��2����0� �� �����)�������������+� ���0�!!�)�����������' '���!�)�%��������������!��� �� �����'� �%����!��# ������ ���
+���������� �����������1�� ���2����'���������� �+�B��!��������������� �0����� �� � ��)'�!�� ����������'� �%� ���:::�
+�����������������2��� ��)��������'� ���� ����������� �����'�����+�
+...�� ���
+,���:::� ����������0������� ����'��� '������� ������!���7=���������� ��'��� ��)��'��������!�� ��������2����+�,���
+�� ��!�������'� ������������������������ ������� ������ ���� �������'� ���� ����� 0��������%������ ����� ���������2���
+0�� �� ������ ���+��!!���� ���������� ����������������!!��'�!���!�������#���� �� �����)��'������� ���������� �!��#����
+����'� �+�� ��������� �� � ���� �� �� �������� ������!������'����)�� ��� ����� � �#������������!�� �� ��2�!� ���'��� �� �
+����'� � �������� � � ���2�� � � � ���� � )���� � '��� � �� � ����'� � � ��('����� � ��� � �0� ����� � ����+ � �� � ��� � ����% � ��� � ���
+���������������0�Q�������+�,���������� ������!���2�������!��� !������������'���� ���2���������� ���:::�)�����'���+�
+,����!��� � �������2�� �� �� �:::� ����������������������������������������������' ������ ���+�8�0�2��%������
+���!��� �������2��!����������'����('������ ������0����� �� �:::� ����� �������2��� ��)�� ����������� ����������+�
+�'�� �����������'� ���%� ������������0���!���2��!�)!��� �������� ������+
+� ����
+�� ����������'� �'����� �� �:::� ����� �����'����� �� ��)� �5+�+�
+,��������'� �����!�����!!������������ �)���'���� �0�!!�0��#����������
+�2���� ����� ���� ���������������!�+��� ���)����� ��������%�� � '����
+������� ������������� �������� ������ '���� ��� ��� �)!������� � �+�� �
+����!����� �������� ��)������� ������������ �)!�������)���'���� �
+��!����������� �)!��� � �%�0����� ���' �' ����!�0%����'���������+�
+,�������'� ���� ���������0� ����2�! ����)�!�0�J�I3KD���JD������
+�� � �'��!� � 2�! ��� � ��� � �� � ����'� K% � � � 0���� � ��� � �� � ������ ���
+!�)�!�����)��������������� ���'��� �� ������ ��� !�)�!���&+�� � ���
+��� � 0��� � �� � 2�! ��� � �� � �� � ������ ��� ������� � J�I3KD��% � ���
+�' �' � 0�!! � '�� � !�0+ � ,�� � 2�! ��� � ������ � �� � ������ �� � �� � ��2���
+)�!�0+�$����������  �>����������������� ������������� ������ ����
+���������� ���+ � ��)� �5+���,���������'�
+DJ K�N�D��J���R�� �J I��KK�
+3:
+
+--- Page Break ---
+
+�� ������ ��� ���� �
+$�  ����DJ K��('�!� ��J�I3KD���������!2�������� ����!��� ��� ����0���� ����' �' �0�!!����!�0�J���'��� ��������� ���� �
+���'����K+
+����+��J&�K
+E� �� �� � ���2�!'������ ������ �������������� ������ ���2����0� ���� �!��������� ��:�������� ���� ������������ �
+������ �2�!�+�8����%� ��� ������� �� � ����� ������ �� �� !���� ��� �����!�'!� ���2�!'�+�B����� ������� ���!����� ���
+���!��� ���� ����2����2������������� ���%��� ���� ����������� ��'�����'� �)������'���� �����'��� �� � ������ �� �
+��� ����������������2����)!������� �������)��'������� �� �� �����)����.'� �������� �������'� ����)'�! +�
+����0�
+�'� ���� �����'����������)������!��� ��#���� ������ ���� ������)�������������1��%��������� ����!��#����������'� +�
+���!��#����'���� �����������1��������'� � �� ���� ������������� ��������� �� �� ���2���������� �������� ������!���+�
+$��������1� ���������('�����)���'��������!��������� �#�� ���� �� ��2�!� ���'���������'� +��� ����!����'� ���������
+������ �������'������ ���0�������� �������'� ����� ����������� �� �����!2�����'�����!���+���������� �����'��� �� �
+����� ����� �������������������'!!��������� ��� ���'��� �������'� %� ����!��#�������!���0� ��������� ����� � �#��� ���
+�!�0�� ���� ���� �������'� � ���'!!������� ��������������+���������������������2���!��#�� �� ������ ����� ���������� 1�
+��������������)'�! �0� �� ���'���������� �!�+�,�� �:::� ����� ���������� �)� ��!��#��� �� ���� ��'�� �� ����� ����!�
+������� ������!���0� ���� ��� ������ ������� �������%�)' �� ��������2��������!��)!���!��#��'!����������!��� ����� �� ����
+�� ���('���� �� ������+
+� ��)� �5+����!��#�0�2�����
+�!��#��������������2������ �����������('�����0�����'���� ���'�� ���� 1F� ����� ������������!�������������+�$�������
+�!��#��������� ����2�������('������������������� 1%�� � ����� ����������!���������� ��!�����!�0����%���%���� ��������
+����������M���� ��������'����� ���������� ���0� �����!��#����� ��������%�0�������� ��� ����� � �#������� ����'!!��!��#�
+���!�+�,������������� �������������� 1��!��#����:������������+
+,�N��I�
+�� ���� ���!!�% �������� J,K���� ����('����� J�K�������!� �����2����!�+�,�� ��!��#� 0�2��������2����� �� ��)� �5+��
+�!!'� �� ����������!�1���0�2�����+�������!� �� ��� ����� ����������!�0� ��������������� ��!�0� �#������� ����������� �
+�� � ��� �� ����'� � �� � ���� � ���0�+ � �� � ��� ��� � � ���!�% � � � : � ������� 1 ��!��#� ��� � � �������� �� � �I:%���%���%����
+�������%�0���������+�����������������������+�������������+�,����!��#��)'�! ����� �����!�)��0�!!�)���'����!�0�� �
+���� ���+�,������ �� ��!��#�0�!!���2������������������������+
+35
+
+--- Page Break ---
+
+,����)��#����!��������'����������� �2�����������  ��)' ����3+��4������
+� ��)� �5+3����0�����!��#�����'� �'����� ���:::� ����+�B����������'����
+��� ����������%�� ��������� �� � ��� ������������� ��������� �)!������+�,����
+����� � �� � ���� � �� � �� � � �)!� � � � � � ��� � �� � ����'� F � � � .'� � ��� ��'�� � ��
+����!!� �%������������!�0� �����������)��#������+���� ��������%� ��� ��������� �
+���� �� ���2�! ����������� ��������� ��%���� �� � �������'� ���� ���������)��
+� ��!�+�,��������� �������������� ���'��� �������������)��� �������&������
+&����������������� ���'���&�+�,��������� ����������� ���I3SD������� ����
+���������� � �� �I3SD�� � ����� ��!�+� A���� � �� � ����� �� ��� � ��2�� � �� � ���
+���2��'����� ���%� ��� ����� ����������������������� ��������� ����!����
+0� �� ����('� ��������� �����������������('���������!�� ���)�!�0+
+��N��+573J&��L�&�K�  ����!��� ��
+��N��+573J&�K�  � �����!��� ��
+,�N� ��L� ��N��+573J&��L��S&�K�  ��� ��
+� ��)� �5+3���!��#�����'�
+��N��I,�N��+99IJJ&��L��S&�K�K  ���+�����
+E� �� �� � ������'�������� ���2�!'������ �������� �������������� ����0�!!������ � ����� '�!�2�!'������� ������('��������
+����!��#+��!��%� �����!��#�0�!!��� ���2��������� ����0�2���������� �0�!!�)�����������J��K�������!������ ���� ����� �
+0�!!�)��������������J���K+
+B��������'����� ������('�������� ����!��#%���'� � ��� �������� ����'!!��!��#��'!�������� ������2����
+�����'�)���)�� ��� ���� ������� ���������+�,����0�!!����'��� �������� ���� ��������������� ���'����
+)�� ����� �#���� �������'����� �+�
+� � ���� ������
+,������������ ���!�����!� ����� ��������������'� ������2�������� �������������+�,������������������2������2��'�!�
+�������� �������'� ��'�� ����!� �+�,���������!���)����!��'!������ ��������� ����� ��'�������)!����!�����������2�� �
+����'� �0��������� ����)��'���� ���� ������� ������ �� ����('��������0����� �������'� �����)���!��#��+�,������������
+����!��������2�!'������������ ������������� �� � ����!���������%�!�����!�0%��������� ������ �+�,������� ������ ��� � ��
+0�'!�����'��0��������2���� � ������� �)���'���� ���� ��)���� ������������!�0+����� ������ ��� � �������'�'�!!� �
+���0���������������� �� ������ ����� ����������������!�0� ����������� ����'�� ������� ������� ������ �� ������+�,���
+����� ���������������� ����� ����0�� ��)�� � �!!��2�� ���!%���� ������������ ��)� �5+�+�,������� ���!!'� �� �� ������� �
+�� �������������' �' ������� ���� �� ����'���'�� ����!������'����)�� ����� ���� ��������0�!!������ ����!����'� ���� �
+���������� �������� �������'� �+
+,��� �����������������0���� �� ��)� �5+:� ������� �������'� ���'����� �� ��)� �5+9+�,��������'� ����� ������  ���
+���� ��!�� �����%�>%������� ���� ������� ����� ������� ��� � �������������� ����� �����������2��� ����� ���+���� ��������% �
+2�!'����������������'���� ��)��!�����������������������'���� ��)��!�����!�0�0� �� ���$�4��,�!������#����� �
+����� ���������!�����!�0� ��!���������+������ ����' �' ���� �����2�� ��%�>� ����' �' ���� ��� ����E���� �%������� ���
+�' �' ���� ���!�0����E���� �+�,�������'� �������'���� ��)�������� �)!��� � ��0� �� ������' ��$�4��,%���%��������� �
+!�����!�0%�����%�����!�0������� �� ����1���+����'��� �� � ������'��� '������������� � �� �������� ��0�!!���2����
+�� ��'����!��������+�������������+�,��������2��������������'���� ���!���������!��'���%���� ����� ������ ����'!��
+)������'! �������2������� ����0������ ��������� ����� ��'����!�����������2�������'� +�E� ���� �� ������ ���$�4��, �
+3=
+
+--- Page Break ---
+
+�� ������ ��� ���� �
+!�������)��'�� �!�0%��%�>%����� ���G' �' ��!!����'���
+����� ������� ��2�!'����� ������������'���� ������
+��0 � ��� � �� � ����� ��� � 0�!! � ���'�+ � G��� � � � ��+��
+�����������% � �� � �' �' � �� � �� ���2�� ��� ��� � )��
+2������� � � � ��2� � ���� � !�0 � ��� � �� � � � � � ��� � � � ���
+!�� �� � �� � !�0+ � ,��� � ����� ��� � 2�!'� � ��� � ����!���
+���'��� ���� ������ ������ ��� ����E���� ����0�
+�#������ ������+�������������� �����'��� �� �� ��
+� ��)� �5+9��� ���'! ��!� ��
+�' �' � ��� � ������� � ���� � ���� � � � !�0+ � G' �' �
+���������������'����� ��� ���� ��� �����!�� ��%���0�2������ �� ������ �)���'���� ���%� ����!�0�� � �����'� �)��
+'���� ���� ������� ������ �� ����('��������0�����������'� �����)���!��#��+�
+��� ��������'� �0���� ��)���!��#��%������� ����� ��'����!������� ����� ��������'� ����3�+�������������%� ����0�'!��
+�!���)�� ������!!�� ��!!�0�)!��2�!'������ �� ����������� �� ��!��#%�0�����0�'!�����!������ ��'�����('��������33+3�
+���� 1+���� �����!�)�%� �������'� ��0�!!�)���!��#���� ����!�0����'����� �� �� ���!������� ������������������������0�!!�
+�� ������ � �������'� �+�8�0�2��%���������'� ��0������������������� ��!%��� ��!������!������'������ ���������� ���!� � �
+���'��� �� � �������'� �����!��#��������� ���������)!��0��!��� �!!��!!�0�������'��� �������� �������'� � ��� �)�!�1�+
+� ��)� �5+:��,�������������
+���'�����������0���
+��� �������� �����2�!2������0���� �� ����)������ �������!��)�����%� �'�������!�������� %���)���������'��������� �� �
+���'�������� ����'�)������!!�0�+�B�������0�����������2����%�� ����)��������!� ��#��0���0����'�� �� ��������0��� �
+���+�,������������������������'����� ������������ �'���� ������'�������� �����2���� �� ����'���� ���������� ���
+����'����� +������ ���!�%�����0�'!���� �� ��� � ���) ��������'����� ��0� ���� ��'���� ���������������'��������
+�������� � 0��� 0� �� � �� � 0� ��� � ��'���� �� � �� � � � ��!!��� �� � '���� � � � � ������ � �'!��+ � G��� � �� � ���'���� � �� � �� �
+����'����� ��'�������'����� ���%�� ��������� �� � �������)��� ����'!��� �� ����!�� �� ����'�)���������������� �
+���� ������������!�'!� ���+
+36
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+• Trailing zeros are significant to the number.
+• Use all digits when performing calculations and round only for the final answer.
+• When numbers are multiplied or divided, the final answer has the same number of significant digits as the
+number with the smallest amount orf significant digits in the calculation.
+• In this book, the formulas are provided using three digits of accuracy. It may be the case that fewer digits
+can be obtained for a given measurement or that the components used may only be known within one digit
+of accuracy. In these cases, the final answers should be rounded accordingly.
+As mentioned, the tolerances of the components will cause deviation of the measured answer from the
+theoretical answer. The tolerance of the resistors used in these labs is ±5 per cent while the capacitors have a
+tolerance of ±10 per cent. This means that for a 1000 ohm resistor, that resistor is guaranteed to be between 950
+and 1050 ohms.
+1000 – 0.05(1000) < actual value < 1000 + 0.05(1000)
+Likewise, a 1 mircofarad capacitor is guaranteed to be between 0.9 μF and 1.1 μF
+1 - .1(1) < actual value < 1 + .1(1)
+This may cause the measured answer to differ quite a bit from the answer calculated using the formulas. In
+addition, when the values of the resistors and capacitors are multiplied together, as is the case with the formulas
+above for the timer and clock, these tolerances are compounded. For example, assume that a 100,000 ohm resistor
+is combined with a 100μF capacitor to produce a time of 10.1 seconds.
+t = 1.10(RC) = 1.10*100,000*0.0001 = 11.0 seconds.
+However, if we take the worst case for each value, we can see that the answer will actually be within ±15 per cent.
+1.10(95,000)(0.00009) < actual value < 1.10(105,000)(0.00011)
+9.41 < actual value < 12.7
+For this reason, it should not be assumed that the final values for the clock and timer will match exactly the values
+calculated theoretically. The tolerances of the components used will often mean that the theoretical value of the
+clock or timer may only have one significant digit of accuracy. When the accuracy of the timer or clock is important,
+either components must be measured before being used to insure their values, or components with smaller
+tolerances should be used (which is more costly), or resistors with adjustable values (potentiometers) can be used
+and adjusted after the circuits are built. Of course adjusting the potentiometers is time consuming and thus costly.
+Review exercises
+1. What is the period in seconds of the clock with the given frequencies?
+a. 6.00 Ghertz
+b. 10 Mhertz
+c. 6000 RPM (NOTE: 60 seconds are in each minute)
+2. For the given period, determine the frequency of the clock in Hertz
+a. 10.o μsec
+b. 0.0500 nanoseconds
+c. 1.00 milliseconds
+39
+
+--- Page Break ---
+
+6. Timers and clocks
+3. Assume delay for each logic gate is 10.0 nanoseconds for the circuit in Exhibit 3.3 and that input values of
+A is low and B and C are all at logic high. Draw a timing diagram for a transition at time zero that takes input
+for C from logic high to logic low. List input A, B, C, and Output as well as values for pins 3, 6, and 10.
+4. If the delay for each logic gate is 10.0 nanoseconds, what is the maximum frequency that the circuit from
+Exhibit 2.14 can be reliably clocked in order to insure proper operation?
+5. A 100 μF capacitor is used to build timers. Three timers are to be built with times of 1, 5 and 10 seconds.
+a. What resistors should be chosen to obtain the times provided?
+b. Assuming that you are limited to choosing the values provided in the lab, which resistors should be
+chosen to come as close to the desired values as possible? Recall that when resistors are added in series,
+the total resistance is the sum of the resistors.
+c. Draw a schematic of the 5-second timer.
+d. Given that capacitors have a tolerance of + -10 per cent and resistors have a tolerance of + -5 per cent,
+what range of values could you expect for your timer?
+6. A 100 μF capacitor is used to build clocks. Two clocks are to be built with periods of 1 and 5 seconds.
+a. Using values of resistors provided in your lab, pick two resistors that yield periods as close to those
+desired as possible.
+b. What is the time on and time off for each of the clocks during one period?
+c. Draw a schematic of the 5-second clock.
+Procedure
+1. Write the prelab in your lab notebook for all the circuits required in the steps that follow. Include all
+necessary equations and calculations.
+2. Obtain instructor approval for your prelab.
+3. Build and test the 5-second timer from Exercise 5 above .
+a. How different is the measured value from the calculated value?
+b. Demonstrate the timer for your instructor.
+4. Repeat Procedure 3 for the 10-second timer from Exercise 5 above.
+5. Build and test the 1 second clock from Exercise 6.
+a. How different is the measured value from the calculated value?
+b. Demonstrate the clock for your instructor.
+6. Repeat Procedure 5 for the 5 second clock from Exercise 6 above.
+40
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+7. Memory
+Learning objectives:
+• Review differences between logic circuits and persistent memory.
+• Review properties for the S-R latch and D flip-flop.
+• Construct a circuit using a flip-flop.
+Memory
+You have often heard the phrase: “In order to know where you are going, you need to know where you have
+been.” While all the circuits discussed in previous chapters are very useful, many applications quite simply cannot
+be implemented without the use of memory to “remember where they have been”. Modern computer systems
+employ a wide array of different memory storage methods that have different properties. Non-volatile memory used
+for secondary storage such as hard drives, CD-ROM drives, or solid state memory (i.e. an Secure Digital or SD card)
+retains its value after power is shut off. Volatile, dynamic random access memory (RAM) loses its value when power
+is shut off and also must have its values continually refreshed with external circuitry. Static, volatile random access
+memory such as that found in cache memory and CPU registers cannot retain its value when power is not provided,
+yet it does not need to be refreshed. This chapter will focus upon the static, volatile, electronic memory listed last.
+All of the logic circuits built in the previous sections are known as combinatorial logic circuits. They depend
+only upon the state of their inputs at any given time and do not take into account anything that has happened in the
+past. Often it is necessary for the output of a circuit to take past values into account. Logical circuits that take past
+output values along with present inputs into account to compute the output values are known as sequential logic
+circuits. In order to determine the next state of an output, the previous state must be known. Memory is used to
+store the history of the state(s) of a digital circuit for use in sequential circuits. An example of a sequential logic
+circuit would be a counter. A computer is nothing more than an advanced sequential logic circuit with memory to
+store data, programs, and references to the state of programs currently being run.
+SR latch
+Two NOR gates can be configured using feedback to produce one bit of memory. The configuration given in
+Exhibit 7.1 is known as an SR latch. The S, SET and R, RESET are the inputs and the Q output is provided along
+with its inverse. The S input is used to set or turn on the latch by setting the output Q high and inverse low.
+Similarly, the R input is used to reset or turn off the latch by resetting the output to low and the inverse to high.
+Once the latch is set, Q remains at a logic high while both input lines are off. Similarly, once the latch is reset, the Q
+output will be set to logic low and will remain that way while both input lines are off. In this way, the latch can store
+one bit of information indefinitely, or at least as long as it has power supplied to it. The NOR SR latch has active
+high inputs, meaning that if either input is brought high, it will force a corresponding output condition. Note that
+setting both input values high must be avoided in order to retain the output values as opposite to each other.
+Latches can also be built using NAND gates, but the set and reset lines operate in a slightly different manner under
+this configuration. The transitions for these latches are examined in more detail in the exercises.
+41
+
+--- Page Break ---
+
+!� �����"
+-  .  /
+�  �  V�J������� �������K
+�  �  �
+�  �  �
+�  �  � � ���� �'���
+,�)!���7��EG&�$&�!� ��
+� ��)� �=+���$&�!� ��
+,���E�E��)�����$&�!� ����������� �2��!�0���2����0� ��������'! �� � �����!��������������)� ��$�����&����' �+�,�� �
+$�����&����' �2�!'�������)��'�� �!�0� ��������� ���� � �+��'� ���� ���EG&�)�����$&�!� ������'!���� ���2��)� ��
+���' �2�!'��� '�������������'! ����'�!�%� ���$�����&�������E�E��)�����$&�!� ������'!���� �)��)��'�� �!�0�� � ���
+����� ���+
+-  .  /
+�  �  � � ���� �'���
+�  �  �
+�  �  �
+�  �  V�J������� �������K
+,�)!������E�E��$&�!� ��  � ��)� �=+���$&�!� ��
+�� %-���%�
+���!����!��������!� ��� �� �����)������������� ��0��#�0� �� ���'���������!��#+��!��#������'���� �����������1�� ���
+������������������ ��������� �����������'� +�,����' �' ���� ����!����!���0�!!���!���������0���� ����!��#������!���������
+��2���� � �%��'����������+�� ��)� �=+3���������!����!��� �� �0�!!���!���������0���� ����!��#%������ ������'��%��������+�
+$��� ��!����!����������������� ��� ������ ������' ��
+0���� ����������� �� ��!��#� ��#����� ����� ���������
+!�0� ������%���!!����������������� �2� ������ ���������
+�!����!���+�$���!��!�%����� �2������� ����������!����!����
+����)����������� �� ���!��� ���������' ��0���� ���
+�!��#� ��#�� � � � ���� � � � !�0 � ����� ���+ � ,�� � ��� � ���
+0����� ������' ����������� ������������� ����' �' ����
+���'����0� ����������������!!��������� �����������2���+�
+� ��)� �=+3�����!����!��
+,�� � ����� � 0� � � 0���� � � ��!����!��� ��� � )� ��!��#�� � ���
+�� ������� � )� � �� � �� ��'� � ��!�� � ���� � �� � �� ���
+�� �����'���� ������ �'� � �����2���+����� ����������%� ������' � �� ����� �����'!��)��� �)!�������� �� �� � �!��#�
+����� ��� � ��� � �� � ��� � )����� � �� � ��  ��!��#� �'!�� � ���'!� � !�� � !��� � ���'�� � ��� � �� � �' �' � � � � � �� � �)�!�1�+�
+���'��� '������������ ��������� �����2����)�����'�������'!��)������'! ��� ���� ������� ����� ��'���!��#������+�
+9�
+
+--- Page Break ---
+
+,����)��#����!��������'����������� �2�����������  ��)' ����3+��4������
+$����� �����!�)����!��'����!��#��0� ���������������� ��� ������������%� �������'� �������������2������������ ���!��� � �
+��� ����� ��'���!��#� �����+�� ��)� �=+9�'���� 0�����!����!���+�,����' �' ���� ������� ����'������� ������' ���� ���
+����������� ��������� ����!�2������������ +�,�������'! ����������� �2������� ����������!����!��+
+� ��)� �=+9��"��� �2������� ������������!����!��
+����'� �������)�������� ������'����<%�,%� ���� ��!����!���+�,����< ��!����!��%�!�#�� ���$& �!� ��� ���� 0�����' �%�
+��0�2����!!���'��� � �������2�!������� ����<��!����!��+�,���,����#��0������� ���!�� �!����!���)���'������ ������' ��������%�
+���� � ����� ����' �' � ���!��+�,���������� �� �0�����!��#���0� ��������' ���������������'���� �� � ���������%� ���
+�' �' ������!�0��������� �0���!�0%�� ����������+�,������!����!����' �' ���!!�0�� ���2�!'����� ������' �0��!�����)!������
+0��� ��!��#��%�� ���0����� ������������ ����������� � �+�>� �� ���,���������2����!�������� �����' +�,��� �)!���
+)�!�0�!�� � ������' ���� �� ��!����!��� �!����0� �� ��������� �� � �%�V%����� ���� �����  �� � �%�V�+�,�������'� �������
+������������ ������������!����!���������2�����)�!�0+��<��!����!��������2��������������������������+����� �����#�����
+����!��� �%���!�� ������!����!���0�!!�)��'�������� �������������� ���� �  +
+0  1  /  / �
+�  �  �  ����'��������
+�  �  �  ����'��������
+�  �  �  ��������
+�  �  �  �������� 2  /  / �
+�  /  /�
+�  �  �  ������
+�  �  ����'�������� �  �  �������
+�  �  �  ������
+�  �  ����'��������
+�  �  �������
+�  �  �  ���� ���!�
+�  �  ���� ���!� �  �  ������
+�  �  �  ���� ���!�
+�  �  ���� ���!�
+�  �  ������
+,�)!�������<��!����!��
+,�)!������,��!����!��
+,�)!���3�����!����!��
+� ��)� �=+:����0�� ������)�!����������� � ������� ������!����!���'������������'� ���������+�,������ ���!�����0��
+���������!��'������� �!� �������� ��!����!���+��!����� �� ���)'))!��������� ���� ����4��&�!���� �������� �� �� � ���
+��2��������)���� � ��!�0����?�!�����@�0���� ����!��������� �!�0F����������!������ ���� ����4��&����'!��)��!�� �����+�
+93
+
+--- Page Break ---
+
+!� �����"
+$������2������!��������0� ����"&�$�,�!���� �� �����)��'���� ���� ���� '������ ����' �' �����'��� ������� �
+������+ � ,���� � !���� � ��� � )� � '��� � � � !��� � �� ��!����!��� � 0� � � �������� � 2�!'��%�
+�������!!��0���� ���'�� �������� ���0�������+�,����!��#�!�������������!!� �����!��
+�� ����� ��� �� � �����2������� ���������0� ���������������+���!!��������� ���������
+��2�����0�!!���2�������!!�)'))!������������ ��� �����!�+����� �����!�)�%� ���=9�=:%�
+0���� � ���2���� � ��'� � ������ ����� � ��������� � ��!����!��� � �� � � � ����!� � ����% � ���
+�����������+�$����� ������� ���=9�=:�����)����'������������� ��+
+&�2��0�� ������� � ��)� �=+:�����!����!������)�!
+�+ � A�� � �� � $& �!� ��� ���� �� ��)� � =+�+ � ���'���� � �� � 2�!'�� � �� � �� � �)!��
+�������� �2�!'��� �� ���2��.'� ����'����%��� ������� ���� �)!��2�!'������� ����' �' ��VE�����VE;+�&���!!� �� � ���
+EG&��� ���������� �2��������� �%������������� ������ ������� ������' �2�!'����������� ����' �' ����!�0+�,������� % �
+��'� �%�������  ����0����� ��� �)!�����������������'+�,��� �' �� �)!������ ���EG&�������2����+
+�+�������� ���!�%��' �' ����� ������� ���0���� ������
+-  .  /  /�  /�  /� �
+�+��$����������V;�����%� ���������VE�� �����+
+)+��&����������VE�����%� ���������VE�;�� ����� �  �  �4.
+�  �  �  �  �  �
+�+��$ �)!��)���'���V�����V;��� ����2�!'��+
+�  �  � �  �  �  �  3  3
+3+����� �����'� ����0%� ����' �' �� ���!��
+�  �  � �  �  �  �  3  3
+�+��&�����%����VE;��'� �)���+
+�  �  � �  �  �  �  �  �
+)+��$����������VE�����%����VE�;�����+
+�+��$ �)!�+�&�����%�V������������ ������ ���)��V;+� �  �  � �  �  �  �  3  3
+B� ��$�����V��%�V;�� ���� �  �  �  �  �  �
+9�,������� �����  ����0����!��� �����!!�0����
+�  �  �  �  3  3
+�+��$�����%����VE;��'� �)���+
+�  �  �  �  3  3
+)+��&����������VE;�����%����VE�����+�
+�+��$ �)!�����$�����%�VE;�� �����+�B� ��&�����VE;��%�VE�� �����+,��� �� �
+������%�����!!� �� ����������� ������' �2�!'��� ����EG&������%� ����' �' ��'� �)���+
+:+�&���� �� ���������0� �� ���!� ��� ������ ��)� �=+��)���� ��������� ���� �)!��� � �������!!�6���0����� ��� �' ��
+�)!������� ������2��'�����)!��+�B��!��2�!'�������VE�����VE�;��������2����������0���%�9�����5����� ���!�� ����)!��% �
+��'��'� �0��#��!!�6���0������ �������)!��+�&����)��� �� � ���E�E���� ����������' �' ����������� ������� ������' �
+2�!'������ ����� ������+�
+5+�A����� ������!����!���)�!�0%��� ������� ���� �)!���' �' ������������ ���E�E���� ���!�)�!����� ���'���9�0����
+���2�!'��������%��%�����V����� ����'�+�,�����!!�0���� ��������� ������� ���0����2���������� ���!�+�
+�+��&����)��� ���E�E���������� �2��!�0���2���%��������� ����' �' �0�!!�)��������� �������' ������J!�0K+
+)+���������������%����E�E�������E�E���0�!!�)���+�
+�+��E�E�3����������E�E�������%���#����E�E�9��+
+�+��E�E������������E�E�9�����%����E�E�3�0�!!�� ����+
+�+��$ �)!�������� ����E�E�3����E�E�9��������� � �+�
+99
+
+--- Page Break ---
+
+,����)��#����!��������'����������� �2�����������  ��)' ����3+��4������
+�  �  /  /�  �  5  67/ �  87/ ��
+�  �  �  �  �  �  �  �
+�  �  �  �  3  3  3  3
+�  �  �  �  3  3  3  3
+�  �  �  �  3  3  3  3
+�  �  �  �  3  3  3  3
+�  �  �  �  3  3  3  3
+�  �  �  �  3  3  3  3
+�  �  �  �  3  3  3  3
+=+  A��� ����� ����2������� ���=9�=:����������� ��� ���� ������� ���2�!'����� ����' �' �V��� ������������ �!��#
+���������)���������2���)�� ����!��#����+
+"�����'��
+�+ B�� � � �� � ���!�) � �� � ��'� � !�) � �� �)��# � ��� � �!! � �� � ����'� � � ��('���� � �� � �� � � ��� � �� � ��!!�0+ � ���!'�� � �!!
+�����������('� �����������!�'!� ����+
+�+ G) ������� �'� ��������2�!�������'�����!�)+
+3+ ���� �'� ����$&�!� ���'�����EG&��� ��+�D������� ������� �������������� �� �� �������'� �������'����� �'� ��+
+9+ ���� �'� �����)� �����������'������������!����!����������=9�=:�����+�D������� ������� �������������� �� �
+�������'� �������'����� �'� ��+
+9:
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+8. State machines
+Learning objectives:
+• Construct state transition diagrams.
+• Relate the number of memory bits required for a given state machine.
+• Build four-state state machines.
+What is a state machine?
+A state machine, often referred to as a finite state machine is a sequential logic circuit that has a finite number of
+defined states that can be represented. A state machine requires the use of memory to store the state of the
+machine. Combinatorial logic is used to combine the values of the present state along with inputs to the system to
+determine the next state of the system.
+An example of a simple state machine could be a counter that counts from from 0 to 1 to 2 to 3 and back to 0. In
+this case, the state machine does not have any input at all, it uses the past state and increments the value of every
+clock cycle. An example of a complex state machine would be a computer. In this case, the computer can have many
+different inputs and has many different states. Input data can come from the keyboard, network, mouse, memory,
+etc., while the state would normally be associated with the address in memory of the program being run. In this
+text, the state machines will be like the counter just described but certainly nothing as complex as a computer.
+State machines are used in more than just computers. Any process that can be defined with a given predictable
+algorithm can often be represented by an electronic state machine. For example, a coffee vending machine could be
+automated with a state machine. The states would be: waiting for correct change, select options such as cream or
+sugar, drop cup, dispense coffee, and dispense options. Inputs could include the cream button, sugar button,
+correct change indicator, and a timer to determine how long to fill the cup with coffee.
+State transition diagrams
+A state transition diagram is a graphical representation of the state
+machine. Exhibit 8.1 shows the state transition diagram for a counter that
+starts at 0 and goes up through 3 and then back again to 0. This machine
+has no input, transitioning from one state to the next at every clock pulse.
+Each state is marked with a circle that contains the value of the state. The
+arrows represent the transitions from one state to the next. The state
+machine shown in Exhibit 8.2.a is also a four state counter, but it uses one
+input. The input, labeled x, determines whether the counter continues to
+increment the count. When x equals 0, the counter counts and when x
+equals 1, it remains in the current state. The convention followed here is as
+follows: state values are listed inside of each state bubble and input values
+Exhibit 8.1: Four state counter
+that determine the transition are listed next to each arrow. If the state
+46
+
+--- Page Break ---
+
+#� $���� ��������
+0�!!� ����� ����������!��������������' %� ����������' �0�!!�)��
+!�� �����  � �� �� �����0+��� ������������������ ������'��� � ��
+��'� ��������2������� ��)� �6+�+)+�,�������'���� �� � �������!�
+����'� ��� ��!��#���� ��+��������������� �� � ��������� ������
+����������!����!��������'���+�E� �� �� � ���2�!'�����������)� %�
+��%� ������ ����������� �)� %�������%� ���!��� ����������� �)� %�
+��!������������ ������������������ ����!��#%�0��!�� ������' ����
+����� ���������� ����� ���+�,����������� ����2������!��� !��
+�������� � �'����� � ��� � �� � ����� � ������� � ���0� � �� � ��
+���2��'������ ��+�B��!�� ������2��'����������0���'���� ��
+�� ��������� ��'�������)!����!��������������'� %� �����������
+'���� ���!!'� �� �� ��� ��2����!���� ����������� ���'��� ��� � ��)� �6+�+�����'��� � ����'� ���0� �����'
+2����'��� � ��+�,�� � �������������%�!�#�� ���� � ����������
+����)����!��'!�0����� ��� ���� ��2������ �������� ���������
+���� �'� �������'� +
+� ��)� �6+�+)��,��������������������'��� � ����'� ��
+6��������� ������ ��
+��������� ������������ � ��������������0�'!������� ���������1�� ������' ����� ������ ��%� ���� � ��%�������0�� �
+����� ��������������� � �� �� �����  +�,���������������!!���������� ���0� ��� �� � �� ����� �����������+�,���%� ���
+����� ���������������'!��)��'���� ������ ���� �' �� �)!�� �� ����� ������' �� �� ������ ��������'���� �� � ��2�!'���
+������' ����� �� � �)!�+�,����' �' ���� ��� �' �� �)!����� �����  �� � ����� ������ ��+����)��� ����!�!��������'���� ��
+���!���� � ����'�� �������('����� ���) ���� �����  �� � ��2�!'������� �� �� � ���������+��!!���� ���>��!����!�����
+������1� ���� �����('���'����������!�������� ��������'����� � ����� ���+��������������'���� ��� ���� ���� � ��%� �� �
+�' �' ������  �� � �� �� ����'! ������� ��� �' �� �)!�� ���'������� ������' � �� �� ��!����!��� � ������ ���� � ��2�!'��+�
+9=
+
+--- Page Break ---
+
+,����)��#����!��������'����������� �2�����������  ��)' ����3+��4������
+����!!�%� ����!����!����0�!!������ ��)���!��#��+���� �����!�)��0��0�� � ���)���2�� ���� � ��%���� ����!��#�'����������
+�!�0�������%��'���������������%����������('��������W���� 1+�
+� ���!�������'��� � ����'� ��
+,�� � ��!!�0��� � � ��� � �' !��� � �� � ������ � �� � � � ��'� � � � ��
+��'� ���0� ��������' +�,�����'��� � ����'� ���������!�)�!������
+� ��)� �6+3� �����0� ���2�!'��� �#������� �����('����� 0��)� ��
+����������!�)�!���V������V�+�,���2�!'������V������V������
+��2������0�!!%�0������������ ����!!�0� ���)�������('�2�!�� �
+��� ���2�!'����� �����'� ��+�,��� �)!��)�!�0����0����0� ���
+������ � � � �% � ��2�� � )� � V� � ��� � V�% � ����� ��� � � � �� � ��  �
+�!��#������!� �� �����  �� � �%���2���)��V �E�����V �E+�
+/�  /�  /��  / ��
+�  �  �  �
+�  �  �  �
+�  �  �  �
+� ��)� �6+3����'��� � ����'� ���0� ��� � ��
+�  �  �  �
+,�)!���9��,�' �� �)!�
+,�� � ��  � � �� � �� � �� �� ������ � �� � �'�� ���� � �� � �������� � 2�!'��� �� � �� � ��  � � � �% � V  �E � ��� � V�E+ � �� � �����
+�'�� �������!����2�� 0��2����)!��%� ������������!������� ���� �������0� ��' � ���'����������!� �)��!�����!��)����� �
+<�����+�V�E����.'� � �����2��������V�+�V �E ���� ���� �!'��2��G&���� ��� 0�����' �+���� ���!�����#� �������� ���� �������
+� �!'��2��G&��� �%� ����('�2�!�� �!�����'������E������G&��� ��������2����!����0� �� ����('�2�!�� �!�����'���� �
+E�E���� �����!�+�,������'! ��������'� �������0������ ��)� �6+9+
+V��JV�%V�KN�V�;
+V��JV�%V�K�N�V����V��
+N�V�V�;�L�V�;V��
+N�JJV�V�;K;JV�;V�K;K;
+E�0%���������� ������ �����'!!���'�� ����!�����'� %��������
+������ ��)�����!'���+���� ��������%� 0��� ��!����!�����������
+=9�=:������0�!!�)��'���+�>���'��� ���=9�=:���������2����� ���
+�' �' �V����0�!!����� ����2����%� ��������������)������!������
+)���!����� ���� �����2�� ��������� ��������������� ��)� �6+9+�
+,�� � �'!! � ������ �� � �� � �� � ����'� � �� � ���0� � �� �� ��)� � 6+:�
+� ��)� �6+9����'� ���4����
+�!����0� ������' ���������������+����0� �������)��'���� ��
+�!��#�  �� � ����'� � ��� � �� � �'������+ � � ��!��#% � �'�� � �� � ����
+���������0� ����:::� ���������� ������2��'������ ��%����'!��
+)��'���������������!�������+
+96
+
+--- Page Break ---
+
+#� $���� ��������
+�
+� ��)� �6+:����'� �������'�
+� ���!�������'��� � ����'� ���0� �����'
+,�����'��� � ����'� �����2������� ��)� �6+�+���� ���'����������!� � ��)�������������  ����!����' +�,���� � ��
+����� ��������������������0������ ��)� �6+5�0� �� ���� � ���!�)�!������)�����%�V��)����� ������ ����������� �)� +�,���
+�' �� �)!��'����� ��� ������ ����������' �� %�V � �����V � �%����� ����' �' ���2���)�� �����  �� � ��2�!'���V �E �����V �E����
+��2������,�)!���:+
+�  / �  / �  / ��  /��
+�  �  �  �  �
+�  �  �  �  �
+�  �  �  �  �
+�  �  �  �  �
+�
+�  �  �  �  �
+�  �  �  �  �
+�  �  �  �  �
+�  �  �  �  �
+� ��)� �6+5����'��� � ����'� ���0� �����' ,�)!���:����'� ��� �' �� �)!�
+,���2�!'������ ����' �' ������V �E� ����V �E� ���� ����!�� ����� �<������ ���� ������� ���������!�$G"�� ���������+�
+�('�2�!�� �� ����������'�������!��E�E���� ���������2��+
+97
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+Q1'Q0' Q1'Q0 Q1Q0 Q1Q0'
+00 01 11 10
+Q1N = x'Q1'Q0 + xQ1 + Q1Q0'
+x'
+0 1 0 1 = ((x'Q1'Q0)' (xQ1)' (Q1Q0')' )'
+0
+x 0 0 1 1
+1
+Table 26: Q1N(x,Q1,Q0)
+Q1'Q0' Q1'Q0 Q1Q0 Q1Q0'
+00 01 11 10 Q0N = xQ0 + x'Q0'
+x' 1 0 0 1 = ((xQ0)' (x'Q0')')'
+0
+x 0 1 1 0
+1
+Table 27: Q0N(x,Q1,Q0)
+Exhibit 8.7: Circuit diagram for four state counter with input
+The logic is then implemented using the 7400 series chips, as shown in Exhibit 8.7. The output of the logic is used
+to feed the input of each D flip-flop and the output of each flip-flop is used as input for the logic. Note that the
+CLEAR line for the 74175 must be tied to Vcc. The CLEAR line can be used on power up to clear or set the flip-flop
+value to logic zero. However, if the line is kept low, the value of the flip-flop will always remain at logic low. The
+CLEAR can be left to float, however this makes the flip-flop susceptible to fluctuations in electrical noise. The use of
+the CLEAR line will be discussed in more detail in the next chapter. For now the CLEAR will just be tied to logic
+50
+
+--- Page Break ---
+
+#� $���� ��������
+����+ � ���� �� ��� � �'������% � � � �0� �� � ��� � )� � '��� � ��� � �� ��!��#+ � 8�0�2��%� ��#� � �'�� � �� ���� � �� � ��  � ��� ����
+������������)�'������0� �����)������'��������0� ������� �����'�����+�
+������������ �����
+G���0���������' ����������������0����'������0� �������� ����!��#���'���+�������0� �����������������!���2���%� ����
+�����'����������)�'���+�>�'�������'���0���� ����� �!���� �� ��� ��#�������� ��������?)�'���@�)������ ��������� ��
+��� +�B���� �������'��%�� �����!��#�!�#�� ����0� ������������ � ���'! ��!�� ������2��� ��'���� �������!����������� �
+����� ���!����+�$0� ���������������2���� �����������'�� ����+�,0���������2������������ �������!����!����')!� �
+���0%�$"�,���� �������!����!������!�� ���0%�$"$,����0��)�!�0+�
+� ��)� �6+7��$"$,��0� ��
+� ��)� �6+6��$"�,��0� ��
+�������� � ���������� � � �� � ��� � ?��)�'�����@ � �0� ����+ � $�� 0����
+����)��'���� �� �� � ����' �' ���� ����0� ����������'��� �� ���!��
+������������������� ����%���� ������� ����'! ��!���������� �� �����
+���'� � 0� � � )�'�����+ � ,0� � ������ � ����0��� � ���������� � ����
+���2���� � ���� )� � � ���� ��� � �0� ��+ �,�� � 2�!'��� ��� ������ ��� � ����
+������ �������0�����'!��)������������ �� � ��� ����������!�������
+������ ���)�'�������� ��� ��� ��!�� +�D�!'���������<X� ���� ���
+����� ���������+�U������ ��������� ���0�'!�����2�������'!�������+��
+����%�0��������'!��)���'������� � ����)�'���� ����0� ������� ��)�
+6+��+�G����'����� ��������'� ������)��'���� ����)�'�����0� �����
+��� � ��.'� ��� � � ��� � ���� � � � )� � ���� � � � �� � 2�!'�� � �� � ���
+� ��)� �6+������)�'�����$"�,��0� ��
+�������� �� ���'� � ������!��� ���+�,���!�����#� ����2��������'!��
+��2��� �!��� � 0����)�'������0� ����+
+� ��)� �6+������)�'�����$"$,��0� ��
+:�
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+Review exercises
+1. How could using a regular switch as the clock source affect the operation of the counter?
+2. Draw a timing diagram for the machine that uses the state transition diagram found in Exhibit 8.3.
+Assume that the machine will use a clock with a period of 1.00 seconds, that the flip-flops used for the design
+are rising edge triggered and that the machine is in state 01 prior to time zero and that the machine goes
+through 4 clock pulses.
+3. Draw the state diagram for a four state counter with one input where the counter counts up in binary
+when the input is low and counts in reverse when the input is high.
+4. How many D flip-flops are required for the counter from Exercise 3?
+5. Determine the logic required for the input of the four state counter from problem 3 and draw a circuit
+diagram with pinouts.
+6. Draw the state diagram for a three-state state machine that counts from 00 → 01 → 10 → 00 etc. as long
+as the input is low. When the input is high, the counter does not count and stays at its current state.
+7. How many D flip-flops are necessary for the counter from the previous problem? Are all of the possible
+states for the flip-flops used? If not which ones are not?
+Procedure
+1. Write the prelab in your lab notebook for all the circuits required in the steps that follow. Include all
+necessary equations and calculations.
+2. Obtain instructor approval for your prelab.
+3. Build and demonstrate the successful operation of the four state counter found in Exhibit 8.5. Attempt to
+clock the circuit with both a regular switch and debounced switch. Note the difference in performance.
+4. Build and demonstrate the successful operation of the four state counter from Exercise 5 of the review
+exercises.
+Optional
+1. Build and demonstrate the successful operation of the four state counter from Exercise 6 .
+52
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+9. More state machines
+Learning objectives:
+• Relate number of states to required amount of memory.
+• Insure state machines do not enter illegal states.
+How many bits of memory does a state machine need?
+The amount of memory or number of flip-flops required for a state machine is directly related to the number of
+states in the state transition diagram. The number of possible states that can be represented increases by a power of
+1 
+two for each new bit of memory added. One bit of memory can represent 2 or two states, two bits can represent up
+2  3 
+to 2 or four different states, and three bits up to 2 or eight different states. To reduce the complexity of the design,
+use the fewest number of flip-flops that would still accomplish the task successfully. If the design required a
+number of states that is not a power of two, then the smallest number of bits raised to the power of two that is
+greater than the number of states required should be used. As an example, if three states were required, two bits
+would be needed, or if six states were required, three bits would be needed.
+Number of states ≤ 2number of bits
+What are unused states?
+A machine that visits the following states in the order listed, 000 → 001 → 011 → 111 → 110 → 100 → 000, will
+require three bits of memory. What becomes of the unused states, 010 and 101? Several approaches are common
+when dealing with the unused states. Note that any legal state moves to another legal state, never visiting the
+unused states. Because the unused states are never visited, these could be considered as don't care conditions in the
+K-maps for the input to the flip-flops. This can reduce the complexity of the design. In addition, PRESET and
+CLEAR lines for flip-flops can be used to insure not only that the state machine enters a legal state when powering
+on, but it also insures that it powers up in a specific initial state.
+Using PRESET and CLEAR pins
+As the system powers up, logic levels cannot always be guaranteed. What if
+during this time, the system happened to enter one of the unused states?
+Depending upon the logic that was used, the system may then transition into one
+of the legal states, or it may get stuck indefinitely in one of the illegal states. In
+order to guarantee that the system does not enter an illegal state as the system
+powers up, the CLEAR lines can be held low temporarily to insure that the
+memory bits are set to zero or logic low on power up. Exhibit 9.1 has an RC circuit
+that can be used to power on to keep the CLEAR line low long enough to insure
+that the bits are set to zero. When power is first turned on, the capacitor will be
+uncharged and must charge through the resistor. If the time constant, RC, is set at Exhibit 9.1: RC for Power On
+several clock cycles, then the state machine will be guaranteed to start with all of
+53
+
+--- Page Break ---
+
+9. More state machines
+the memory bits at zero. The 74175 quad D flip-flop in the logic kit does not offer a PRESET pin. However the same
+type of RC circuit can be used for other flip-flops that do.
+Assigning unused states to the system
+Powering up is not the only time the machine can enter an unused state. At times large transient spikes can
+occur during storms or when powering on or off other equipment that can cause logic levels to change
+unpredictably. In cases such as this, the machine can still enter a state that was not planned. Even the RC circuit
+connected to CLEAR or PRESET pins cannot rescue the state machine in this case. To address this, the designer
+should add the additional states to the state transition diagram and simply have them transition to a legal state. In
+this way, even if for some reason a circuit enters an illegal state, it will quickly shift to one that is allowed.
+Adding the extra states as well as the RC circuit does indeed complicate the circuit, however for a final design
+that will be used in production, it provides assurance that the circuit will perform reliably even when the
+unexpected occurs.
+Example 1: Three state counter
+The three state counter in Exhibit 9.2 counts up when the
+input is high and counts down when the input is low. Two flip-
+flops will be needed to implement this machine which means that
+four states can be represented by those two bits. The state 11 is
+not used in this design. What would happen if for some reason,
+the machine would enter the state 11? The effect of entering this
+unused or illegal state cannot be known until the circuit
+implementation is finalized. Instead of waiting to see what
+happens after the design is completed, it is best to incorporate
+this state early on in the design phase. Two approaches will be
+investigated. The first will shift the state 11 to the legal 00 state
+Exhibit 9.2: 3 state counter
+on the next clock cycle. The next approach will be to place don't
+care conditions for the state 11 and then examine the next state
+that would follow depending upon the simplest design that
+results from using the don't care conditions.
+Approach 1: 11 → 00
+The resulting state transition diagram assuming that state 11
+transitions to 00 on the next clock cycle is given in Exhibit 9.3. In
+all of the cases that follow, unused states will be shown as dotted
+circles in the state transition diagram. Since state 11 will move to
+state 00 regardless of the input value, it is not written on the
+diagram. From the K-maps given below, the next state values for
+Q1 and Q0 are listed as Q1N and Q0N. It is left as an exercise for the
+reader to determine the circuitry required to implement this state
+Exhibit 9.3: 3 state counter with unused state
+machine.
+54
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+Q1'Q0' Q1'Q0 Q1Q0 Q1Q0' Q1'Q0' Q1'Q0 Q1Q0 Q1Q0'
+00 01 11 10 00 01 11 10
+x' 1 0 0 0 x' 0 0 0 1
+0 0
+x 0 1 0 0 x 1 0 0 0
+1 1
+Table 28: Q1N(x,Q1,Q0) = Q1N = x' Q1'Q0' + xQ1'Q0 Table 29: Q0N(x,Q1,Q0) = xQ1'Q0' + x'Q1Q0'
+Approach 2: Using don't care conditions
+The next approach instead places don't care conditions for the state 11 as seen in the K-maps below. By selecting
+the minimal expressions, the next states for Q1 and Q0 can be found. The resulting expressions can be found to be
+less complex than those from the first approach.
+Q1'Q0' Q1'Q0 Q1Q0 Q1Q0' Q1'Q0' Q1'Q0 Q1Q0 Q1Q0'
+00 01 11 10 00 01 11 10
+x' 1 0 d 0 x' 0 0 d** 1
+0 0
+x 0 1 d* 0 x 1 0 d 0
+1 1
+Table 30: Q1N(x,Q1,Q0) = xQ1'Q0' + x'Q0 Table 31: Q0N(x,Q1,Q0) = xQ1'Q0' + x'Q1
+The resulting state transition diagram is given in Exhibit 9.4.a.
+Using the don't care conditions does simplify the logic. Notice that
+the unused state now goes to two different states depending upon
+the value of the input. The don't care condition labeled as d*,
+which is xQ1Q0 is grouped with the term xQ1'Q0. This results in a
+simpler grouping, xQ0, but it does now cause the machine to
+transition from 11 to 10 when the input x is a logic high. Similarly,
+the term d** now causes the state 11 to transition to 01. The
+remaining don't cares are not contained in a group, so the they will
+transition to 0 at the next state. It is left to the designer to
+carefully examine the requirements of the final circuit to
+determine if indeed these are don't care conditions. If so, then the
+transition diagram should be updated to reflect their use in the
+logic simplification.
+Exhibit 9.4.a: 3 state counter with don't cares
+A sample timing diagram that starts on the unused state 11 and
+cycles through this new diagram in Exhibit 9.4.a is given in Exhibit 9.4.b. Notice that the first transition at time 0 is
+to the state 01. From there the counter counts in reverse as the input is low, transitioning at time 1 to state 00, at
+time 2 to state 10, and then back to state 01 at time 3. Somewhere between time 3 and 4 input x goes high, but the
+state does not change until the next rising clock edge at time 4. From that point on, with the input high, the counter
+counts up. This assumes that the circuit will use rising edge triggered flip-flops.
+55
+
+--- Page Break ---
+
+%� ���� ����� ��������
+� ��)� �7+9+)��,������������������3�� � ����'� ��
+� ���!�������2��� � ���������
+,�����2��� � �������������0������ ��)� �7+:����� 0���������� �!����+�G������ ���!����� ����� �����)� 0��������
+��������0��!�� ���� ������������������ ������ �����+�,����!��2��� ����������)!��� � ��� �� �����'�'���+�,��� �' ��
+�)!�� �� ���!!�0��'�������; ����������� ���������'�'����� � ������%����%�����������2��������%���%������3������� �2�!�+�
+,������'! ����<������ �� ���!!�0�����)��'���� ���� ������� ���������!�� ���������+���� ���'�'����� � ���0���� ��
+������� �!����� ����  �� � �����%� ���� ���������!�� ��������������)�����0����� �����!�� ���)�!�0+�� ����!�� �������
+� ������� �����0� �����0�� � �� ����� ���������������� ����������+
+� ��)� �7+:����2��� � ����'� ��
+:5
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+Q2N = x'Q2'Q0' + Q2'Q1Q0'
+x Q2 Q1 Q0 Q2N Q1N Q0N
+Q1N = x'Q2'Q1'Q0' + xQ2'Q1'Q0
+0 0 0 0 1 1 1
+Q0N = Q1'Q0'
+0 0 0 1 0 0 0
+Now, if the don't care conditions are used in the design for the
+0 0 1 0 1 0 0
+minimal expressions, the complexity of the results is reduced.
+0 0 1 1 d1 d1 d1
+Q2N = x'Q2'Q0' + Q2'Q1 or x'Q2'Q0' + Q1Q0'
+0 1 0 0 0 0 1
+Q1N = x'Q2'Q1'Q0' + xQ2'Q0 or x'Q2'Q1'Q0' + xQ1'Q0
+0 1 0 1 d2 d2 d2
+Q0N = Q1'Q0' 0 1 1 0 d3 d3 d3
+The results for Q1N Q2N have two equally minimal forms. The state 0 1 1 1 0 0 0
+transition diagram that uses the first minimal form is given in the 1 0 0 0 0 0 1
+Exhibit 9.6. Notice that the unused state 011 goes to the legal state 1 0 0 1 0 1 0
+100 if the input is logic high and another unused state, 110 when 1 0 1 0 1 0 0
+the input is a logic low. To trace where the external states will go, 1 0 1 1 d1 d1 d1
+examine d1 which corresponds to unused state 011. For Q2N, d1 is 1 1 0 0 0 0 1
+part of group Q2'Q1. Q2N will be 1 regardless of the input at the next 1 1 0 1 d2 d2 d2
+1 1 1 0 d3 d3 d3
+state. d1 is only grouped if x is 1 for Q1N and not at all in Q0N.
+1 1 1 1 0 0 0
+Table 32: Truth table for 5 state machine
+It is left to the designer of the machine to determine if these transitions are acceptable given the specifications for
+the product.
+Q1'Q0' Q1'Q0 Q1Q0 Q1Q0' Q1'Q0' Q1'Q0 Q1Q0 Q1Q0'
+00 01 11 10 00 01 11 10
+x'Q2' 1 0 d1 1 x'Q2' 1 0 d1 0
+00 00
+x'Q2 0 d2 0 d3 x'Q2 0 d2 0 d3
+01 01
+xQ2 0 d2 0 d3 xQ2 0 d2 0 d3
+11 11
+xQ2' 0 0 d1 1 xQ2' 0 1 d1 0
+10 10
+Table 33: Q2N Table 34: Q1N
+Q1'Q0' Q1'Q0 Q1Q0 Q1Q0'
+00 01 11 10
+x'Q2' 1 0 d1 0
+00
+x'Q2 1 d2 0 d3
+01
+xQ2 1 d2 0 d3
+11
+xQ2' 1 0 d1 0
+10
+Table 35: Q0N
+57
+
+--- Page Break ---
+
+9. More state machines
+It should be noted that all of the designs shown in this text have used only the D flip-flop. However, it can often
+be the case that another type can result in a simpler design. JK flip-flops can be used to produce ripple counters
+with minimal extra circuitry. The JK flip-flop does have two inputs, so the resulting logic minimization must be
+done for both the J and the K input, doubling the number of K-maps required. In order to reduce the required
+number of parts for the logic kit, only the D flip-flop was used. Designers should become familiar using all of the
+different types of flip-flops so that they can be assured that they have chosen the one that truly results in a minimal
+design.
+Exhibit 9.6: Five state counter with unused states
+Review exercises
+1. A state machine requires 7 different states. How many flip-flops are required for this machine?
+(a) If a machine has no external inputs, what size is the K-map for one of the required inputs?
+(b) If the machine has one external output, how large is the K-map for one of the flip-flop inputs?
+(c) If the design were to use JK instead of D flip-flops, how many next state inputs must be determined?
+2. Repeat Exercise 1 for a state machine with 14 states.
+3. Draw six clock pulses of the timing diagram for the machine that uses the state transition diagram found
+in Exhibit 9.6. Assume that the clock for the machine has a period of 1.00 seconds, that the machine is in
+state 011 prior to time zero and that input x is kept at logic high the entire time.
+4. A state machine traverses the states listed in this order 000 → 001 → 011 → 111 → 110 → 100 → 000.
+There is no external input.
+(a) Draw the state transition diagram for this machine.
+(b) What are the unused states?
+(c) Modify the diagram if the unused states transition to 000.
+58
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+(d) Assuming a state machine were to be built using D flip-flops, determine the value of the next state for
+each of the flip-flops.
+5. The two bit sequence 00 → 01 → 11 → 10 → 00 is a Gray code. Gray codes only have one bit change for
+each transition.
+(a) Sketch the state transition diagram for the 3 bit Gray code: 000 → 001 → 011 → 010 → 110 → 111 →
+101 → 100 → 000 ... .
+(b) Assuming a state machine were to be built using D flip-flops, determine the value of the next state for
+each of the flip-flops.
+6. A two bit counter is to be built that will count forward, 00 → 01 → 10 → 11 → 00, when a logical input is
+set high and counts in reverse order when it is low.
+a. Draw the state transition diagram for this state machine.
+b. Assuming a state machine was to be built using D flip-flops, determine the value of the next state for
+each of the flip-flops.
+7. A two bit counter is to be built that will count forward, 00 → 01 → 10 → 11 → 00, when a logical input is
+set high and as a Gray code when it is low (00 → 01 → 11 → 10 → 00).
+(a) Draw the state transition diagram for this state machine.
+(b) Assuming a state machine was to be built using D flip-flops, determine the value of the next state for
+each of the flip-flops.
+Procedure
+1. Write the prelab in your lab notebook for all the circuits required and the steps that follow. Include all
+necessary equations and calculations.
+2. Obtain instructor approval for your prelab.
+3. Your instructor will pick one or more state machines from the various examples from the review exercises
+for you to build and demonstrate.
+59
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+10. What's next?
+Hopefully, this introduction has whetted your appetite for this fascinating subject. Modern technology simply
+would not be possible without the advances and applications of this subject in the world in which we live. All of the
+sequential circuits shown in the chapters “State machines” and “More state machines” are synchronous, meaning
+they use a clock. However, sequential circuits designed without clocks, known as asynchronous circuits, can be
+designed. As the clock can often insert added delay for the faster components in the circuit, asynchronous circuits
+can usually be designed that will respond even faster than synchronous circuits. Timing issues become critical in
+this case, and the resulting timing analysis can become so complicated that asynchronous circuits are often not
+chosen over their synchronous counterparts. However, for circuits that require the fastest speed possible, often
+asynchronous circuits are considered.
+In addition, while the circuits designed in these labs all used discrete components, for circuits that are used in
+applications today, nearly all of the components are fabricated on a single chip. Either Programmable Logic Devices
+(PLDs) can be used to fit entire state machines on a single chip or custom chips can be fabricated for a specific task.
+Very large-scale integration (VLSI) techniques are used to design entire systems on a single chip; a CPU with cache
+memory and a graphics processing unit would be an example. Complexities that require additional analysis are
+when the size of the transistors is decreased, speeds of the circuits are increased, and the desired power
+consumption is lowered. Hardware description languages such as Verilog can even be used to synthesize and test
+circuit performance virtually in software before constructing a single device.
+Any one of these areas can provide a wealth of challenging problems to tackle. It is the hope of this author that
+the foundation gained from this text will prove useful as you use technology and design applications that require
+digital logic.
+60
+
+--- Page Break ---
+
+,����)��#����!��������'����������� �2�����������  ��)' ����3+��4������
+,%%��� ��,<���� %�% �����
+� ��)� ��+���=9��
+� ��)� ��+���=9��
+� ��)� ��+3��=9�9
+5�
+
+--- Page Break ---
+
+&������� &' (��� �������
+� ��)� ��+9��=9��
+� ��)� ��+:��=9�:�
+5�
+
+--- Page Break ---
+
+,����)��#����!��������'����������� �2�����������  ��)' ����3+��4������
+� ��)� ��+5��=9�=:
+53
+
+--- Page Break ---
+
+Appendix A: Chip pinouts
+555 Timer
+Exhibit A.7: 555 timer
+64
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+Appendix B: Resistors and
+capacitors
+Resistors
+Resistors are electronic components that obey Ohm's law: Voltage across a resistor is equal to the current
+through the resistor times the resistance of the device.
+V = I * R
+Resistance is measured in ohms ( ) . Current and voltage are related by the resistance of the object, if voltage is
+kept constant and resistance rises, current will fall. Likewise if resistance decreases, more current will flow,
+meaning the measure of the current will rise. While many devices have resistance, including the wire used in these
+labs, the only resistance that we will be concerned with in this manual is the resistance attributed to actual
+resistors. Manufactured resistors come in various forms, however
+those used here will be standard ¼ watt resistors that follow the
+conventional color code that describes their value.
+COLOR VALUE MNEMONIC
+Black 0 Better
+Brown 1 Be
+Note: download full color pdf Red 2 Right
+http://textbookequity.org/digital-
+logic Orange 3 Or
+Yellow 4 Your
+Green 5 Great
+Exhibit B.1: Sample Resistor
+Blue 6 Big
+Each resistor has four colored stripes as shown in the figure above. Violet 7 Venture
+Each stripe corresponds to a number as shown in Table 36. The
+Gray 8 Goes
+formula for the value of each resistor is listed below.
+White 9 West
+C
+Generic Formula: A B x 10
+3  Table 36: Color Codes
+Which for this case yields: 2 0 x 10 or 20,000 Ω.
+The first two stripes indicate the numerical value of the resistance,
+the third the exponent of ten which will be multiplied by the numbers from the first two stripes, and the fourth a
+tolerance of the resistor. The diagram above illustrates how the first three stripes are used to calculate the value of
+the resistor as well as the diagram below. The mnemonic is often suggested as a means of remembering the color
+65
+
+--- Page Break ---
+
+Appendix B: Resistors and capacitors
+code. The tolerances will not be utilized in this lab manual. Another example is provided in Exhibit B.2. Applying
+the formula to obtain the value for this resistor is left as an exercise for the reader.
+Exhibit B.2: 100,000 Ohm Resistor
+Capacitors
+In direct current circuits, capacitors can be thought
+of as charge storage devices. Electrolytic capacitors will
+be used in these labs. Electrolytic capacitors appear to
+look like a tiny aluminum can with two wires. Be
+cautious when connecting the electrolytic capacitors as
+they have a polarity. Insure that the negative terminal
+of the capacitor is connected properly or the capacitor
+can malfunction and in some cases explode! The unit of
+measurement for capacitors is the Farad. Capacitors
+with higher Farad measurements can store more charge
+at a given voltage. Exhibit B.3: Capacitors
+66
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+Appendix C: Lab notebook
+The lab notebook should be a bound notebook, much like a standard composition notebook. The lab notebook is
+used to document the experiment or lab procedure. Notebooks can serve many purposes: for the author to review
+the material, for someone else to replicate the procedure, or even as a legal document for use in patent or court
+proceedings. The notebook for these experiments will be informal, in that the student will hand write all of the
+content in the notebook. Do not misinterpret the meaning of informal, because the work should still be neat,
+legible, well organized, and complete. What follows are some guidelines that should be used to document the labs
+from this text. Of course your instructor may add or delete from this list.
+The lab notebook should:
+• be bound
+• have two to three pages at the front dedicated to a table of contents
+• have numbered pages to use in the table of contents (you may number them yourself)
+Each lab should contain:
+• name of lab
+• your name
+• partner(s) name(s)
+• date
+• brief objective of lab (no more than two sentences)
+• equipment list required
+• pre-lab including:
+• any necessary diagrams
+• any necessary equations and calculations
+• approval of instructor before you begin the lab exercise
+• results and observations
+• conclusion
+Make sure that you:
+• Do not erase any items. Cross them out and redo the work.
+• Write only on the right side of each page. This leaves you room to include any corrections.
+While following these guidelines certainly makes it easier for your instructor to review your work, that is not its
+main purpose. Keep in mind, someone should be able to understand what you did and even replicate your work
+given your lab notebook. Your lab notebook can be a helpful document for you. In industry, it can also be a helpful
+document for others.
+67
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+Appendix D: Boolean
+algebra
+Commutative law:
+x + y = y + x
+xy = yx
+Associative law:
+x + (y + z) = (x + y) + z
+x(yz) = (xy)z
+Distributive law:
+x(y + z) = xy + xz
+x + (yz) = (x + y)(x + z)
+Absorption:
+x + (xy) = x
+x(x + y) = x
+De Morgan's law:
+(x + y)' = x'y'
+(xy)' = x' + y'
+Other laws and properties:
+(x')' = x
+x + 1 = 1
+(x)0 = 0
+x + 0 = x
+(x)1 = x
+x + x' = 1
+(x)x' = 0
+(x)x = x
+x + x = x
+68
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+Appendix E: Equipment list
+Quantity Item Description
+1 Digital Trainer See detailed description below.
+2 pn2222 transistors Other general purpose npn transistors may be substituted.
+2 1KΩ 1/4 watt resistors
+2 33KΩ 1/4 watt resistors
+2 4.7KΩ 1/4 watt resistors
+2 100KΩ 1/4 watt resistors
+4 7400 Quad 2 input NAND, see note regarding 7400 series chips
+4 7402 Quad 2 input NOR
+2 7404 6 inverters
+3 7410 3, 3 input NAND
+3 74151 8 input multiplexer
+2 74175 Quad D flip-flop with CLEAR
+2 555 timer
+1 100 μFarad capacitor
+1 0.01 μFarad capacitor
+Digital trainer
+A digital trainer is a single purpose unit that contains several features that facilitate the construction and testing
+of digital circuits. Digital trainers can be constructed, but can be found as a unit for a reasonable price. A digital
+trainer should include:
+• A breadboard
+• A 5V power supply which regulates within ±0.25V of 5V
+• 8 LEDs that are wired to turn on with logic 1 and off with logic 0
+• 6 SPDT switches that are wired to logic high (5V) or logic low (0V)
+• 2 SPDT debounced switches (consult Exhibit 8.10 if constructing a digital trainer)
+7400 series families
+Several of the 7400 series families are acceptable for use with these labs. The LS (Low Powered Schottky), ALS
+(Advanced Low Powered Schottky) or HC (High speed CMOS) are all widely available, relatively inexpensive and
+will all perform acceptably.
+69
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+Appendix F: Solutions
+Chapter 1 review exercises
+2. Exhibit 1.3 contains the diagram illustrating the commonly connected pins on the breadboard.
+3.
+x x!
+0 1
+1 0
+4. Resistor color codes are explained in detail in Appendix B.
+Note: Download full color PDF at http://
+textbookequity.org/digital-logic
+a.
+b.
+c.
+d.
+70
+
+--- Page Break ---
+
+&������� +' $��������
+:+��,������'������)�!������2�������+�
+5+��,���E�E����� ��������� ����� ����E���� �+�,����'�� �������� 0���������� �2����)!��%������0� �� 0��
+� 
+��� ��� ����0����J,���������K%���� ��������'!��)����'��J�  K��������� ������)�!� �������� ����'�� ���+
+�  �  �����
+�  �  �
+�  �  �
+�  �  �
+�  �  �
+=+�
+�  �  ������
+�  �  �
+�  �  �
+�  �  �
+�  �  �
+���%����#���" �������� ���
+�+����!������'�� ����0� �� ��������' ���������� ���0��)���'����������� ��� ��������' ������ 0�������)�!� ���+
+J�'�)���������' �K  3
+J�'�)�����������)!���' ������������������' K  �N�� 
+: 
+�+�����'�� ����0� ����2�����' ��0�!!���2���  ����3���������� ���0�+
+3+��,�' �� �)!�����!!�0+�� ������ ���������� ���) ���� �������!����'! ������������ ����� ������� ��2�!'��� �� �
+���� �)�����������������) ���������� +������ ���!�%����3+�+� ��� �������!'�������>%� �����'� ��J�>K;����� ���
+��� �����>;+��,��������� ����'���� ���) ���� �������!����'! +
+�  �  ��  �����  ��  �
+�  �  �  �  �  �
+�  �  �  �  �  �
+�+���J�%>K�N�J�>K;�L�>;
+�  �  �  �  �  �
+�  �  �  �  �  �
+=�
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+A B C A+B (A+B)' y
+0 0 0 0 1 0
+0 0 1 0 1 1
+0 1 0 1 0 0
+b. y(A,B,C) = (A+B)'C 0 1 1 1 0 0
+1 0 0 1 0 0
+1 0 1 1 0 0
+1 1 0 1 0 0
+1 1 1 1 0 0
+A B C A+B (A+B)' y
+0 0 0 0 1 0
+0 0 1 0 1 1
+0 1 0 1 0 0
+c. y(A,B,C) = (AC)' + (BC) 0 1 1 1 0 0
+1 0 0 1 0 0
+1 0 1 1 0 0
+1 1 0 1 0 0
+1 1 1 1 0 0
+It may not always be necessary to write every intermediate step. In this case, (AC)' is written directly instead of
+first writing (AC) and then the inverse. If you find this confusing, make sure not to skip steps like this. Note that
+many different functions can yield the same result. For example, (AB'C)' is equivalent to the function above.
+A B C A⨁B C' y
+0 0 0 0 1 0
+0 0 1 0 0 0
+0 1 0 1 1 1
+0 1 1 1 0 0
+d. y(A,B,C) = (A⨁B)C'
+1 0 0 1 1 1
+1 0 1 1 0 0
+1 1 0 0 1 0
+1 1 1 0 0 0
+72
+
+--- Page Break ---
+
+&������� +' $��������
+�  �  ��  �
+�  �  �  �
+�+���J�%>K�N��;�L�>� �  �  �  �
+�  �  �  �
+�  �  �  �
+�+���J�%>%�K�N�JJ�L>K;J>L�K;K;
+�  �  �  ���  ���  ������  ������  ������������  �
+�  �  �  �  �  �  �  �  �
+�  �  �  �  �  �  �  �  �
+�  �  �  �  �  �  �  �  �
+�  �  �  �  �  �  �  �  �
+�  �  �  �  �  �  �  �  �
+�  �  �  �  �  �  �  �  �
+�  �  �  �  �  �  �  �  �
+�  �  �  �  �  �  �  �  �
+��� ����� ���!�������!������'�� ����0� ������������ ��('�2�!�� %�J��L�>�L��K+
+9+��$�!' ����0� ������' �)�!�0+��
+:+��$�!' ����0� ������' �)�!�0+�� ������ ����!� ��!�)�!�D�������-������ ����������+���� ��� �������������%� ���
+D������ ���'�������� ����� ��������� ���-������ ���)�  ���!�� %���0�2��� ������������' ����'!���!0����)��
+����'! ��+
+5+��
+=3
+
+--- Page Break ---
+
+,����)��#����!��������'����������� �2�����������  ��)' ����3+��4������
+���%����&���" �������� ���
+�+�
+J�>K;�L�J��K;�
+K;J�>K;;�J��K;;
+J�>KJ��K
+�>��
+G������!�����'�
+���������;��!�0
+��')!������ �2��������!
+"���� �������� ����������
+�+ $���!� ������2����!�������!���� +���')!�������� ����� ���!��+�-��'��������'�� �#�� 0�������%���9 �
+��� ���!�������� ���('���+�����!!�����'���������� � �#�� �����������9 ����� ���!��+�&�� ���!��������('����
+����)����!� ��������)������F��'� �����!!'� �� �������� ��������)����'������ �����  ����� ��+��� ���!�
+���'�������������0��)�!�0+
+���� ��� �� ��� ���� ��� �� ��� ���� ��� �� ���
+�� �� �� �� �� �� �� �� �� �� �� ��
+���� �  �  �  � ���� �  �  �  � ���� �  �  �  �
+�� �� ��
+��� �  �  �  � ��� �  �  �  � ��� �  �  �  �
+�� �� ��
+�� �  �  �  � �� �  �  �  � �� �  �  �  �
+�� �� ��
+��� �  �  �  � ��� �  �  �  � ��� �  �  �  �
+�� �� ��
+,0��� ����')!�����'�����
+,���������!�����'�� ,0�����'�����������'�
+=9
+
+--- Page Break ---
+
+Appendix F: Solutions
+A'B A'B AB AB'
+' 01 11 10
+00 A'B' A'B AB AB' A'B' A'B AB AB'
+00 01 11 10 00 01 11 10
+C'D 1 0 0 1
+' C'D' 1 0 0 1 C'D' 1 1 1 1
+00 00 00
+C'D 1 0 0 1 C'D 0 0 0 0 C'D 1 1 1 1
+01 01 01
+CD 0 0 0 0 CD 0 0 0 0 CD 0 0 0 0
+11 11 11
+CD' 0 0 0 0 CD' 1 0 0 1 CD' 0 0 0 0
+10 10 10
+Group spanning boundary Four corner group Group of eight
+3. Truth tables follow.
+A B C AB A'BC' AB'C f
+0 0 0 0 0 0 0
+0 0 1 0 0 0 0
+0 1 0 0 1 0 1
+a. f(A,B,C) = AB + A'BC' + AB'C 0 1 1 0 0 0 0
+1 0 0 0 0 0 0
+1 0 1 0 0 1 1
+1 1 0 1 0 0 1
+1 1 1 1 0 0 1
+A B C A'C ABC AB' g
+0 0 0 0 0 0 0
+0 0 1 1 0 0 1
+0 1 0 0 0 0 0
+b. g(A,B,C) = A'C + ABC + AB' 0 1 1 1 0 0 1
+1 0 0 0 0 1 1
+1 0 1 0 0 1 1
+1 1 0 0 0 0 0
+1 1 1 0 1 0 1
+75
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+c. h(A,B,C,D) = A'BC' + (A ⨁ B)C + A'B'C'D + ABCD
+A B C D A'BC' (A⨁B) (A⨁B)C A'B'C'D ABCD h
+0 0 0 0 0 0 0 0 0 0
+0 0 0 1 0 0 0 1 0 1
+0 0 1 0 0 0 0 0 0 0
+0 0 1 1 0 0 0 0 0 0
+0 1 0 0 1 1 0 0 0 1
+0 1 0 1 1 1 0 0 0 1
+0 1 1 0 0 1 1 0 0 1
+0 1 1 1 0 1 1 0 0 1
+1 0 0 0 0 1 0 0 0 0
+1 0 0 1 0 1 0 0 0 0
+1 0 1 0 0 1 1 0 0 1
+1 0 1 1 0 1 1 0 0 1
+1 1 0 0 0 0 0 0 0 0
+1 1 0 1 0 0 0 0 0 0
+1 1 1 0 0 0 0 0 0 0
+1 1 1 1 0 0 0 0 1 1
+A B C D A'C'D' C'D CD j
+0 0 0 0 1 0 0 1
+0 0 0 1 0 1 0 1
+0 0 1 0 0 0 0 0
+0 0 1 1 0 0 1 1
+0 1 0 0 1 0 0 1
+0 1 0 1 0 1 0 1
+0 1 1 0 0 0 0 0
+d. (A,B,C,D) = A'C'D' + C'D + CD 0 1 1 1 0 0 1 1
+1 0 0 0 0 0 0 0
+1 0 0 1 0 1 0 1
+1 0 1 0 0 0 0 0
+1 0 1 1 0 0 1 1
+1 1 0 0 0 0 0 0
+1 1 0 1 0 1 0 1
+1 1 1 0 0 0 0 0
+1 1 1 1 0 0 1 1
+76
+
+--- Page Break ---
+
+&������� +' $��������
+9+��������!�� ������������2���������������+�E� ���� �� �('� ���� ��%� ��� �������� ����������!������� ���'���
+� ��!!���� ���������!�$G"�J$'��G��"���'� �K�� ��������+
+�+��G������!�� ������������J�%>%�K�N��>�L��;>�;�L��>;��
+������!�� ������������J�%>%�K�N�>�;�L���
+)+��G������!�� �����������J�%>%�K�N��;��L��>��L��>;
+������!�� �����������J�%>%�K�N��>;�L��
+�+��G������!�� �����������J�%>%�%�K�N��;>�;�L�J����>K��L��;>;�;��L��>��
+������!�� �����������J�%>%�%�K�N��;>�L��;�;��L�>���L��>;�
+������!�� �����������J�%>%�%�K�N��;>�L��;�;��L�����L��>;�
+����� ��������������!�� ���������� �� �+���� ����������%������ �������������� ����0���� �� �+
+���  �
+�+��G������!�� ����������.J�%>%�%�K�N��;�;�;�L��;��L���
+������!�� ����������.J�%>%�%�K�N���L��;�;
+==
+
+--- Page Break ---
+
+,����)��#����!��������'����������� �2�����������  ��)' ����3+��4������
+:+ �J�%>%�K�N��>;�L��
+,��������'� �0������������'�������!��E�E���� ��+�,�����!!�0�� �������'� � ��)�����!���� ���0� ��.'� ����
+����+���������;��!�0�0���'���� ���2��������������EG&��� �+�������� ���%������2�� ���0����2������)�
+'����� �������������E�E���� ��!�� ���� �������� ����2�� ����' ��+
+5+ �J�%>%�%�K�N��;>�L��;�;��L�>���L��>;�
+=+ ��� ���!�����#� �������� ���� ��������'�����' �E�E���� �%����)��� �������� ��������� 0�����' �E�E������
+'���+�,�����!!�0����.'� ����� �������0�� �� � ���������������������� ����!���� � ���+
+�+ ������!�� �����������;�L�>;
+\�J�;>K;�J�;�;�K;�];��;��\�J>��K;�J�>;�K;�];��;�K;
+\�J�;>K;�J�;�;�K;�];��;;��L�\�J>��K;�J�>;�K;�];��;;
+\�J�;>K;�J�;�;�K;�];���L�\�J>��K;�J�>;�K;�];
+\�J�;>K;;�LJ�;�;�K;;]���L�\�J>��K;;�L�J�>;�K;;�]
+�;>�L��;�;��L�>���L��>;�;
+=6
+
+--- Page Break ---
+
+&������� +' $��������
+)+��������!�� �����������;�L��;>
+����� ����!���� � �������������'�
+���������;��!�0
+��')!������ �2��������!
+���������;��!�0
+��')!������ �2��
+�+��,0���������� �������!�� ����������� �� ����� �������)!��+
+�+��������!�� �����������;�;�L��;�;�L�>�;�L����
+��+��������!�� �����������;�;�L��;�;�L��>�L����
+=7
+
+--- Page Break ---
+
+,����)��#����!��������'����������� �2�����������  ��)' ����3+��4������
+�+ ,������������� �������!�� ����������� �� ����� �������)!��+�$���)�!�0+
+�+ ������!�� �����������;�;��L��;>��L��;��;�L��>;�
+��+ ������!�� ���������  >;�;��L��;>��L��;��;�L��>;�
+���+ ������!�� �����������;�;��L��;>��L��;��;�L��>;�
+���%����+���" �������� ���
+�+ ������!�$G"�� ���������
+�+ ������!�� ����������>;�L���;
+6�
+
+--- Page Break ---
+
+&������� +' $��������
+)+��������!�� ������������L���
+�+��E� ���� �� � ������!' ��������������� ������'������ �� ������� ���)�'��������J>;�K+
+������!�� �����������>;L����L�>;���
+�+��,����� ������������!'���� �����'������������'�����J>;�;K+
+������!�� ����������>;�;�L��;>�
+�+��,0���������� �������!�� ����������� �� ����� �������)!��+
+������!�� ����������>;�;�L��;�;�L�>�+�
+6�
+
+--- Page Break ---
+
+,����)��#����!��������'����������� �2�����������  ��)' ����3+��4������
+������!�� ����������>;�;�L��;>�L�>��
+�+ ������!�� ���������  �;��L��;�;
+�+ <������0� ��������!�$G"�� ���������
+�+ ������!�� ���������  �>�L��;�;
+)+ E� ���� �� ��� ��!!����; ����������� ���������� ��)����2����+
+������!�� ������������
+6�
+
+--- Page Break ---
+
+&������� +' $��������
+�+��������!�� ����������>��L����L��;>;��
+�+��������!�� ������������;�L���;�
+���%����.���" �������� ���
+�+�<����������������!�$G"�� ���������
+�+����J�%)%�K�N��;);�;�L��;)�;�L��;)��L��);�;��
+������!�� ����������  ��J�%)%�K�N��;)�L�);�;�
+�  )  !  ��
+�  �  �  �
+�  �  �  �
+�  �  �  �
+�  �  �  �
+�  �  �  �
+�
+�  �  �  �
+�  �  �  �
+�  �  �  �
+63
+
+--- Page Break ---
+
+,����)��#����!��������'����������� �2�����������  ��)' ����3+��4������
+)+ ��J�%)%�K�N��;);��L��;)��L��)�;�L��);�
+������!�� ���������  ��J�%)%�K�N��;��L�);��L�)�;
+�  )  !  ��
+�  �  �  �
+�  �  �  �
+�  �  �  �
+�  �  �  �
+�  �  �  �
+�  �  �  �
+�  �  �  �
+�  �  �  �
+�+ �3J�%)%�%�K�N��;);�;�;�L��;)���L��)����L��);�;�;�L��);�;�
+������!�� �����������3J�%)%�%�K�N�);�;�;�L��);�;�L�)��
+�  )  !  �  �6
+�  �  �  �  �
+�  �  �  �  �
+�  �  �  �  �
+�  �  �  �  �
+�  �  �  �  �
+�  �  �  �  �
+�  �  �  �  �
+�  �  �  �  �
+�  �  �  �  �
+�  �  �  �  �
+�  �  �  �  �
+�  �  �  �  �
+�  �  �  �  �
+�  �  �  �  �
+�  �  �  �  �
+�  �  �  �  �
+69
+
+--- Page Break ---
+
+&������� +' $��������
+�+���9J�%)%�%�K�N��;);�;�;�L��;)�;��L��)���L��;);��;�L��;);���L��;)��;�L��);�;�
+������!�� �����������9J�%)%�%�K�N��;);��L��;��;�L��;);�;�L��)���L��;)�;��L��);�;��
+�  )  !  �  �8  �����
+�  �  �  �  �  �;
+�  �  �  �  �  �;
+�  �  �  �  �  �
+�  �  �  �  �  �
+�  �  �  �  �  �
+�  �  �  �  �  �
+�  �  �  �  �  �;
+�  �  �  �  �  �;
+�  �  �  �  �  �
+�  �  �  �  �  �
+�  �  �  �  �  �
+�  �  �  �  �  �
+�  �  �  �  �  �
+�  �  �  �  �  �
+�  �  �  �  �  �
+�  �  �  �  �  �
+�
+,��� �' �� �)!���!������0�� ������' ����('��������� ����'! ��!� ���0�����0�!!�)��'����!� ���0����
+���!���� ���� ����'�� ����0� �����' +
+6:
+
+--- Page Break ---
+
+,����)��#����!��������'����������� �2�����������  ��)' ����3+��4������
+�+ ��J�%)%�K�N���;);��L��;)��L��)�;�L��);�
+3+ �9J�%)%�%�K�N��;);�;�;�L��;)�;��L��)���L��;);��;�L��;);���L��;)��;��L��);�;
+� ������ ��� �' �� �)!����������2��'�����)!��� ��'����� ����0������' �2�!'�������������+
+65
+
+--- Page Break ---
+
+Appendix F: Solutions
+4. Circuit design
+a. g1(a,b,c,d) = a'b'c'd + abcd + a'bcd + a'bc'd + ab'c'd + a'b'cd + abc'd + ab'cd
+Minimal expression: g1(a,b,c,d) = d
+When the K-map is filled out, it can be seen that the minimal solution is simply d. No logic is needed at
+all! Hopefully, you did not try to write the truth table and implement it with a multiplexer. This illustrates
+why even though a multiplexer can implement any circuit, the logic should be analyzed first.
+a'b' a'b ab ab'
+00 01 11 10
+c'd' 0 0 0 0
+00
+c'd 1 1 1 1
+01
+cd 1 1 1 1
+11
+cd' 0 0 0 0
+10
+b. g2(a,b,c,d) = a'bc'd + a'b'cd' + ab'cd
+For this problem, first the K-map shows that this is the minimal expression. Then the truth table is
+constructed to determine the input values for an 8-to-1 mux implementation.
+a b c d g2 Mux Input
+0 0 0 0 0 0
+0 0 0 1 0 0
+0 0 1 0 1 d'
+0 0 1 1 0 d'
+a'b' a'b ab ab'
+00 01 11 10 0 1 0 0 0 d
+c'd' 0 0 0 0 0 1 0 1 1 d
+00
+0 1 1 0 0 0
+c'd 0 1 0 0
+0 1 1 1 0 0
+01
+1 0 0 0 0 0
+cd 0 0 0 1
+11 1 0 0 1 0 0
+cd' 1 0 0 0 1 0 1 0 0 d
+10
+1 0 1 1 1 d
+1 1 0 0 0 0
+1 1 0 1 0 0
+1 1 1 0 0 0
+1 1 1 1 0 0
+87
+
+--- Page Break ---
+
+,����)��#����!��������'����������� �2�����������  ��)' ����3+��4������
+�+ �3J�%)%�%�K�N��)�;�;�L��)�;��L��)���L��)��;�L��;)�;��L��;)��
+������!�� �����������)�L�)�
+,���������!�� ������������ �����!'����)����� �������!���('����)�+�,��������)�����!���� ���0� ���
+����!��=9��������0� ������E�E���� ��!�� ��2��+
+66
+
+--- Page Break ---
+
+&������� +' $��������
+�+���9J�%)%�%�K�N��;)�;�;�L��)�;�;�L��)��;�L��);��;�L��;)�;��L��)�;��L��)���L��);��
+������!�� ����������)�;�L����
+��
+���%����4���" �������� ���
+�+��"��������������������� ����!��#�0� ����2������('������
+�+��,�N��I�
+�,�N��IJ5%���%���K�N��+�������5=���������5=�����
+)+��,�N��IJ��%���%���K�N��+�����������������������
+�+����N�5�������!��I����S�����I5�����N�����81
+,�N��I����N��+������������+������
+�+�����('���������!��#����8�� 1
+�+����N��I,
+��N��IJ+�����K�N�����<�1
+)+����N��IJ�+����������:K�N���+��-81
+�+�����N��IJ+���K�N������81
+67
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+3. Notice that Pin 3 never changes, although the state for Pin 6 and Pin 10 (the output) are indeterminate
+until it can be verified that the logic has successfully traveled through the required logic gates.
+4. The logic circuit from Exhibit 2.14 has eight logic gates. Many of these gates are in parallel, such as the
+first two inverters or the two NAND chips from IC1. The longest path for the logic to travel is what
+determines the maximum frequency that the clock can be traveled.
+So the longest delay is: (10nsec * 5) = 50 nsec
+f = 1/T = 1/(0.00000005) = 20.0 MHz
+5. Timers with times of 1, 5, and 10 seconds
+a. Recall that the timer has a delay of: t = 1.10(RC) Solving for R yields: R = t/(1.10C)
+The required values for R are found in the table, along with those that are easiest to obtain using the
+resistors from the lab kit.
+t – desired R desired R for lab t - actual
+1.0 sec 9100 Ω 9400 Ω 1.0 sec
+5.0 sec 45000 Ω 42400 Ω 4.7 sec
+10. sec 91000 Ω 100000 Ω 11 sec
+b. The first R is obtained by putting two of the 4.7 K resistors in series. The second is by putting two 4.7K
+resistors in series with a 33K resistor.
+90
+
+--- Page Break ---
+
+Appendix F: Solutions
+c. The schematic should look identical to Exhibit 6.1 with the appropriate values for R and C.
+d. Last, for the values chosen, the span for the times is calculated below.
+i. 1 second timer: 1.10(0.95 * 9400)(0.9 * 100u) < actual < 1.10(1.05 * 9400)(1.1 * 100u)
+.89 < actual value < 1.2
+ii. 5 second timer: 1.10(0.95 * 42400)(0.9 * 100u) < actual < 1.10(1.05 * 42400)(1.1 * 100u)
+4.0 < actual value < 5.4
+iii. 10 second timer: 1.10(0.95 * 100000)(0.9 * 100u) < actual < 1.10(1.05 * 100000)(1.1 * 100u)
+9.4 < actual value < 13
+6. Recall that the period of the clock is given by:
+T = t1 + t2
+= time on + time off
+= 0.693(R1 + R2)C + 0.693(R2)C
+= 0.693(R1 + 2*R2)C
+a. If R1 and R2 are both 4.7K resistors for the first clock and R1 is 4.7K and R2 is 33K for the second, the
+resulting times are:
+T(1sec) = 0.693(4700 + 4700)0.0001 + .693(4700)0.0001
+= 0.651 + 0.326
+= .98 seconds
+T(5sec) = 0.693(33000 + 4700)0.0001 + .693(33000)0.0001
+= 2.61 + 2.29
+= 4.9 seconds
+b. Time on for the 1 second clock is 0.65 seconds and off is 0.33, while time on for the 5 second clock is
+2.6 seconds and off is 2.3 seconds.
+c. The schematic will look exactly like Exhibit 6.3 with the appropriate R and C values inserted.
+91
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+Chapter 7 review exercises
+1. Recall, if either of the input values are 1, the output of the gate is 0. While the output values of Q and Q'
+may change, the input values of S and R will not for this table. So, for any row that has S set to 1, the
+corresponding value for QN' must be 0 and likewise if R is 1, QN must be 0. Using this, some values can
+immediately be determined with this information. As the output values may change, the remaining next
+state values require more examination.
+S R Q Q' QN QN'
+0 0 0 1 ? ?
+0 0 1 0 ? ?
+0 1 0 1 0 ?
+0 1 1 0 0 ?
+1 0 0 1 ? 0
+1 0 1 0 ? 0
+1 1 0 1 0 0
+1 1 1 0 0 0
+Row 1: Q' is 1, causing Q to be 0 leaving Q' 1.
+Row 2: Q is 1, causing Q' to be 0 leaving Q 1For rows 1 and 2, the state of Q and Q' does not change.
+Row 3 & 4: QN and S are 0, causing QN ' to be 1. QN ' at 1 means QN is 0.For rows 3 and 4, the latch is
+reset.
+Row 5 & 6: QN ' and R are 0, causing QN to be 1. QN at 1 means QN' is 0. For rows 5 and 6, the latch is set.
+Row 7 & 8: QN and QN' are not inverse values of each other, which explains why these states are not used
+for the latch. Final stable values are provided in the second truth table.
+S R Q Q' QN QN'
+0 0 0 1 0 1
+0 0 1 0 1 0
+0 1 0 1 0 1
+0 1 1 0 0 1
+1 0 0 1 1 0
+1 0 1 0 1 0
+1 1 0 1 0 0
+1 1 1 0 0 0
+92
+
+--- Page Break ---
+
+Appendix F: Solutions
+2. For the SR latch constructed with NAND gates, recall that the NAND gate will have an output of 1 if either
+of the input values is 0. In this manner, some of the next state values may be determined immediately.
+S R Q Q' QN QN'
+0 0 0 1 1 1
+0 0 1 0 1 1
+0 1 0 1 1 ?
+Now, the remaining undetermined rows are examined. 0 1 1 0 1 ?
+1 0 0 1 ? 1
+1 0 1 0 ? 1
+1 1 0 1 ? ?
+1 1 1 0 ? ?
+Rows 1 & 2: Both QN and QN ' are 1, not inverses of one another.These states are not used.
+Rows 3 & 4: QN is 1 and R is 1, so QN ' will be 0. These are the set states.
+Rows 5 & 6: QN ' is 1 and S is 1, so QN will be 0. These are the reset states.
+Row 7: S and Q' are 1, so QN will stay 0. QN is 0 and R is 1, so QN ' stays 1
+Row 8: R and Q are 1, so QN ' will stay 0. QN ' is 0 and S is 1, so QN stays 1.Rows 7 and 8 are t stable states
+where the output values do not change.
+S R Q Q' QN QN'
+0 0 0 1 1 1
+0 0 1 0 1 1
+0 1 0 1 1 0
+Final values are provided in the second truth table. 0 1 1 0 1 0
+1 0 0 1 0 1
+1 0 1 0 0 1
+1 1 0 1 ? ?
+1 1 1 0 ? ?
+3. As the NAND gate is an active low gate, meaning if either input is 0, the output will go high, some of the
+values of the table can be determined immediately (these are bolded).
+NAND1 can be determined by D and C (italic).
+Where the values of NAND1 and C are known, the value of NAND2 can be determined (highlighted in
+yellow).
+Where NAND1 or NAND2 are known to be 0, the corresponding gates NAND3 and NAND4 must be 1
+(shown in light blue).
+93
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+D C Q Q' 1 2 3/QN 4/QN'
+0 0 0 1 1 1 ? ?
+0 0 1 0 1 1 ? ?
+0 1 0 1 1 0 ? 1
+0 1 1 0 1 0 ? 1
+1 0 0 1 1 1 ? ?
+1 0 1 0 1 1 ? ?
+1 1 0 1 0 1 1 ?
+1 1 1 0 0 1 1 ?
+Now treat NAND1 as the S input and NAND2 as the R input to the NAND SR latch (NAND3 and NAND4)
+and use the work from the previous problem.
+Rows 1 & 5: Similar to row 7 from problem 2.
+Rows 2 & 6: Similar to row 8 from problem 2.
+The states for Rows 1, 2, 5 and 6 do not change.
+Row 3: Similar to row 5 from problem 2.
+Row4: Similar to row 6 from problem 2.
+Rows 3 and 4 correspond to the reset state.
+Row 7: Similar to row 3 from problem 2.
+Row 8: Similar to row 4 from problem 2.
+Rows 7 and 8 correspond to the set state.
+D C Q Q' 1 2 3/QN 4/QN'
+0 0 0 1 1 1 0 1
+0 0 1 0 1 1 1 0
+0 1 0 1 1 0 0 1
+0 1 1 0 1 0 0 1
+1 0 0 1 1 1 0 1
+1 0 1 0 1 1 1 0
+1 1 0 1 0 1 1 0
+1 1 1 0 0 1 1 0
+Note than when C is low, the state of the flip-flop can never change. Also, due to the addition of NAND1
+and NAND2, there is never a time when the inputs reach a state that should not be used, as with the SR
+latches that must avoid certain states. So when C is low, the state remains constant and when C is high,
+the state tracks the D input. The final values are given in the second truth table.
+4. When the clear line is low, the value of Q will be low regardless of the state of D. When the value of Clear
+is high, the value of Q will be equal to the value of D at the time of the rising clock edge.
+94
+
+--- Page Break ---
+
+&������� +' $��������
+�  �DE�.  /
+�  �  �
+�  �  �
+�  �  �
+�  �  �
+���%����8���" �������� ���
+�+�>���'����0� ������'����������)�'���%� �������'� ���'!���� ����� � ���)�'���������!��#��'!�������0�!!+�,����
+0�'!������� �� � �������'� ����� �)���!��#�������� �����������������2����!������ ����0� ��+
+�+��
+3+��
+7:
+
+--- Page Break ---
+
+,����)��#����!��������'����������� �2�����������  ��)' ����3+��4������
+9+ ,0���!����!��������������� ���������� ��!!���'�������)!��� � ��+
+/��/� � /��/� /�/� /�/� � /��/�� /��/� /�/� /�/��
+�� �� �� �� �� �� �� ��
+�� �  �  �  � �� �  �  �  �
+� �
+:+�
+� �  �  �  � � �  �  �  �
+� �
+/��J�%/�%/�K /��J�* /�%/�K�N�/ � �
+,���������!�� �������������V� E ���� V�;V�;�L� ;V�;V��L� V�V��L� ;V�V��0���������� �2����������!+���� �
+����������%� ���������� �� ���!!�0��'�������'! ��!� ��� �����!���� � ������' ����� �����������!����!��+�,���
+���� ��!����!�����('�������2�!'�� �� �����)�� �#�������� !��������� ����!����!���� ��!��V�;+
+&����)��� ��)�������'!�0����'����� ����' %��������'��� �� � ���$�!�� ���!������� ������ ����������� �)� �
+���� ���!�����!�� ��������+
+5+�
+75
+
+--- Page Break ---
+
+&������� +' $��������
+�  �
+=+��,���� � ��������������3�� � ������� ���('��������!����!���+  � �T�3�TN�� 
+,���� � ���������� �'���+�,�����  ����� ���0�!!�����'��� ���������������� ����0� ��'�'����� � ��+
+���%����;���" �������� ���
+�  3
+�+����� � ���������� �� �����=��� � ���0�!!���('����3��!����!���+�  � �T�=�TN�� 
+�+��B� ������  ����!����' �%���!�� ���� �� ����� � ������2�������' � ���� ������� �����  �� � �%���� ���<�
+�����0�!!�)����9 ����� ���!�+
+)+��B� �������  ����!����' %� �����0�!!�)��9� � �!����' �%���� ���<������0�!!�)��9 9��('����+
+�+��B� ���<��!����!���%����)� �� ���������<��������' �� �� ����!����!��%� �����0�'!����0�)��5���
+� � �����' �2�!'��� ���� ������+
+3 9
+�+����� � ���������� �� ������9��� � ���0�!!���('����9��!����!���+  � �T��9�TN�� 
+�+�B� ������  ����!����' �%���!�� ���� �� ����� � ������2�������' � ���� ������� �����  �� � �%���� ���<�
+�����0�!!�)����9 9���� ���!�+
+)+��B� �������  ����!����' %� �����0�!!�)��:� � �!����' �+�,���<������0�!!�)��6 9���� ���!��%�0���������
+�� ���'�0��!��+���� ��������%��! ���� ��������1� ���� �����('������'!��)��� �!����+
+�+��A��������<��!����!���0� ���9�� � ��� �� ���('�����9��!����!���%� �����0�'!��)���� � �!����6�� � �����' �+�
+G��������' ���������<����' ������������� ����!����!���+
+3+��
+9+����� � ���������� ��2������ ���� � ���!�� ������ �������������������������������������������������+ �
+,������������  ����!����' +
+7=
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+a.
+b. Of the 8 possible states, 101 and 100 are not represented.
+c.
+Q1'Q0' Q1'Q0 Q1Q0 Q1Q0' Q1'Q0' Q1'Q0 Q1Q0 Q1Q0'
+00 01 11 10 00 01 11 10
+Q2' 0 0 1 0 Q2' 0 1 1 0
+d. 0 0
+Q2 0 0 1 1 Q2 0 0 1 0
+1 1
+Q2N(Q2,Q1,Q0) = Q1Q0 + Q2Q1 Q1N(Q2,Q1,Q0) = Q1Q0 + Q2'Q0
+Q1'Q0' Q1'Q0 Q1Q0 Q1Q0'
+00 01 11 10
+Q2' 1 1 1 0
+0
+Q2 0 0 0 0
+1
+Q0N(Q2,Q1,Q0) = Q2'Q1' + Q2'Q0
+5. The two bit sequence 00 → 01 → 11 → 10 → 00 is a Gray code. Gray codes only have one bit change for
+each transition.
+98
+
+--- Page Break ---
+
+Appendix F: Solutions
+a.
+Q1'Q0' Q1'Q0 Q1Q0 Q1Q0' Q1'Q0' Q1'Q0 Q1Q0 Q1Q0'
+00 01 11 10 00 01 11 10
+Q2' 0 0 0 1 Q2' 0 1 1 1
+b. 0 0
+Q2 0 1 1 1 Q2 0 0 0 1
+1 1
+Q2N(Q2,Q1,Q0) = Q1Q0' + Q2Q0 Q1N(Q2,Q1,Q0) = Q1Q0' + Q2'Q0
+Q1'Q0' Q1'Q0 Q1Q0 Q1Q0'
+00 01 11 10
+Q2' 1 1 0 0
+0
+Q2 0 0 1 1
+1
+Q0N(Q2,Q1,Q0) = Q2'Q1' + Q2Q1
+6. A two bit counter is to be built that will count forward, 00 → 01 → 10 → 11 → 00, when a logical input is
+set high and counts in reverse order when it is low.
+a.
+99
+
+--- Page Break ---
+
+This book is licensed under a Creative Commons Attribution 3.0 License
+Q1'Q0' Q1'Q0 Q1Q0 Q1Q0' Q1'Q0' Q1'Q0 Q1Q0 Q1Q0'
+00 01 11 10 00 01 11 10
+x' 1 0 1 0 x' 1 0 0 1
+0 0
+b.
+x 0 1 0 1 x 1 0 0 1
+1 1
+Q1N(x,Q1,Q0) = x'Q0'Q1'+xQ1'Q0 +x'Q1Q0+x'Q1Q0' Q0N(x,Q1,Q0) = Q0'
+7. A two bit counter is to be built that will count forward, 00 → 01 → 10 → 11 → 00, when a logical input is
+set high and as a Gray code when it is low (00 → 01 → 11 → 10 → 00).
+a.
+Q1'Q0' Q1'Q0 Q1Q0 Q1Q0' Q1'Q0' Q1'Q0 Q1Q0 Q1Q0'
+00 01 11 10 00 01 11 10
+x' 0 1 1 0 x' 1 1 0 0
+0 0
+b.
+x 0 1 0 1 x 1 0 0 1
+1 1
+Q1N(x,Q1,Q0) = x'Q0 + Q1'Q0 + xQ1Q0 Q0N(x,Q1,Q0) = x'Q1' + xQ0'
+For more quality open textbooks www.textbookequity.org
+"Fearlessly copy, print, remix" (tm)
+100
