@@ -1,0 +1,843 @@
+1
+.
+.
+.
+Berkeley)
+ 
+Professor in
+ 
+Contemporary Logic Design
+ 
+and are used with permission
+ 
+sources
+ 
+ntegrated Circuits: A Design Perspective
+Digital I
+ 
+.
+Introductory Digital Systems Laboratory
+flops, Latches and Registers)flops, Latches and Registers)) from Chapter 2 of R. Katz, G. Borriello.
+--
+L4: Sequential Building BlocksL4: Sequential Building Blocks
+(Flip  
+(Flip
+Acknowledgements:Prof. Randy Katz (Unified Microelectronics Corporation DistinguishedElectrical Engineering and Computer Science at the University of California,and Prof. Gaetano Borriello (University of Washington Department of ComputerScience & Engineering2nd ed. Prentice-Hall/Pearson Education, 2005.J. Rabaey, A. Chandrakasan, B. NikolicPrentice Hall/Pearson, 2003.
+Materials in this lecture are courtesy of the following
+L4: 6.111 Spring 2006
+
+--- Page Break ---
+
+2
+  0   1   M-1
+in in in
+Circuit
+Introductory Digital Systems Laboratory
+Combinational
+Combinational Logic ReviewCombinational Logic Review
+  0   1   N-1
+ 
+in in in
+Combinational logic circuits are memorylessNo feedback in combinational logic circuitsOutput assumes the function implemented by theOutputs can have multiple logical transitions
+       
+   logic network, assuming that the switchingtransients have settled before settling to the correct value
+L4: 6.111 Spring 2006
+
+--- Page Break ---
+
+3
+Outputs
+Next state
+Memory element
+D
+CLK
+ 
+LOGIC
+Registers
+Q
+Introductory Digital Systems Laboratory
+COMBINATIONAL
+A Sequential SystemA Sequential System
+ 
+Inputs
+Sequential circuits have memory (i.e., remember the past)The current state is “held” in memory and the next state iscomputed based the current state and the current inputsIn a synchronous systems, the clock signal orchestrates thesequence of events
+     
+Current State
+  
+L4: 6.111 Spring 2006
+
+--- Page Break ---
+
+4
+Current_Sum
+clk
+  N-1
+reset D Q
+in
+Introductory Digital Systems Laboratory
+ 
+  2
+A Simple ExampleA Simple Example
+in  
+in
+Adding N inputs (N-1 Adders)
+  0   1
+Using a sequential (serial) approach
+in in
+ 
+L4: 6.111 Spring 2006
+
+--- Page Break ---
+
+5
+o2
+B  
+  o2
+= V
+ 
+= V   i1
+ 
+V
+i1
+V
+Point C isMetastable
+C Points A andB are stable(represent 0 & 1)
+δ
+A
+δ
+stabilitystability
+--
+o   i2
+1   = V  V
+o1   i2
+= VV
+  o2
+V
+  o2
+B
+= V
+  Introductory Digital Systems Laboratory
+  i 1
+V
+C
+  i2
+V
+  i1
+  i2
+A
+  i1
+= V
+= V   V
+ 
+o2   o1
+o1
+Implementing State: BiImplementing State: BiV
+= V
+V    
+  i 2
+V
+ 
+  o1
+V L4: 6.111 Spring 2006
+
+--- Page Break ---
+
+6
+1 0
+Q Q SR = 1 1
+SR = 0 0
+SR = 00, 10
+SR = 1 0
+0 0 ??
+Q Q
+SR = 0 1
+SR = 1 0 SR = 11
+  SR = 0 1
+FlipflopFlipflop
+   
+ 
+0 1
+Q Q SR = 0 0
+SR = 1 1
+SR = 00, 01
+Set
+Q Q 0 1 0
+Reset
+Reset (SR)Reset (SR)
+-- Q Q 1 0 0
+ 
+R 0 0 1 1 Set
+Introductory Digital Systems Laboratory
+S 0 1 0 1 Forbidden State 
+Hold
+based Setbased Set
+--
+ 
+Q Q
+Reset
+ 
+ 
+NORNORQ Q
+ 
+R S Q Q
+S R
+Flip-flop refers to a bi-stable element (edge-triggered registers are alsocalled flip-flops) – this circuit is not clocked and outputs change“asynchronously” with the inputs
+   
+S 
+R
+L4: 6.111 Spring 2006
+
+--- Page Break ---
+
+7
+Q
+hold
+ 
+sample
+ 
+hold
+ 
+sample
+LatchLatch
+--
+hold
+R
+S S
+ 
+clock
+and
+ 
+R
+Introductory Digital Systems Laboratory
+Positive DPositive D
+Q
+G
+ 
+clk
+D
+ 
+Making a Clocked Memory Element:Making a Clocked Memory Element:
+ 
+D
+CLK
+A Positive D-Latch: Passes input D to output Q when CLK ishigh and holds state when clock is low (i.e., ignores input D)A Latch is level-sensitive: invert clock for a negative latch
+   
+ 
+L4: 6.111 Spring 2006
+
+--- Page Break ---
+
+8
+Q
+1 0
+CLK
+ 
+D
+Negative Latch
+"stored value"
+Q
+0 1
+CLK
+clk
+"remember"
+ 
+Positive LatchD
+Introductory Digital Systems Laboratory
+  0
+Based Positive & Negative LatchBased Positive & Negative Latch
+out
+  clk"load"
+ 
++ sel * in
+ 
+  1
+0 1
+"data"
+SEL
+ 
+MultiplexorMultiplexor
+2:1 multiplexor0 1
+in in
+Out = sel * in
+L4: 6.111 Spring 2006
+
+--- Page Break ---
+
+9
+H L q
+nQ
+Outputs
+ 
+     
+L H q
+nQ
+   
+L H X
+nD .
+ 
+Inputs 
+     
+n-n H H L
+LE
+by MIT OpenCourseWare
+ 
+s
+Figure
+Data EnabledData Latched
+Operating Modes Introductory Digital Systems Laboratory
+74HC75 (Positive Latch)74HC75 (Positive Latch)
+1 9 8
+16 15 14 10 11
+1Q 1Q 2Q 2Q 3Q 3Q 4Q 4Q
+Q Q Q Q Q Q Q Q
+ 
+     
+D CP L1 D CP L2 D CP L3 D CP L4
+  1-2 3-4
+1D LE 2D 3D LE 4D
+   
+2 13 3 6 4 7
+L4: 6.111 Spring 2006
+
+--- Page Break ---
+
+10
+Q
+ 
+Q
+  Image by MIT OpenCourseWare.
+CLK
+D
+D
+D M Q
+Q
+CLK
+Q
+ 
+Triggered RegisterTriggered RegisterQ
+--
+0 1
+Slave CLK
+Q
+D G
+Positive latch
+M
+  M Q
+Introductory Digital Systems Laboratory
+  Q
+ 
+Q
+D G
+1 0
+CLK
+Master
+Negative latch
+ 
+ 
+D
+D
+CLK
+ 
+Building an EdgeBuilding an Edge Use negative clock phase to latch inputs into first latchUse positive clock to change outputs with second latchmaster-slave flip-flop twice as much logic
+     
+  
+Master-Slave RegisterView pair as one basic unit
+   
+ 
+L4: 6.111 Spring 2006
+
+--- Page Break ---
+
+11
+while the clock is high
+sample inputs as long as the clock is
+ 
+Triggered RegisterTriggered Register Behavior the same unless input changes
+device sample inputs on the event edge
+--  
+D Clk
+7474 7475
+Q Q Introductory Digital Systems Laboratory
+Edge triggeredTransparent latchesasserted
+Timing Diagram:
+Q Q
+ 
+C
+Clk Clk
+latch
+Latches vs. EdgeLatches vs. Edge  register  
+D D
+Level-sensitive
+register
+Bubble herefor negative
+Positive edge-triggered
+edge triggered
+7474 7475
+L4: 6.111 Spring 2006
+
+--- Page Break ---
+
+12
+level
+ 
+, low
+level
+ 
+, high
+for an edge-triggered
+ 
+cq
+edge
+ 
+for a latch)
+ 
+) 
+dq
+  su ) 
+  h
+, falling
+edge
+ 
+Minimum time after the clocking event duringwhich the input must remain stableDelay overhead of the memory element
+Periodic Event, causes state of memoryelement to changeMinimum time before the clocking event bywhich the input must be stable
+memory element can be updated on the:rising Propagation Delay (Tregister and T
+Clock: Setup Time (THold Time (T
+Introductory Digital Systems Laboratory
+  h
+T
+Important Timing ParametersImportant Timing Parameters 
+  su
+T
+ 
+stable and
+stable and
+clocking event
+Clock Input clocking event
+There is a timingduring which theto be recognized
+There is a timingduring which theinput must remainto be recognized
+input must remainunchanged in order
+"window" around theunchanged in order
+"window" around the
+L4: 6.111 Spring 2006
+
+--- Page Break ---
+
+13
+Q 1 0 Q
+Q+
+ 
+Q 0 1 Q
+Q+
+ 
+K 0 1 0 1
+         
+J 0 0 1 1
+FlopFlop
+--
+K FlipK Flip
+--
+100
+Q Q
+Introductory Digital Systems Laboratory
+The JThe J
+S R
+ 
+Eliminate the forbidden state of the SR Flip-flopUse output feedback to guarantee that R and S arenever both one
+J K
+   
+ 
+J K Q \ Q
+L4: 6.111 Spring 2006
+
+--- Page Break ---
+
+14
+Q Q Operation
+Slave
+Master
+outputs outputs
+Correct Toggle
+S R
+100
+Sample inputs while clock low
+Toggle
+ 
+1's
+Catch
+ 
+ 
+Slave RegisterSlave Register
+P
+-- P
+Reset
+ 
+Q Q
+Set
+Introductory Digital Systems Laboratory
+Is there a problem with this circuit?
+J P
+K Q
+Clk \ P \ Q
+K MasterK MasterS R
+--
+JJ
+Sample inputs while clock high
+ 
+Q Q
+φ
+J K
+CLK
+J
+K
+L4: 6.111 Spring 2006
+
+--- Page Break ---
+
+15
+Q Q
+  pLH
+K RegisterK Register t φ
+-- J K
+JK Register Logic Symbol
+φ X
+Input
+Output
+Q Q
+Triggered JTriggered J
+--
+S R
+Output Introductory Digital Systems Laboratory
+X
+Schematic
+JK Register Schematic
+ 
+φ
+J φ K
+Input
+Pulse Based EdgePulse Based Edge
+L4: 6.111 Spring 2006
+
+--- Page Break ---
+
+17
+Q
+D
+Latch Clk
+Pulse-Based Register
+Data
+Clk
+Short pulse around clock edge
+Q
+L2
+D Clk
+Triggered Registers
+Triggered Registers Introductory Digital Systems Laboratory
+--
+ 
+ 
+Q
+PulsePulse
+L1
+D Clk
+ 
+ 
+Master-Slave Latches
+Data Clk
+Ways to design an edge-triggered sequential cell:
+Pulse registers are widely used in high-performanceThe can have a negative setup time!
+   
+microprocessor chips (Sun Microsystems, AMD, Intel, etc.)
+ 
+L4: 6.111 Spring 2006
+
+--- Page Break ---
+
+16
+0
+1
+1
+1
+FlopFlop
+--
+1
+0
+1
+1
+ 
+ 
+0
+0
+0
+0
+Introductory Digital Systems Laboratory
+Flop vs. Toggle FlipFlop vs. Toggle Flip
+--
+Flip-Flop
+T (Toggle)
+D Flip-Flop
+N-1
+N   N-1
+N Q Q Q
+Q
+D FlipD FlipQ Q 0 1
+ 
+Clk
+Clk T
+D
+       
+   
+T 0 1
+D 0 1
+L4: 6.111 Spring 2006
+
+--- Page Break ---
+
+17
+Q Q
+ 
+D C
+J=1, K=0, then Q+ = 1J=0, K=1, then Q+ = 0J=1, K=1, then Q+ = Q
+J-K implemented with D
+E.g., J=K=0, then Q+ = Q
+J  
+K
+ElementsElements
+Introductory Digital Systems Laboratory
+Q
+ 
+Q Q
+ 
+J C K
+Q+ = DQ+ = J Q + K QQ+ = T Q + T Q
+D implemented with J-K
+ 
+D: J-K:T:
+Realizing Different Types of MemoryRealizing Different Types of Memory
+D
+Characteristic EquationsImplementing One FF in Terms of Another
+L4: 6.111 Spring 2006
+
+--- Page Break ---
+
+18
+1 1 1
+= D
+      + 
+0 0 0
+Q
+D 0 1
+Q
+1 X 0
+     
+1 K = D
+0 X
+D 0 1
+D 0 1 0 1 Q
+T 0 1 1 0
+1 1 X
+K X X 1 0
+      J = D
+0 0 X
+J 0 1
+X X
+D 0 1
+Q
++
+0 1 0 1 Introductory Digital Systems Laboratory
+Q
+0 0 1 1
+Design ProcedureDesign ProcedureQ
+ 
+then J = 0, K = X
+to cause the same state changes as in the original K-mapE.g., D = Q= 0, Q+ = 0
+1) Start with K-map of Q+ = ƒ(D, Q)2) Create K-maps for J and K with same inputs (D, Q)3) Fill in K-maps with appropriate values for J and K
+Implementing D FF with a J-K FF:
+Excitation Tables: What are the necessary inputs to cause a particular kind ofchange in state?
+L4: 6.111 Spring 2006
+
+--- Page Break ---
+
+19
+1 1
+10
+J
+ 
+   
+1 0
+11
+K
+ 
+   
+0 0
+01
+Introductory Digital Systems Laboratory
+ 
+    = D = JQ + KQ
+ 
+0 1
++
+00
+Q
+JK
+0 1
+Q
+Design Procedure (cont.)Design Procedure (cont.)
+ 
+to cause same behavior as J-K FF. Of course it is identicalto the characteristic equation for a J-K FF.
+its the same! that is why design procedure with D FF is simple!
+Resulting equation is the combinational logic input to D
+1) K-Map of Q+ = F(J, K, Q)2,3) Revised K-map using D's excitation table
+Implementing J-K FF with a D FF:
+L4: 6.111 Spring 2006
+
+--- Page Break ---
+
+20
+Q
+Clk
+D
+: contamination or
+minimum delaythrough logic network
+: worst case delay
+ 
+Logic Timing Parameterslogic logic,cd
+T through the combinationallogic networkT
+Logic
+Combinational
+Introductory Digital Systems Laboratory
+Q
+System Timing ParametersSystem Timing Parameters
+Clk
+D
+ 
+ 
+In
+clock to q delayminimum delay fromclock to q
+: contamination or 
+: worst case rising edge
+  : setup time
+: hold time
+cq cq, cd su h
+T T T T
+Register Timing Parameters
+L4: 6.111 Spring 2006
+
+--- Page Break ---
+
+21
+Q
+Clk
+D
+CLout
+cq su
+cq,cd
+h
+T
+T
+T
+su su2
+T T + T
+ 
+ 
+logic
++ T
+Logic  
+cq
+logic
+T
+Combinational
+Introductory Digital Systems Laboratory
+T > T
+ 
+l,cd
+cq T
+h cq,cd
+T
+T T
+su
+Q
+T
+Clk
+D
+ 
+ 
+System Timing (I): Minimum PeriodSystem Timing (I): Minimum Period
+In
+IN
+FF1
+CLK
+CLout
+L4: 6.111 Spring 2006
+
+--- Page Break ---
+
+22
+Q
+Clk
+D
+CLout
+h
+T hold
+> T
+ 
+Logic
+logic,cd
+Combinational + T
+ 
+Introductory Digital Systems Laboratory
+cq,cd
+T
+  l,cd
+h
+T
+T
+cq,cd
+su
+Q T
+T
+Clk
+D
+ 
+ 
+System Timing (II): Minimum DelaySystem Timing (II): Minimum Delay
+In
+IN
+FF1
+CLK
+CLout
+L4: 6.111 Spring 2006
+
+--- Page Break ---
+
+23
+100
+clocking event that is,
+ 
+the rising edge of the clock
+all measurements are made
+from the
+IN
+Q0 Q1
+CLK
+Tphl40ns25ns
+RegisterRegisterTh
+5ns
+-- OUT
+Tsu Q1
+20ns  
+Introductory Digital Systems Laboratory
+ShiftShift DQ
+Th Tw 25nsTplh25ns13ns  
+5ns
+Q0
+ 
+Tsu
+20ns
+DQ  
+D Q Shift-register
+Typical parameters for Positive edge-triggered D Register
+CLK   IN
+  CLK
+
+
+L4: 6.111 Spring 2006

@@ -1,0 +1,268 @@
+Lecture 10
+Digital Logic Design
+-- Basics
+
+--- Page Break ---
+
+Logic Design
+  From now, we’ll study how a modern
+processor is built starting with basic logic
+elements as building blocks.
+  Why study logic design?
+  Understand what processors can do fast and what
+they can’t do fast (avoid slow things if you want your
+code to run fast!)
+  Background for more detailed hardware courses
+
+--- Page Break ---
+
+Logic Gates
+  Basic building blocks are logic  gates.
+  In the beginning, did ad hoc designs, and then
+saw patterns repeated, gave names
+  Can build gates with transistors and resistors
+  Then found theoretical basis for design
+  Can represent and reason about gates with
+truth tables and Boolean algebra
+  Assume know truth tables and Boolean
+algebra from a math or circuits course.
+  Section B.2 in the textbook has a review
+
+--- Page Break ---
+
+Gates
+A NOR gate
+A transistor inverter A NAND gate 
+or A NOT gate
+
+--- Page Break ---
+
+Gates and Boolean Algebra
+Five basic gates
+Truth Table
+
+--- Page Break ---
+
+Digit Display
+
+--- Page Break ---
+
+Building a Circuit
+  Use And/Or gates to implement this
+expression
+  How many gates do we use?
+  Can we use less
+
+--- Page Break ---
+
+Boolean Algebra 101
+How to simplify Boolean expression?
+
+--- Page Break ---
+
+Boolean Algebra (1)
+  Using just ‘0’ and ‘1’s (after George Boole)
+  Truth Table
+  A Boolean function with  n  variables has only 2^n
+possible input combinations
+  A table with 2^n rows
+
+--- Page Break ---
+
+Boolean Algebra (2)
+  Algebra representations
+
+--- Page Break ---
+
+Boolean Algebra (3)
+Another example with 3 inputs
+
+--- Page Break ---
+
+Boolean Algebra (4)
+  All Boolean functions can be implemented by
+logic gates (AND, OR, NOT) and vice versa.
+  Boolean operations
+  AND: XY,  X ^ Y, X &Y
+  OR: X+Y, X v Y, X | Y
+  NOT: X,  X’, /X, \X
+Order: NOT, AND, OR
+
+--- Page Break ---
+
+Basics
+  P1: X = 0 or X = 1
+  P2: 0 . 0 = 0
+  P3: 1 + 1 = 1
+  P4: 0 + 0 = 0
+  P5: 1 . 1 = 1
+  P6: 1 . 0 = 0 . 1 = 0
+  P7: 1 + 0 = 0 + 1 = 1
+
+--- Page Break ---
+
+Boolean Laws
+  T1 : Commutative Law
+  A + B = B + A
+  A B = B A
+  T2 : Associate Law
+  (A + B) + C = A + (B + C)
+  (A B) C = A (B C)
+
+--- Page Break ---
+
+Boolean Laws
+  T3 : Distributive Law
+  A (B + C) = A B + A C
+  A + (B C) = (A + B) (A + C)
+  T4 : Identity Law
+  A + A = A
+  A A = A
+
+--- Page Break ---
+
+Laws
+  T6 : Redundancy Law
+  A + A B = A
+  A (A + B) = A
+  T7
+  0 + A = A
+  0 A = 0
+  T8
+  1 + A = 1
+  1 A = A
+
+--- Page Break ---
+
+Other Laws
+Some identities of Boolean algebra.
+
+--- Page Break ---
+
+Example
+Idempotent theorem +
+commutative law
+distributive law
+complementarity law
+identity law
+
+--- Page Break ---
+
+Question 1
+Simplify the Boolean expression
+(A+B+C)(D+E)' + (A+B+C)(D+E) and choose the
+best answer.
+  A + B + C
+  D + E
+  A'B'C'
+  D'E'
+  None of the above
+
+--- Page Break ---
+
+Question 2
+Given the function F(X,Y,Z) = XZ + Z(X'+ XY), the
+equivalent most simplijied Boolean
+representation for F is:
+  Z + YZ
+  Z + XYZ
+  XZ
+  X + YZ
+  None of the above
+
+--- Page Break ---
+
+Question 3
+An equivalent representation for the Boolean
+expression A' + 1 is
+  A
+  A'
+  1
+  0
+
+--- Page Break ---
+
+Question 4
+Simplijication of the Boolean expression
+AB + ABC + ABCD + ABCDE + ABCDEF
+yields which of the following results?
+  ABCDEF
+  AB
+  AB + CD + EF
+  A + B + C + D + E + F
+  A + B(C+D(E+F))
+
+--- Page Break ---
+
+Question 5
+Given that F = A'B'+ C'+ D'+ E', which of the
+following represent the only correct
+expression for  F'?
+  F'= A+B+C+D+E
+  F'= ABCDE
+  F'= AB(C+D+E)
+  F'= AB+C'+D'+E'
+  F'= (A+B)CDE
+
+--- Page Break ---
+
+Deriving Complement of a Boolean
+Expression
+  DeMorgan’s  LAW:  The complement of a Boolean
+expression is formed by replacing all literals
+by their compliments;  ANDs  become  ORs,
+ORs  become  ANDs
+X + Y = X • Y X • Y = X + Y
+
+--- Page Break ---
+
+Using DeMorgan’s Law
+X  + Y = X • Y X • Y = X + Y
+X +  Y • Z = ?
+
+--- Page Break ---
+
+Question 5
+Given that F = A'B'+ C'+ D'+ E', which of the
+following represent the only correct
+expression for F'?
+  F'= A+B+C+D+E
+  F'= ABCDE
+  F'= AB(C+D+E)
+  F'= AB+C'+D'+E'
+  F'= (A+B)CDE
+
+--- Page Break ---
+
+Question 6
+Given the function F(A,B,X,Y) = AB + X'Y, the
+most simplijied Boolean representation for F'
+is
+  (AB)' + (X'Y)
+  A'B' + XY'
+  (A'+ B')(X + Y')
+  (AB + X'Y)'
+  (AB)'(X'Y)'
+
+--- Page Break ---
+
+Question 7
+Given the function F(X,Y,Z) = XZ + Z(X'+ XY), the
+equivalent, most simplijied Boolean
+representation for F is
+  Z + YZ
+  Z + XYZ
+  XZ
+  Z
+  none of the above
+
+--- Page Break ---
+
+Question 8
+Simplijication of the Boolean expression AB + A
+(BC)' yields which of following results?
+  A
+  BC
+  B
+  AB
+  (BC)'

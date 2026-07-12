@@ -1,0 +1,391 @@
+1
+.
+and are used with permission
+ 
+FSMsFSMs
+ 
+sources
+ 
+Introductory Digital Systems Laboratory
+L11: Major/MinorL11: Major/Minor
+ 
+Rex Min
+Acknowledgements:Materials in this lecture are courtesy of the following
+L11: 6.111 Spring 2006
+
+--- Page Break ---
+
+2
+QuizQuiz
+Introductory Digital Systems Laboratory
+ 
+Understand the difference between latches, registers and unclockedmemory elements (e.g., SR-Flip Flop)Different memory types: SR, D, JK, TUnderstand setup/hold/propagation delay and how they are computedImpact of Clock skew on timingContinuous assignments, blocking vs. non-blocking, etc.
+         
+z z z z z
+Combinational Logic: Boolean Algebra, Karnaugh Maps, MSP, MPS,dealing with don’t caresLatches and Edge Triggered Registers/Flip-flopsSystem Timing (minimum clock period and hold time constraint)Counters and simple FSMs (understand how the ‘163 and ‘393 work)FSM design (Mealy/Moore, dealing with glitches)Combinational and sequential Verilog coding
+           
+     
+Quiz will be Closed Book Tuesday, March 21, 2006,7:30pm-9:30pm in 32-155 Covers Problem Sets 1-3,Lectures 1-10 (through Analog), Labs 1-3Some of the topics to be covered include
+   
+ 
+L11: 6.111 Spring 2006
+
+--- Page Break ---
+
+3
+Quiz (cont.)Quiz (cont.)
+Introductory Digital Systems Laboratory
+ 
+When are glitches OK?How do you deal with glitches in digital system design? (registeredoutputs, appropriate techniques to gate a clock, etc.)Understand differences between DRAM vs. SRAM vs. EEPROMUnderstand timing and interfacing to the 6264Number representation: sign – magnitude, Ones complement, TwoscomplementAdder Structures: Ripple carry, Carry Bypass Adder, Carry LookaheadAdderFalse Paths and Delay EstimationShift/add multiplier, Baugh-Wooley Multiplier (Twos complementmultiplication)Basics of ADC and DAC, interfaces
+                 
+z z z z z z z z z
+Tri-states basicsDealing with glitchesMemory BasicsArithmetic Analog Design
+         
+    
+L11: 6.111 Spring 2006
+
+--- Page Break ---
+
+4
+9
+S
+ 
+8
+S
+ 
+7 3
+3 c
+S
+d
+    3
+is a “sub-FSM” that
+6 a    
+3
+S b x
+...d
+x
+ 
+5   2
+2 c
+S
+d
+    2
+4 a  
+2
+S b
+ 
+3 Introductory Digital Systems Laboratory
+S
+ 
+2 1
+c
+Toward FSM ModularityToward FSM ModularityS 1
+d
+    1
+ 
+1 a
+1  
+S b
+No! The outputs may be the same, but thenext-state transitions are not.
+0
+Consider the following abstract FSM:S Suppose that each set of states aproduces exactly the same outputs.Can we simplify the FSM by removing equivalent states?This situation closely resembles a procedure call or function callin software...how can we apply this concept to FSMs?
+       
+   
+L11: 6.111 Spring 2006
+
+--- Page Break ---
+
+5
+RESETCLK
+Minor FSM AMinor FSM B
+A B
+A B
+BUSY BUSY
+START START
+a good thing)
+ 
+Introductory Digital Systems Laboratory
+always
+Major FSM
+ 
+The Major/Minor FSM AbstractionThe Major/Minor FSM Abstraction
+ 
+CLK START: tells the minor FSM to begin operation (the call)BUSY: tells the major FSM whether the minor is done (the return)Modular designs (Tasks that occur often but in different contextsTasks that require a variable/unknown period of timeEvent-driven systems
+           
+RESET      
+Subtasks are encapsulated in minor FSMs with commonreset and clockSimple communication abstraction:The major/minor abstraction is great for...
+     
+  
+L11: 6.111 Spring 2006
+
+--- Page Break ---
+
+6
+4
+4
+S
+S
+ 
+3
+S
+BUSY
+ 
+3
+S  
+3
+BUSY is done
+S
+3. Wait until
+the minor FSM
+ 
+BUSY 3
+S
+ 
+2
+S
+BUSY
+START  
+2
+S
+it’s started)
+minor FSM
+2. Trigger the(and make sure
+Introductory Digital Systems Laboratory
+BUSY
+ 
+2
+S
+ 
+1
+Inside the Major FSMInside the Major FSM
+S
+BUSY
+ 
+1
+is ready S
+1. Wait until
+the minor FSM
+ 
+ 
+ 
+... CLK
+State
+BUSY
+START
+Major FSM
+L11: 6.111 Spring 2006
+
+--- Page Break ---
+
+7
+4
+4
+1
+T S speed
+can we T
+BUSY this up?
+ 
+3  
+1
+S
+T
+3
+T  
+ 
+BUSY 3 4
+S
+T
+ 
+2. Do some useful work3  
+3
+S
+T
+2
+T
+BUSY
+ 
+2  
+2
+S
+T
+START Introductory Digital Systems Laboratory
+ 
+2  
+1
+S
+T
+1
+T
+BUSY
+Inside the Minor FSMInside the Minor FSMSTART
+ 
+1  
+1
+S
+T
+     
+CLK
+work is done State State
+major FSM 3. Signal to themajor FSM that BUSY
+1. Wait for a
+START
+trigger from the
+Major FSM Minor FSM
+L11: 6.111 Spring 2006
+
+--- Page Break ---
+
+8
+2
+T
+BUSY
+4
+T
+ 
+BUSY
+START
+Bad idea #2:1
+T
+BUSY never asserts!BUSY
+START
+3
+T
+BUSY
+1 4
+T
+BUSY
+2
+T
+BUSY
+Introductory Digital Systems Laboratory
+3
+T
+BUSY
+START
+2
+Optimizing the Minor FSMOptimizing the Minor FSM1
+T
+T BUSY
+BUSY Bad idea #1: 
+START
+Good idea: de-assert BUSY one cycle early
+ 
+START
+may not immediately return to T
+ 
+4 1
+T T
+BUSY
+START
+L11: 6.111 Spring 2006
+
+--- Page Break ---
+
+9
+  B
+AB
++BUSY
+  A
+WT
+  C
+BUSY
+  B
+  B
+BUSY
+BUSY 
+C
+  A BUSY 
+Major FSM is triggered byTICKMinors A and B are startedsimultaneouslyMinor C is started once bothA and B completeTICKs arriving before thecompletion of C are ignored  A C
+       
+ 
+Operating Scenario:      B ST
+BUSY START
+BUSY
+  A B
++BUSY
+AB   C
+  A
+STSTARTSTART
+BUSY BUSY
+Minor FSM AMinor FSM BMinor FSM C  B
+FSM ExampleFSM Example
+ 
+--
+C
+A B C
+A B C
+WT
+Introductory Digital Systems Laboratory
+and BUSY  
+ 
+  A
+BUSY BUSY BUSY   C
+START START START
+TICK
+A FourA Four BUSY
+loop forever!   C
+BUSY
+both rise before either minor
+FSM completes. Otherwise, we
+Assume that BUSY
+ 
+ 
+ 
+Major FSM
+TICK
+IDLE
+TICK L11: 6.111 Spring 2006
+
+--- Page Break ---
+
+10
+  AB
+ST
+ 
+IDLE
+ 
+IDLE
+ 
+  C
+WT
+ 
+  C
+WT
+ 
+  C
+WT
+ 
+  C
+ST
+Minor FSM AMinor FSM BMinor FSM C 
+  C
+ST
+  A   A   B   B   C   C  
+  AB
+BUSY BUSY BUSY
+STARTSTART START WT
+  AB
+WT 
+  AB
+WT 
+Introductory Digital Systems Laboratory
+  AB
+ST
+ 
+FSM Sample WaveformFSM Sample Waveform
+Major FSM
+--   AB
+ST
+ 
+IDLE
+ 
+FourFour
+TICK
+IDLE  
+A B C
+A B C
+tick
+state
+BUSY BUSY BUSY
+START START START
+L11: 6.111 Spring 2006

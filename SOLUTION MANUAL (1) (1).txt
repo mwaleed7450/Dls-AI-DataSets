@@ -1,0 +1,7073 @@
+Chapter 2
+2.1. The proof is as follows:
+(x + y) · (x + z) = xx + xz + xy + yz
+= x + xz + xy + yz
+= x(1 + z + y) + yz
+= x · 1 + yz
+= x + yz
+2.2. The proof is as follows:
+(x + y) · (x + y) = xx + xy + xy + yy
+= x + xy + xy + 0
+= x(1 + y + y)
+= x · 1
+= x
+2.3. Proof using Venn diagrams:
+x y x y
+z z
+x x + y
+x y x y
+z z
+y ⋅ z x + z
+x y x y
+z z
+x + y ⋅ z ( x + y) ( x + z)
+2-1
+
+--- Page Break ---
+
+2.4. Proof of 15a using Venn diagrams:
+x y x y
+x ⋅ y x
+x y x y
+x ⋅ y y
+x y
+x ⋅ y
+A similar proof is constructed for 15b.
+2.5. Proof using Venn diagrams:
+x1 x2 x1 x2
+x3 x3
+x1 + x2 + x3 x1 + x2
+x1 x2
+x3
+x1 + x2 + x3
+x1 x2
+x3
+( x1 + x2 + x3) ⋅ ( x1 + x2 + x3)
+2-2
+
+--- Page Break ---
+
+2.6. A possible approach for determining whether or not the expressions are valid is to try to manipulate the left
+and right sides of an expression into the same form, using the theorems and properties presented in section
+2.5. While this may seem simple, it is an awkward approach, because it is not obvious what target form one
+should try to reach. A much simpler approach is to construct a truth table for each side of an expression. If
+the truth tables are identical, then the expression is valid. Using this approach, we can show that the answers
+are:
+(a) Yes
+(b) Yes
+(c) No
+2.7. Timing diagram of the waveforms that can be observed on all wires of the circuit:
+A
+x C
+2
+f
+B
+x
+3
+x D
+1
+x
+1
+x
+2
+x
+3
+A
+B
+C
+D
+f
+2-3
+
+--- Page Break ---
+
+2.8. Timing diagram of the waveforms that can be observed on all wires of the circuit:
+x C
+1
+x
+3
+f
+A
+D
+x
+2
+B
+x
+1
+x
+2
+x
+3
+A
+B
+C
+D
+f
+2.9. Starting with the canonical sum-of-products for f get
+f = x1x2x3 + x1x2x3 + x1x2x3 + x1x2x3 + x1x2x3 + x1x2x3 + x1x2x3
+= x1(x2x3 + x2x3 + x2x3 + x2x3) + x2(x1x3 + x1x3 + x1x3 + x1x3)
++x3(x1x2 + x1x2 + x1x2 + x1x2)
+= x1(x2(x3 + x3) + x2(x3 + x3)) + x2(x1(x3 + x3) + x1(x3 + x3))
++x3(x1(x2 + x2) + x1(x2 + x2))
+= x1(x2 · 1 + x2 · 1) + x2(x1 · 1 + x1 · 1) + x3(x1 · 1 + x1 · 1)
+= x1(x2 + x2) + x2(x1 + x1) + x3(x1 + x1)
+= x1 · 1 + x2 · 1 + x3 · 1
+= x1 + x2 + x3
+2.10. Starting with the canonical product-of-sums for f can derive:
+f = (x1 + x2 + x3)(x1 + x2 + x3)(x1 + x2 + x3)(x1 + x2 + x3) ·
+(x1 + x2 + x3)(x1 + x2 + x3)(x1 + x2 + x3)
+= ((x1 + x2 + x3)(x1 + x2 + x3))((x1 + x2 + x3)(x1 + x2 + x3)) ·
+((x1 + x2 + x3)(x1 + x2 + x3))((x1 + x2 + x3)(x1 + x2 + x3))
+= (x1 + x2 + x3x3)(x1 + x2 + x3x3) ·
+(x1 + x2 + x3x3)(x1 + x2x2 + x3)
+= (x1 + x2)(x1 + x2)(x1 + x2)(x1 + x3)
+2-4
+
+--- Page Break ---
+
+= (x1 + x2x2)(x1 + x2x3)
+= x1(x1 + x2x3)
+= x1x1 + x1x2x3
+= x1x2x3
+2.11. Derivation of the minimum sum-of-products expression:
+f = x1x3 + x1x2 + x1x2x3 + x1x2x3
+= x1(x2 + x2)x3 + x1x2(x3 + x3) + x1x2x3 + x1x2x3
+= x1x2x3 + x1x2x3 + x1x2x3 + x1x2x3 + x1x2x3
+= x1x3 + (x1 + x1)x2x3 + (x1 + x1)x2x3
+= x1x3 + x2x3 + x2x3
+2.12. Derivation of the minimum sum-of-products expression:
+f = x1x2x3 + x1x2x4 + x1x2x3x4
+= x1x2x3(x4 + x4) + x1x2x4 + x1x2x3x4
+= x1x2x3x4 + x1x2x3x4 + x1x2x4 + x1x2x3x4
+= x1x2x3 + x1x2(x3 + x3)x4 + x1x2x4
+= x1x2x3 + x1x2x4 + x1x2x4
+2.13. The simplest POS expression is derived as
+f = (x1 + x3 + x4)(x1 + x2 + x3)(x1 + x2 + x3 + x4)
+= (x1 + x3 + x4)(x1 + x2 + x3)(x1 + x2 + x3 + x4)(x1 + x2 + x3 + x4)
+= (x1 + x3 + x4)(x1 + x2 + x3)((x1 + x2 + x4)(x3 + x3))
+= (x1 + x3 + x4)(x1 + x2 + x3)(x1 + x2 + x4) · 1
+= (x1 + x3 + x4)(x1 + x2 + x3)(x1 + x2 + x4)
+2.14. Derivation of the minimum product-of-sums expression:
+f = (x1 + x2 + x3)(x1 + x2 + x3)(x1 + x2 + x3)(x1 + x2 + x3)
+= ((x1 + x2) + x3)((x1 + x2) + x3)(x1 + (x2 + x3))(x1 + (x2 + x3))
+= (x1 + x2)(x2 + x3)
+2.15. (a) Location of all minterms in a 3-variable Venn diagram:
+m0
+x1 x2
+m6
+m4 m2
+m7
+m5 m3
+x3
+m1
+2-5
+
+--- Page Break ---
+
+(b) For f = x1x2x3 + x1x2 + x1x3 have:
+x1 x2 x1 x2 x1 x2
+x3 x3 x3
+x ⋅ x2 ⋅ x x1 ⋅ x2 x ⋅ x
+1  3 1  3
+Therefore, f is represented as:
+x1 x2
+x3
+f = x3 + x1x2
+2.16. The function in Figure 2.18 in Venn diagram form is:
+x1 x2
+x3
+2.17. In Figure P2.1a it is possible to represent only 14 minterms. It is impossible to represent the minterms
+x1x2x3x4 and x1x2x3x4.
+In Figure P2.1b, it is impossible to represent the minterms x1x2x3x4 and x1x2x3x4.
+2.18. Venn diagram for f = x1x2x3x4 + x1x2x3x4 + x1x2 is
+x4
+x1 x2 x1 x2
+x3 x3
+2-6
+
+--- Page Break ---
+
+2.19. The simplest SOP implementation of the function is
+f = x1x2x3 + x1x2x3 + x1x2x3 + x1x2x3
+= (x1 + x1)x2x3 + x1(x2 + x2)x3
+= x2x3 + x1x3
+2.20. The simplest SOP implementation of the function is
+f = x1x2x3 + x1x2x3 + x1x2x3 + x1x2x3 + x1x2x3
+= x1(x2 + x2)x3 + x1(x2 + x2)x3 + (x1 + x1)x2x3
+= x1x3 + x1x3 + x2x3
+Another possibility is
+f = x1x3 + x1x3 + x1x2
+2.21. The simplest POS implementation of the function is
+f = (x1 + x2 + x3)(x1 + x2 + x3)(x1 + x2 + x3)
+= ((x1 + x3) + x2)((x1 + x3) + x2)(x1 + x2 + x3)
+= (x1 + x3)(x1 + x2 + x3)
+2.22. The simplest POS implementation of the function is
+f = (x1 + x2 + x3)(x1 + x2 + x3)(x1 + x2 + x3)(x1 + x2 + x3)
+= ((x1 + x2) + x3)((x1 + x2) + x3)((x1 + x3) + x2)((x1 + x3) + x2)
+= (x1 + x2)(x1 + x3)
+2.23. The lowest cost circuit is defined by
+f (x1, x2, x3) = x1x2 + x1x3 + x2x3
+2-7
+
+--- Page Break ---
+
+2.24. The truth table that corresponds to the timing diagram in Figure P2.3 is
+x1 x2 x3 f
+0 0 0 1
+0 0 1 0
+0 1 0 0
+0 1 1 1
+1 0 0 0
+1 0 1 1
+1 1 0 1
+1 1 1 0
+The simplest SOP expression is f = x1x2x3 + x1x2x3 + x1x2x3 + x1x2x3.
+2.25. The truth table that corresponds to the timing diagram in Figure P2.4 is
+x1 x2 x3 f
+0 0 0 0
+0 0 1 1
+0 1 0 1
+0 1 1 1
+1 0 0 1
+1 0 1 0
+1 1 0 0
+1 1 1 1
+The simplest SOP expression is derived as follows:
+f = x1x2x3 + x1x2x3 + x1x2x3 + x1x2x3 + x1x2x3
+= x1(x2 + x2)x3 + x1x2(x3 + x3) + (x1 + x1)x2x3 + x1x2x3
+= x1 · 1 · x3 + x1x2 · 1 + 1 · x2x3 + x1x2x3
+= x1x3 + x1x2 + x2x3 + x1x2x3
+2-8
+
+--- Page Break ---
+
+2.26. (a)
+x1 x0 y1 y0 f
+0 0 0 0 1
+0 0 0 1 0
+0 0 1 0 0
+0 0 1 1 0
+0 1 0 0 0
+0 1 0 1 1
+0 1 1 0 0
+0 1 1 1 0
+1 0 0 0 0
+1 0 0 1 0
+1 0 1 0 1
+1 0 1 1 0
+1 1 0 0 0
+1 1 0 1 0
+1 1 1 0 0
+1 1 1 1 1
+(b) The simplest POS expression is
+f = (x1 + y1)(x1 + y1)(x0 + y0)(x0 + y0)
+2.27. (a)
+x1 x0 y1 y0 f
+0 0 0 0 1
+0 0 0 1 0
+0 0 1 0 0
+0 0 1 1 0
+0 1 0 0 1
+0 1 0 1 1
+0 1 1 0 0
+0 1 1 1 0
+1 0 0 0 1
+1 0 0 1 1
+1 0 1 0 1
+1 0 1 1 0
+1 1 0 0 1
+1 1 0 1 1
+1 1 1 0 1
+1 1 1 1 1
+2-9
+
+--- Page Break ---
+
+(b) The canonical SOP expression is
+f = x1x0y1y0 + x1x0y1y0 + x1x0y1y0 + x1x0y1y0 + x1x0y1y0 + x1x0y1y0
++x1x0y1y0 + x1x0y1y0 + x1x0y1y0 + x1x0y1y0
+(c) The simplest SOP expression is
+f = x1x0 + y1y0 + x1y0 + x0y1
+2.28. Using the ciruit in Figure 2.25a as a starting point, the function in Figure 2.24 can be implemented using
+NAND gates as follows:
+f
+x1
+x2
+x3
+2.29. Using the ciruit in Figure 2.25b as a starting point, the function in Figure 2.24 can be implemented using
+NOR gates as follows:
+x3
+x2
+x1
+f
+2-10
+
+--- Page Break ---
+
+2.30. The circuit in Figure 2.33 can be implemented using NAND and NOR gates as follows:
+x1
+x3
+g
+x2
+x4
+f
+h
+∑ 
+2.31. The minimum-cost SOP expression for the function f (x1, x2, x3) =  m(3, 4, 6, 7) is
+f = x1x3 + x2x3
+The corresponding circuit implemented using NAND gates is
+x1
+x3
+f
+x2
+∑ 
+2.32. A minimum-cost SOP expression for the function f (x1, x2, x3) =  m(1, 3, 4, 6, 7) is
+f = x1x2 + x1x3 + x1x3
+The corresponding circuit implemented using NAND gates is
+x2
+x1
+f
+x3
+2-11
+
+--- Page Break ---
+
+∑ 
+2.33. The minimum-cost POS expression for the function f (x1, x2, x3) =  m(3, 4, 6, 7) is
+f = (x1 + x3)(x2 + x3)
+The corresponding circuit implemented using NOR gates is
+x1
+x3 f
+x2
+∑ 
+2.34. The minimum-cost POS expression for the function f (x1, x2, x3) =  m(1, 3, 4, 6, 7) is
+f = (x1 + x3)(x1 + x2 + x3)
+The corresponding circuit implemented using NOR gates is
+x
+1
+f
+x
+2
+x
+3
+2.37. The circuit in Figure 2.25a can be implemented using;
+module prob2 37 (x1, x2, x3, f);
+input x1, x2, x3;
+output f;
+not (notx1, x1);
+not (notx2, x2);
+not (notx3, x3);
+and (a, notx1, notx2, x3);
+and (b, notx1, x2, notx3);
+and (c, x1, notx2, notx3);
+and (d, x1, x2, x3);
+or (f, a, b, c, d);
+endmodule
+2-12
+
+--- Page Break ---
+
+2.38. The circuit in Figure 2.25b can be implemented using;
+module prob2 38 (x1, x2, x3, f);
+input x1, x2, x3;
+output f;
+not (notx1, x1);
+not (notx2, x2);
+not (notx3, x3);
+or (a, x1, x2, x3);
+or (b, notx1, notx2, x3);
+or (c, notx1, x2, notx3);
+or (d, x1, notx2, notx3);
+and (f, a, b, c, d);
+endmodule
+2.39. The simplest circuit is obtained in the POS form as
+f = (x1 + x2 + x3)(x1 + x2 + x3)
+Verilog code that implements the circuit is
+module prob2 39 (x1, x2, x3, f);
+input x1, x2, x3;
+output f;
+or (g, x1, x2, x3);
+or (h, ∼x1, ∼x2, ∼x3);
+and (f, g, h);
+endmodule
+2.40. The simplest circuit is obtained in the SOP form as
+f = x2 + x1x3 + x1x3
+Verilog code that implements the circuit is
+module prob2 40 (x1, x2, x3, f);
+input x1, x2, x3;
+output f;
+assign f = ∼x2 | (∼x1 & x3) | (x1 & ∼x3);
+endmodule
+2-13
+
+--- Page Break ---
+
+2.41. The Verilog code is
+module prob2 41 (x1, x2, x3, x4, f1, f2);
+input x1, x2, x3, x4;
+output f1, f2;
+assign f1 = (x1 & ∼x3) | (x2 & ∼x3) | (∼x3 & ∼x4) | (x1 & x2) | (x1 & ∼x4);
+assign f2 = (x1 | ∼x3) & (x1 | x2 | ∼x4) & (x2 | ∼x3 | ∼x4);
+endmodule
+2.42. The Verilog code is
+module prob2 42 (x1, x2, x3, x4, f1, f2);
+input x1, x2, x3, x4;
+output f1, f2;
+assign f1 = (x1 & x3) | (∼x1 & ∼x3) | (x2 & x4) | (∼x2 & ∼x4);
+assign f2 = (x1 & x2 & ∼x3 & ∼x4) | (∼x1 & ∼x2 & x3 & x4) |
+(x1 & ∼x2 & ∼x3 & x4) | (∼x1 & x2 & x3 & ∼x4);
+endmodule
+2-14
+
+--- Page Break ---
+
+Chapter 3
+3.1. (a) x x x f
+1  2  3 
+0 0 0 0
+0 0 1 1
+0 1 0 1
+0 1 1 0
+1 0 0 1
+1 0 1 0
+1 1 0 0
+1 1 1 1
+(b) 
+#transistors = NOT gates × 2 + AND gates × 8 + OR gates
+= 3 × 2 + 4 × 8 + 1 × 10 = 48
+3.2. (a) In problem 3.1 the canonical SOP for f is
+f = x1x2x3 + x1x2x3 + x1x2x3 + x1x2x3
+This expression is equivalent to f in Figure P3.2, as derived below.
+x1
+x2
+x2 x3 + x2 x3
+x1 x x3 + x1 x x3 +
+2  2 
+x3 x
+3
+x1 x x3 + x1 x x3
+2  2 
+x2 x3 + x2 x3
+(b) Assuming the multiplexers are implemented using transmission gates
+#transistors = NOT gates × 2 + MUXes × 6
+= 1 × 2 + 3 × 6 = 20
+3-1
+
+--- Page Break ---
+
+3.3. (a) A SOP expression for f in Figure P3.3 is:
+f = (x1 ⊕ x2) ⊕ x3
+= (x1 ⊕ x2)x3 + (x1 ⊕ x2)x3
+= x1x2x3 + x1x2x3 + x1x2x3 + x1x2x3
+which is equivalent to the expression derived in problem 3.2.
+(b) Assuming the XOR gates are implemented as shown in Figure 3.61b
+#transistors = XOR gates × 8
+= 2 × 8 = 16
+3.4. Using the circuit
+The number of transistors needed is 16.
+3.5. Using the circuit
+The number of transistors needed is 20.
+3.6. (a) 
+x1 x2 x3 f
+0 0 0 1
+0 0 1 1
+0 1 0 1
+0 1 1 1
+1 0 0 1
+1 0 1 0
+1 1 0 0
+1 1 1 0
+3-2
+
+--- Page Break ---
+
+(b) The canonical SOP expression is
+f = x1x2x3 + x1x2x3 + x1x2x3 + x1x2x3 + x1x2x3
+The number of transistors required using only AND, OR, and NOT gates is
+#transistors = NOT gates × 2 + AND gates × 8 + OR gates × 12
+= 3 × 2 + 5 × 8 + 1 × 12 = 58
+3.7. (a) 
+x1 x2 x3 x4 f x1 x2 x3 x4 f
+0 0 0 0 1 1 0 0 0 1
+0 0 0 1 0 1 0 0 1 0
+0 0 1 0 0 1 0 1 0 0
+0 0 1 1 0 1 0 1 1 0
+0 1 0 0 1 1 1 0 0 0
+0 1 0 1 0 1 1 0 1 0
+0 1 1 0 0 1 1 1 0 0
+0 1 1 1 0 1 1 1 1 0
+(b)
+f = x1x2x3x4 + x1x2x3x4 + x1x2x3x4
+= x1x3x4 + x2x3x4
+The number of transistors required using only AND, OR, and NOT gates is
+#transistors = NOT gates × 2 + AND gates × 8 + OR gates × 4
+= 4 × 2 + 2 × 8 + 1 × 4 = 28
+3.8.
+VDD
+Vx
+1
+Vx
+3
+Vx
+2
+V f
+3-3
+
+--- Page Break ---
+
+3.9. V 
+f
+Vx
+3
+Vx
+4
+Vx
+1
+Vx
+2
+3.10. Minimum SOP expression for f is
+f = x2x3 + x1x3 + x2x4 + x1x4
+= (x1 + x2)(x3 + x4)
+which leads to the circuit
+VDD
+V f
+Vx
+1
+Vx
+3
+Vx
+2
+Vx
+4
+3.11. Minimum SOP expression for f is
+f = x4 + x1x2x3
+which leads to the circuit
+3-4
+
+--- Page Break ---
+
+VDD
+V f
+Vx
+4
+Vx
+1
+Vx
+2
+Vx
+3
+3.12.
+VDD VDD
+V f
+V x
+V y
+V z
+3-5
+
+--- Page Break ---
+
+3.13.
+VDD VDD
+V y
+V x
+V z
+V y V z
+V f
+V z V  V y
+y
+V x V z
+3.14. (a) Since VDS ≥ VGS − VT the NMOS transistor is operating in the saturation region:
+1 ′ W 2
+ID =  kn (VGS − VT )
+2  L 
+μA 2 
+= 10  × 5 × (5 V − 1 V) = 800 μA
+V2 
+(b) In this case VDS < VGS − VT , thus the NMOS transistor is operating in the triode region:
+[ ]
+′ W 1 2
+ID = kn (VGS − VT )VDS −  V DS
+L 2 
+[ ]
+μA 1 2
+= 20  × 5 × (5 V − 1 V) × 0.2 V −  × (0.2 V) = 78 μA
+V2  2 
+3.15. (a) Since VDS ≤ VGS − VT the PMOS transistor is operating in the saturation region:
+1 ′ W 2
+ID =  kp (VGS − VT )
+2  L 
+μA 2 
+= 5  × 5 × (−5 V + 1 V) = 400 μA
+V2 
+(b) In this case VDS > VGS − VT , thus the PMOS transistor is operating in the triode region:
+[ ]
+′ W 1 2
+ID = kp (VGS − VT )VDS −  V DS
+L 2 
+[ ]
+μA 1 2
+= 10  × 5 × (−5 V + 1 V) × (−0.2) V −  × (−0.2 V) = 39 μA
+V2  2 
+3-6
+
+--- Page Break ---
+
+3.16.
+[ ]
+′ W
+RDS = 1/ kn (VGS − VT )
+L 
+[ ]
+mA
+= 1/ 0.020  × 10 × (5 V − 1 V) = 1.25 kΩ
+V2 
+3.17.
+[ ]
+′ W
+RDS = 1/ kn (VGS − VT )
+L 
+[ ]
+mA
+= 1/ 0.040  × 10 × (3.3 V − 0.66 V) = 947 Ω
+V2 
+3.18. Since VDS < (VGS − VT ), the PMOS transistor is operating in the saturation region:
+1 ′ W 2
+ISD =  kp (VGS − VT )
+2  L 
+μA 2 
+= 50  × (−5 V + 1 V) = 800 μA
+V2 
+Hence the value of RDS is
+RDS = VDS /IDS
+= 4.8 V/800 μA = 6 kΩ
+3.19. Since VDS < (VGS − VT ), the PMOS transistor is operating in the saturation region:
+1 ′ W 2
+ISD =  kp (VGS − VT )
+2  L 
+μA 2 
+= 80  × (−3.3 V + 0.66 V) = 558 μA
+V2 
+Hence the value of RDS is
+RDS = VDS /IDS
+= 3.2 V/558 μA = 5.7 kΩ
+3.20. The low output voltage of the pseudo-NMOS inverter can be obtained by setting Vx = VDD and evaluating
+the voltage Vf . First we assume that the NMOS transistor is operating in the triode region while the PMOS
+is operating in the saturation region. For simplicity we will assume that the magnitude of the threshold
+voltages for both the NMOS and PMOS transistors are equal, so that
+VT = VT N = −VT P
+The current flowing through the PMOS transistor is
+1 ′ Wp 2
+ID =  kp (−VDD − VT P )
+2  Lp
+1 2
+=  kp(−VDD − VT P )
+2 
+1 2
+=  kp(VDD − VT )
+2 
+3-7
+
+--- Page Break ---
+
+Similarly, the current going through the NMOS transistor is
+[ ]
+′ Wn 1 2
+ID = kn (Vx − VT N )Vf −  V f
+Ln 2 
+[ ]
+1 2
+= kn (Vx − VT N )Vf −  V f
+2 
+[ ]
+1 2
+= kn (VDD − VT )Vf −  V f
+2 
+Since there is only one path for current to flow, we can equate the currents flowing through the NMOS and
+PMOS transistors and solve for the voltage Vf .
+[ ]
+2  1 2
+kp(VDD − VT ) = 2kn (VDD − VT )Vf −  V f
+2 
+2  2
+kp(VDD − VT ) − 2kn(VDD − VT )Vf + knV f = 0
+This quadratic equation can be solved using the standard formula, with the parameters
+2
+a = kn, b = −2kn(VDD − VT ), c = kp(VDD − VT )
+which gives
+√ 
+−b b2 c
+Vf =  ± − 
+2a  4a2  a
+√
+kp
+= (VDD − VT ) ± (VDD − VT )2 −  (VDD − VT )2
+kn
+[ √ ]
+kp
+= (VDD − VT ) 1 ± 1 − 
+kn
+Only one of these two solutions is valid, because we started with the assumption that the NMOS transistor
+is in the triode region while the PMOS is in the saturation region. Thus
+[ √ ]
+kp
+Vf = (VDD − VT ) 1 − 1 − 
+kn
+3.21. (a)
+1 ′ Wp 2
+Istat =  kp (VDD − VT )
+2  Lp
+μA 2 
+= 12  × 1 × (5 V − 1 V) = 192 μA
+V2 
+(b)
+[ ]
+′ Wn
+RDS = 1/ kn (VGS − VT )
+Ln
+[ ]
+mA
+= 1/ 0.060  × 4 × (5 V − 1 V) = 1.04 kΩ
+V2 
+(c) Using the expression derived in problem 3.20
+′ Wp μA
+kp = kp = 24 
+Lp V2
+′ Wn μA
+kn = kn = 240 
+Ln V2
+3-8
+
+--- Page Break ---
+
+[ √ ]
+24
+VOL = Vf = (5 V − 1 V) 1 − 1 − 
+240
+= 0.21 V
+(d)
+PD = Istat VDD
+= 192 μA × 5 V = 960 μW ≈ 1mW
+(e)
+RSD P = VSD /ISD
+= (VDD − Vf )/Istat
+= (5 V − 0.21 V)/0.192 mA = 24.9 kΩ
+(f ) The low-to-high propagation delay is
+1.7C
+tpLH = 
+Wp
+kp′ VDD
+Lp 
+1.7 × 70 fF
+=  = 0.99 ns
+μA
+24  2 × 1 × 5 V 
+V
+The high-to-low propagation delay is
+1.7C
+tpHL = 
+Wn
+kn ′ VDD
+Ln 
+1.7 × 70 fF
+=  = 0.1 ns
+μA
+60  2 × 4 × 5 V 
+V
+3.22. (a)
+1 ′ Wp 2
+Istat =  kp (VDD − VT )
+2  Lp
+μA 2 
+= 48  × 1 × (5 V − 1 V) = 768 μA
+V2 
+(b)
+[ ]
+′ Wn
+RDS = 1/ kn (VGS − VT )
+Ln
+[ ]
+mA
+= 1/ 0.060  × 4 × (5 V − 1 V) = 1.04 kΩ
+V2 
+(c) Using the expression derived in problem 3.20
+′ Wp μA ′ Wn μA
+kp = kp = 96  kn = kn = 240 
+Lp V2  Ln V2
+3-9
+
+--- Page Break ---
+
+[ √ ]
+96
+VOL = Vf = (5 V − 1 V) 1 − 1 − 
+240
+= 0.90 V
+(d)
+PD = Istat VDD
+= 768 μA × 5 V = 3840 μW ≈ 3.8mW
+(e)
+RSD P = VSD /ISD
+= (VDD − Vf )/Istat
+= (5 V − 0.90 V)/0.768 mA = 5.34 kΩ
+(f ) The low-to-high propagation delay is
+1.7C
+tpLH = 
+Wp
+kp′ VDD
+Lp 
+1.7 × 70 fF
+=  = 0.25 ns
+μA
+96  2 × 1 × 5 V 
+V
+The high-to-low propagation delay is
+1.7C
+tpHL = 
+Wn
+kn ′ VDD
+Ln 
+1.7 × 70 fF
+=  = 0.1 ns
+μA
+60  2 × 4 × 5 V 
+V
+3.23. (a)
+1 ′ Wp 2
+Istat =  kp (VDD − VT )
+2  Lp
+μA 2 
+= 12  × 1 × (5 V − 1 V) = 192 μA
+V2 
+(b) The two NMOS transistors in series can be considered equivalent to a single transistor with twice the
+length. Thus
+[ ]
+′ Wn
+RDS = 1/ kn (VGS − VT )
+Ln
+[ ]
+mA
+= 1/ 0.060  × 2 × (5 V − 1 V) = 2.08 kΩ
+V2 
+(c) Using the expression derived in problem 3.20
+′ Wp μA
+kp = kp = 24 
+Lp V2
+′ Wn μA
+kn = kn = 120 
+Ln V2
+3-10
+
+--- Page Break ---
+
+[ √ ]
+24
+VOL = Vf = (5 V − 1 V) 1 − 1 − 
+120
+= 0.42 V
+(d)
+PD = Istat VDD
+= 192 μA × 5 V = 960 μW ≈ 1mW
+(e)
+RSD P = VSD /ISD
+= (VDD − Vf )/Istat
+= (5 V − 0.42 V)/0.192 mA = 23.9 kΩ
+(f ) The low-to-high propagation delay is
+1.7C
+tpLH = 
+Wp
+kp′ VDD
+Lp 
+1.7 × 70 fF
+=  = 0.99 ns
+μA
+24  2 × 1 × 5 V 
+V
+The high-to-low propagation delay is
+1.7C
+tpHL = 
+Wn
+kn ′ VDD
+Ln 
+1.7 × 70 fF
+=  = 0.2 ns
+μA
+60  2 × 2 × 5 V 
+V
+3.24. (a)
+1 ′ Wp 2
+Istat =  kp (VDD − VT )
+2  Lp
+μA 2 
+= 12  × 1 × (5 V − 1 V) = 192 μA
+V2 
+(b) The two NMOS transistors in parallel can be considered equivalent to a single transistor with twice the
+width. Thus
+[ ]
+′ Wn
+RDS = 1/ kn (VGS − VT )
+Ln
+[ ]
+mA
+= 1/ 0.060  × 8 × (5 V − 1 V) = 520 Ω
+V2 
+(c) Using the expression derived in problem 3.20
+′ Wp μA
+kp = kp = 24 
+Lp V2
+′ Wn μA
+kn = kn = 480 
+Ln V2
+3-11
+
+--- Page Break ---
+
+[ √ ]
+24
+VOL = Vf = (5 V − 1 V) 1 − 1 − 
+480
+= 0.10 V
+(d)
+PD = Istat VDD
+= 192 μA × 5 V = 960 μW ≈ 1mW
+(e)
+RSD P = VSD /ISD
+= (VDD − Vf )/Istat
+= (5 V − 0.10 V)/0.192 mA = 25.5 kΩ
+(f ) The low-to-high propagation delay is
+1.7C
+tpLH = 
+Wp
+kp′ VDD
+Lp 
+1.7 × 70 fF
+=  = 0.99 ns
+μA
+24  2 × 1 × 5 V 
+V
+The high-to-low propagation delay is
+1.7C
+tpHL = 
+Wn
+kn ′ VDD
+Ln 
+1.7 × 70 fF
+=  = 0.05 ns
+μA
+60  2 × 8 × 5 V 
+V
+3.25. (a)
+NM H = VOH − VIH = 0.5 V
+NM L = VIL − VOL = 0.7 V
+(b)
+VOL = 8 × 0.1 V = 0.8 V
+NML = 1 V − 0.8 V = 0.2 V
+3.26. Under steady-state conditions, for an n-input CMOS NAND gate the voltage levels VOL and VOH are 0 V
+and VDD , respectively. No current flows in a CMOS gate in the steady-state. Thus there can be no voltage
+drop across any of the transistors.
+3.27. (a)
+2
+PN OT gate = f CV 
+2 
+= 75 MHz × 150 fF × (5 V) = 281 μW
+(b)
+Ptotal = 0.2 × 250, 000 × 281 μW = 14 W
+3-12
+
+--- Page Break ---
+
+3.28. (a)
+2
+PN OT gate = f CV 
+2 
+= 125 MHz × 120 fF × (3.3 V) = 163 μW
+(b)
+Ptotal = 0.2 × 250, 000 × 163 μW = 8.2 W
+3.29. (a) The high-to-low propagation delay is
+1.7C 1.7 × 150 fF
+tpHL =  =  = 0.255 ns
+Wn μA
+kn ′ VDD 20  2 × 10 × 5 V 
+Ln  V
+(b) The low-to-high propagation delay is
+1.7C 1.7 × 150 fF
+tpLH =  =  = 0.638 ns
+Wp μA
+kp′ VDD 8 V2 × 10 × 5 V 
+Lp 
+(c) For equivalent high-to-low and low-to-high delays
+tpHL = tpLH
+1.7C 1.7C
+= 
+Wn Wp
+kn ′ VD D  k′ VD D
+Ln  p Lp 
+′
+kn
+W
+Wp kp′ n
+=
+Lp Ln
+12.5 μm
+= 
+0.5 μm
+3.30. (a) The high-to-low propagation delay is
+1.7C 1.7 × 150 fF
+tpHL =  =  = 0.193 ns
+Wn μA
+kn ′ VDD 40  2 × 10 × 3.3 V 
+Ln  V
+(b) The low-to-high propagation delay is
+1.7C 1.7 × 150 fF
+tpLH =  =  = 0.483 ns
+Wp μA
+kp′ VDD 16 V2 × 10 × 3.3 V 
+Lp 
+(c) For equivalent high-to-low and low-to-high delays
+tpHL = tpLH
+1.7C 1.7C
+= 
+Wn Wp
+kn ′ VD D  k′ VD D
+Ln  p Lp 
+′
+kn
+W
+Wp kp′ n
+=
+Lp Ln
+8.75 μm
+= 
+0.35 μm
+3-13
+
+--- Page Break ---
+
+3.31. The two PMOS transistors in a CMOS NAND gate are connected in parallel. The worst case current to drive
+the output high happens when only one of these transistors is turned “ON”. Thus each transistor has to have
+Wp
+the same dimensions as the PMOS transistor in the inverter, namely  = 4.
+Lp 
+Wn
+The two NMOS transistors are connected in series. If each one had the ratio  , then the two transistors
+Ln 
+Wn
+could be thought of as one equivalent transistor with a  ratio. Thus each NMOS transistor must have
+2Ln 
+Wn
+twice the width of that in the inverter, namely  = 4.
+Ln 
+3.32. The two NMOS transistors in a CMOS NOR gate are connected in parallel. The worst case current to drive
+the output low happens when only one of these transistors is turned “ON”. Thus each transistor has to have
+Wn
+the same dimensions as the NMOS transistor in the inverter, namely  = 2.
+Ln 
+Wp
+The two PMOS transistors are connected in series. If each of these transistors had the ratio  , then the
+Lp 
+Wp
+two transistors could be thought of as one transistor with a  ratio. Thus each PMOS transistor must be
+2Lp 
+Wn
+made twice as wide as that in the inverter, namely  = 8.
+Ln 
+3.33. The worst case path in the PMOS network contains two transistors in series. Thus each PMOS transistor
+must be twice as wide the transistors in the inverter. The worst case path in the NMOS network also contains
+two transistors in series. Similarly, each NMOS transistor must be twice as wide as those in the inverter.
+3.34. The worst case PMOS path contains three transistors in series so each transistor must be three times as wide
+as the PMOS transistors in the inverter. The worst case NMOS path contains two transistors in series. Thus
+the NMOS transistors must be two times as wide.
+3.35. (a) The current flowing through the inverter is equal to the current flowing through the PMOS transistor. We
+shall assume that the PMOS transistor is operating in the saturation region.
+1 ′ Wp 2
+Istat =  kp (VGS − VT p)
+2  Lp
+μA 2 
+= 120  × ((3.5 V − 5 V) + 1 V) = 30 μA
+V2 
+(b) The current flowing through the NMOS transistor is equal to the static current Istat. Assume that the
+NMOS transistor is operating in the triode region.
+[ ]
+′ Wn 1 2
+Istat = kn (VGS − VT n)VDS −  V DS
+Ln 2 
+[ ]
+μA 1 2
+30 μA = 240  × 2.5 V × Vf −  V f
+V2  2 
+2
+1 = 20Vf − 4V f
+Solving this quadratic equation yields Vf = 0.05 V. Note that the output voltage Vf satisfies the assumption
+that the PMOS transistor is operating in the saturation region while the NMOS transistor is operating in the
+triode region. (c) The static power dissipated in the inverter is
+PS = IstatVDD = 30 μA × 5 V = 150 μW
+(d) The static power dissipated by 250,000 inverters.
+250, 000 × Ps = 37.5 W
+3-14
+
+--- Page Break ---
+
+3.36.
+x1 x2 x3 
+NOR plane
+VDD
+VDD
+P1
+P2
+P3
+P4
+NOR plane
+f1 f2
+3.37.
+x1 x2 x3 
+NOR plane
+VDD
+VDD
+P1
+P2
+P3
+P4
+NOR plane
+f1 f2
+3-15
+
+--- Page Break ---
+
+3.38.
+x1 x2 x3 
+NOR plane
+VDD
+VDD
+S1
+S2
+S3
+S4
+NOR plane
+f1 f2
+3.39.
+x1 x2 x3 
+NOR plane
+VDD
+VDD
+S1
+S2
+S3
+S4
+NOR plane
+f1 f2
+3-16
+
+--- Page Break ---
+
+3.40. x1 x2 x3
+NOR plane
+VDD VDD
+VDD
+VDD
+VDD
+f
+NOR plane 1
+3.41. x1 x2 x3
+NOR plane
+VDD VDD
+VDD
+VDD
+VDD
+f
+NOR plane 1
+3-17
+
+--- Page Break ---
+
+3.42.
+f2 = m1
+f2 = m2
+f2 = m4
+f2 = m7
+f2 = m1 + m2
+f2 = m1 + m4
+f2 = m1 + m7
+f2 = m2 + m4
+f2 = m2 + m7
+f2 = m4 + m7
+f2 = m1 + m2 + m4
+f2 = m1 + m2 + m7
+f2 = m1 + m4 + m7
+f2 = m2 + m4 + m7
+f2 = m1 + m2 + m4 + m7
+3.43.
+f2 = m0
+f2 = m3
+f2 = m5
+f2 = m6
+f2 = m0 + m3
+f2 = m0 + m5
+f2 = m0 + m6
+f2 = m3 + m4
+f2 = m3 + m6
+f2 = m5 + m6
+f2 = m0 + m3 + m5
+f2 = m0 + m3 + m6
+f2 = m0 + m5 + m6
+f2 = m3 + m5 + m6
+f2 = m0 + m3 + m5 + m6
+3-18
+
+--- Page Break ---
+
+3.44.
+x 0
+1 x x
+0 1  2
+1
+x2
+0 0
+x x + x x
+1 1  2  1  3
+1
+x 0 1
+1
+0
+0
+0 x1 x3
+x x x + x x + x x
+3 1 1  2  1  3  2  3
+1
+1
+1
+0
+x2
+x x
+0 2  3
+1
+x3
+0
+3.45. The canonical SOP for f is
+f = x1x2x3 + x1x2x3 + x1x2x3 + x1x2x3 + x1x2x3
+This expression can be manipulated into
+f = x1x2 + x1x3 + x1x2
+= x2 + x1x3
+The circuit is
+x 0
+1 x x
+0 1  3
+1 0
+x3
+0 1 x2 + x1 x3
+1
+1
+x2
+3.46. The canonical SOP for f is
+f = x1x2x4 + x2x3x4 + x1x2x3
+This expression can be manipulated into
+f = x2 · (x1x4 + x3x4) + x2 · (x1x3)
+Using functional decomposition we have
+f = x2f1 + x2f2
+where
+f1 = x1x4 + x3x4
+f2 = x1x3
+3-19
+
+--- Page Break ---
+
+The circuit is
+x1
+x1 x4 + x3 x4
+x3
+x4
+x1 x2 x4 + x2 x3 x4 + x1 x2 x3
+0
+x1
+x1 x3
+x3
+x2
+3.47. The canonical SOP for f is
+f = x1x2x4 + x2x3x4 + x1x2x3
+This expression can be manipulated into
+f = x2 · (x1x4 + x3x4) + x2 · (x1x3)
+Using functional decomposition we have
+f = x2f1 + x2f2
+where
+f1 = x1x4 + x3x4
+f2 = x1x3
+The function f1 requires one 2-LUT, while f2 requires three 2-LUTs. We then need three additional 3-LUTs
+to realize f , as illustrated in the circuit
+x1 x1 x4
+x4
+x1 x4 + x3 x4
+x1 x2 x + x3 x2 x4
+4 
+x3
+x4 x3 x4
+x1 x2 x4 + x2 x3 x4 + x1 x2 x3
+x2
+x1 x2 x3
+x1 x x
+1  3
+x3
+3.48.
+g = x2x3
+h = x1
+j = x2
+k = x3
+3-20
+
+--- Page Break ---
+
+3.49. (a) x x
+2 0  1
+x1 • 0 + x1 x2
+x3 x1 x2 + x3 • 1 = x1 x2 + x3
+1
+1 1 1 x3
+(b) 
+0 0 0
+x3
+0
+x3 • 0 + x3 ( x1 + x2) = x1 x3 + x2 x3
+x x2 + x1 • 1 = x1 + x2
+1 
+x2 1 x1
+3.50. (a) 
+x1
+x1 x2
+x2
+1
+x1 x2 • x3 = x1 x2 + x3
+1
+x3
+1
+x3
+1
+3-21
+
+--- Page Break ---
+
+(b)
+x1
+x1 x2 x4
+x2
+x4
+x1 x2 x4 • x1 • x2 x3 x = x1 x2 x4 + x1 + x2 x3 x4
+4
+x1
+x2
+x3
+x2 x3 x
+4
+x4
+1
+x
+1 4
+3.51. module prob2 51 (x1, x2, x3, x4, f);
+input x1, x2, x3, x4;
+output f;
+assign f = (x2 & ∼x3 & ∼x4) | (∼x1 & x2 & x4) | (∼x1 & x2 & x3) | (x1 & x2 & x3);
+endmodule
+3.52. module prob2 52 (x1, x2, x3, x4, f);
+input x1, x2, x3, x4;
+output f;
+assign f = (x1 | x2 | ∼x4) & (∼x2 | x3 | ∼x4) & (∼x1 | x3 | ∼x4) & (∼x1 | ∼x3 | ∼x4);
+endmodule
+3.53. module prob2 53 (x1, x2, x3, x4, x5, x6, x7, f);
+input x1, x2, x3, x4, x5, x6, x7;
+output f;
+assign f = (x1 & x3 & ∼x6) | (x1 & x4 & x5 & ∼x6) | (x2 & x3 & x7) | (x2 & x4 & x5 & x7);
+endmodule
+3.54. The circuit in Figure P3.10 is a two-input XOR gate. Since NMOS transistors are used only to pass logic 0
+and PMOS transistors are used only to pass logic 1, the circuit does nor suffer from any major drawbacks.
+3.55. The circuit in Figure P3.11 is a two-input XOR gate. This circuit has two drawbacks: when both inputs are
+0 the PMOS transistor must drive f to 0, resulting in f = VT volts. Also, when x1 = 1 and x2 = 0, the
+NMOS transistor must drive the output high, resulting in f = VDD − VT .
+3-22
+
+--- Page Break ---
+
+Chapter 4
+4.1. SOP form: f = x1x2 + x2x3
+POS form: f = (x1 + x2)(x2 + x3)
+4.2. SOP form: f = x1x2 + x1x3 + x2x3
+POS form: f = (x1 + x3)(x1 + x2)(x2 + x3)
+4.3. SOP form: f = x1x2x3x4 + x1x2x3x4 + x2x3x4
+POS form: f = (x1 + x4)(x2 + x3)(x2 + x3 + x4)(x2 + x4)(x1 + x3)
+4.4. SOP form: f = x2x3 + x2x4 + x2x3x4
+POS form: f = (x2 + x3)(x2 + x3 + x4)(x2 + x4)
+4.5. SOP form: f = x3x5 + x3x4 + x2x4x5 + x1x3x4x5 + x1x2x4x5
+POS form: f = (x3 + x4 + x5)(x3 + x4 + x5)(x2 + x3 + x4)(x1 + x3 + x4 + x5)(x1 + x2 + x4 + x5)
+4.6. SOP form: f = x2x3 + x1x5 + x1x3 + x3x4 + x2x5
+POS form: f = (x1 + x2 + x3)(x1 + x2 + x4)(x3 + x4 + x5)
+4.7. SOP form: f = x3x4x5 + x3x4x5 + x1x4x5 + x1x2x4 + x3x4x5 + x2x3x4 + x2x3x4x5
+POS form: f = (x3 + x4 + x5)(x3 + x4 + x5)(x1 + x2 + x3 + x4 + x5)
+∑ 
+4.8. f =  m(0, 7)
+∑ 
+f =  m(1, 6)
+∑ 
+f =  m(2, 5)
+∑ 
+f =  m(0, 1, 6)
+∑ 
+f =  m(0, 2, 5)
+etc.
+4.9. f = x1x2x3 + x1x2x4 + x1x3x4 + x2x3x4
+4.10. SOP form: f = x1x2x3 + x1x2x4 + x1x3x4 + x1x2x3 + x1x3x4 + x2x3x4
+POS form: f = (x1 + x2 + x3)(x1 + x2 + x4)(x1 + x3 + x4)(x2 + x3 + x4)(x1 + x2 + x3 + x4)
+The POS form has lower cost.
+∑ 
+4.11. The statement is false. As a counter example consider f (x1, x2, x3) =  m(0, 5, 7).
+Then, the minimum-cost SOP form f = x1x3 + x1x2x3 is unique.
+But, there are two minimum-cost POS forms:
+f = (x1 + x3)(x1 + x3)(x1 + x2) and
+f = (x1 + x3)(x1 + x3)(x2 + x3)
+4-1
+
+--- Page Break ---
+
+4.12. If each circuit is implemented separately:
+f = x1x4 + x1x2x3 + x1x2x4 Cost= 15
+g = x1x3x4 + x2x3x4 + x1x3x4 + x1x2x4 Cost = 21
+In a combined circuit:
+f = x2x3x4 + x1x3x4 + x1x2x3x4 + x1x2x3
+g = x2x3x4 + x1x3x4 + x1x2x3x4 + x1x2x4
+The first 3 product terms are shared, hence the total cost is 31.
+4.13. If each circuit is implemented separately:
+f = x1x2x4 + x2x4x5 + x3x4x5 + x1x2x4x5 Cost = 22
+g = x3x5 + x4x5 + x1x2x4 + x1x2x4 + x2x4x5 Cost = 24
+In a combined circuit:
+f = x1x2x4 + x2x4x5 + x3x4x5 + x1x2x4x5
+g = x1x2x4 + x2x4x5 + x3x4x5 + x1x2x4x5 + x3x5
+The first 4 product terms are shared, hence the total cost is 31. Note that in this implementation f ⊆ g, thus
+g can be realized as g = f + x3x5, in which case the total cost is lowered to 28.
+4.14. f = (x3 ↑ g) ↑ ((g ↑ g) ↑ x4) where g = (x1 ↑ (x2 ↑ x2)) ↑ ((x1 ↑ x1) ↑ x2)
+4.15. f = (((x3 ↓ x3) ↓ g) ↓ ((g ↓ g) ↓ (x4 ↓ x4)), where
+g = ((x1 ↓ x1) ↓ x2) ↓ (x1 ↓ (x2 ↓ x2)). Then, f = f ↓ f .
+4.16. f = (g ↑ k) ↑ ((g ↑ g) ↑ (k ↑ k)), where g = (x1 ↑ x1) ↑ (x2 ↑ x2) ↑ (x5 ↑ x5)
+and k = (x3 ↑ (x4 ↑ x4)) ↑ ((x3 ↑ x3) ↑ x4)
+4.17. f = (g ↓ k) ↓ ((g ↓ g) ↓ (k ↓ k)), where g = x1 ↓ x2 ↓ x5
+and k = ((x3 ↓ x3) ↓ x4) ↓ (x3 ↓ (x4 ↓ x4)). Then, f = f ↓ f .
+4.18. f = x1(x2 + x3)(x4 + x5) + x1(x2 + x3)(x4 + x5)
+4.19. f = x1x3x4 + x2x3x4 + x1x3x4 + x2x3x4 = (x1 + x2)x3x4 + (x1 + x2)x3x4
+This requires 2 OR and 2 AND gates.
+4.20. f = x1 · g + x1 · g, where g = x3x4 + x3x4
+4.21 f = g · h + g · h, where g = x1x2 and h = x3 + x4
+4.22. Let D(0, 20) be 0 and D(15, 26) be 1. Then decomposition yields:
+g = x5(x1 + x2)
+f = (x3x4 + x3x4)g + x3x4g = x3x4g + x3x4g + x3x4g
+Cost = 9 + 18 = 27
+4-2
+
+--- Page Break ---
+
+The optimal SOP form is:
+f = x3x4x5 + x1x3x4x5 + x1x2x3x4 + x1x3x4x5 + x2x3x4x5 + x2x3x4x5
+Cost = 7 + 29 = 36
+4.23. The prime implicants are generated as follows:
+List 1 List 2
+0 0 0 0 0 0,2 0 0 x 0
+0,4 0 x 0 0
+2 0 0 1 0 0,8 x 0 0 0
+4 0 1 0 0
+8 1 0 0 0 4,5 0 1 0 x
+8,9 1 0 0 x
+5 0 1 0 1
+9 1 0 0 1 5,7 0 1 x 1
+7 0 1 1 1 7,15 x 1 1 1
+15 1 1 1 1
+The initial prime implicant table is
+Prime Minterm
+implicant 0 2 4 5 7 8 9 15
+p1 0 0 x 0
+p2 0 x 0 0
+p3 x 0 0 0
+p4 0 1 0 x
+p5 1 0 0 x
+p 0 1 x 1
+6 
+p x 1 1 1
+7 
+The prime implicants p1, p5 and p7 are essential. Removing these prime implicants gives
+Prime Minterm
+implicant 4 5
+p2
+p3
+p4
+p6
+Since p4 covers both minterms, the final cover is
+C = {p1, p4, p5, p7}
+= {00x0, 010x, 100x, x111}
+4-3
+
+--- Page Break ---
+
+and the function is implemented as
+f = x1x2x4 + x1x2x3 + x1x2x3 + x2x3x4
+4.24. The prime implicants are generated as follows:
+List 1 List 2 List 3
+0 0 0 0 0 0,4 0 x 0 0 3,7,11,15 x x 1 1
+0,8 x 0 0 0 9,11,13,15 1 x x 1
+4 0 1 0 0
+8 1 0 0 0 4,6 0 1 x 0
+8,9 1 0 0 x
+3 0 0 1 1
+6 0 1 1 0 3,7 0 x 1 1
+9 1 0 0 1 3,11 x 0 1 1
+6,7 0 1 1 x
+7 0 1 1 1
+9,11 1 0 x 1
+11 1 0 1 1
+13 1 1 0 1 9,13 1 x 0 1
+15 1 1 1 1 7,15 x 1 1 1
+11,15 1 x 1 1
+13,15 1 1 x 1
+The initial prime implicant table is
+Prime Minterm
+implicant 0 4 6 8 9 15
+p1 0 x 0 0
+p2 x 0 0 0
+p3 0 1 x 0
+p4 1 0 0 x
+p5 0 1 1 x
+p6 x x 1 1
+p7 1 x x 1
+There are no essential prime implicants. Prime implicant p3 dominates p5 and their costs are the same, so
+remove p5. Similarly, p7 dominates p6, so remove p6. This gives
+Prime Minterm
+implicant 0 4 6 8 9 15
+p1
+p2
+p3
+p4
+p7
+4-4
+
+--- Page Break ---
+
+Now, p3 and p7 are essential, which leaves
+Prime Minterm
+implicant 0 8
+p
+1
+p
+2
+p
+4
+Choosing p2 results in the minimum cost cover
+C = {p2, p3, p7}
+= {x000, 01x0, 1xx1}
+and the function is implemented as
+f = x2x3x4 + x1x2x4 + x1x4
+4.25. The prime implicants are generated as follows:
+List 1 List 2 List 3
+0 0 0 0 0 0,4 0 x 0 0 0,4,8,12 x x 0 0
+0,8 x 0 0 0
+4 0 1 0 0 4,5,12,13 x 1 0 x
+8 1 0 0 0 4,5 0 1 0 x 8,9,12,13 1 x 0 x
+4,12 x 1 0 0
+3 0 0 1 1
+8,9 1 0 0 x
+5 0 1 0 1
+8,12 1 x 0 0
+9 1 0 0 1
+12 1 1 0 0 3,7 0 x 1 1
+3,11 x 0 1 1
+7 0 1 1 1
+5,7 0 1 x 1
+11 1 0 1 1
+5,13 x 1 0 1
+13 1 1 0 1
+9,11 1 0 x 1
+14 1 1 1 0
+9,13 1 x 0 1
+12,13 1 1 0 x
+12,14 1 1 x 0
+4-5
+
+--- Page Break ---
+
+The initial prime implicant table is
+Prime Minterm
+implicant 0 3 4 5 7 9 11
+p1 0 x 1 1
+p2 x 0 1 1
+p3 0 1 x 1
+p4 1 0 x 1
+p5 x x 0 0
+p6 x 1 0 x
+p7 1 x 0 x
+p8 1 1 x 0
+Prime implicant p5 is essential, so remove columns 0 and 4 to get
+Prime Minterm
+implicant 3 5 7 9 11
+p1
+p2
+p3
+p4
+p6
+p7
+Here, p3 dominates p6, and p4 dominates p7; but costs of p3 and p4 are greater than the costs of p6 and p7,
+respectively. So, use branching. First choose p3 to be in the final cover, which leads to
+Prime Minterm
+implicant 3 9 11
+p1
+p2
+p4
+p6
+p7
+Now, choose p2 and p7 (lower cost than p4) to cover the remaining minterms. The resulting cover is
+C = {p2, p3, p5, p7}
+= {x011, 01x1, xx00, 1x0x}
+4-6
+
+--- Page Break ---
+
+Next, assume that p3 is not included in the final cover, which leads to
+Prime Minterm
+implicant 3 5 7 9 11
+p1
+p2
+p4
+p6
+p7
+Then p6 is essential. Also, column 3 dominates 7, hence remove 3 giving
+Prime Minterm
+implicant 7 9 11
+p1
+p2
+p4
+p7
+Choose p1 and p4, which results in the cover
+C = {p1, p4, p5, p6}
+= {0x11, 10x1, xx00, x10x}
+Both covers have the same cost, so choosing the first cover the function can be implemented as
+f = x2x3x4 + x1x2x4 + x3x4 + x1x3
+Observe that if we had not taken the cost of prime implicants (rows) into account and pursued the dominance
+of p3 over p6 and p4 over p7, then we would have removed p6 and p7 giving the following table
+Prime Minterm
+implicant 3 5 7 9 11
+p1
+p2
+p3
+p4
+Now p3 and p4 are essential. Also choose p1, so that
+C = {p1, p3, p4, p5}
+= {0x11, 01x1, 10x1, xx00}
+The cost of this cover is greater by one literal compared to both covers derived above.
+4-7
+
+--- Page Break ---
+
+4.26. Note that X # Y = X · Y . Therefore,
+(A · B)#C = A · B · c
+(A#C) · (B#C) = A · C · B · C
+= A · B · C
+Similarly,
+(A + B)#C = (A + B) · C
+= A · C + B · C
+(A#C) + (B#C) = A · C + B · C
+0 
+4.27. The initial cover is C = {0000, 0011, 0100, 0101, 0111, 1000, 1001, 1111}.
+Using the ∗-product get the prime implicants
+P = {00x0, 0x00, x000, 010x, 01x1, 100x, x111}.
+The minimum cover is Cminimum = {00x0, 010x, 100x, x111}, which corresponds to f = x1x2x4 +
+x1x2x3 + x1x2x3 + x2x3x4.
+0 
+4.28. The initial cover is C = {0x0x0, 110xx, x1101, 1001x, 11110, 01x10, 0x011}.
+Using the ∗-product get the prime implicants
+P = {0x0x0, xx01x, x1x10, 110xx, x10x0, 11x01, x1101}.
+The minimum cover is Cmimimum = {0x0x0, xx01x, x1x10, 110xx, x1101}, which corresponds to f =
+x1x3x5 + x3x4 + x2x4x5 + x1x2x3 + x2x3x4x5.
+0 
+4.29. The initial cover is C = {00x0, 100x, x010, 1111, 00x1, 011x}.
+Using the ∗-product get the prime implicants P = {00xx, 0x1x, x00x, x0x0, x111}.
+The minimum-cost cover is Cminimum = {x00x, x0x0, x111}, which corresponds to f = x2x3 + x2x4 +
+x2x3x4.
+4.30. Expansion of x1x2x3 gives x1.
+Expansion of x1x2x3 gives x1.
+Expansion of x1x2x3 gives x1.
+Expansion of x1x2x3 gives x2x3.
+The set of prime implicants comprises x1 and x2x3.
+4.31. Expansion of x1x2x3x4 gives x2x3x4 and x1x2x4.
+Expansion of x1x2x3x4 gives x2x3x4.
+Expansion of x1x2x3x4 gives x3x4.
+Expansion of x1x2x3 gives x1x3.
+Expansion of x2x3 gives x2x3.
+The set of prime implicants comprises x2x3x4, x1x2x4, x3x4, x1x3, and x2x3.
+4.32. Representing both functions in the form of Karnaugh map, it is easy to show that f = g. The minimum cost
+SOP expression is
+f = g = x2x3x5 + x2x3x4 + x1x3x4 + x1x2x4x5.
+4-8
+
+--- Page Break ---
+
+4.33. The cost of the circuit in Figure P4.2 is 11 gates and 30 inputs, for a total of 41. The functions implemented
+by the circuit can also be realized as
+f = x1x2x4 + x2x3x4 + x1x3x4 + x1x4
+g = x1x2x4 + x2x3x4 + x1x3x4 + x2x4 + x3x4
+The first three product terms in f and g are the same; therefore, they can be shared. Then, the cost of
+implementing f and g is 8 gates and 24 inputs, for a total of 32.
+4.34. The cost of the circuit in Figure P4.3 is 11 gates and 26 inputs, for a total of 37. The functions implemented
+by the circuit can also be realized as
+f = (x2 ↑ x4) ↑ (x1 ↑ x2 ↑ x3) ↑ (x1 ↑ x2 ↑ x3) ↑ (x2 ↑ x3)
+g = (x2 ↑ x4) ↑ (x1 ↑ x2 ↑ x3) ↑ (x1 ↑ x2 ↑ x3) ↑ (x1 ↑ x1)
+The first three NAND terms in f and g are the same; therefore, they can be shared. Then, the cost of imple-
+menting f and g is 7 gates and 20 inputs, for a total of 27.
+4.35. Using gate level primitives, the circuit in Figure 4.25b can be implemented using the code
+module prob4 35 (x1, x2, x3, x4, x5, f);
+input x1, x2, x3, x4, x5;
+output f;
+or (g, x1, x2, x5);
+not (notx3, x3);
+not (notx4, x4);
+and (a, x3, notx4);
+and (b, notx3, x4);
+or (k, a, b);
+and (c, g, k);
+not (notg, g);
+not (notk, k);
+and (d, notg, notk);
+or (f, c, d);
+endmodule
+4-9
+
+--- Page Break ---
+
+4.36. Using continuous assignment, the circuit in Figure 4.25b can be implemented using the code
+module prob4 36 (x1, x2, x3, x4, x5, f);
+input x1, x2, x3, x4, x5;
+output f;
+wire g, k;
+assign g = (x1 | x2 | x5);
+assign k = (x3 & ∼x4) | (∼x3 & x4);
+assign f = (g & k) | (∼g & ∼k);
+endmodule
+4.37. Using gate level primitives, the circuit in Figure 4.27c can be implemented using the code
+module prob4 37 (x1, x2, x3, x4, x5, x6, x7, f);
+input x1, x2, x3, x4, x5, x6, x7;
+output f;
+nand (a, x1, x1);
+nand (b, x2, x3);
+nand (c, a, b);
+nand (d, x5, x5);
+nand (e, x6, x6);
+nand (g, d, e);
+nand (h, x4, g);
+nand (j, x7, x7);
+nand (k, h, j);
+nand (m, c, k);
+nand (f, m, m);
+endmodule
+4.38. Using continuous assignment, the circuit in Figure 4.27c can be implemented using the code
+module prob4 38 (x1, x2, x3, x4, x5, x6, x7, f);
+input x1, x2, x3, x4, x5, x6, x7;
+output f;
+wire a, b;
+assign a = ∼(∼x1 & ∼(x2 & x3));
+assign b = ∼(∼(x4 & ∼(∼x5 & ∼x6)) & ∼x7);
+assign f = ∼(∼(a & b));
+endmodule
+4-10
+
+--- Page Break ---
+
+4.39. Using gate level primitives, the circuit in Figure 4.28b can be implemented using the code
+module prob4 39 (x1, x2, x3, x4, x5, x6, x7, f);
+input x1, x2, x3, x4, x5, x6, x7;
+output f;
+nor (a, x2, x2);
+nor (b, x3, x3);
+nor (c, a, b);
+nor (d, x1, c);
+nor (e, x4, x4);
+nor (g, x5, x6);
+nor (h, e, g);
+nor (k, h, x7);
+nor (f, d, k);
+endmodule
+4.40. Using continuous assignment, the circuit in Figure 4.27c can be implemented using the code
+module prob4 40 (x1, x2, x3, x4, x5, x6, x7, f);
+input x1, x2, x3, x4, x5, x6, x7;
+output f;
+wire a, b;
+assign a = ∼(x1 | ∼(∼x2 | ∼x3));
+assign b = ∼(∼(∼x4 | ∼(x5 | x6)) | x7);
+assign f = ∼(a | b);
+endmodule
+4.41. Using the POS expression
+f = (x1 + x2 + x3 + x4)(x1 + x2 + x3 + x4)(x1 + x2 + x3 + x4)(x1 + x2 + x3 + x4)
+the function can be implemented using the code
+4-11
+
+--- Page Break ---
+
+module prob4 41 (x1, x2, x3, x4, f);
+input x1, x2, x3, x4;
+output f;
+not (notx1, x1);
+not (notx2, x2);
+not (notx3, x3);
+not (notx4, x4);
+or (a, x1, x2, notx3, notx4);
+or (b, x1, notx2, notx3, x4);
+or (c, notx1, x2, notx3, x4);
+or (d, notx1, notx2, x3, notx4);
+and (f, a, b, c, d);
+endmodule
+4.42. Using the POS expression
+f = (x1 + x2 + x3 + x4)(x1 + x2 + x3 + x4)(x1 + x2 + x3 + x4)(x1 + x2 + x3 + x4)
+the function can be implemented using the code
+module prob4 42 (x1, x2, x3, x4, f);
+input x1, x2, x3, x4;
+output f;
+assign f = (x1 | x2 | ∼x3 | ∼x4) & (x1 | ∼x2 | ∼x3 | x4) &
+(∼x1 | x2 | ∼x3 | x4) & (∼x1 | ∼x2 | x3 | ∼x4);
+endmodule
+4.43. The simplest expression is
+f = x1x3 + x2x3(x1 + x4)
+which can be implemented using the code
+module prob4 43 (x1, x2, x3, x4, f);
+input x1, x2, x3, x4;
+output f;
+not (notx1, x1);
+not (notx3, x3);
+and (a, notx1, notx3);
+or (b, x1, x4);
+and (c, x2, x3, b);
+or (f, a, c);
+endmodule
+4-12
+
+--- Page Break ---
+
+4.44. The simplest expression is
+f = x1x3 + x2x3(x1 + x4)
+which can be implemented using the code
+module prob4 44 (x1, x2, x3, x4, f);
+input x1, x2, x3, x4;
+output f;
+assign f = (∼x1 & ∼x3) | (x2 & x3 & (x1 | x4));
+endmodule
+4.45. The simplest expression is
+f = (x1 + x3)(x1 + x2 + x3 + x4)
+which can be implemented using the code
+module prob4 45 (x1, x2, x3, x4, f);
+input x1, x2, x3, x4;
+output f;
+not (notx1, x1);
+not (notx2, x2);
+not (notx3, x3);
+or (a, notx1, x3);
+or (b, x1, notx2, notx3, x4);
+and (f, a, b);
+endmodule
+4.46. The simplest expression is
+f = (x1 + x3)(x1 + x2 + x3 + x4)
+which can be implemented using the code
+module prob4 46 (x1, x2, x3, x4, f);
+input x1, x2, x3, x4;
+output f;
+assign f = (∼x1 | x3) & (x1 | ∼x2 | ∼x3 | x4);
+endmodule
+4-13
+
+--- Page Break ---
+
+4.47. The simplest expression is
+f = (x2 + x3)(x1 + x3 + x4)
+which can be implemented using the code
+module prob4 47 (x1, x2, x3, x4, f);
+input x1, x2, x3, x4;
+output f;
+not (notx1, x1);
+not (notx3, x3);
+or (a, x2, notx3);
+or (b, notx1, notx3, x4);
+and (f, a, b);
+endmodule
+4.48. The simplest expression is
+f = (x2 + x3)(x1 + x3 + x4)
+which can be implemented using the code
+module prob4 47 (x1, x2, x3, x4, f);
+input x1, x2, x3, x4;
+output f;
+assign f = (x2 | ∼x3) & (∼x1 | ∼x3 | x4);
+endmodule
+4-14
+
+--- Page Break ---
+
+Chapter 5
+5.1. (a) 478
+(b) 743
+(c) 2025
+(d) 41567
+(e) 61680
+5.2. (a) 478
+(b) −280
+(c) −1
+5.3. (a) 478
+(b) −281
+(c) −2
+5.4. The numbers are represented as follows:
+Decimal Sign and Magnitude 1’s Complement 2’s Complement
+73 000001001001 000001001001 000001001001
+1906 011101110010 011101110010 011101110010
+−95 100001011111 111110100000 111110100001
+−1630 111001011110 100110100001 100110100010
+5.5. The results of the operations are:
+(a): 00110110 54 (b): 01110101 117 (c): 11011111 (−33)
++01000101 +69 +11011110 − 34 +10111000 +(−72)
+01111011 123 01010011 83 10010111 (−105)
+(d): 00110110 54 (e): 01110101 (117) (f ): 11010011 (−45)
+−00101011 −43 −11010110 −(− 42) −11101100 −(−20)
+00001011 11 10011111 (159) 11100111 (−25)
+Arithmetic overflow occurs in example e; note that the pattern 10011111 represents −97 rather than +159.
+5-1
+
+--- Page Break ---
+
+5.6. The associativity of the XOR operation can be shown as follows:
+x ⊕ (y ⊕ z) = x ⊕ (yz + yz)
+= x(yz + yz) + x(y · z + yz)
+= x · yz + xyz + xy · z + xyz
+(x ⊕ y) ⊕ z = (xy + xy) ⊕ z
+= (x · y + xy)z + (xy + xy)z
+= x · yz + xyz + xyz + xy · z
+The two SOP expressions are the same.
+5.7. In the circuit of Figure 5.5b, we have:
+si = (xi ⊕ yi) ⊕ ci
+= xi ⊕ yi ⊕ ci
+ci+1 = (xi ⊕ yi)ci + xiyi
+= (xiyi + xiyi)ci + xiyi
+= xiyici + xiyici + xiyi
+= yici + xici + xiyi
+The expressions for si and ci+1 are the same as those derived in Figure 5.4b.
+5.8. We will give a descriptive proof for ease of understanding. The 2’s complement of a given number can
+be found by adding 1 to the 1’s complement of the number. Suppose that the number has k 0s in the least-
+significant bit positions, bk−1 . . . b0, and it has bk = 1. When this number is converted to its 1’s complement,
+each of these k bits has the value 1. Adding 1 to this string of 1s produces bkbk−1bk−2 . . . b0 = 100 . . . 0.
+This result is equivalent to copying the k 0s and the first 1 (in bit position bk ) encountered when the number
+is scanned from right to left. Suppose that the most-significant n − k bits, bn−1bn−2 . . . bk, have some
+pattern of 0s and 1s, but bk = 1. In the 1’s complement this pattern will be complemented in each bit
+position, which will include bk = 0. Now, adding 1 to the entire n-bit number will make bk = 1, but
+no further carries will be generated; therefore, the complemented bits in positions bn−1bn−2 . . . bk+1 will
+remain unchanged.
+5.9. Construct the truth table
+xn−1 yn−1 cn−1 cn sn−1 (sign bit) Overflow
+0 0 0 0 0 0
+0 0 1 0 1 1
+0 1 0 0 1 0
+0 1 1 1 0 0
+1 0 0 0 1 0
+1 0 1 1 0 0
+1 1 0 1 0 1
+1 1 1 1 1 0
+Note that overflow cannot occur when two numbers with opposite signs are added. From the truth table the
+overflow expression is
+Overf low = cncn−1 + cncn−1 = cn ⊕ cn−1
+5-2
+
+--- Page Break ---
+
+5.10. Since sk = xk ⊕ yk ⊕ ck , it follows that
+xk ⊕ yk ⊕ sk = (xk ⊕ yk) ⊕ (xk ⊕ yk ⊕ ck )
+= (xk ⊕ yk) ⊕ (xk ⊕ yk) ⊕ ck
+= 0 ⊕ ck
+= ck
+5.11. Yes, it works. The NOT gate that produces ci is not needed in stages where i > 0. The drawback is “poor”
+propagation of ci = 1 through the topmost NMOS transistor. The positive aspect is fewer transistors needed
+to produce ci+1.
+5.12. From Expression 5.4, each ci requires i AND gates and one OR gate. Therefore, to determine all ci signals
+∑n
+2 
+we need  i=1(i + 1) = (n + 3n)/2 gates. In addition to this, we need 3n gates to generate all g, p, and s
+2 
+functions. Therefore, a total of (n + 9n)/2 gates are needed.
+5.13. 84 gates.
+5.14. The circuit for a 4-bit version of the adder based on the hierarchical structure in Figure 5.18 is constructed
+as follows:
+x3 y3 x2 y2 x1 y1 x0 y0
+Block 1 Block 1 c0
+G1 P1 G0 P0
+s3 s2 s1 s0
+c4 
+c2
+Blocks 0 and 1 have the structure similar to the circuit in Figure 5.16. The overall circuit is given by the
+expressions
+pi = xi + yi
+gi = xiyi
+P0 = p1p0
+G0 = g1 + p1g0
+5-3
+
+--- Page Break ---
+
+P1 = p3p2
+G1 = g3 + p3g2
+c2 = G0 + P0c0
+c4 = G1 + P1G0 + P1P0c0
+5.15. The longest path, which causes the critical delay, is from the inputs m0 and m1 to the output p7, indicated
+by the dashed path in the following copy of Figure 5.33a:
+0 m3 m2 m1 m0
+q0
+C B A
+0
+PP1
+q1
+q2
+D
+0
+PP2
+q3
+H G F E
+0
+p7 p6 p5 p4 p3 p2 p1 p0
+Propagation through the block A involves one gate delay in the AND gate shown in Figure 5.33b and two
+gate delays to generate the carry-out in the full-adder. Then, in each of the blocks B, C, D, E, F , G, and H,
+two more gate delays are needed to generate the carry-out signals in the circuits depicted by Figure 5.33c.
+Therefore, the total delay along the critical path is 17 gate delays.
+5-4
+
+--- Page Break ---
+
+5.16. The 4 × 4 multiplier in Figure 5.36 can be implemented as follows:
+module fig5 36 (M, Q, P);
+input [3:0] M, Q;
+output [7:0] P;
+wire [3:1] Ctop, Csecond, Cbottom;
+wire [5:2] PP1;
+wire [6:3] PP2;
+assign P[0] = M[0] & Q[0];
+fig5 36b toprow stage0 (M[1], M[0], Q[1], Q[0], 0, Ctop[1], P[1]);
+fig5 36b toprow stage1 (M[2], M[1], Q[1], Q[0], Ctop[1], Ctop[2], PP1[2]);
+fig5 36b toprow stage2 (M[3], M[2], Q[1], Q[0], Ctop[2], Ctop[3], PP1[3]);
+fig5 36b toprow stage3 (0, M[3], Q[1], Q[0], Ctop[3], PP1[5], PP1[4]);
+fig5 36c secondrow stage0 (PP1[2], M[0], Q[2], 0, Csecond[1], P[2]);
+fig5 36c secondrow stage1 (PP1[3], M[1], Q[2], Csecond[1], Csecond[2], PP2[3]);
+fig5 36c secondrow stage2 (PP1[4], M[2], Q[2], Csecond[2], Csecond[3], PP2[4]);
+fig5 36c secondrow stage3 (PP1[5], M[3], Q[2], Csecond[3], PP2[6], PP2[5]);
+fig5 36c bottomrow stage0 (PP2[3], M[0], Q[3], 0, Cbottom[1], P[3]);
+fig5 36c bottomrow stage1 (PP2[4], M[1], Q[3], Cbottom[1], Cbottom[2], P[4]);
+fig5 36c bottomrow stage2 (PP2[5], M[2], Q[3], Cbottom[2], Cbottom[3], P[5]);
+fig5 36c bottomrow stage3 (PP2[6], M[3], Q[3], Cbottom[3], P[7], P[6]);
+endmodule
+module fig5 36b (m k1, m k, q1, q0, Cin, Cout, s);
+input m k1, m k, q1, q0, Cin;
+output Cout, s;
+wire x, y;
+assign x = m k1 & q0;
+assign y = m k & q1;
+fulladd FA (Cin, x, y, s, Cout);
+endmodule
+module fig5 36c (ppi k1, m k, qj, Cin, Cout, s);
+input ppi k1, m k, qj, Cin;
+output Cout, s;
+wire y;
+assign y = m k & qj;
+fulladd FA (Cin, ppi k1, y, s, Cout);
+endmodule
+module fulladd (Cin, x, y, s, Cout);
+input Cin, x, y;
+output s, Cout;
+reg s, Cout;
+always @(x or y or Cin)
+{Cout, s} = x + y + Cin;
+endmodule
+5-5
+
+--- Page Break ---
+
+5.17. The code in Figure P5.2 represents a multiplier. It multiplies the lower two bits of Input by the upper two
+bits of Input, producing the four-bit Output. The style of code is poor, because it is not readily apparent
+what is being described.
+5.18. Let Y = y3y2y1y0 be the 9’s complement of the BCD digit X = x3x2x1x0. Then, Y is defined by the truth
+table
+x3 x2 x1 x0 y3 y2 y1 y0
+0 0 0 0 1 0 0 1
+0 0 0 1 1 0 0 0
+0 0 1 0 0 1 1 1
+0 0 1 1 0 1 1 0
+0 1 0 0 0 1 0 1
+0 1 0 1 0 1 0 0
+0 1 1 0 0 0 1 1
+0 1 1 1 0 0 1 0
+1 0 0 0 0 0 0 1
+1 0 0 1 0 0 0 0
+This gives
+y0 = x0
+y1 = x1
+y2 = x2x1 + x2x1
+y3 = x3x2x1
+5-6
+
+--- Page Break ---
+
+5.19. BCD subtraction can be performed using 10’s complement representation, using an approach that is similar
+to 2’s complement subtraction. Note that 10’s and 2’s complements are the radix complements in number
+systems where the radices are 10 and 2, respectively. Let X and Y be BCD numbers given in 10’s comple-
+ment representation, such that the sign (left-most) BCD digit is 0 for positive numbers and 9 for negative
+numbers. Then, the subtraction operation S = X − Y is performed by finding the 10’s complement of Y
+and adding it to X, ignoring any carry-out from the sign-digit position.
+′ 
+For example, let X = 068 and Y = 043. Then, the 10’s complement of Y is 957, and S = 068 + 957 =
+1025. Dropping the carry-out of 1 from the sign-digit position gives S = 025.
+As another example, let X = 032 and Y = 043. Then, S = 032 + 957 = 989, which represents −1110.
+The 10’s complement of Y can be formed by adding 1 to the 9’s complement of Y . Therefore, a circuit that
+can add and subtract BCD operands can be designed as follows:
+X Y
+9’s complementer
+MUX Add ⁄ Sub
+BCD Adder
+S
+For the 9’s complementer one can use the circuit designed in problem 5.18. The BCD adder is a circuit
+based on the approach illustrated in Figure 5.40.
+5-7
+
+--- Page Break ---
+
+5.20. A possible Verilog code is
+module bcdaddsubtract (A, B, D, Add Sub, carryout);
+input [15:0] A, B;
+input Add Sub;
+output [15:0] D;
+output carryout;
+reg [15:0] Bmux;
+wire [15:0] Bnot;
+wire [3:1] C;
+complement digit dig0 (B[3:0], Bnot[3:0]);
+complement digit dig1 (B[7:4], Bnot[7:4]);
+complement digit dig2 (B[11:8], Bnot[11:8]);
+complement digit dig3 (B[15:12], Bnot[15:12]);
+always @(B or Bnot or Add Sub)
+if (Add Sub == 0) Bmux = B;
+else Bmux = Bnot;
+bcdadd stage0 (Add Sub, A[3:0], Bmux[3:0], D[3:0], C[1]);
+bcdadd stage1 (C[1], A[7:4], Bmux[7:4], D[7:4], C[2]);
+bcdadd stage2 (C[2], A[11:8], Bmux[11:8], D[11:8], C[3]);
+bcdadd stage3 (C[3], A[15:12], Bmux[15:12], D[15:12], carryout);
+endmodule
+module complement digit (W, Wnot);
+input [3:0] W;
+output [3:0] Wnot;
+assign Wnot[0] = ∼W[0];
+assign Wnot[1] = W[1];
+assign Wnot[2] = (∼W[2] & W[1]) | (W[2] & ∼W[1]);
+assign Wnot[3] = ∼W[3] & ∼W[2] & ∼W[1];
+endmodule
+module bcdadd (Cin, X, Y, S, Cout);
+input Cin;
+input [3:0] X, Y;
+output [3:0] S;
+output Cout;
+reg [3:0] S;
+reg Cout;
+reg [4:0] Z;
+always @(X or Y or Cin)
+begin
+Z = X + Y + Cin;
+if (Z < 10) {Cout, S} = Z;
+else {Cout, S} = Z + 6;
+end
+endmodule
+5-8
+
+--- Page Break ---
+
+5.21. A full-adder circuit can be used, such that two of the bits of the number are connected as inputs x and y,
+while the third bit is connected as the carry-in. Then, the carry-out and sum bits will indicate how many
+input bits are equal to 1.
+z2 z1
+x y
+cout
+cin z0
+s
+Result
+5.22. Using the approach explained in the solution to problem 5.21, the desired circuit can be built as follows:
+z5 z4 z3 z2 z1 z0
+FA FA
+2-bit 
+0
+adder
+Result
+5-9
+
+--- Page Break ---
+
+5.23. Using the approach explained in the solutions to problems 5.21 and 5.22, the desired circuit can be built as
+follows:
+z7 z6 z5 z4 z3 z2 z1 z0
+HA FA FA
+s s
+2-bit
+adder
+0
+2-bit
+0
+adder 
+Result
+5.24. The graphical representation is
+000 
+999 001 
+998 002
+997 003
+996 004
+904 096
+903 097
+902 098
+901 099 
+900 
+5-10
+
+--- Page Break ---
+
+For example, the addition −3 + (+5) = 2 involves starting at 997 (= −3) and going clockwise 5 numbers,
+which gives the result 002 (= +2). Similarly, the subtraction 4 − (+8) = −4 involves starting at 004 (= +4)
+and going counterclockwise 8 numbers, which gives the result 996 (= −4).
+5.25. The ternary half-adder in Figure P5.3 can be defined using binary-encoded signals as follows:
+A B Carry Sum
+a1 a0 b1 b0 cout s1 s0
+0 0 0 0 0 0 0
+0 0 0 1 0 0 1
+0 0 1 0 0 1 0
+0 1 0 0 0 0 1
+0 1 0 1 0 1 0
+0 1 1 0 1 0 0
+1 0 0 0 0 1 0
+1 0 0 1 1 0 0
+1 0 1 0 1 0 1
+The remaining 7 (out of 16) valuations, where either a1 = a0 = 1, or b1 = b0 = 1, can be treated as don’t
+care conditions. Then, the minimum cost expressions are:
+cout = a0b1 + a1b1 + a1b0
+s1 = a0b0 + a1a0b1 + a1b1b0
+s0 = a1b1 + a1a0b0 + a0b1b0
+5-11
+
+--- Page Break ---
+
+5.26. Ternary full-adder is defined by the truth table:
+cin A B cout Sum
+0 0 0 0 0
+0 0 1 0 1
+0 0 2 0 2
+0 1 0 0 1
+0 1 1 0 2
+0 1 2 1 0
+0 2 0 0 2
+0 2 1 1 0
+0 2 2 1 1
+1 0 0 0 1
+1 0 1 0 2
+1 0 2 1 0
+1 1 0 0 2
+1 1 1 1 0
+1 1 2 1 1
+1 2 0 1 0
+1 2 1 1 1
+1 2 2 1 2
+Using binary-encoded signals for this full-adder gives the following truth table:
+A B Sum
+cin a1 a0 b1 b0 cout s1 s0
+0 0 0 0 0 0 0 0
+0 0 0 0 1 0 0 1
+0 0 0 1 0 0 1 0
+0 0 1 0 0 0 0 1
+0 0 1 0 1 0 1 0
+0 0 1 1 0 1 0 0
+0 1 0 0 0 0 1 0
+0 1 0 0 1 1 0 0
+0 1 0 1 0 1 0 1
+1 0 0 0 0 0 0 1
+1 0 0 0 1 0 1 0
+1 0 0 1 0 1 0 0
+1 0 1 0 0 0 1 0
+1 0 1 0 1 1 0 0
+1 0 1 1 0 1 0 1
+1 1 0 0 0 1 0 0
+1 1 0 0 1 1 0 1
+1 1 0 1 0 1 1 0
+5-12
+
+--- Page Break ---
+
+Treating the 14 (out of 32) valuations where either a1 = a0 = 1 or b1 = b0 = 1 as don’t care conditions,
+leads to the minimum cost expressions
+cout = a0b1 + a1b0 + a1b1 + a1cin + b1cin + a0b0cin
+s1 = a0b0cin + a1a0b1cin + a1b1b0cin + a1b1cin + a1a0b0cin + a0b1b0cin
+s0 = a1b1cin + a1a0b0cin + a0b1b0cin + a1b0cin + a0b1cin + a1a0b1b0cin
+5.27. The subtractions 26 − 27 = 99 and 18 − 34 = 84 make sense if the two-digit numbers 00 to 99 are in-
+terpreted so that the numbers 00 to 49 are positive integers from 0 to +49, while the numbers 50 to 99 are
+negative integers from −50 to −1. This scheme can be illustrated graphically as follows:
+00 
+99 01
+98 02
+0
+– 1 +1
+97 03
+–2 +2
+–3 +3
+–48 +48
+– 49 +49
+–50
+52 48
+51 49
+50 
+5-13
+
+--- Page Break ---
+
+Chapter 6
+6.1. 
+w3 w0 y0
+w2 w1 y1
+w1 w y2
+2
+y3
+f
+y4
+y5
+y6
+y
+1 En 7
+6.2. 
+w3 w0 y0
+w2 w1 y1
+w1 w y2
+2
+y3
+f
+y4
+y5
+y6
+y
+1 En 7
+6.3.
+w1 w2 w3 f
+0 0 0 1 w f
+1
+0 0 1 0
+0 w2 + w3
+0 1 0 1
+1 w2w3
+0 1 1 1
+1 0 0 0
+1 0 1 0
+1 1 0 1
+1 1 1 0
+w1
+w2
+w3
+f
+6-1
+
+--- Page Break ---
+
+6.4. w1 w2 w3 f
+0 0 0 1 w f
+1
+0 0 1 0
+0 w2w3
+0 1 0 0
+1 w2 + w3
+0 1 1 0
+1 0 0 1
+1 0 1 0
+1 1 0 1
+1 1 1 1
+w w1
+2
+w3
+f
+6.5. The function f can be expressed as
+f = w1w2w3 + w1w2w3 + w1w2w3 + w1w2w3
+Expansion in terms of w1 produces
+f = w1(w2 + w3) + w1(w2w3)
+The corresponding circuit is
+w1
+w2
+w3
+f
+6.6. The function f can be expressed as
+f = w1w2w3 + w1w2w3 + w1w2w3 + w1w2w3
+Expansion in terms of w2 produces
+f = w2(w3) + w2(w1)
+The corresponding circuit is
+w2
+w3
+f
+w1
+6-2
+
+--- Page Break ---
+
+6.7. Expansion in terms of w2 gives
+f = w2(1 + w1w3 + w1w3) + w2(w1w3 + w1w3)
+= w1w2w3 + w1w2w3 + w2 + w1w2w3 + w1w2w3
+Further expansion in terms of w1 gives
+f = w1(w2w3 + w2w3 + w2) + w1(w2w3 + w2w3 + w2)
+= w1w2w3 + w1w2w3 + w1w2 + w1w2w3 + w1w2w3 + w1w2
+Further expansion in terms of w3 gives
+f = w3(w1w2 + w1w2 + w1w2 + w1w2) + w3(w1w2 + w1w2 + w1w2 + w1w2)
+= w1w2w3 + w1w2w3 + w1w2w3 + w1w2w3 + w1w2w3 + w1w2w3
+6.8. Expansion in terms of w1 gives
+f = w1w2 + w1w3 + w1w2
+Further expansion in terms of w2 gives
+f = w2(w1w3) + w2(w1 + w1 + w1w3)
+= w1w2 + w1w2w3 + w1w2w3 + w1w2
+Further expansion in terms of w3 gives
+f = w3(w1w2 + w1w2 + w1w2 + w1w2) + w3(w1w2 + w1w2)
+= w1w2w3 + w1w2w3 + w1w2w3 + w1w2w3 + w1w2w3
+6.9. Proof of Shannon’s expansion theorem
+f (x1, x2, ..., xn) = x1 · f (0, x2, ..., xn) + x1 · f (1, x2, ..., xn)
+This theorem can be proved using perfect induction, by showing that the expression is true for every possible
+value of x1. Since x1 is a boolean variable, we need to look at only two cases: x1 = 0 and x1 = 1.
+Setting x1 = 0 in the above expression, we have:
+f (0, x2, ..., xn) = 1 · f (0, x2, ..., xn) + 0 · f (1, x2, ..., xn)
+= f (0, x2, ..., xn)
+Setting x1 = 1, we have:
+f (1, x2, ..., xn) = 0 · f (0, x2, ..., xn) + 1 · f (1, x2, ..., xn)
+= f (1, x2, ..., xn)
+This proof can be performed for any arbitrary xi in the same manner.
+6.10. Derivation using f:
+f = wf w + wf w
+( )
+f = wfw + wf w
+( ) ( )
+= wfw · wf w
+= (w + fw)(w + fw )
+6-3
+
+--- Page Break ---
+
+6.11. Expansion in terms of w2 gives
+f = w2(w1 + w3) + w2(w1w3)
+Letting g = w1 + w3, we have
+f = w2g + w2g
+The corresponding circuit is
+w1 1 g
+1 0
+1
+w3 1 f
+0 1
+0
+w2
+6.12. Expansion of f in terms of w2 gives
+f = w2(w1 + w3) + w2(w1w3)
+= w2 ⊕ (w1 + w3)
+= w2 ⊕ w1w3
+The cost of this multilevel circuit is 2 gates + 4 inputs = 6.
+6.13. Using Shannon’s expansion in terms of w2 we have
+f = w2(w3 + w1w4) + w2(w3w4 + w1w3)
+= w2(w3 + w1w4) + w2(w3(w1 + w4))
+If we let g = w3 + w1w4, then
+f = w2g + w2g
+Thus, two 3-LUTs are needed to implement f .
+6.14. Any number of 5-variable functions can be implemented by using two 4-LUTs. For example, if we cascade
+the two 4-LUTs by connecting the output of one 4-LUT to an input of the other, then we can realize any
+function of the form
+f = f1(w1, w2, w3, w4) + w5
+f = f1(w1, w2, w3, w4) · w5
+6-4
+
+--- Page Break ---
+
+6.15. Expressing f in the form
+f = s1s0w0 + s1s0w1 + s1s0w2 + s1s0w3
+= s0(s1w0 + s1w1) + s0(s1w2 + s1w3)
+leads to the circuit.
+0
+s1 s1w0 + s1w1
+w0
+w1
+s ( s w + s w ) + s ( s w + s w )
+0 0  1 0  1 1 0  1 2  1 3
+s0
+0
+s1
+w2 s w + s w
+1 2  1 3
+w3
+Alternatively, directly using the expression
+f = s1s0w0 + s1s0w1 + s1s0w2 + s1s0w3
+leads to the circuit.
+s0
+s1 s1s0w0 + s1s0w1
+w0
+w1
+s s w + s s w + s s w + s s w
+0 1 0 0  1 0 1 1 0 2  1 0 3
+0
+s0
+s1
+w2 s s w + s s w
+1 0 2  1 0 3
+w3
+6-5
+
+--- Page Break ---
+
+6.16. Using Shannon’s expansion in terms of w3 we have
+f = w3(w2) + w3(w1 + w2)
+= w3(w2) + w3(w2 + w2w1)
+The corresponding circuit is
+w3
+0
+w2
+0
+1
+f
+w2
+1
+w1
+6.17. Using Shannon’s expansion in terms of w3 we have
+f = w3(w1 + w1w2) + w3(w1 + w1w2)
+The corresponding circuit is
+w w3
+2
+0 0
+0 w1
+1 w2
+0 1
+w2
+f
+0 w1
+0 1
+0
+6.18. The code in Figure P6.2 is a 2-to-4 decoder with an enable input. It is not a good style for defining this
+decoder. The code is not easy to read. Moreover, the Verilog compiler often turns if statements into mul-
+tiplexers, in which case the resulting decoder may have multiplexers controlled by the En signal on the
+output side.
+6-6
+
+--- Page Break ---
+
+∑ 
+6.19. The function f (w1, w2, w3) =  m(1, 2, 3, 5, 6) can be implemented using the followung code:
+module prob6 19 (W, f);
+input [1:3] W;
+output f;
+reg f;
+always @(W)
+case (W)
+3’b001: f = 1;
+3’b010: f = 1;
+3’b011: f = 1;
+3’b101: f = 1;
+3’b110: f = 1;
+default: f = 0;
+endcase
+endmodule
+6.20. Using the truth table in Figure 6.23a, the 4-to-2 binary encoder can be implemented as:
+module prob6 20 (W, Y);
+input [3:0] W;
+output [1:0] Y;
+reg [1:0] Y;
+always @(W)
+case (W)
+4’b0001: Y = 2’b00;
+4’b0010: Y = 2’b01;
+4’b0100: Y = 2’b10;
+4’b1000: Y = 2’b11;
+default: Y = 2’bxx;
+endcase
+endmodule
+6-7
+
+--- Page Break ---
+
+6.21. An 8-to-2 binary encoder can be implemented as:
+module prob6 21 (W, Y);
+input [7:0] W;
+output [2:0] Y;
+reg [2:0] Y;
+always @(W)
+case (W)
+8’b00000001: Y = 3’b000;
+8’b00000010: Y = 3’b001;
+8’b00000100: Y = 3’b010;
+8’b00001000: Y = 3’b011;
+8’b00010000: Y = 3’b100;
+8’b00100000: Y = 3’b101;
+8’b01000000: Y = 3’b110;
+8’b10000000: Y = 3’b111;
+default: Y = 3’bxxx;
+endcase
+endmodule
+6.22. The code in Figure P6.3 will instantiate latches on the outputs of the decoder because the if statement does
+not specify all possibilities in a combinational circuit. It can be fixed by including the else clause
+else Y[k] = 0;
+after the if clause.
+6.23. First define a set of intermediate variables
+i0 = w7w6w5w4w3w2w1w0
+i1 = w7w6w5w4w3w2w1
+i2 = w7w6w5w4w3w2
+i3 = w7w6w5w4w3
+i4 = w7w6w5w4
+i5 = w7w6w5
+i6 = w7w6
+i7 = w7
+Now a traditional binary encoder can be used for the priority encoder
+y0 = i1 + i3 + i5 + i7
+y1 = i2 + i3 + i6 + i7
+y2 = i4 + i5 + i6 + i7
+6-8
+
+--- Page Break ---
+
+6.24. An 8-to-3 priority encoder can be implemented using a case statement as follows:
+module prob6 24 (W, Y, z);
+input [7:0] W;
+output [2:0] Y;
+output z;
+reg [2:0] Y;
+reg z;
+always @(W)
+begin
+z = 1;
+case (W)
+8’b1xxxxxxx: Y = 7;
+8’b01xxxxxx: Y = 6;
+8’b001xxxxx: Y = 5;
+8’b0001xxxx: Y = 4;
+8’b00001xxx: Y = 3;
+8’b000001xx: Y = 2;
+8’b0000001x: Y = 1;
+8’b00000001: Y = 0;
+default: begin
+z = 0;
+Y = 3’bx;
+end
+endcase
+endmodule
+6.25. An 8-to-3 priority encoder can be implemented using a for loop as follows:
+module prob6 25 (W, Y, z);
+input [7:0] W;
+output [2:0] Y;
+output z;
+reg [2:0] Y;
+reg z;
+integer k;
+always @(W)
+begin
+Y = 3’bx;
+z = 0;
+for (k = 0; k < 8; k = k+1)
+if (W[k])
+begin
+Y = k;
+z = 1;
+end
+end
+endmodule
+6-9
+
+--- Page Break ---
+
+6.26. The following code can be used:
+// 3-to-8 decoder
+module h3to8 (W, Y, En);
+input [2:0] W;
+input En;
+output [0:7] Y;
+wire [0:7] Y;
+reg En0to3, En4to7;
+always @(W or En)
+begin
+if (En == 0)
+begin
+En0to3 = 0; En4to7 = 0;
+end
+else if (W[2] == 0)
+begin
+En0to3 = 1; En4to7 = 0;
+end
+else if (W[2] == 1)
+begin
+En0to3 = 0; En4to7 = 1;
+end
+end
+if2to4 lowbits (W[1:0], Y[0:3], En0to3);
+if2to4 highbits (W[1:0], Y[4:7], En4to7);
+endmodule
+// 2-to-4 decoder
+module if2to4 (W, Y, En);
+input [1:0] W;
+input En;
+output [0:3] Y;
+reg [0:3] Y;
+always @(W or En)
+if (En == 0) Y = 4’b0000;
+else if (W == 0) Y = 4’b0001;
+else if (W == 1) Y = 4’b0010;
+else if (W == 2) Y = 4’b0100;
+else if (W == 3) Y = 4’b1000;
+endmodule
+6-10
+
+--- Page Break ---
+
+6.27. A 6-to-64 binary decoder can be implemented by using the code:
+module h6to64 (W, Y, En);
+input [5:0] W;
+input En;
+output [0:63] Y;
+wire [0:63] Y;
+reg [7:0] En3to8dec;
+always @(W or En)
+begin
+if (En == 0)
+En3to8dec = 8’b00000000;
+else
+case (W[5:3])
+0: En3to8dec = 8’b00000001;
+1: En3to8dec = 8’b00000010;
+2: En3to8dec = 8’b00000100;
+3: En3to8dec = 8’b00001000;
+4: En3to8dec = 8’b00010000;
+5: En3to8dec = 8’b00100000;
+6: En3to8dec = 8’b01000000;
+7: En3to8dec = 8’b10000000;
+endcase
+end
+h3to8 dec0 (W[2:0], Y[0:7], En3to8dec[0]);
+h3to8 dec1 (W[2:0], Y[8:15], En3to8dec[1]);
+h3to8 dec2 (W[2:0], Y[16:23], En3to8dec[2]);
+h3to8 dec3 (W[2:0], Y[24:31], En3to8dec[3]);
+h3to8 dec4 (W[2:0], Y[32:39], En3to8dec[4]);
+h3to8 dec5 (W[2:0], Y[40:47], En3to8dec[5]);
+h3to8 dec6 (W[2:0], Y[48:55], En3to8dec[6]);
+h3to8 dec7 (W[2:0], Y[56:63], En3to8dec[7]);
+endmodule
+//The rest of the code includes the 3-to-8 decoder
+//developed in problem 6.26.
+6-11
+
+--- Page Break ---
+
+// 3-to-8 decoder
+module h3to8 (W, Y, En);
+input [2:0] W;
+input En;
+output [0:7] Y;
+wire [0:7] Y;
+reg En0to3, En4to7;
+always @(W or En)
+begin
+if (En == 0)
+begin
+En0to3 = 0; En4to7 = 0;
+end
+else if (W[2] == 0)
+begin
+En0to3 = 1; En4to7 = 0;
+end
+else if (W[2] == 1)
+begin
+En0to3 = 0; En4to7 = 1;
+end
+end
+if2to4 lowbits (W[1:0], Y[0:3], En0to3);
+if2to4 highbits (W[1:0], Y[4:7], En4to7);
+endmodule
+// 2-to-4 decoder
+module if2to4 (W, Y, En);
+input [1:0] W;
+input En;
+output [0:3] Y;
+reg [0:3] Y;
+always @(W or En)
+if (En == 0) Y = 4’b0000;
+else if (W == 0) Y = 4’b0001;
+else if (W == 1) Y = 4’b0010;
+else if (W == 2) Y = 4’b0100;
+else if (W == 3) Y = 4’b1000;
+endmodule
+6-12
+
+--- Page Break ---
+
+6.28. A possible code is:
+module prob6 28 (W, S, f);
+input [0:3] W;
+input [1:0] S;
+output f;
+wire f;
+wire [0:3] Y;
+dec2to4 decoder (S, Y, 1);
+assign f = (W[0] & Y[0]) | (W[1] & Y[1]) | (W[2] & Y[2]) | (W[3] & Y[3]);
+endmodule
+module dec2to4 (W, Y, En);
+input [1:0] W;
+input En;
+output [0:3] Y;
+reg [0:3] Y;
+always @(W or En)
+case (En, W)
+3’b100: Y = 4’b1000;
+3’b101: Y = 4’b0100;
+3’b110: Y = 4’b0010;
+3’b111: Y = 4’b0001;
+default: Y = 4’b0000;
+endcase
+endmodule
+6.29. a = w3 + w2w0 + w1 + w2w0
+b = w3 + w1w0 + w1w0 + w2
+c = w2 + w1 + w0
+6.30. d = w3 + w2w0 + w1w0 + w2w1w0 + w2w1
+e = w2w0 + w1w0
+f = w3 + w1w0 + w2w0 + w2w1
+g = w3 + w1w0 + w2w1 + w2w1
+6-13
+
+--- Page Break ---
+
+6.31. (a) Each ROM location that should store a 1 requires no circuitry, because the pull-up resistor provides the
+default value of 1. Each location that stores a 0 has the following cell
+(b) V
+DD
+a0
+a
+1 -to-4 decoder
+2
+d3 d2 d1 d0
+(c) Every location in the ROM contains the following cell
+Ve
+If a location should store a 1, then the corresponding EEPROM transistor is programmed to be turned off.
+But if the location should store a 0, then the EEPROM transistor is left unprogrammed.
+6-14
+
+--- Page Break ---
+
+(d)
+VDD
+a0
+a
+1 -to-4 decoder
+2
+d3 d2 d1 d0
+6-15
+
+--- Page Break ---
+
+Chapter 7
+7.1.
+Clock
+D
+Qa
+Qb
+Qc
+7.2. The circuit in Figure 7.3 can be modified to implement an SR latch by connecting  S  to the  Data  input and
+S  +  R  to the  Load  input. Thus the value of  S  is loaded into the latch whenever either  S  or  R  is asserted.
+Care must be taken to ensure that the  Data  signal remains stable while the  Load  signal is asserted.
+7.3.  R
+Q S  R  Qa  Qb
+b
+1  1 0/1  1/0 (no change)
+1  0 0  1
+0  1 1  0
+Q
+a 0  0 1  1
+S
+7.4.  S
+Q
+Clk
+Q
+R
+7-1
+
+--- Page Break ---
+
+7.5.
+1 T  Q T  Q T  Q
+100 MHz Q Q Q
+50 MHz  25 MHz  12.5 MHz
+100 MHz
+50 MHz
+25 MHz
+12.5 MHz
+0 ns  10 ns  20 ns  30 ns  40 ns  50 ns  60 ns  70 ns
+7.6.
+S
+D  Q Q
+R
+Q Q
+Clock
+S R Q ( t + 1)
+S  Q
+0 0 Q ( )t
+0 1 0
+1 0  1
+R Q
+1 1  0
+7-2
+
+--- Page Break ---
+
+7.7.
+R
+Q
+Q
+S
+7.8.
+J
+T  Q Q
+K
+Q Q
+Clock
+7.9. This circuit acts as a negative-edge-triggered JK flip-flop, in which  J  =  A, K  =  B,  Clock  =  C, Q =  D,
+and  Q =  E. This circuit is found in the standard chip called 74LS107A (plus a  Clear  input, which is not
+shown).
+7-3
+
+--- Page Break ---
+
+7.10.  module  tflipflop (T, Clock, Resetn, Q);
+input  T, Clock, Resetn;
+output  Q;
+reg  Q;
+always  @(negedge  Resetn or  posedge  Clock)
+if  (!Resetn)
+Q  <= 0;
+else if  (T)
+Q  <= Q;
+endmodule
+7.11.  module  jkflipflop (J, K, Clock, Resetn, Q);
+input  J, K, Clock, Resetn;
+output  Q;
+reg  Q;
+always  @(negedge  Resetn or  posedge  Clock)
+if  (!Resetn)
+Q  <= 0;
+else
+case  (J, K)
+1’b01:  Q  <= 0;
+1’b10:  Q  <= 1;
+1’b11:  Q  <= Q;
+default:  Q  <= Q;
+endcase
+endmodule
+7.13. Let  S  =  s1s0  be a binary number that specifies the number of bit-positions by which to rotate. Also let  L
+be a parallel-load input, and let  R  =  r0r1r2r3  be parallel data. If the inputs to the flip-flops are  d0 . . . d3
+and the outputs are  q0 . . . q3, then the barrel-shifter can be represented by the logic expressions
+d0  =  L · r0  +  L ·  (s1s0q0  + s1s0q3  + s1s0q2  + s1s0q1)
+d1  =  L · r1  +  L ·  (s1s0q1  + s1s0q0  + s1s0q3  + s1s0q2)
+d2  =  L · r2  +  L ·  (s1s0q2  + s1s0q1  + s1s0q0  + s1s0q3)
+d3  =  L · r3  +  L ·  (s1s0q3  + s1s0q2  + s1s0q1  + s1s0q0)
+7.14.  There are many ways to write the Verilog code for this problem. One solution is
+7-4
+
+--- Page Break ---
+
+// Barrel shifter. If L = 1, load in parallel from R. If L = 0 and E =1
+// rotate right by number of bit positions given by S.
+module  barrel4 (R, L, S, Clock, Q);
+input  [0:3] R;
+input  L, Clock;
+input  [1:0] S;
+output  [0:3] Q;
+reg  [0:3] Q;
+wire  [0:3] M;
+mux4to1 Bit0 (Q[0], Q[3], Q[2], Q[1], S, M[0]);
+mux4to1 Bit1 (Q[1], Q[0], Q[3], Q[2], S, M[1]);
+mux4to1 Bit2 (Q[2], Q[1], Q[0], Q[3], S, M[2]);
+mux4to1 Bit3 (Q[3], Q[2], Q[1], Q[0], S, M[3]);
+always  @(posedge  Clock)
+if  (L)
+Q  <= R;
+else
+begin
+Q[0]  <= M[0];
+Q[1]  <= M[1];
+Q[2]  <= M[2];
+Q[3]  <= M[3];
+end
+endmodule
+module  mux4to1 (w0, w1, w2, w3, S, f);
+input  w0, w1, w2, w3;
+input  [1:0] S;
+output  f;
+reg  f;
+always  @(w0 or w1 or w2 or w3 or S)
+if  (S == 2’b00)
+f = w0;
+else if  (S == 2’b01)
+f = w1;
+else if  (S == 2’b10)
+f = w2;
+else if  (S == 2’b11)
+f = w3;
+endmodule
+7-5
+
+--- Page Break ---
+
+7.15.  Enable
+0
+D 
+0 T  Q Q 0
+1
+Q
+0
+D 1
+T  Q Q 1
+1
+Q
+0
+D 2
+T  Q Q 2
+1
+Q
+0
+D 
+3 T  Q Q 3
+1
+Q
+Output
+carry
+Load
+Clock
+7.16. Up/down
+1  T  Q 0 T  Q 0 T  Q
+Q 0  Q 1  Q 2
+1 1
+Clock Q Q Q
+7-6
+
+--- Page Break ---
+
+7.17.
+Up/down
+0 0
+D  Q D  Q D  Q
+Q 0  Q 
+Q 1 2
+1 1
+Clock Q Q Q
+7.18. The counting sequence is  000, 001, 010, 111.
+7.19. The circuit in Figure P7.4 is a master-slave JK flip-flop. It suffers from a problem sometimes called  ones-
+catching. Consider the situation where the Q output is low,  Clock  = 0, and  J  =  K  = 0. Now let  Clock
+remain stable at 0 while  J  change from 0 to 1 and then back to 0. The master stage is now set to 1 and this
+value will be incorrectly transferred into the slave stage when the clock changes to 1.
+7.20. Repeated application of DeMorgan’s theorem can be used to change the positive-edge triggered D flip-flop
+in Figure 7.11 into the negative-edge D triggered flip-flop:
+Q
+Clock
+Q
+D
+7-7
+
+--- Page Break ---
+
+7.21.  module  upcount12 (Resetn, Clock, Q);
+input  Resetn, Clock;
+output  [3:0] Q;
+reg  [3:0] Q;
+always  @(posedge  Clock)
+if  (!Resetn)
+Q  <= 0;
+else if  (Q == 11)
+Q  <= 0;
+else
+Q  <= Q + 1;
+endmodule
+7.22. The longest delay in the circuit is the from the output of FF 0  to the input of FF3. This delay totals  5 ns.
+Thus the minimum period for which the circuit will operate reliably is
+Tmin  = 5 ns + tsu  = 8 ns
+The maximum frequency is
+Fmax  = 1/Tmin  = 125 MHz
+7.23.  module  johnson8 (Resetn, Clock, Q);
+input  Resetn, Clock;
+output  [7:0] Q;
+reg  [7:0] Q;
+always  @(negedge  Resetn or  posedge  Clock)
+if  (!Resetn)
+Q  <= 0;
+else
+Q  <=  {{Q[6:0]}, {∼Q[7]}};
+endmodule
+7-8
+
+--- Page Break ---
+
+7.24.  // Ring counter with synchronous reset
+module  ripplen (Resetn, Clock, Q);
+parameter  n = 8;
+input  Resetn, Clock;
+output  [n−1:0] Q;
+reg  [n−1:0] Q;
+always  @(posedge  Clock)
+if  (!Resetn)
+begin
+Q[7:1]  <= 0;
+Q[0]  <= 1;
+end
+else
+Q  <=  {{Q[6:0]}, {Q[7]}};
+endmodule
+7.25.  module  accumulate(Reset, Clock, Data, Q);
+input  Reset, Clock;
+input  [3:0] Data;
+output  [3:0] Q;
+reg  [3:0] Q;
+always  @(posedge  Reset or  posedge  Clock)
+if  (Reset)
+Q  <= 0;
+else
+Q  <= Q + Data;
+endmodule
+7.26.  module  count32 (Clock, Reset, Q);
+input  Clock, Reset;
+output  [31:0] Q ;
+lpm  counter count  up (.aclr(Reset), .clock(Clock), .q(Q)) ;
+defparam  count  up.lpm  width = 32;
+endmodule
+7.30.  T T T
+1  2  3
+(Swap):  I4  Rout  =  X,  Tin  Rout  =  Y ,  Rin  =  X  Tout,  Rin  =  Y  ,
+Done
+7-9
+
+--- Page Break ---
+
+Since the processor now has five operations a 3-to-8 decoder is needed to decode the signals  f 2, f1, f0. The
+SWAP operation is represented by the code
+I4  =  f2f 1f0
+New expressions are needed for  Rin  and  Rout  to accommodate the SWAP operation:
+Rkin  =  (I0  + I1)  ·  T1  · Xk  + (I2  + I3)  · T3  ·  Xk  + I4  ·  T2  · Xk  + I4  · T3  ·  Yk
+Rkout  =  I1  ·  T1  ·  Yk  + (I2  + I3)  ·  (T1Xk  + T2Yk) + I4  · T1Xk  + I4  ·  T2Yk
+The control signals for the temporary register,  T , are
+Tin  =  T1I4
+Tout  =  T3I4
+7.31. (a)  Period = 2 ×  n × tp
+(b) 
+Reset Reset
+Interval E Counter
+Ring Osc
+Count
+The counter tallies the number of pulses in the 100 ns time period. Thus
+100 ns
+tp  = 
+2 × Count × n
+7.32. D
+Q
+Clock
+Q
+A
+1
+Clock
+0
+1
+D
+0
+1
+A
+0
+1
+Q
+0
+7-10
+
+--- Page Break ---
+
+7.33.
+Start Reset
+3-bit counter
+Clock
+f g
+7.34. With non-blocking assignments, the result of the assignment f  <= A[1] & A[0] is not seen by the successive
+assignments inside the  for  loop. Thus,  f  has an uninitialized value when the  for  loop is entered. Similarly,
+each  for  loop interation sees the unitialized value of  f .  The result of the code is the sequential circuit
+specified by f = f  |  A[n-1] A[n-2].
+7.35.
+Reset Reset
+Interval E Counter
+Ring Osc
+Count
+7-11
+
+--- Page Break ---
+
+The counting sequence is: 001, 110, 011, 111, 101, 100, 010, 001
+7.36.
+Reset Reset
+Interval E Counter
+Ring Osc
+Count
+The counting sequence is: 001, 101, 111, 110, 011, 100, 010, 001
+7.37.
+Reset Reset
+Interval E Counter
+Ring Osc
+Count
+The counting sequence is: 001, 100, 000, 000, ...
+7.38.
+Reset Reset
+Interval E Counter
+Ring Osc
+Count
+The counting sequence is: 001, 110, 000, 000, ...
+7.39. 
+Reset Reset
+Interval E Counter
+Ring Osc
+Count
+7.40.
+7-12
+
+--- Page Break ---
+
+// Universal shift register. If Dir = 0 shifting is to the left.
+module  universaln (R, L, Dir, w0, w1, Clock, Q);
+parameter  n = 4;
+input  [n−1:0] R;
+input  L, Dir, w0, w1, Clock;
+output  [n−1:0] Q;
+reg  [n−1:0] Q;
+integer  k;
+always  @(posedge  Clock)
+if  (L)
+Q  <= R;
+else
+begin
+if  (Dir)
+begin
+for  (k = 0; k  <  n−1; k = k+1)
+Q[k]  <= Q[k+1];
+Q[n−1]  <= w0;
+end
+else
+begin
+Q[0]  <= w1;
+for  (k = n−1; k  >  0; k = k−1)
+Q[k]  <= Q[k−1];
+end
+end
+endmodule
+7-13
+
+--- Page Break ---
+
+Chapter 8
+8.1. The expressions for the inputs of the flip-flops are
+D2 = Y2 = wy2 + y1y2
+D1 = Y1 = w ⊕ y1 ⊕ y2
+The output equation is
+z = y1y2
+8.2. The excitation table for JK flip-flops is
+Flip-flop inputs
+Present 
+Output
+state w = 0 w = 1 
+y2y1  z
+J2K2 J1K1 J2K2 J1K1
+00 1d 0d 1d 1d 0
+01 0d d0 0d d1 0
+10 d0 1d d1 0d 0
+11 d0 d1 d1 d0 1
+The expressions for the inputs of the flip-flops are
+J2 = y1
+K2 = w
+J1 = wy2 + wy2
+K1 = J1
+The output equation is
+z = y1y2
+8.3. A possible state table is
+Next state Output z
+Present 
+state 
+w = 0 w = 1 w = 0 w = 1
+A A B 0 0
+B E C 0 0
+C E D 0 0
+D E D 0 1
+E F B 0 0
+F A B 0 1
+8-1
+
+--- Page Break ---
+
+8.4. Verilog code for the solution given in problem 8.3 is
+module prob8 4 (Clock, Resetn, w, z);
+input Clock, Resetn, w;
+output z;
+reg z;
+reg [3:1] y, Y;
+parameter [3:1] A = 3’b000, B = 3’b001, C = 3’b010, D = 3’b011, E = 3’b100, F = 3’b101;
+// Define the next state and output combinational circuits
+always @(w or y)
+case (y)
+A: if (w) begin
+Y = B; z = 0;
+end
+else begin
+Y = A; z = 0;
+end
+B: if (w) begin
+Y = C; z = 0;
+end
+else begin
+Y = E; z = 0;
+end
+C: if (w) begin
+Y = D; z = 0;
+end
+else begin
+Y = E; z = 0;
+end
+D: if (w) begin
+Y = D; z = 1;
+end
+else begin
+Y = E; z = 0;
+end
+E: if (w) begin
+Y = B; z = 0;
+end
+else begin
+Y = F; z = 0;
+end
+F: if (w) begin
+Y = B; z = 1;
+end
+else begin
+Y = A; z = 0;
+end
+default: begin
+Y = 3’bxxx; z = 0;
+end
+endcase
+8-2
+
+--- Page Break ---
+
+// Define the sequential block
+always @(negedge Resetn or posedge Clock)
+if (Resetn == 0) y <= A;
+else y <= Y;
+endmodule
+8.5. A minimal state table is
+Present Next State Output
+state w = 0 w = 1 z
+A A B 0
+B E C 0
+C D C 0
+D A F 1
+E A F 0
+F E C 1
+8.6. An initial attempt at deriving a state table may be
+Next state Output z
+Present 
+state 
+w = 0 w = 1 w = 0 w = 1
+A A B 0 0
+B D C 0 0
+C D C 1 0
+D A E 0 1
+E D C 0 0
+States B and E are equivalent; hence the minimal state table is
+Next state Output z
+Present 
+state 
+w = 0 w = 1 w = 0 w = 1
+A A B 0 0
+B D C 0 0
+C D C 1 0
+D A B 0 1
+8-3
+
+--- Page Break ---
+
+8.7. For Figure 8.51 have (using the straightforward state assignment):
+Next state
+Present 
+Output
+state w = 0 w = 1 
+y3y2y1  z
+Y3Y2Y1 Y3Y2Y1
+A 0 0 0 0 0 1 0 1 0 1
+B 0 0 1 0 1 1 1 0 1 1
+C 0 1 0 1 0 1 1 0 0 0
+D 0 1 1 0 0 1 1 1 0 1
+E 1 0 0 1 0 1 0 1 0 0
+F 1 0 1 1 0 0 0 1 1 0
+G 1 1 0 1 0 1 1 1 0 0
+This leads to
+Y3 = wy3 + y1y2 + wy1y3
+Y2 = wy3 + wy1y2 + wy1y2 + wy1y2y3
+Y1 = y3w + y1w + wy1y2
+z = y1y3 + y2y3
+For Figure 8.52 have
+Next state
+Present 
+Output
+state w = 0 w = 1 
+y2y1  z
+Y2Y1 Y2Y1
+A 0 0 0 1 1 0 1
+B 0 1 0 0 1 1 1
+C 1 0 1 1 1 0 0
+F 1 1 1 0 0 0 0
+This leads to
+Y2 = wy2 + y1y2 + wy2
+Y1 = y1w + wy1y2
+z = y2
+Clearly, minimizing the number of states leads to a much simpler circuit.
+8-4
+
+--- Page Break ---
+
+8.8. For Figure 8.55 have (using straightforward state assignment):
+Next state
+Present 
+Output
+state DN=00 01 10 11 
+y4y3y2y1  z
+Y4Y3Y2Y1
+S1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 − 0
+S2 0 0 0 1 0 0 0 1 0 0 1 1 0 1 0 0 − 0
+S3 0 0 1 0 0 0 1 0 0 1 0 1 0 1 1 0 − 0
+S4 0 0 1 1 0 0 0 0 − − − 1
+S5 0 1 0 0 0 0 1 0 − − − 1
+S6 0 1 0 1 0 1 0 1 0 1 1 1 1 0 0 0 − 0
+S7 0 1 1 0 0 0 0 0 − − − 1
+S8 0 1 1 1 0 0 0 0 − − − 1
+S9 1 0 0 0 0 0 1 0 − − − 1
+The next-state and output expressions are
+Y4 = Dy3
+Y3 = Dy1 + Dy2 + N y2 + Dy3y2y1
+Y2 = N y2 + y3y1 + N y3y2y1
+Y1 = N y2 + Dy2y1 + Dy2y1
+z = y4 + y1y2 + y1y3
+Using the same approach for Figure 8.56 gives
+Next state
+Present 
+Output
+state DN=00 01 10 11 
+y3y2y1  z
+Y3Y2Y1
+S1 0 0 0 0 0 0 0 1 0 0 0 1 − 0
+S2 0 0 1 0 0 1 0 1 1 1 0 0 − 0
+S3 0 1 0 0 1 0 0 0 1 0 1 1 − 0
+S4 0 1 1 0 0 0 − − − 1
+S5 1 0 0 0 1 0 − − − 1
+The next-state and output expressions are:
+Y3 = Dy2y1
+Y2 = y3 + N y2y1 + N y2
+Y1 = Dy2y1 + N y2y1 + Dy3y1
+z = y3 + y2y1
+These expressions define a circuit that has considerably lower cost that the circuit resulting from Figure
+8.55.
+8-5
+
+--- Page Break ---
+
+8.9. To compare individual bits, let k = w1 ⊕ w2. Then, a suitable state table is
+Next state Output z
+Present 
+state 
+k = 0 k = 1 k = 0 k = 1
+A B A 0 0
+B C A 0 0
+C D A 0 0
+D D A 1 0
+The state-assigned table is
+Present Next State Output
+state k = 0 k = 1 k = 0 k = 1
+y2y1 Y2Y1 Y2Y1 z z
+00 01 00 0 0
+01 10 00 0 0
+10 11 00 0 0
+11 11 00 1 0
+The next-state and output expressions are
+Y2 = ky1 + ky2
+Y1 = ky1 + ky2
+z = ky1y2
+8-6
+
+--- Page Break ---
+
+8.10. Verilog code for the solution given in problem 8.9 is
+module prob8 10 (Clock, Resetn, w1, w2, z);
+input Clock, Resetn, w1, w2;
+output z;
+reg z;
+reg [2:1] y, Y;
+wire k;
+parameter [2:1] A = 2’b00, B = 2’b01, C = 2’b10, D = 2’b11;
+// Define the next state and output combinational circuits
+∧ 
+assign k = w1  w2;
+always @(k or y)
+case (y)
+A: if (k) begin
+Y = A; z = 0;
+end
+else begin
+Y = B; z = 0;
+end
+B: if (k) begin
+Y = A; z = 0;
+end
+else begin
+Y = C; z = 0;
+end
+C: if (k) begin
+Y = A; z = 0;
+end
+else begin
+Y = D; z = 0;
+end
+D: if (k) begin
+Y = A; z = 0;
+end
+else begin
+Y = D; z = 1;
+end
+endcase
+// Define the sequential block
+always @(negedge Resetn or posedge Clock)
+if (Resetn == 0) y <= A;
+else y <= Y;
+endmodule
+8-7
+
+--- Page Break ---
+
+8.11. A possible minimum state table for a Moore-type FSM is
+Next state 
+Present  Output
+state  z
+w = 0 w = 1 
+A B C 0
+B D E 0
+C E D 0
+D F G 0
+E F F 0
+F A A 0
+G A A 1
+8.12. A minimum state table is shown below. We assume that the 3-bit patterns do not overlap.
+Next state 
+Present  Output
+state  p
+w = 0 w = 1 
+A B C 0
+B D E 0
+C E D 0
+D A F 0
+E F A 0
+F B C 1
+8-8
+
+--- Page Break ---
+
+8.13. Verilog code for the solution given in problem 8.12 is
+module prob8 13 (Clock, Resetn, w, p);
+input Clock, Resetn, w;
+output p;
+reg [3:1] y, Y;
+parameter [3:1] A = 3’b000, B = 3’b001, C = 3’b010, D = 3’b011, E = 3’b100, F = 3’b101;
+// Define the next state combinational circuit
+always @(w or y)
+case (y)
+A: if (w) Y = C;
+else Y = B;
+B: if (w) Y = E;
+else Y = D;
+C: if (w) Y = D;
+else Y = E;
+D: if (w) Y = F;
+else Y = A;
+E: if (w) Y = A;
+else Y = F;
+F: if (w) Y = C;
+else Y = B;
+default: Y = 3’bxxx;
+endcase
+// Define the sequential block
+always @(negedge Resetn or posedge Clock)
+if (Resetn == 0) y <= A;
+else y <= Y;
+// Define output
+assign p = (y == F);
+endmodule
+8.14. The timing diagram is
+Clock
+a
+b
+y y,
+2
+S
+Mealy
+Sum
+Moore
+8-9
+
+--- Page Break ---
+
+8.15. The state table corresponding to Figure P8.1 is
+Next state 
+Present  Output
+state  z
+w = 0 w = 1 
+A C D 0
+B B A 0
+C D A 0
+D C B 1
+Using one-hot encoding, the state-assigned table is
+Next state
+Present 
+Output
+state w = 0 w = 1 
+y4y3y2y1  z
+Y4Y3Y2Y1 Y4Y3Y2Y1 
+A 0 0 0 1 0 1 0 0 1 0 0 0 0
+B 0 0 1 0 0 0 1 0 0 0 0 1 0
+C 0 1 0 0 1 0 0 0 0 0 0 1 0
+D 1 0 0 0 0 1 0 0 0 0 1 0 1
+The next-state expressions are
+D4 = Y4 = wy3 + wy1
+D3 = Y3 = w(y1 + y4)
+D2 = Y2 = wy2 + wy4
+D1 = Y1 = w(y2 + y1)
+The output is given by z = y4.
+8.16. The state-assignment given in problem 8.15 can be used, except that the state variable y1 should be com-
+plemented. Thus, the state assignment will be y4y3y2y1 = 0000, 0011, 0101, and 1001, for the states A, B,
+C, and D, respectively. The circuit derived in problem 8.15 can be used, except that the signal for the state
+variable y1 should be taken from the Q output of flip-flop 1, rather than from its Q output.
+8.17. The partitioning process gives
+P1 = (ABCDEF G)
+P2 = (ABD)(CEF G)
+P3 = (ABD)(CEG)(F )
+P4 = (ABD)(CEG)(F )
+8-10
+
+--- Page Break ---
+
+The minimum state table is
+Next state Output z
+Present 
+state 
+w = 0 w = 1 w = 0 w = 1
+A A C 0 0
+C F C 0 1
+F C A 0 1
+8.18. The partitioning process gives
+P1 = (ABCDEF G)
+P2 = (ADG)(BCEF )
+P3 = (AG)(D)(B)(CE)(F )
+P4 = (A)(G)(D)(B)(CE)(F )
+The minimized state table is
+Next state Output z
+Present 
+state 
+w = 0 w = 1 w = 0 w = 1
+A B C 0 0
+B D − 0 1
+C F C 0 1
+D B G 0 0
+F C D 0 1
+G F − 0 0
+8.19. An implementation for the Moore-type FSM in Figures 8.5.7 and 8.5.6 is given in the solution for problem
+8.8. The Mealy-type FSM in Figure 8.58 is described in the form of a state table as
+Next state Output z
+Present 
+state 
+DN=00 01 10 11 00 01 10 11
+S1 S1 S3 S2 − 0 0 0 1
+S2 S2 S1 S3 − 0 1 1 −
+S3 S3 S2 S1 − 0 0 1 −
+8-11
+
+--- Page Break ---
+
+The state-assigned table is
+Next state Output
+Present 
+state DN=00 01 10 11 00 01 10 11
+y2y1 
+Y2Y1 Y2Y1 Y2Y1 Y2Y1 z z z z
+00 00 10 01 − 0 0 0 −
+01 01 00 10 − 0 1 1 −
+10 10 01 00 − 0 0 1 −
+The next-state and output expressions are
+Y2 = Dy1 + Dy2N + N y2y1
+Y1 = N y2 + Dy1N + Dy2y1
+z = Dy1 + Dy2 + N y1
+In this case, choosing the Mealy model results in a simpler circuit.
+8.20. Use w as the clock. Then the state table is
+Present Next Output
+state state z1z0
+A B 0 0
+B C 1 0
+C D 0 1
+D A 1 1
+The state-assigned table is
+Present Next
+Output
+state state 
+y1y0 Y1Y0 z1z0
+0 0 1 0 0 0
+1 0 0 1 1 0
+0 1 1 1 0 1
+1 1 0 0 1 1
+The next-state expressions are
+Y1 = y1
+Y2 = y1 ⊕ y2
+8-12
+
+--- Page Break ---
+
+The resulting circuit is
+D Q
+D Q
+Q
+Q
+w
+z1 z0
+8.21. From the state-assigned table given in the solution to Problem 8.20, the excitation table for JK flip-flops is
+Present
+Flip-flop inputs Output
+state 
+y1y0 J1K1 J0K0 z1z0
+0 0 1 d 0 d 0 0
+1 0 d 1 1 d 1 0
+0 1 1 d d 0 0 1
+1 1 d 1 d 1 1 1
+The flip-flop inputs are J1 = K1 = 1 and J2 = K2 = y1. The resulting circuit is
+1 J Q J Q
+K Q K Q
+w
+z1 z0
+8.22. From the state-assigned table given in the solution to Problem 8.20, the excitation table for T flip-flops is
+Present Flip-flop
+Output
+state inputs 
+z z
+y1y0 T1 T0  1 0
+0 0 1 0 0 0
+1 0 1 1 1 0
+0 1 1 0 0 1
+1 1 1 1 1 1
+8-13
+
+--- Page Break ---
+
+The flip-flop inputs are T1 = 1 and T2 = y1. The resulting circuit is
+1 T Q T Q
+Q Q
+w
+z1 z0
+8.23. The state diagram is
+Next state 
+Present  Output
+state  z2z1z0
+w = 0 w = 1 
+A A B 0 0 0
+B B C 0 0 1
+C C D 0 1 0
+D D E 0 1 1
+E E F 1 0 0
+F F A 1 0 1
+The state-assigned table is
+Next state
+Present 
+Output
+state w = 0 w = 1 
+y2y1y0  z2z1z0
+Y2Y1Y0
+0 0 0 0 0 0 0 0 1 0 0 0
+0 0 1 0 0 1 0 1 0 0 0 1
+0 1 0 0 1 0 0 1 1 0 1 0
+0 1 1 0 1 1 1 0 0 0 1 1
+1 0 0 1 0 0 1 0 1 1 0 0
+1 0 1 1 0 1 0 0 0 1 0 1
+The next-state expressions are
+Y2 = y0y2 + wy2 + wy0y1
+Y1 = y0y1 + wy1 + wy0y1y2
+Y0 = wy0 + wy0
+The outputs are: z2 = y2, z1 = y1, and z0 = y0.
+8-14
+
+--- Page Break ---
+
+8.24. Using the state-assigned table given in the solution for problem 8.23, the excitation table for JK flip-flops is
+Present Flip-flop inputs
+Outputs
+state w = 0 w = 1 
+z2z1z0
+y2y1y0 J K J K J K J K J K J K
+2 2  1 1  0 0  2 2  1 1  0 0
+000 0 d 0 d 0 d 0 d 0 d 1 d 000
+001 0 d 0 d d 0 0 d 1 d d 1 001
+010 0 d d 0 0 d 0 d d 0 1 d 010
+011 0 d d 0 d 0 1 d d 1 d 1 011
+100 d 0 0 d 0 d d 0 0 d 1 d 100
+101 d 0 0 d d 0 d 1 0 d d 1 101
+The expressions for the inputs of the flip-flops are
+J2 = wy1y0
+K2 = wy2y0
+J1 = wy2y0
+K1 = wy0
+J0 = w
+K0 = w
+The outputs are: z2 = y2, z1 = y1, and z0 = y0.
+8.25. Using the state-assigned table given in the solution for problem 8.23, the excitation table for T flip-flops is
+Present Flip-flop inputs
+Outputs
+state w = 0 w = 1 
+z2z1z0
+y2y1y0 T T T T T T
+2 1 0  2 1 0
+000 000 001 000
+001 000 011 001
+010 000 001 010
+011 000 111 011
+100 000 001 100
+101 000 101 101
+The expressions for T inputs of the flip-flops are
+T2 = wy1y0 + wy2y0
+T1 = wy2y0
+T0 = w
+The outputs are: z2 = y2, z1 = y1, and z0 = y0.
+8-15
+
+--- Page Break ---
+
+8.26. The state diagram is
+Present Next state 
+Count
+state w = 0 w = 1
+A H C 0
+B A D 1
+C B E 2
+D C F 3
+E D G 4
+F E H 5
+G F A 6
+H G B 7
+The state-assigned table is
+Next state
+Present 
+Output
+state w = 0 w = 1 
+y2y1y0  z2z1z0
+Y2Y1Y0 Y2Y1Y0
+A 0 0 0 1 1 1 0 1 0 0 0 0
+B 0 0 1 0 0 0 0 1 1 0 0 1
+C 0 1 0 0 0 1 1 0 0 0 1 0
+D 0 1 1 0 1 0 1 0 1 0 1 1
+E 1 0 0 0 1 1 1 1 0 1 0 0
+F 1 0 1 1 0 0 1 1 1 1 0 1
+G 1 1 0 1 0 1 0 0 0 1 1 0
+H 1 1 1 1 1 0 0 0 1 1 1 1
+The next-state expressions (inputs to D flip-flops) are
+D2 = Y2 = wy2y1 + wy2y1 + wy2y1 + wy2y0 + y2y1y0w
+D1 = Y1 = wy1 + y1y0 + wy1y0
+D0 = Y0 = y0w + y0w
+The outputs are: z2 = y2, z1 = y1, and z0 = y0.
+8-16
+
+--- Page Break ---
+
+8.27. From the state-assigned table given in the solution to problem 8.26, the excitation table for JK flip-flops is
+Present Flip-flop inputs
+Outputs
+state w = 0 w = 1 
+z2z1z0
+y2y1y0 J K J K J K J K J K J K
+2 2  1 1  0 0  2 2  1 1  0 0
+000 1 d 1 d 1 d 0 d 1 d 0 d 000
+001 0 d 0 d d 1 0 d 1 d d 0 001
+010 0 d d 1 1 d 1 d d 1 0 d 010
+011 0 d d 0 d 1 1 d d 1 d 0 011
+100 d 1 1 d 1 d d 0 1 d 0 d 100
+101 d 0 0 d d 1 d 0 1 d d 0 101
+110 d 0 d 1 1 d d 1 d 1 0 d 110
+111 d 0 d 0 d 1 d 1 d 1 d 0 111
+The expressions for J and K inputs to the three flip-flops are
+J2 = y1w + y1y0w
+K2 = J2
+J1 = w + y0
+K1 = J1
+J0 = w
+K0 = J0
+The outputs are: z2 = y2, z1 = y1, and z0 = y0.
+8.28. From the state-assigned table given in the solution to problem 8.26, the excitation table for T flip-flops is
+Present Flip-flop inputs
+Outputs
+state w = 0 w = 1 
+z2z1z0
+y2y1y0 T T T T T T
+2 1 0  2 1 0
+000 111 010 000
+001 001 010 001
+010 011 110 010
+011 001 110 011
+100 111 010 100
+101 001 010 101
+110 011 110 110
+111 001 110 111
+The expressions for T inputs of the flip-flops are
+T2 = y1y0w + y1w
+T1 = w + y0
+T0 = w
+8-17
+
+--- Page Break ---
+
+The outputs are: z2 = y2, z1 = y1, and z0 = y0.
+8.29. The next-state and output expressions are
+D1 = Y1 = w(y1 + y2)
+D2 = Y2 = w(y1 + y2)
+z = y1y2
+The corresponding state-assigned table is
+Next state
+Present 
+Output
+state w = 0 w = 1 
+y2y1  z
+Y2Y1 Y2Y1
+0 0 0 0 1 0 0
+0 1 0 0 1 1 1
+1 0 0 0 1 1 0
+1 1 0 0 0 1 0
+This leads to the state table
+Next state Output
+Present 
+state 
+w = 0 w = 1 z
+A A C 0
+B A D 1
+C A D 0
+D A B 0
+The circuit produces z = 1 whenever the input sequence on w comprises a 0 followed by an even number
+of 1s.
+8-18
+
+--- Page Break ---
+
+8.30. The Verilog code based on the style of code in Figure 8.29 is
+module prob8 30 (Clock, Resetn, D, N, z);
+input Clock, Resetn, D, N;
+output z;
+reg [3:1] y, Y;
+wire [1:0] K;
+parameter [3:1] S1 = 3’b000, S2 = 3’b001, S3 = 3’b010, S4 = 3’b011, S5 = 3’b100;
+// Define the next state combinational circuit
+assign K = {D, N};
+always @(K or y)
+case (y)
+S1: if (K == 2’b00) Y = S1;
+else if (K == 2’b01) Y = S3;
+else if (K == 2’b10) Y = S2;
+else Y = 3’bxxx;
+S2: if (K == 2’b00) Y = S2;
+else if (K == 2’b01) Y = S4;
+else if (K == 2’b10) Y = S5;
+else Y = 3’bxxx;
+S3: if (K == 2’b00) Y = S3;
+else if (K == 2’b01) Y = S2;
+else if (K == 2’b10) Y = S4;
+else Y = 3’bxxx;
+S4: if (K == 2’b00) Y = S1;
+else Y = 3’bxxx;
+S5: if (K == 2’b00) Y = S3;
+else Y = 3’bxxx;
+default: Y = 3’bxxx;
+endcase
+// Define the sequential block
+always @(negedge Resetn or posedge Clock)
+if (Resetn == 0) y <= S1;
+else y <= Y;
+// Define output
+assign z = (y == S4) | (y == S5);
+endmodule
+8-19
+
+--- Page Break ---
+
+8.31. The Verilog code based on the style of code in Figure 8.34 is
+module prob8 31 (Clock, Resetn, D, N, z);
+input Clock, Resetn, D, N;
+output z;
+reg [3:1] y;
+wire [1:0] K;
+parameter [3:1] S1 = 3’b000, S2 = 3’b001, S3 = 3’b010, S4 = 3’b011, S5 = 3’b100;
+assign K = {D, N};
+// Define the sequential block
+always @(negedge Resetn or posedge Clock)
+if (Resetn == 0) y <= S1;
+else
+case (y)
+S1: if (K == 2’b00) y <= S1;
+else if (K == 2’b01) y <= S3;
+else if (K == 2’b10) y <= S2;
+else y <= 3’bxxx;
+S2: if (K == 2’b00) y <= S2;
+else if (K == 2’b01) y <= S4;
+else if (K == 2’b10) y <= S5;
+else y <= 3’bxxx;
+S3: if (K == 2’b00) y <= S3;
+else if (K == 2’b01) y <= S2;
+else if (K == 2’b10) y <= S4;
+else y <= 3’bxxx;
+S4: if (K == 2’b00) y <= S1;
+else y <= 3’bxxx;
+S5: if (K == 2’b00) y <= S3;
+else y <= 3’bxxx;
+default: y <= 3’bxxx;
+endcase
+// Define output
+assign z = (y == S4) | (y == S5);
+endmodule
+8.32. The Verilog code based on the style of code in Figure 8.29 is
+module prob8 32 (Clock, Resetn, D, N, z);
+input Clock, Resetn, D, N;
+output z;
+reg z;
+reg [2:1] y, Y;
+wire [1:0] K;
+parameter [2:1] S1 = 2’b00, S2 = 2’b01, S3 = 2’b10;
+cont’d
+8-20
+
+--- Page Break ---
+
+// Define the next state and output combinational circuits
+assign K = {D, N};
+always @(K or y)
+case (y)
+S1: if (K == 2’b00) begin
+Y = S1; z = 0;
+end
+else if (K == 2’b01) begin
+Y = S3; z = 0;
+end
+else if (K == 2’b10) begin
+Y = S2; z = 0;
+end
+else begin
+Y = 2’bxx; z = 1’bx;
+end
+S2: if (K == 2’b00) begin
+Y = S2; z = 0;
+end
+else if (K == 2’b01) begin
+Y = S1; z = 1;
+end
+else if (K == 2’b10) begin
+Y = S3; z = 1;
+end
+else begin
+Y = 2’bxx; z = 1’bx;
+end
+S3: if (K == 2’b00) begin
+Y = S3; z = 0;
+end
+else if (K == 2’b01) begin
+Y = S2; z = 0;
+end
+else if (K == 2’b10) begin
+Y = S1; z = 1;
+end
+else begin
+Y = 2’bxx; z = 1’bx;
+end
+default: begin
+Y = 2’bxx; z = 1’bx;
+end
+endcase
+// Define the sequential block
+always @(negedge Resetn or posedge Clock)
+if (Resetn == 0) y <= S1;
+else y <= Y;
+endmodule
+8-21
+
+--- Page Break ---
+
+8.33. The Verilog code based on the style of code in Figure 8.34 is
+module prob8 33 (Clock, Resetn, D, N, z);
+input Clock, Resetn, D, N;
+output z;
+reg [2:1] y;
+wire [1:0] K;
+parameter [2:1] S1 = 2’b00, S2 = 2’b01, S3 = 2’b10;
+assign K = {D, N};
+// Define the sequential block
+always @(negedge Resetn or posedge Clock)
+if (Resetn == 0) y <= S1;
+else
+case (y)
+S1: if (K == 2’b00) y <= S1;
+else if (K == 2’b01) y <= S3;
+else if (K == 2’b10) y <= S2;
+else y <= 2’bxx;
+S2: if (K == 2’b00) y <= S2;
+else if (K == 2’b01) y <= S1;
+else if (K == 2’b10) y <= S3;
+else y <= 2’bxx;
+S3: if (K == 2’b00) y <= S3;
+else if (K == 2’b01) y <= S2;
+else if (K == 2’b10) y <= S1;
+else y <= 2’bxx;
+default: y <= 2’bxx;
+endcase
+// Define output
+assign z = ((y == S2) & ((K == 2’b01) | (K == 2’b10))) | ((y == S3) & (K == 2’b10));
+endmodule
+8-22
+
+--- Page Break ---
+
+8.34. Verilog code for the FSM in Figure P8.2 is
+module prob8 34 (Clock, Resetn, w, z);
+input Clock, Resetn, w;
+output z;
+reg [2:1] y, Y;
+parameter [2:1] A = 2’b00, B = 2’b01, C = 2’b10, D = 2’b11;
+// Define the next state combinational circuit
+always @(w or y)
+case (y)
+A: if (w) Y = C;
+else Y = A;
+B: if (w) Y = D;
+else Y = A;
+C: if (w) Y = D;
+else Y = A;
+D: if (w) Y = B;
+else Y = A;
+endcase
+// Define the sequential block
+always @(negedge Resetn or posedge Clock)
+if (Resetn == 0) y <= A;
+else y <= Y;
+// Define output
+assign z = (y == B);
+endmodule
+8-23
+
+--- Page Break ---
+
+8.35. An ASM chart for the FSM in Figure 8.57 is
+Reset
+S1
+1
+D
+0
+0
+N
+1
+S3
+1
+D
+0
+0
+N 0 
+1
+1 N
+S2 S5
+z
+1
+D
+0
+0
+N
+1
+S4
+z
+1
+D
+0
+1
+N
+0
+8-24
+
+--- Page Break ---
+
+8.36. An ASM chart for the FSM in Figure 8.58 is
+Reset
+S1
+1
+D
+0
+0
+N
+1
+S3
+z
+1
+D
+0
+0
+N
+1
+S2
+z
+1
+D
+0
+0
+N
+1
+8-25
+
+--- Page Break ---
+
+8.37. To ensure that the device 3 will get serviced the FSM in Figure 8.72 can be modified as follows:
+Reset 000
+Idle
+000 1xx
+gnt1 ⁄ g1=1
+1xx
+x00
+01x 01x
+001
+gnt2 ⁄ g2=1
+xx0 x01 x1x 001
+gnt3 ⁄ g3=1
+xx1
+8.39. The required control signals can be generated using the following FSM:
+00
+01 ⁄ R2out , TEMPin 01 ⁄ R1out , R2in
+10 ⁄ R3out , TEMPin 10 ⁄ R1out , R3in
+11 ⁄ R3out , TEMPin 11 ⁄ R2out , R3in
+A B C
+01 ⁄ TEMPout , R1in
+10 ⁄ TEMPout , R1in
+11 ⁄ TEMPout , R2in
+8-26
+
+--- Page Break ---
+
+Let k = w2 + w1. Then the next-state transitions can be defined as
+Next state
+Present 
+state 
+k = 0 k = 1
+A A B
+B B C
+C C A
+Using one-hot encoding, the state-assigned table becomes
+Next state
+Present 
+state k = 0 k = 1
+y3y2y1 
+Y3Y2Y1 Y3Y2Y1
+001 001 010
+010 010 100
+100 100 001
+The next-state expressions are
+Y3 = ky3 + ky2
+Y2 = ky2 + ky1
+Y1 = ky1 + ky3
+The output expressions are
+TEMP in = ky1
+TEMP out = ky3
+R1out = y2(w2 ⊕ w1)
+R1in = y3(w2 ⊕ w1)
+R2out = y1w2w1 + y2w2w1
+R2in = y2w2w1 + y3w2w1
+R3out = y1w2
+R3in = y2w2
+8-27
+
+--- Page Break ---
+
+Chapter 9
+9.1. The next-state and output expressions for the circuit in Figure P9.1 are
+Y1 = w1 + y1y2
+Y2 = w2 + y1 + w1y2
+z1 = y1
+z2 = y2
+This gives the excitation table
+Present Next state
+state w2w1 = 00 01 10 11 z2z1
+y2y1 
+Y2Y1
+A 00 11 10 11 10 11
+B 01 11 11 01 01 10
+C 10 11 10 11 10 01
+D 11 11 10 01 10 00
+The resulting flow table is
+Present Next state
+state  z2z1
+w2w1 = 00 01 10 11 
+A D C D C 11
+B D D B B 10
+C D C D C 01
+D D C B C 00
+The behavior is the same as described in the flow table in Figure 9.21a, if the state interchanges A ↔
+D and B ↔ C are made.
+9-1
+
+--- Page Break ---
+
+9.2. The waveforms are
+c
+1∆ 3∆ 1∆ 3∆
+z1
+2∆ 2∆ 2∆ 2∆
+z2
+The flow table is
+Present Next state Outputs, z2z1
+state C = 0 1 0 1
+0 1 0 00 10
+1 1 0 01 00
+The circuit generates a non-overlapping 2-phase clock.
+9.3. The partitioning procedure gives
+P1 = (ADGJM P T )(BEHR)(CF )(ILOSV )(KN U )
+P2 = (AD)(GP )(JM T )(B)(E)(HR)(C)(F )(ILOSV )(KN U )
+P3 = (A)(D)(GP )(JM T )(B)(E)(HR)(C)(F )(ILOSV )(KN U )
+P4 = P3
+This gives the flow table
+Present Next state
+state  z
+w2w1 = 00 01 10 11 
+A A B C − 0
+B D B − − 0
+C G − C − 0
+D D E F − 0
+E G E − − 0
+F J − F − 0
+G G H I − 0
+H J H − − 0
+I A − I − 1
+J J K I − 0
+K A K − − 1
+9-2
+
+--- Page Break ---
+
+The corresponding merger diagram is
+A B C D
+E
+K
+F
+J I H G
+This leads to the reduced flow table
+Present Next state
+state  z
+w2w1 = 00 01 10 11 
+A A B C − 0
+B D B − − 0
+C G C C − 0
+D D C F − 0
+F J F F − 0
+G G F I − 0
+I A I I − 1
+J J I I − 0
+9.4. The partitioning procedure gives
+P1 = (AF )(BEGL)(CJ)(DK)(HM )
+P2 = (AF )(BG)(EL)(CJ)(DK)(HM )
+P3 = (A)(F )(BG)(EL)(CJ)(DK)(HM )
+P4 = P3
+9-3
+
+--- Page Break ---
+
+Replacing states B and G, E and L, C and J, D and K, and H and M with new states B, E, C, D, and H,
+respectively, produces the following flow table:
+Present Next state Output
+state  z
+w2w1 = 00 01 10 11 
+A A B C − 0
+B D B − H 0
+C F − C H 0
+D D E C − 1
+E A E − H 0
+F F E C − 0
+H − B C H 1
+The merger diagram is
+A B C D
+H F E
+Only C and F can be merged if the Moore model is to be preserved. Therefore, the reduced flow table is
+Present Next state
+state  z
+w2w1 = 00 01 10 11 
+A A B C − 0
+B D B − H 0
+C C E C H 0
+D D E C − 1
+E A E − H 0
+H − B C H 1
+9-4
+
+--- Page Break ---
+
+9.5. Relabel the flow table as
+Present Next state Output z
+state 
+w2w1 = 00 01 10 11 00 01 10 11
+A 1 3 7 2 0 − 1 1
+B 5 3 4 8 0 1 0 0
+C 5 6 4 2 0 1 0 1
+D 1 6 7 8 − − 1 0
+The transition diagram is
+D 6 C
+8 2
+1 7, 4 5,
+A 3 B
+The diagonal transitions cannot be avoided without introducing additional states. A possible modification is
+D 6 E 6 C
+8 2
+4 5,
+1 7, F G
+4 5,
+8
+A 3 B
+This transition diagram can be embedded onto a 3-cube as follows:
+E
+6
+8
+D F
+6
+8 y
+1 7, 2
+C 4 5, G
+y3
+2
+4 5,
+y1
+A 3 B
+9-5
+
+--- Page Break ---
+
+Then the modified flow table is
+Present Next state Output z
+state 
+w2w1 = 00 01 10 11 00 01 10 11
+A A B D A 0 − 1 1
+B G B B F 0 1 0 0
+C C C G A 0 1 0 1
+D A E D D − − 1 0
+E − C − − − 1 − −
+F − − − D − − − 0
+G C − B − 0 − 0 −
+The excitation table is
+Present Next state Output
+state w2w1 = 00 01 10 11 00 01 10 11
+y3y2y1 
+Y3Y2Y1 z
+A 000 000 001 010 000 0 − 1 1
+B 001 101 001 001 011 0 1 0 0
+C 100 100 100 101 000 0 1 0 1
+D 010 000 110 010 010 − − 1 0
+E 110 − 100 − − − 1 − −
+F 011 − − − 010 − − − 0
+G 101 100 − 001 − 0 − 0 −
+The next-state and output expressions are
+Y3 = w2y3 + w2w1y1 + w1y3y1
+Y2 = w2w1y3y1 + w1y3y2y1 + w2y3y2y1 + w2w1y3y2y1
+Y2 = y3y2y1 + w2w1y3y2 + w2w1y3y2 + w2w1y2y1
+z = w2w1 + w1y2y1 + w2w1y3y1
+9-6
+
+--- Page Break ---
+
+9.6. Relabel the flow table in Figure 9.42 as
+Present Next state Output z
+state 
+w2w1 = 00 01 10 11 00 01 10 11
+A 1 3 7 2 0 − 1 1
+B 5 3 4 8 0 1 0 0
+C 5 6 4 2 0 1 0 1
+D 1 6 7 8 − − 1 0
+Using pairs of equivalent states gives the following transition diagram:
+C2 6 D2
+4 5,
+8
+B1 B2
+y
+3 3 2
+C1 6 D1
+y
+2 3
+1 7,
+y
+1
+A1 A2
+Therefore, the modified flow table is
+Present Next state Output z
+state 
+w2w1 = 00 01 10 11 00 01 10 11
+A1 A1 B1 A2 A1 0 − 1 1
+A2 A2 B2 D1 A2 0 − 1 1
+B1 C2 B1 B1 B2 0 1 0 0
+B2 B1 B2 B2 D2 0 1 0 0
+C1 C1 C1 C2 A1 0 1 0 1
+C2 C2 C2 B1 C1 0 1 0 1
+D1 A2 C1 D1 D1 − − 1 0
+D2 D1 C2 D2 D2 − − 1 0
+9-7
+
+--- Page Break ---
+
+The excitation table is
+Present Next state Output z
+state w2w1 = 00 01 10 11 00 01 10 11
+y3y2y1 
+Y3Y2Y1 z
+A1 000 000 010 001 000 0 − 1 1
+A2 001 001 011 101 001 0 − 1 1
+B1 010 110 010 010 011 0 1 0 0
+B2 011 010 011 011 111 0 1 0 0
+C1 100 100 100 110 000 0 1 0 1
+C2 110 110 110 010 100 0 1 0 1
+D1 101 001 100 101 101 − − 1 0
+D2 111 101 110 111 111 − − 1 0
+The next-state and output expressions are
+Y3 = w2w1y2y1 + w1y3y2y1 + w2w1y2y1 + w2w1y2y1 +
+y3y2y1 + w2w1y3 + w1y3y2 + w1y3y1
+Y2 = y3y2 + w2w1y3 + w1y2y1 + w2w1y2 + w2y2y1 + w2w1y3y2
+Y1 = w2y1 + w1y2y1 + w1y3y1 + w2w1y3y2
+z = w2y1 + w2y3y2 + w1y3y2 + w1y3y1
+9.7. Using the one-hot encoding, the FSM in Figure 9.42 can be implemented as
+State Present Next state Output z
+assignment state 
+w2w1 = 00 01 10 11 00 01 10 11
+0001 A A E F A 0 − 1 1
+0010 B G B B H 0 1 0 0
+0100 C C C G I 0 1 0 1
+1000 D F J D D − − 1 0
+0011 E − B − − − 1 − −
+1001 F A − D − 0 − 1 −
+0110 G C − B − 0 − 0 −
+1010 H − − − D − − − 0
+0101 I − − − A − − − 1
+1100 J − C − − − 1 − −
+9-8
+
+--- Page Break ---
+
+9.8. Using the merger diagram in Figure 9.40a, the FSM in Figure 9.39 becomes
+Present Next state Output
+state  z
+w2w1 = 00 01 10 11 
+A A G E − 0
+B B C B D 0
+C B C E C 1
+D − C E D 0
+E A − E D 1
+G B G − D 1
+9.9. The relabeled flow table is
+Present Next state Output
+state  z
+w2w1 = 00 01 10 11 
+A 1 2 3 −
+B 4 2 − 7
+C 6 − 3 7
+D 4 5 3 −
+E 1 5 − 7
+F 6 5 3 −
+G − 2 3 7
+The corresponding transition diagram is as follows. Note that the diagonal transitions are shown only when
+they involve a transition to a stable state.
+3 7,
+C G
+3 7
+3 2 7,
+A B
+2
+3 6, 1
+5
+E D
+5
+F
+9-9
+
+--- Page Break ---
+
+The diagonal transition D → C labeled 3 can be removed by using the unspecified entry in row E, such
+that the required transition is performed as D → E → F → C; this involves placing a label 3 on the paths
+from D to E and E to F . Similarly, the diagonal transition E → G labeled 7 can be removed by using the
+unspecified entry in row A, such that the required transition is performed as E → A → C → G. These
+modifications produce the following transition diagram:
+3 7,
+C G
+3 7, 2 7,
+A B
+2
+3 6, 1 7,
+5 3,
+E D
+5 3,
+F
+Then the modified flow table is
+Present Next state Output
+state  z
+w2w1 = 00 01 10 11 
+A A B C C 0
+B D B − G 0
+C F − C G 0
+D C E E − 1
+E A E F A 0
+F F E C − 0
+G − B C G 1
+Thus, a possible state assignment is: A = 000, B = 001, C = 100, D = 011, E = 010, F = 110,
+and G = 101. Then, the state-assigned table is
+9-10
+
+--- Page Break ---
+
+Present Next state
+Output
+state w2w1 = 00 01 10 11 
+y3y2y1  z
+Y3Y2Y1 
+A 000 000 001 100 100 0
+B 001 011 001 − 101 0
+C 100 110 − 100 101 0
+D 011 011 010 010 − 1
+E 010 000 010 110 000 0
+F 110 110 010 100 − 0
+G 101 − 001 100 101 1
+The next-state and output expressions are
+Y3 = w2y2 + w1y3 + w2w1y1
+Y2 = w1y3y1 + w2y3y1 + w2w1y2 + w2w1y3y2 + y2y1
+Y1 = w1y3y2 + w2w1y2 + w2w1y1 + y3y2y1
+z = y2y1 + y3y1
+9.10. The minimum-cost hazard-free implementation is
+f = x1x3x4 + x1x2x4 + x1x3x4
+9.11. The minimum-cost hazard-free implementation is
+f = x1x2x4x5 + x1x2x3x4 + x1x2x3x4 + x1x2x4x5
+9.12. The minimum-cost hazard-free POS implementation is
+f = (x1 + x2 + x4)(x1 + x2 + x3)(x1 + x3 + x4)(x2 + x3 + x4)
+9.13. The minimum-cost hazard-free POS implementation is
+f = (x1 + x2 + x4 + x5)(x1 + x2 + x3 + x4)(x1 + x2 + x4)
+9.14. If A = B = D = E = 1 and C changes from 0 to 1, then f changes 0 → 1 → 0 and g changes
+0 → 1 → 0 → 1. Therefore, there is a static hazard on f and a dynamic hazard on g.
+9-11
+
+--- Page Break ---
+
+9.16. The flow diagram in Figure P9.3 meets the vending machine specification if w2 = D and w1 = N . There-
+fore, the reduced flow table is the same as the same as the answer to Problem 9.3. The relabeled flow table is
+Present Next state Output
+state  z
+DN=00 01 10 11 
+A 1 2 4 − 0
+B 5 2 − − 0
+C 8 3 4 − 0
+D 5 3 7 − 0
+F 11 6 7 − 0
+G 8 6 10 − 0
+I 1 9 10 − 1
+J 11 9 10 − 0
+The transition diagram is
+9 10,
+I J
+1
+A B
+2
+10 4 11
+10 5
+C D
+3
+8  7
+G F
+6
+A suitable state assignment is: A = 000, B = 001, C = 010, D = 011, F = 111, G = 110, I = 100, and
+J = 101. Then the state-assigned table is
+9-12
+
+--- Page Break ---
+
+Present Next state
+Output
+state DN=00 01 10 11 
+y3y2y1  z
+Y3Y2Y1 
+A 000 000 001 010 − 0
+B 001 011 001 − − 0
+C 010 110 010 010 − 0
+D 011 011 010 111 − 0
+F 111 101 111 111 − 0
+G 110 110 111 100 − 0
+I 100 000 100 100 − 1
+J 101 101 100 100 − 0
+The next-state and output expressions are
+Y3 = Dy3 + N y3 + y3y1 + y3y2 + Dy1 + Dy2y1N
+Y2 = Dy3 + y3y2 + Ny3y1 + N y2 + Dy2y1 + Dy2y1
+Y1 = N y3y1 + Dy1N + N y3y2 + N y3y2 + y3y2y1 + y3y2y1
+z = y3y2y1
+9.17. A possible Moore-type flow table is
+Present Next state Output
+state  z
+wc = 00 01 10 11 
+A A B D − 0
+B A B − C 0
+C − B D C 0
+D A − D E 0
+E A E D E 1
+A merger diagram for this flow table is
+A B
+C
+E D
+9-13
+
+--- Page Break ---
+
+Merging states A, B and C into a new state A, and states D and E into a new state E, gives the Mealy-type
+flow table
+Present Next state Output z
+state 
+wc = 00 01 10 11 00 01 10 11
+A A A D A 0 0 0 0
+D A D D D 0 1 0 1
+Then, the excitation table is
+Present Next state Output
+state wc = 00 01 10 11 00 01 10 11
+y 
+Y z
+0 0 0 1 0 0 0 0 0
+1 0 1 1 1 0 1 0 1
+The next-state expression is
+Y = wc + cy + wy
+Note that the term wy is included to prevent a static hazard. The output expression is
+z = cy
+The resulting circuit is
+z
+c 
+w
+9-14
+
+--- Page Break ---
+
+9.18. A possible Moore-type flow table is
+Present Next state Output
+state  z
+wc = 00 01 10 11 
+A A B D − 0
+B A B − C 0
+C − B D C 0
+D A − D E 0
+E A E F E 1
+F A B F F 0
+The corresponding merger diagram is
+F A B
+C
+E D
+Merging rows A, B, and C into a new row A gives the reduced flow table
+Present Next state Output z
+state 
+wc = 00 01 10 11 z
+A A A D A 0
+D A − D E 0
+E A E F E 1
+F A A F F 0
+To determine a suitable state assignment, relabel the flow table as follows:
+Present Next state Output
+state wc = 00 01 10 11 z
+A 1 2 4 3 0
+D 1 − 4 6 0
+E 1 5 7 6 1
+F 1 2 7 8 0
+9-15
+
+--- Page Break ---
+
+The transition diagram is
+D 1 6, E
+1 1
+1 4, 1 7,
+A 1 2, F
+The flow table is
+Both diagonal transitions, under the label 1, can be omitted because there exist alternate paths along the
+edges for this label. Let the transition from E to A take place via D. Then, a possible state assignment is
+A = 00, D = 01, E = 11, and F = 10, which leads to the excitation table:
+Present Next state
+Output
+state wc = 00 01 10 11 
+z
+y2y1 Y2Y1 Y2Y1 Y2Y1 Y2Y1 
+A 00 00 00 01 00 0
+D 01 00 − 01 11 0
+E 11 01 11 10 11 1
+F 10 00 00 10 10 0
+The resulting next-state expressions are
+Y2 = wy2 + cy1
+Y1 = cy1 + wy1y2 + wy2c + wy1y2
+The product term wy1y2 is included to avoid a static hazard.
+The output expression is z = y1y2.
+9-16
+
+--- Page Break ---
+
+9.19. A possible state diagram for the three-input arbiter is
+Reset
+000
+000 A ⁄ 000 xx1 B ⁄ 001 xx1
+000 0x1
+100 000 x10 x01
+100 x10
+1xx D ⁄ 100 100 C ⁄ 010 x1x
+010
+9.20. Using the mutual exclusion element, the input valuation r2r1 = 11 cannot occur. Hence, the flow table is
+Present Next state Output
+state  g2g1
+r2r1 = 00 01 10 11 
+A A B C − 00
+B A B C − 01
+C A B C − 10
+The excitation table is
+Present Next state
+Output
+state r2r1 = 00 01 10 11 
+y2y1  g2g1
+Y2Y1 
+A 00 00 01 10 − 00
+B 01 00 01 10 − 01
+C 10 00 01 10 − 10
+D 11 − − − − −
+9-17
+
+--- Page Break ---
+
+The resulting next state and output equations are
+Y1 = r1
+Y2 = r2
+g1 = y1
+g2 = y2
+9-18
+
+--- Page Break ---
+
+Chapter 10
+10.1. In the modified shift register the order of the multiplexers that perform the load and enable operations are
+reversed from the order in Figure 10.4. Bit zero of the modified register is show below.
+R0 L E
+1
+1
+w 0 D Q
+0
+Clock Q
+Q0
+10.2. (a) A modified ASM chart that has only Moore-type outputs in state S2 is given below.
+Reset
+S1
+Load A
+B ← 0
+0
+0 1
+s s
+1
+S2 S4
+Shift A Done
+S3
+Shift A 1
+A = 0?
+B ← B + 1
+0
+0
+a
+0
+1
+10-1
+
+--- Page Break ---
+
+(b)
+Reset
+S1
+LB
+0
+0 1
+s s
+1
+S2 S4
+EA Done = 1
+S3
+1
+EA, EB z
+0
+0
+a
+0
+1
+10-2
+
+--- Page Break ---
+
+(c) module bitcount (Clock, Resetn, LA, s, Data, B, Done);
+input Clock, Resetn, LA, s;
+input [7:0] Data;
+output [3:0] B;
+output Done;
+wire [7:0] A;
+wire z;
+reg [1:0] Y, y;
+reg [3:0] B;
+reg Done, EA, EB, LB;
+// control circuit
+parameter S1 = 2’b00, S2 = 2’b01, S3 = 2’b10, S4 = 2’b11;
+always @(s or y or z)
+begin: State table
+case (y)
+S1: if (s == 0) Y = S1;
+else Y = S2;
+S2,S3: if (!z && !A[0]) Y = S2;
+else if (!z && A[0]) Y = S3;
+else Y = S4;
+S4: if (s == 1) Y = S4;
+else Y = S1;
+endcase
+end
+always @(posedge Clock or negedge Resetn)
+begin: State flipflops
+if (Resetn == 0) y <= S1;
+else y <= Y;
+end
+always @(y or A[0])
+begin: FSM outputs
+EA = 0; LB = 0; EB = 0; Done = 0; // defaults
+case (y)
+S1: LB = 1;
+S2: EA = 1;
+S3: begin
+EA = 1; EB = 1;
+end
+S4: Done = 1;
+endcase
+end
+10-3
+
+--- Page Break ---
+
+// datapath circuit
+// counter B
+always @(negedge Resetn or posedge Clock)
+if (!Resetn) B <= 0;
+else if (LB) B <= 0;
+else if (EB) B <= B + 1;
+shiftrne ShiftA (Data, LA, EA, 0, Clock, A);
+assign z = ∼|A;
+endmodule
+10.3. (a)
+Reset
+S1
+Load A P ← 0 C,  ← 0
+Load B
+0
+0 1
+s s
+1
+S2 S3
+Shift left A, C ← C + 1 Done
+1
+P ← P + A C = n – 1?
+0
+0
+bC
+1
+10-4
+
+--- Page Break ---
+
+(b)
+LA 0 DataA DataB LC 0
+L L
+LB E 
+EA E Shift-left Register EC E Counter.
+A B C
+Clock
+2n
+n log2n
++
+n-to-1
+Sum
+0
+2n 2n b
+C
+Psel
+2n
+z
+DataP
+EP E
+register
+2n
+P
+(c) The ASM chart for the control circuit is shown below. Note that we assume the EB signal is controlled
+by external logic.
+10-5
+
+--- Page Break ---
+
+Reset
+S1
+Psel = 0, EP, LC
+0
+s
+1
+0
+1
+s
+S2 S3
+Psel = 1, EA EC, Done
+1
+EP z
+0
+0
+bC
+1
+(d) module multiply (Clock, Resetn, LA, LB, s, DataA, DataB, P, Done);
+parameter n = 8;
+parameter m = 3;
+input Clock, Resetn, LA, LB, s;
+input [n−1:0] DataA, DataB;
+output [n+n−1:0] P;
+output Done;
+wire bc, z;
+reg [n+n−1:0] DataP;
+wire [n+n−1:0] A, Sum;
+reg [1:0] y, Y;
+wire [n−1:0] B;
+wire [m−1:0] C;
+reg Done, EA, EP, Psel, LC, EC;
+integer k;
+10-6
+
+--- Page Break ---
+
+// control circuit
+parameter S1 = 2’b00, S2 = 2’b01, S3 = 2’b10;
+always @(s or y or z)
+begin: State table
+case (y)
+S1: if (s == 0) Y = S1;
+else Y = S2;
+S2: if (z) Y = S3;
+else Y = S2;
+S3: if (s == 1) Y = S3;
+else Y = S1;
+default: Y = 2’bxx;
+endcase
+end
+always @(posedge Clock or negedge Resetn)
+begin: State flipflops
+if (Resetn == 0) y <= S1;
+else y <= Y;
+end
+always @(y or bc)
+begin: FSM outputs
+EA = 0; EP = 0; Done = 0; Psel = 0; EC = 0; LC = 0; // defaults
+case (y)
+S1: begin
+EP = 1; EC = 1; LC = 1;
+end
+S2: begin
+EA = 1; Psel = 1; EC = 1; LC = 0;
+if (bc) EP = 1;
+else EP = 0;
+end
+S3: Done = 1;
+endcase
+end
+// datapath circuit
+regne RegB (DataB, Clock, Resetn, LB, B);
+defparam RegB.n = 8;
+shiftlne ShiftA ({{n{1’b0}}, DataA}, LA, EA, Clock, A);
+defparam ShiftA.n = 16;
+upcount Counter (LC, Clock, EC, C);
+defparam Counter.n = m;
+10-7
+
+--- Page Break ---
+
+assign bc = B[C];
+assign z = &C;
+assign Sum = A + P;
+// define the 2n 2-to-1 multiplexers
+always @(Psel or Sum)
+for (k = 0; k < n+n; k = k+1)
+DataP[k] = Psel ? Sum[k] : 0;
+regne RegP (DataP, Clock, Resetn, EP, P);
+defparam RegP.n = 16;
+endmodule
+10.4. 
+module divider (Clock, Resetn, s, LA, EB, DataA, DataB, R, Q, Done);
+parameter n = 8, logn = 3;
+input Clock, Resetn, s, LA, EB;
+input [n−1:0] DataA, DataB;
+output [n−1:0] R, Q;
+output Done;
+wire Cout, z;
+wire [n−1:0] DataR;
+wire [n−1:0] Sum;
+reg [1:0] y, Y;
+wire [n−1:0] A, B, Q;
+wire [logn−1:0] Count;
+reg Done, EA, Rsel, LR, ER, LC, EC, EQ;
+// control circuit
+parameter S1 = 2’b00, S2 = 2’b01, S3 = 2’b10, S4 = 2’b11;
+always @(s or y or z)
+begin: State table
+case (y)
+S1: if (s == 0) Y = S1;
+else Y = S2;
+S2: Y = S3;
+S3: if (z == 1) Y = S4;
+else Y = S2;
+S4: if (s == 1) Y = S4;
+else Y = S1;
+endcase
+end
+10-8
+
+--- Page Break ---
+
+always @(posedge Clock or negedge Resetn)
+begin: State flipflops
+if (Resetn == 0) y <= S1;
+else y <= Y;
+end
+always @(y or s or Cout or z)
+begin: FSM outputs
+LR = 0; ER = 0; LC = 0; EC = 0; EA = 0; // defaults
+EQ = 0; Rsel = 0; Done = 0; // defaults
+case (y)
+S1: begin
+LC = 1; LR = 1; Rsel = 0;
+end
+S2: begin
+ER = 1; EA = 1;
+end
+S3: begin
+Rsel = 1; EQ = 1; EC = 1;
+if (Cout) LR = 1;
+else LR = 0;
+if (z == 0) EC = 1;
+else EC = 0;
+end
+S4: Done = 1;
+endcase
+end
+// datapath circuit
+regne RegB (DataB, Clock, Resetn, EB, B);
+defparam RegB.n = n;
+shiftlne ShiftR (DataR, LR, ER, A[n−1], Clock, R);
+defparam ShiftR.n = n;
+shiftlne ShiftA (DataA, LA, EA, 0, Clock, A);
+defparam ShiftA.n = n;
+shiftlne ShiftQ (0, 0, EQ, Cout, Clock, Q);
+defparam ShiftQ.n = n;
+downcount Counter (Clock, EC, LC, Count);
+defparam Counter.n = logn;
+assign z = (Count == 0);
+assign {Cout, Sum} = R + {0, ∼B} + 1;
+// define the n 2-to-1 multiplexers
+assign DataR = Rsel ? Sum : 0;
+endmodule
+10-9
+
+--- Page Break ---
+
+10.5. (a)
+Reset
+S1
+Q ← 0
+Load A
+Load B
+0
+0 1
+s s
+1
+S3
+Done
+S2
+1 0
+R ← R – B
+R – B ≥ 0?
+Q ← Q + 1
+10-10
+
+--- Page Break ---
+
+(b)
+R A LoadB B
+sel
+E
+1 0
+RegB
+n
+ER
+E
+LoadA
+RegR
+LQ 0
+R n
+L
+C C
+out + i 1 EQ E Counter
+R – B
+Cout
+n Q
+Clock
+(c)
+Reset
+S1
+LQ, EQ, Rsel = 0
+0
+0 1
+s s
+1
+S3
+Done
+S2
+Rsel = 1
+EQ 1 0
+Cout
+ER 
+10-11
+
+--- Page Break ---
+
+(d) module divider (Clock, Resetn, s, EA, EB, DataA, DataB, R, Q, Done);
+parameter n = 8;
+input Clock, Resetn, s, EA, EB;
+input [n−1:0] DataA, DataB;
+output [n−1:0] R, Q;
+output Done;
+wire Cout, ERegR;
+wire [n−1:0] DataR;
+wire [n−1:0] Sum;
+reg [1:0] y, Y;
+wire [n−1:0] A, B, Q;
+reg Done, Rsel, ER, LQ, EQ;
+// control circuit
+parameter S1 = 2’b00, S2 = 2’b01, S3 = 2’b10;
+always @(s or y or Cout)
+begin: State table
+case (y)
+S1: if (s == 0) Y = S1;
+else Y = S2;
+S2: if (Cout == 0) Y = S3;
+else Y = S2;
+S3: if (s == 1) Y = S3;
+else Y = S1;
+default: Y = S1;
+endcase
+end
+always @(posedge Clock or negedge Resetn)
+begin: State flipflops
+if (Resetn == 0) y <= S1;
+else y <= Y;
+end
+always @(y or s or Cout)
+begin: FSM outputs
+ER = 0; LQ = 0; EQ = 0; Rsel = 0; Done = 0; // defaults
+case (y)
+S1: begin
+LQ = 1; EQ = 1; Rsel = 0;
+end
+S2: begin
+Rsel = 1;
+if (Cout)
+begin
+EQ = 1; ER = 1;
+end
+10-12
+
+--- Page Break ---
+
+else
+begin
+EQ = 0; ER = 0;
+end
+end
+S3: Done = 1;
+endcase
+end
+// datapath circuit
+regne RegB (DataB, Clock, Resetn, EB, B);
+defparam RegB.n = n;
+regne RegR (DataR, Clock, Resetn, ERegR, R);
+defparam RegR.n = n;
+upcount Counter (Clock, EQ, LQ, Q);
+defparam Counter.n = n;
+assign ERegR = ER | EA;
+assign {Cout, Sum} = {1’b0, R} + {1’b0, ∼B} + 1;
+// define the n 2-to-1 multiplexers
+assign DataR = Rsel ? Sum : DataA;
+endmodule
+(e) This implementation of a divider is less efficient in the worst case when compared to the other implemen-
+tations shown. The efficient algorithms presented are able to perform division in n cycles for n-bit inputs.
+n 
+However, the method of repeated subtraction takes 2 cycles for the worst case, which is when dividing by
+1. On the other hand, if the two numbers A and B are close in size, then repeated subtraction is an efficient
+approach.
+10.6. State S3 is responsible for loading the operands into the divider, while state S4 starts the division operation.
+These states can be combined into a single state. We can use the z flag to indicate the first time that we’ve
+entered the new combined state. When z = 1 a mealy output is produced which loads the operands and
+decrements the counter. Thus, the z flag changes to a 0. The combined state now produces a mealy output
+which starts the division, on the condition that z = 0. This control circuit ASM chart is shown below.
+10-13
+
+--- Page Break ---
+
+Reset
+S1
+LC Ssel,  = 0, ES
+0
+s
+1
+S2
+EC Ssel = 1, ES
+0
+z
+1
+S3
+0
+1 
+LA, EB, EC z s
+1
+0
+S4
+Div
+Div Done,
+0 1
+zz
+10.7. module meancntl (Clock, Resetn, s, z, zz, EC, LC, Ssel, ES, LA, EB, Div, Done);
+input Clock, Resetn, s, z, zz;
+output EC, LC, Ssel, ES, LA, EB, Div, Done;
+reg EC, LC, Ssel, ES, LA, EB, Div, Done;
+reg [1:0] y, Y;
+parameter S1 = 2’b00, S2 = 2’b01, S3 = 2’b10, S4 = 2’b11;
+always @(s or y or z or zz)
+begin: State table
+case (y)
+S1: if (s == 0) Y = S1;
+else Y = S2;
+S2: if (z == 0) Y = S2;
+else Y = S3;
+10-14
+
+--- Page Break ---
+
+S3: if (zz == 1) Y = S3;
+else Y = S4;
+S4: if (s == 1) Y = S4;
+else Y = S1;
+endcase
+end
+always @(posedge Clock or negedge Resetn)
+begin: State flipflops
+if (Resetn == 0) y <= S1;
+else y <= Y;
+end
+always @(s or y or z or zz)
+begin: FSM outputs
+LC = 0; EC = 0; ES = 0; LA = 0; EB = 0; Div = 0; Done = 0; Ssel = 0; // defaults
+case (y)
+S1: begin
+LC = 1; ES = 1;
+end
+S2: begin
+Ssel = 1; ES = 1;
+if (z == 0) EC = 1;
+else EC = 0;
+end
+S3: if (z == 0)
+begin
+Div = 1; LA = 0; EB = 0; EC = 0;
+end
+else
+begin
+LA = 1; EB = 1; EC = 1;
+end
+S4: begin
+Div = 1; Done = 1;
+end
+endcase
+end
+endmodule
+10.8. The states S2 and S3 can be merged into a single state by performing the assignment Cj = Ci + 1. The
+circuit would require an adder to increment Ci by 1 and the outputs of this adder would be loaded in parallel
+into the counter Cj . If instead of using counters to implement Ci and Cj we used shift registers, then the
+effect of producing Ci + 1 could be efficiently implemented by wiring Ci to the parallel-load data inputs on
+Cj such that the bits are shifted by one position.
+10.9. (a) The part of the datapath circuit that needs to be modified is shown below. The rest of the datapath is the
+same as the circuit shown in Figure 10.37.
+10-15
+
+--- Page Break ---
+
+1000
+4 4
+LI L LJ L
+Shift-right
+EI E Shift-right EJ E
+Ci C j
+Clock
+Ci ( k – 2) ⇒ zi
+C j ( k – 1) ⇒ z j
+0 1 Csel
+ExtAdd
+2
+RAdd 4 Cmux
+2-to-4decoder4
+0 1 Int
+Rout[0-3] 4 4 2
+Imux
+4-to-2
+encoder
+Rout0
+WrInit Rin0
+Wr Rout
+1
+Rin1
+Rout2
+Rin2
+Rout3
+Rin3
+(b) module sort (Clock, Resetn, s, WrInit, Rd, DataIn, RAdd, DataOut, Done);
+parameter n = 4;
+input Clock, Resetn, s, WrInit, Rd;
+input [n−1:0] DataIn;
+input [1:0] RAdd;
+output [n−1:0] DataOut;
+output Done;
+wire [0:3] Ci, Cj, Cmux;
+reg [1:0] Imux;
+wire [n−1:0] R0, R1, R2, R3, A, B;
+wire [n−1:0] RData, ABMux;
+wire BltA, zi, zj;
+reg Int, Csel, Wr, Ain, Bin, Aout, Bout, LI, LJ, EI, EJ, Done;
+reg [3:0] y, Y;
+reg Rin0, Rin1, Rin2, Rin3;
+reg [n−1:0] ABData;
+wire [0:3] Rout, ExtAdd;
+wire [0:3] Addr0; //Parallel load for Ci
+10-16
+
+--- Page Break ---
+
+// control circuit
+parameter S1 = 4’b0000, S2 = 4’b0001, S3 = 4’b0010, S4 = 4’b0011;
+parameter S5 = 4’b0100, S6 = 4’b0101, S7 = 4’b0110, S8 = 4’b0111, S9 = 4’b1000;
+always @(s or BltA or zj or zi or y)
+begin: State table
+case (y)
+S1: if (s == 0) Y = S1;
+else Y = S2;
+S2: Y = S3;
+S3: Y = S4;
+S4: Y = S5;
+S5: if (BltA) Y = S6;
+else Y = S8;
+S6: Y = S7;
+S7: Y = S8;
+S8: if (!zj) Y = S4;
+else if (!zi) Y = S2;
+else Y = S9;
+S9: if (s) Y = S9;
+else Y = S1;
+default: Y = 4’bx;
+endcase
+end
+always @(posedge Clock or negedge Resetn)
+begin: State flipflops
+if (Resetn == 0) y <= S1;
+else y <= Y;
+end
+always @(y or zj or zi)
+begin: FSM outputs
+Int = 1; Done = 0; LI = 0; LJ = 0; EI = 0; EJ = 0; // defaults
+Csel = 0; Wr = 0; Ain = 0; Bin = 0; Aout = 0; Bout = 0; // defaults
+case (y)
+S1: begin
+LI = 1; Int = 0;
+end
+S2:begin
+Ain = 1; LJ = 1;
+end
+S3: EJ = 1;
+S4: begin
+Bin = 1; Csel = 1;
+end
+S5: ; // no ouputs asserted in this state
+S6: begin
+Csel = 1; Wr = 1; Aout = 1;
+end
+10-17
+
+--- Page Break ---
+
+S7: begin
+Wr = 1; Bout = 1;
+end
+S8: begin
+Ain = 1;
+if (!zj) EJ = 1;
+else
+begin
+EJ = 0;
+if (!zi) EI = 1;
+else EI = 0;
+end
+S9: Done = 1;
+endcase
+end
+// datapath circuit
+regne Reg0 (RData, Clock, Resetn, Rin0, R0);
+defparam Reg0.n = n;
+regne Reg1 (RData, Clock, Resetn, Rin1, R1);
+defparam Reg1.n = n;
+regne Reg2 (RData, Clock, Resetn, Rin2, R2);
+defparam Reg2.n = n;
+regne Reg3 (RData, Clock, Resetn, Rin3, R3);
+defparam Reg3.n = n;
+regne RegA (ABData, Clock, Resetn, Ain, A);
+defparam RegA.n = n;
+regne RegB (ABData, Clock, Resetn, Bin, B);
+defparam RegB.n = n;
+assign BltA = (B < A) ? 1 : 0;
+assign ABMux = (Bout == 0) ? A : B;
+assign RData = (WrInit == 0) ? ABMux : DataIn;
+assign Addr0 = 4’b1000;
+shiftrne Outerloop (Addr0, LI, EI, 0, Clock, Ci);
+shiftrne Innerloop (Ci, LJ, EJ, 0, Clock, Cj);
+dec2to4 Decoder (RAdd, ExtAdd);
+assign Rout = Int ? Cmux : ExtAdd;
+assign Cmux = (Csel == 0) ? Ci : Cj;
+always @(WrInit or Wr or Rout or R3 or R2 or R1 or R0)
+begin
+case (Rout)
+4’b1000: Imux = 0;
+4’b0100: Imux = 1;
+4’b0010: Imux = 2;
+4’b0001: Imux = 3;
+default: Imux = 0;
+endcase
+10-18
+
+--- Page Break ---
+
+if (WrInit || Wr)
+case (Rout)
+4’b1000: {Rin3, Rin2, Rin1, Rin0} = 4’b0001;
+4’b0100: {Rin3, Rin2, Rin1, Rin0} = 4’b0010;
+4’b0010: {Rin3, Rin2, Rin1, Rin0} = 4’b0100;
+4’b0001: {Rin3, Rin2, Rin1, Rin0} = 4’b1000;
+default: {Rin3, Rin2, Rin1, Rin0} = 4’bx;
+endcase
+else {Rin3, Rin2, Rin1, Rin0} = 4’b0000;
+case (Imux)
+0: ABData = R0;
+1: ABData = R1;
+2: ABData = R2;
+3: ABData = R3;
+endcase
+end
+assign zi = Ci[2];
+assign zj = Cj[3];
+assign DataOut = (Rd == 0) ? ’bz : ABData;
+endmodule
+(c) The major drawback of using shift-registers instead of counters is that the number of flip-flops is in-
+creased. Each counter uses log2n flip-flops while each shift register contains n flip-flops. However, the
+shift-register requires no combinational logic to perform tests such as whether the count value k − 2 has
+been reached — in the shift register we directly access bit k − 2 of the register to perform this test. It should
+also be possible to clock the datapath at a higher maximum clock frequency when using shift-registers,
+because they are simpler than counters.
+10.11. The Verilog code below shows the changes needed in the datapath so that an SRAM block can be used
+instead of registers. The SRAM block is clocked on the negative edge of the Clock signal, hence changes
+in the outputs produced by the other datapath elements must be stable before the negative edge; the clock
+period must be long enough to accommodate this constraint.
+module sort (Clock, Resetn, s, WrInit, Rd, DataIn, RAdd, DataOut, Done);
+parameter n = 4;
+input Clock, Resetn, s, WrInit, Rd;
+input [n−1:0] DataIn;
+input [1:0] RAdd;
+output [n−1:0] DataOut;
+output Done;
+10-19
+
+--- Page Break ---
+
+wire [1:0] Ci, Cj, CMux, IMux, MemAdd;
+wire [n−1:0] A, B, RData, ABMux;
+wire BltA, zi, zj, WE, NClock;
+reg Int, Csel, Wr, Ain, Bin, Aout, Bout;
+reg LI, LJ, EI, EJ, Done;
+reg [3:0] y, Y;
+reg [n−1:0] ABData;
+// control circuit
+parameter S1 = 4’b0000, S2 = 4’b0001, S3 = 4’b0010, S4 = 4’b0011;
+parameter S5 = 4’b0100, S6 = 4’b0101, S7 = 4’b0110, S8 = 4’b0111, S9 = 4’b1000;
+always @(s or BltA or zj or zi)
+begin: State table
+. . . code not shown: see Figure 10.40
+end
+always @(posedge Clock or negedge Resetn)
+begin: State flipflops
+if (Resetn == 0)
+y <= S1;
+else
+y <= Y;
+end
+always @(y or zj or zi)
+begin: FSM outputs
+. . . code not shown: see Figure 10.40
+end
+regne RegA (ABData, Clock, Resetn, Ain, A);
+defparam RegA.n = n;
+regne RegB (ABData, Clock, Resetn, Bin, B);
+defparam RegB.n = n;
+assign BltA = (B < A) ? 1 : 0;
+assign ABMux = (Bout == 0) ? A : B;
+assign RData = (WrInit == 0) ? ABMux : DataIn;
+upcount OuterLoop (0, Resetn, Clock, EI, LI, Ci);
+upcount InnerLoop (Ci, Resetn, Clock, EJ, LJ, Cj);
+assign CMux = (Csel == 0) ? Ci : Cj;
+assign IMux = (Int == 1) ? CMux : RAdd;
+assign MemAdd = IMux;
+assign WE = WrInit | Wr;
+assign NClock = ∼Clock;
+10-20
+
+--- Page Break ---
+
+lpm ram dq mem block (.address(MemAdd), .we(WE), .q(ABData),
+.inclock(NClock), .data(RData));
+defparam mem block.lpm width = 4;
+defparam mem block.lpm widthad = 2;
+defparam mem block.lpm address control = ”registered”;
+defparam mem block.lpm indata = ”registered”;
+defparam mem block.lpm outdata = ”unregistered”;
+assign zi = (Ci == 2);
+assign zj = (Cj == 3);
+assign DataOut = (Rd == 0) ? ’bz : ABData;
+endmodule
+10.12. Pseudo-code that represents the log2 operation is
+- - assume that K ≥ 1
+L = 0 ;
+while (K > 1) do
+K = K ÷ 2 ;
+L = L + 1 ;
+end while ;
+L 
+- - L now has the largest value such that 2 < K
+An ASM chart that corresponds to the pseudo-code is
+Reset
+S1
+L ← 0
+Load K
+0 0
+s
+1
+s
+1
+S2 S3
+L ← L + 1 Shift-right K Done = 1
+1 0
+K > 1?
+From the ASM chart, a shift-register is needed to divide K by 2, and a counter is needed for L. An
+appropriate datapath circuit is
+10-21
+
+--- Page Break ---
+
+LK Data LL
+0
+n log2n
+L L
+Counter
+EK E Shift-Right EL E
+K n
+Clock
+L
+K > 1?
+Kgt1
+An ASM chart for the control circuit is
+Reset
+S1
+LL
+0 0
+s
+1
+s
+1
+S2 S3
+EL EK Done = 1
+1 0
+Kgt1
+Complete Verilog code for this circuit is shown below.
+10-22
+
+--- Page Break ---
+
+module log2k (Clock, Resetn, LData, s, Data, L, Done);
+input Clock, Resetn, LData, s;
+input [7:0] Data;
+output [3:0] L;
+output Done;
+wire [7:0] K;
+wire Kgt1;
+reg [1:0] y, Y;
+reg Done, EL, LL, EK;
+// control circuit
+parameter S1 = 2’b00, S2 = 2’b01, S3 = 2’b10;
+always @(s or y or Kgt1)
+begin: FSM transitions
+case (y)
+S1: if (s == 0) Y = S1;
+else Y = S2;
+S2: if (Kgt1 == 1) Y = S2;
+else Y = S3;
+S3: if (s == 1) Y = S3;
+else Y = S1;
+default: Y = 2’bxx;
+endcase
+end
+always @(posedge Clock or negedge Resetn)
+begin: State flipflops
+if (Resetn == 0)
+y <= S1;
+else
+y <= Y;
+end
+always @(y or s or LData or Kgt1)
+begin: FSM outputs
+EL = 0; LL = 0; EK = 0; Done = 0; // defaults
+case (y)
+S1: begin
+EL = 1; LL = 1;
+if (LData == 1) EK = 1;
+else EK = 0;
+end
+S2: begin
+EK = 1;
+if (Kgt1) EL = 1;
+else EL = 0;
+end
+S3: Done = 1;
+endcase
+end
+10-23
+
+--- Page Break ---
+
+//datapath circuit
+shiftrne ShiftK (Data, LData, EK, 1’b0, Clock, K);
+defparam ShiftK.n = 8;
+// upcount is in Figure 7.57
+upcount CntL (4’b0, Resetn, Clock, EL, LL, L);
+assign Kgt1 = (K > 1) ? 1 : 0;
+endmodule
+10.13. module mean (Clock, Resetn, Data, RAdd, s, ER, M, Done);
+parameter n = 8;
+input Clock, Resetn;
+input [n−1:0] Data;
+input [1:0] RAdd;
+input s, ER;
+output [n−1:0] M;
+output Done;
+reg LC, EC, Ssel, ES, LA, EB, LB, Div, Done;
+wire z, zz;
+reg [0:3] Dec RAdd;
+wire [0:3] Rin;
+wire [1:0] C;
+wire [n−1:0] R0, R1, R2, R3, SR, Sin, Sum, Remainder, K;
+reg [n−1:0] Ri;
+reg [2:0] y, Y;
+parameter S1 = 3’b000, S2 = 3’b001, S3 = 3’b010, S4 = 3’b011, S5 = 3’b100;
+always @(s or y or z or zz)
+begin: State table
+case (y)
+S1: if (s == 0) Y = S1;
+else Y = S2;
+S2: if (z == 0) Y = S2;
+else Y = S3;
+S3: Y = S4;
+S4: if (zz == 0) Y = S4;
+else Y = S5;
+S5: if (s == 1) Y = S5;
+else Y = S1;
+default: Y = 3’bxxx;
+endcase
+end
+10-24
+
+--- Page Break ---
+
+always @(posedge Clock or negedge Resetn)
+begin: State flipflops
+if (Resetn == 0)
+y <= S1;
+else
+y <= Y;
+end
+always @(y or s or z or zz)
+begin: FSM outputs
+LC = 0; EC = 0; ES = 0; LA = 0; EB = 0; // defaults
+Div = 0; Done = 0; Ssel = 0; // defaults
+case (y)
+S1: begin
+LC = 1; ES = 1;
+end
+S2: begin
+Ssel = 1; ES = 1;
+if (z == 0) EC = 1;
+else EC = 0;
+end
+S3: begin
+LA = 1; EB = 1;
+end
+S4: Div = 1; // not really used in this circuit
+S5: begin
+Div = 1; Done = 1;
+end
+endcase
+end
+// Datapath
+always @(RAdd)
+begin
+case (RAdd)
+0: Dec RAdd = 4’b1000;
+1: Dec RAdd = 4’b0100;
+2: Dec RAdd = 4’b0010;
+3: Dec RAdd = 4’b0001;
+endcase
+end
+assign Rin = (ER == 1) ? Dec RAdd : 4’b0000;
+regne Reg0 (Data, Clock, Resetn, Rin[0], R0);
+defparam Reg0.n = n;
+regne Reg1 (Data, Clock, Resetn, Rin[1], R1);
+defparam Reg1.n = n;
+10-25
+
+--- Page Break ---
+
+regne Reg2 (Data, Clock, Resetn, Rin[2], R2);
+defparam Reg2.n = n;
+regne Reg3 (Data, Clock, Resetn, Rin[3], R3);
+defparam Reg3.n = n;
+downcount Counter (Clock, EC, LC, C);
+defparam Counter.n = 2;
+assign z = (C == 0) ? 1 : 0;
+assign Sin = (Ssel == 1) ? Sum : 0;
+regne RegS (Sin, Clock, Resetn, ES, SR);
+defparam RegS.n = n;
+always @(C)
+begin
+case (C)
+0: Ri = R0;
+1: Ri = R1;
+2: Ri = R2;
+3: Ri = R3;
+endcase
+end
+assign Sum = SR + Ri;
+//divide by 4
+assign M = 2’b00, SR[n−1:2];
+assign zz = 1;
+endmodule
+10.14. From Figures 10.26 and 10.27, we can see that the divider subcircuit does not use its adder while in state S1.
+Since the control circuit for the divider stays in S1 while s = 0, it is possible to lend the adder to another
+circuit while we are in S1 and s = 0. The Figure below shows the changes needed in the divider circuit: a
+multiplexer is added to each data input on the adder. The multiplexer select line is driven by the divider’s
+s input — this signal is called Div in the figure, because Div is the signal in the Mean circuit that drives
+the s input on the divider subcircuit. When Div = 1 the adder is provided with the normal data used in the
+division operation. But when Div = 0 the adder is provided with the external data inputs named Op1 and
+Op2, which come from the Mean circuit. Note that the Cin input on the adder is controlled by Div. This
+feature is needed because the divider uses its adder to perform subtraction.
+10-26
+
+--- Page Break ---
+
+Op1 R Op2 B
+n n n n
+0 1 0 1
+AddIn0 AddIn1
+Cout C + C
+out in Div
+MeanOut
+DivOut
+10.15. Verilog code for the modified divider circuit is shown below.
+module divider (Clock, Resetn, s, LA, EB, DataA, DataB, R, Q, Done, Op1, Op2, Result);
+parameter n = 8, logn = 3;
+input Clock, Resetn, s, LA, EB;
+input [n−1:0] DataA, DataB;
+output [n−1:0] R, Q;
+output Done;
+input [n−1:0] Op1, Op2; // new ports
+output [n−1:0] Result; // new port
+wire Cout, z;
+wire [n−1:0] DataR, AddIn1, AddIn2;
+wire [n−1:0] Sum;
+reg [1:0] y, Y;
+reg [n−1:0] A, B;
+reg [logn−1:0] Count;
+reg Done, EA, Rsel, LR, ER, ER0, LC, EC, R0;
+integer k;
+// control circuit
+parameter S1 = 2’b00, S2 = 2’b01, S3 = 2’b10;
+always @(s or y or z)
+begin: State table
+. . . code not shown: see Figure 10.28
+end
+10-27
+
+--- Page Break ---
+
+always @(posedge Clock or negedge Resetn)
+begin: State flipflops
+if (Resetn == 0)
+y <= S1;
+else
+y <= Y;
+end
+always @(y or s or Cout or z)
+begin: FSM outputs
+. . . code not shown: see Figure 10.28
+end
+//datapath circuit
+regne RegB (DataB, Clock, Resetn, EB, B);
+defparam RegB.n = n;
+shiftlne ShiftR (DataR, LR, ER, R0, Clock, R);
+defparam ShiftR.n = n;
+muxdff FF R0 (0, A[n−1], ER0, Clock, R0);
+shiftlne ShiftA (DataA, LA, EA, Cout, Clock, A);
+defparam ShiftA.n = n;
+assign Q = A;
+downcount Counter (Clock, EC, LC, Count);
+defparam Counter.n = logn;
+assign z = (Count == 0);
+// new code for the divider
+assign AddIn1 = (s == 1) ? {R, R0} : Op1;
+assign AddIn2 = (s == 1) ? ∼B : Op2;
+assign {Cout, Sum} = AddIn1 + AddIn2 + s;
+// define the n 2-to-1 multiplexers
+assign DataR = Rsel ? Sum : 0;
+assign Result = Sum;
+endmodule
+Code for the modified Mean circuit is shown below.
+10-28
+
+--- Page Break ---
+
+module mean (Clock, Resetn, Data, RAdd, s, ER, M, Done);
+parameter n = 8;
+input Clock, Resetn;
+input [n−1:0] Data;
+input [1:0] RAdd;
+input s, ER;
+output [n−1:0] M;
+output Done;
+reg LC, EC, Ssel, ES, LA, EB, LB, zz, Div, Done;
+wire z;
+reg [0:3] Dec RAdd;
+wire [0:3] Rin;
+wire [1:0] C;
+wire [n−1:0] R0, R1, R2, R3, SR, Sin, Sum, Remainder, K;
+reg [n−1:0] Ri;
+reg [2:0] y, Y;
+parameter S1 = 3’b000, S2 = 3’b001, S3 = 3’b010, S4 = 3’b011, S5 = 3’b100;
+always @(s or y or z or zz)
+begin: State table
+case (y)
+S1: if (s == 0) Y = S1;
+else Y = S2;
+S2: if (z == 0) Y = S2;
+else Y = S3;
+S3: Y = S4;
+S4: if (zz == 0) Y = S4;
+else Y = S5;
+S5: if (s == 1) Y = S5;
+else Y = S1;
+default: Y = 3’bxxx;
+endcase
+end
+always @(posedge Clock or negedge Resetn)
+begin: State flipflops
+if (Resetn == 0)
+y <= S1;
+else
+y <= Y;
+end
+always @(y or s or z or zz)
+begin: FSM outputs
+LC = 0; EC = 0; ES = 0; LA = 0; EB = 0; // defaults
+Div = 0; Done = 0; Ssel = 0; // defaults
+case (y)
+S1: begin
+LC = 1; EC = 1; ES = 1;
+end
+10-29
+
+--- Page Break ---
+
+S2: begin
+Ssel = 1; ES = 1;
+if (z == 0) EC = 1;
+else EC = 0;
+end
+S3: begin
+LA = 1; EB = 1;
+end
+S4: Div = 1;
+S5: begin
+Div = 1; Done = 1;
+end
+endcase
+end
+// Datapath
+always @(RAdd)
+begin
+case (RAdd)
+0: Dec RAdd = 4’b1000;
+1: Dec RAdd = 4’b0100;
+2: Dec RAdd = 4’b0010;
+3: Dec RAdd = 4’b0001;
+endcase
+end
+assign Rin = (ER == 1) ? Dec RAdd : 4’b0000;
+regne Reg0 (Data, Clock, Resetn, Rin[0], R0);
+defparam Reg0.n = n;
+regne Reg1 (Data, Clock, Resetn, Rin[1], R1);
+defparam Reg1.n = n;
+regne Reg2 (Data, Clock, Resetn, Rin[2], R2);
+defparam Reg2.n = n;
+regne Reg3 (Data, Clock, Resetn, Rin[3], R3);
+defparam Reg3.n = n;
+downcount Counter (Clock, EC, LC, C);
+defparam Counter.n = 2;
+assign z = (C == 0) ? 1 : 0;
+assign Sin = (Ssel == 1) ? Sum : 0;
+regne RegS (Sin, Clock, Resetn, ES, SR);
+defparam RegS.n = n;
+10-30
+
+--- Page Break ---
+
+always @(C)
+begin
+case (C)
+0: Ri = R0;
+1: Ri = R1;
+2: Ri = R2;
+3: Ri = R3;
+endcase
+end
+divider DivideBy4 (.Clock(Clock), .Resetn(Resetn), .s(Div), .LA(LA), .EB(EB),
+.DataA(SR), .DataB(4), .R(Remainder), .Q(M), .Done(zz), .Op1(SR),
+.Op2(Ri), .Result(Sum));
+endmodule
+10.16. The modified pseudo-code is
+for i = 0 to k − 2 do
+A = Ri ;
+for j = i + 1 to k − 1 do
+if Rj < A then
+Ri = Rj ;
+Rj = A ;
+end if ;
+A = Ri ;
+end for ;
+end for ;
+An ASM chart that corresponds to the pseudo-code is
+10-31
+
+--- Page Break ---
+
+Reset
+S1
+Ci ← 0
+Load registers
+0
+s
+1
+S2
+A ← Ri, C j ← Ci
+S3
+Ci ← Ci + 1
+Cj ← Cj + 1
+S4
+S5
+Ri ← Rj
+1
+Rj < A?
+Cj ← Cj + 1 S6
+0
+Rj ← A
+S7
+A ← Ri
+0
+Cj = k – 1?
+S8
+0
+1
+Done = 1 s
+1
+0
+Ci = k – 2?
+1
+10-32
+
+--- Page Break ---
+
+From the ASM chart, we can see that the datapath circuit needs a multiplexer to allow the operation Ri ←
+Rj . An appropriate datapath is shown below.
+DataIn
+WrInit
+n
+Rin0 E Rin1 E Rin2 E Rin3 E
+Imux
+Ain E
+Cj n
+Clock
+A n R
+j
+Rjout Rd
+<
+RjltA DataOut
+An ASM chart for the control circuit is
+10-33
+
+--- Page Break ---
+
+Reset
+S1
+LI Int,  = 0
+0
+s
+1
+S2
+Int = 1, Csel = 0, Ain LJ,
+S3
+EI
+EJ
+S4
+S5
+Csel = 0, Int = 1, Wr Rjout,
+1
+RjltA
+EJ S6
+0
+Csel = 1, Int = 1, Wr Aout,
+S7
+Csel = 0, Int = 1, Ain
+0
+zj
+S8
+0
+1 
+Done = 1 s
+1
+0
+zi
+1
+10-34
+
+--- Page Break ---
+
+10.17. module sort (Clock, Resetn, s, WrInit, Rd, DataIn, RAdd, DataOut, Done);
+parameter n = 4;
+input Clock, Resetn, s, WrInit, Rd;
+input [n−1:0] DataIn;
+input [1:0] RAdd;
+output [n−1:0] DataOut;
+output Done;
+wire [1:0] Ci, Cj, CMux, IMux;
+wire [n−1:0] R0, R1, R2, R3, A;
+wire [n−1:0] RData, ARjMux;
+wire RjltA;
+wire zi, zj;
+reg Int, Csel, Wr, Ain;
+reg LI, LJ, EI, EJ, Done, RjOut;
+reg [n−1:0] Rj;
+reg [2:0] y, Y;
+reg Rin0, Rin1, Rin2, Rin3;
+reg [n−1:0] AData;
+// control circuit
+parameter S1 = 3’b000, S2 = 3’b001, S3 = 3’b010, S4 = 3’b011;
+parameter S5 = 3’b100, S6 = 3’b101, S7 = 3’b110, S8 = 3’b111;
+always @(s or RjltA or zj or zi)
+begin: State table
+case (y)
+S1: if (s == 0) Y = S1;
+else Y = S2;
+S2: Y = S3;
+S3: Y = S4;
+S4: if (RjltA == 1) Y = S5;
+else Y = S7;
+S5: Y = S6;
+S6: Y = S7;
+S7: if (!zj) Y = S4;
+else if (!zi) Y = S2;
+else Y = S8;
+S8: if (s) Y = S8;
+else Y = S1;
+default: Y = 4’bx;
+endcase
+end
+10-35
+
+--- Page Break ---
+
+always @(posedge Clock or negedge Resetn)
+begin: State flipflops
+if (Resetn == 0)
+y <= S1;
+else
+y <= Y;
+end
+assign Int = (y != S1);
+assign Done = (y == S8);
+always @(y or zj or zi)
+begin: FSM outputs
+LI = 0; LJ = 0; EI = 0; EJ = 0; Csel = 0; // defaults
+Wr = 0; Ain = 0; RjOut = 0; // defaults
+case (y)
+S1: begin
+LI = 1;
+end
+S2: begin
+Ain = 1; LJ = 1;
+end
+S3: EJ = 1;
+S4: ;
+S5: begin
+RjOut = 1; Wr = 1;
+end
+S6: begin
+Wr = 1; Csel = 1;
+end
+S7: begin
+Ain = 1;
+if (!zj) EJ = 1;
+else
+begin
+EJ = 0;
+if (!zi) EI = 1;
+else EI = 0;
+end
+end
+S8: ;
+endcase
+end
+//datapath circuit
+regne Reg0 (RData, Clock, Resetn, Rin0, R0);
+defparam Reg0.n = n;
+regne Reg1 (RData, Clock, Resetn, Rin1, R1);
+defparam Reg1.n = n;
+10-36
+
+--- Page Break ---
+
+regne Reg2 (RData, Clock, Resetn, Rin2, R2);
+defparam Reg2.n = n;
+regne Reg3 (RData, Clock, Resetn, Rin3, R3);
+defparam Reg3.n = n;
+regne RegA (AData, Clock, Resetn, Ain, A);
+defparam RegA.n = n;
+assign RjltA = (Rj < A) ? 1 : 0;
+assign ARjMux = (RjOut == 0) ? A : Rj;
+assign RData = (WrInit == 0) ? ARjMux : DataIn;
+upcount OuterLoop (0, Resetn, Clock, EI, LI, Ci);
+upcount InnerLoop (Ci, Resetn, Clock, EJ, LJ, Cj);
+assign CMux = (Csel == 0) ? Ci : Cj;
+assign IMux = (Int == 1) ? CMux : RAdd;
+always @(WrInit or Wr or IMux or Cj)
+begin
+case (IMux)
+0: AData = R0;
+1: AData = R1;
+2: AData = R2;
+3: AData = R3;
+endcase
+case (Cj)
+0: Rj = R0;
+1: Rj = R1;
+2: Rj = R2;
+3: Rj = R3;
+endcase
+if (WrInit || Wr)
+case (IMux)
+0: {Rin3, Rin2, Rin1, Rin0} = 4’b0001;
+1: {Rin3, Rin2, Rin1, Rin0} = 4’b0010;
+2: {Rin3, Rin2, Rin1, Rin0} = 4’b0100;
+3: {Rin3, Rin2, Rin1, Rin0} = 4’b1000;
+endcase
+else {Rin3, Rin2, Rin1, Rin0} = 4’b0000;
+end
+assign zi = (Ci == 2);
+assign zj = (Cj == 3);
+assign DataOut = (Rd == 0) ? ’bz : AData;
+endmodule
+10-37
+
+--- Page Break ---
+
+10.18.
+Reset
+S1
+Load registers
+0
+w
+1
+S2
+R3 ← R1
+S3
+R1 ← R2
+S4
+R2 ← R3
+10-38
+
+--- Page Break ---
+
+10.19. (a) An ASM chart for the control circuit is
+Reset
+S1
+0
+w
+1
+S2
+R1out ,R3in
+S3
+R2out ,R1in
+S4
+R3out ,R2in
+(b) module swapmux (Data, Resetn, w, Clock, RinExt, BusWires);
+input [7:0] Data;
+input Resetn, w, Clock;
+input [1:3] RinExt;
+output [7:0] BusWires;
+reg [7:0] BusWires;
+wire [1:3] Rin;
+reg [1:3] RinCntl, Rout;
+wire [7:0] R1, R2, R3;
+reg [1:0] y, Y;
+// control circuit
+parameter S1 = 2’b00, S2 = 2’b01, S3 = 2’b10, S4 = 2’b11;
+always @(y or w)
+begin: State table
+case (y)
+S1: if (w == 0) Y = S1;
+else Y = S2;
+S2: Y = S3;
+10-39
+
+--- Page Break ---
+
+S3: Y = S4;
+S4: Y = S1;
+default: Y = 3’bxxx;
+endcase
+end
+always @(posedge Clock or negedge Resetn)
+begin: State flipflops
+if (Resetn == 0)
+y <= S1;
+else
+y <= Y;
+end
+always @(y)
+begin: FSM outputs
+RinCntl = 3’b000; Rout = 3’b000; // defaults
+case (y)
+S1: ;
+S2: begin
+Rout[1] = 1; RinCntl[3] = 1;
+end
+S3: begin
+Rout[2] = 1; RinCntl[1] = 1;
+end
+S4: begin
+Rout[3] = 1; RinCntl[2] = 1;
+end
+endcase
+end
+// datapath circuit
+assign Rin = RinExt | RinExt;
+regn reg 1 (BusWires, Rin[1], Clock, R1);
+regn reg 2 (BusWires, Rin[2], Clock, R2);
+regn reg 3 (BusWires, Rin[3], Clock, R3);
+always @(Rout or Data or R1 or R2 or R3)
+begin
+if (Rout == 3’b100)
+BusWires = R1;
+else if (Rout == 3’b010)
+BusWires = R2;
+else if (Rout == 3’b001)
+BusWires = R3;
+else
+BusWires = Data;
+end
+endmodule
+10-40
+
+--- Page Break ---
+
+10.20. An ASM chart for the processor is
+Reset
+T0
+0
+w
+1
+Load function register
+T1
+1
+RX ← Data Done, I = 0
+0
+1
+RX ← RY ,Done I = 1
+0
+A ← RX
+T2
+1
+I = 2
+0
+G ← A + RY
+G ← A – RY
+T3
+RX ← G Done,
+10-41
+
+--- Page Break ---
+
+10.21. (a) An ASM chart for the control circuit is
+Reset
+T0
+0
+w
+1
+FRin
+T1
+1
+Rin = X Extern, Done, I = 0
+0
+1
+Rin = X Rout, = Y Done, I = 1
+0
+Ain Rout, = X
+T2
+Gin Rout, = Y
+1
+I = 2
+0
+AddSub = 0
+AddSub = 1
+T3
+Gout Rin, = X Done,
+10-42
+
+--- Page Break ---
+
+(b) module proc (Data, Reset, w, Clock, F, Rx, Ry, Done, BusWires);
+input [7:0] Data;
+input Reset, w, Clock;
+input [1:0] F, Rx, Ry;
+output [7:0] BusWires;
+output Done;
+reg [7:0] BusWires;
+reg [0:3] Rin, Rout;
+reg [7:0] Sum;
+reg Extern, Done, Ain, FRin, Gin, Gout, AddSub;
+wire [1:0] Count, I;
+wire [0:3] Xreg, Y;
+wire [7:0] R0, R1, R2, R3, A, G;
+wire [1:6] Func, FuncReg, Sel;
+reg [1:0] t, T;
+// control circuit
+parameter T0 = 2’b00, T1 = 2’b01, T2 = 2’b10, T3 = 2’b11;
+always @(t or w or I)
+begin: State table
+case (t)
+T0: if (w == 0) T = T0;
+else T = T1;
+T1: if (I == 2’b00 || I == 2’b01) T = T0;
+else T = T2;
+T2: T = T3;
+T3: T = T0;
+default: T = 2’bxx;
+endcase
+end
+always @(posedge Clock or posedge Reset)
+begin: State flipflops
+if (Reset == 1)
+t <= T0;
+else
+t <= T;
+end
+10-43
+
+--- Page Break ---
+
+always @(t or w or I)
+begin: FSM outputs
+FRin = 0; Rin = 4’b0000; Rout = 4’b0000; Done = 0; // defaults
+Gin = 0; Gout = 0; Extern = 0; Ain = 0; AddSub = 0; // defaults
+case (t)
+T0: if (w == 1) FRin = 1;
+else FRin = 0;
+T1: begin
+Ain = 1; // doesn’t matter if we load A when not needed
+if (I == 2’b00)
+begin
+Done = 1; Rin = Xreg; Rout = 4’b0000; Extern = 1;
+end
+else if (I == 2’b01)
+begin
+Done = 1; Rin = Xreg; Rout = Y; Extern = 0;
+end
+else
+begin
+Done = 0; Rin = 4’b0000; Rout = Xreg; Extern = 0;
+end
+end
+T2: begin
+Gin = 1; Rout = Y;
+if (I == 2’b10) AddSub = 0;
+else AddSub = 1;
+end
+T3: begin
+Gout = 1; Rin = Xreg; Done = 1;
+end
+endcase
+end
+//datapath circuit
+assign Func = {F, Rx, Ry};
+regn functionreg (Func, FRin, Clock, FuncReg);
+defparam functionreg.n = 6;
+assign I = FuncReg[1:2];
+dec2to4 decX (FuncReg[3:4], 1, Xreg);
+dec2to4 decY (FuncReg[5:6], 1, Y);
+regn reg 0 (BusWires, Rin[0], Clock, R0);
+regn reg 1 (BusWires, Rin[1], Clock, R1);
+regn reg 2 (BusWires, Rin[2], Clock, R2);
+regn reg 3 (BusWires, Rin[3], Clock, R3);
+regn reg A (BusWires, Ain, Clock, A);
+10-44
+
+--- Page Break ---
+
+// alu
+always @(AddSub or A or BusWires)
+begin
+if (!AddSub)
+Sum = A + BusWires;
+else
+Sum = A − BusWires;
+end
+regn reg G (Sum, Gin, Clock, G);
+assign Sel = {Rout, Gout, Extern};
+always @(Sel or R0 or R1 or R2 or R3 or G or Data)
+begin
+if (Sel == 6’b100000)
+BusWires = R0;
+else if (Sel == 6’b010000)
+BusWires = R1;
+else if (Sel == 6’b001000)
+BusWires = R2;
+else if (Sel == 6’b000100)
+BusWires = R3;
+else if (Sel == 6’b000010)
+BusWires = G;
+else BusWires = Data;
+end
+endmodule
+10-45
+
+--- Page Break ---
+
+10.22. (a) An ASM chart for the traffic controller is
+Reset
+S1
+C1 ← t1
+S2
+C1 ← C1 – 1, G1 R2, C1 ← t1
+1
+0 C = 0?
+2 
+C1 = 0? 0
+1
+S5
+C2 ← t2 C2 ← C2 – 1, R1 Y2,
+S3
+C2 ← C2 – 1, Y1 R2, C ← t
+2  2
+1
+0 C = 0?
+1 
+C2 = 0? 0
+1
+S4
+C1 ← t1 C1 ← C1 – 1, R1 G2,
+(b). The two counters, C1 and C2, each require clock enable and parallel-load inputs. Assuming that the
+clock enables signals are called EC1 and EC2 and the parallel-load inputs are called LC1 and LC2, an ASM
+chart for the control circuit is
+10-46
+
+--- Page Break ---
+
+Reset
+S1
+LC1
+S2
+EC1 G1 R2, , LC1
+1
+0 zC2
+zC1 0
+1
+S5
+LC2 EC2 R1 Y2, ,
+S3
+EC2 Y1 R2, , LC2
+1
+0 zC1
+zC2 0
+1
+S4
+LC1 EC1 R1 G2, ,
+(c) module traffic (Clock, Resetn, G1, Y1, R1, G2, Y2, R2);
+input Clock, Resetn;
+output G1, Y1, R1, G2, Y2, R2;
+reg G1, Y1, R1, G2, Y2, R2;
+reg [2:0] y, Y;
+reg EC1, EC2, LC1, LC2;
+reg [3:0] C1, C2;
+wire zC1, zC2;
+parameter Ticks1 = 4’b0011; // 4 ticks for C1
+parameter Ticks2 = 4’b0001; // 2 ticks for C2
+10-47
+
+--- Page Break ---
+
+// control circuit
+parameter S1 = 3’b000, S2 = 3’b001, S3 = 3’b010, S4 = 3’b011, S5 = 3’b100;
+always @(y or zC1 or zC2)
+begin: State table
+case (y)
+S1: Y = S2;
+S2: if (zC1 == 0) Y = S2;
+else Y = S3;
+S3: if (zC2 == 0) Y = S3;
+else Y = S4;
+S4: if (zC1 == 0) Y = S4;
+else Y = S5;
+S5: if (zC2 == 0) Y = S5;
+else Y = S2;
+default: Y = 3’bxxx;
+endcase
+end
+always @(posedge Clock or negedge Resetn)
+begin: State flipflops
+if (Resetn == 0)
+y <= S1;
+else
+y <= Y;
+end
+always @(y or zC1 or zC2)
+begin: FSM outputs
+G1 = 0; Y1 = 0; R1 = 0; G2 = 0; Y2 = 0; R2 = 0; // defaults
+LC1 = 0; EC1 = 0; LC2 = 0; EC2 = 0; // defaults
+case (y)
+S1: LC1 = 1;
+S2: begin
+EC1 = 1; G1 = 1; R2 = 1;
+if (zC1) LC2 = 1;
+else LC2 = 0;
+end
+S3: begin
+EC2 = 1; Y1 = 1; R2 = 1;
+if (zC2) LC1 = 1;
+else LC2 = 0;
+end
+S4: begin
+EC1 = 1; R1 = 1; G2 = 1;
+if (zC1) LC2 = 1;
+else LC2 = 0;
+end
+10-48
+
+--- Page Break ---
+
+S5: begin
+EC2 = 1; R1 = 1; Y2 = 1;
+if (zC2) LC1 = 1;
+else LC2 = 0;
+end
+endcase
+end
+//datapath circuit
+assign zC1 = (C1 == 0);
+assign zC2 = (C2 == 0);
+always @(posedge Clock)
+if (LC1)
+C1 <= Ticks1;
+else if (EC1)
+C1 <= C1 − 1;
+always @(posedge Clock)
+if (LC2)
+C2 <= Ticks2;
+else if (EC2)
+C2 <= C2 − 1;
+endmodule
+10.23. The debounce circuit has three parts, as shown below. The Data signal from the switch has to be synchro-
+nized to the 102.4 KHz signal using two flip-flops. The synchronized signal called Sync is fed to an FSM.
+The FSM also uses the counter shown, which counts for 1024 cycles of the 102.4 KHz signal, providing a
+10 msec delay.
+1111111111
+Sync
+10
+Meta
+LC L
+Data D Q D Q
+EC E Down-counter
+102.4 KHz
+Done
+10-49
+
+--- Page Break ---
+
+An ASM chart for the FSM is given below. The FSM provides the z output, which is the debounced version
+of the Data signal.
+Reset
+S1 1
+z = 0 C,  ← 1023, LC
+Done
+0
+S4
+0
+Sync
+z = 0 C,  ← C – 1, EC
+1
+S2 0
+z = 1 C,  ← C – 1, EC
+Sync
+1
+S3
+0
+Done
+z = 1 C,  ← 1023, LC
+1
+10.24. (a) If we set C1 = 1 pF, then Ra = 0 and Rb = 1.43 kΩ
+(b) If we set C1 = 1 pF, then Ra = 1.42 kΩ and Rb = 0.71 kΩ
+10-50
+
+--- Page Break ---
+
+Chapter 11
+11.1. Label the wires in the circuit of Figure P11.1 as follows:
+a
+w1 c
+w2
+b
+f
+w3
+d
+A complete fault table is
+Test Fault detected
+w1w2w3 
+a/0 a/1 b/0 b/1 c/0 c/1 d/0 d/1 f /0 f /1
+√ √
+000 
+√ √ √
+001 
+√ √
+010 
+√ √ √ √
+011 
+√ √
+100 
+√ √ √ √
+101 
+√
+110 
+√ √ √ √
+111 
+A minimal test set must include the tests w1w2w3 = 011, 101, and 111, which cover all faults except d/1.
+The latter fault can be detected by choosing one of 000, 010, or 100.
+11.2. Label the wires in the circuit of Figure P11.2 as follows:
+a
+w e
+1
+w
+2
+b
+f
+c
+w
+3
+w g
+4
+d
+11-1
+
+--- Page Break ---
+
+A complete fault table is
+Test Fault detected
+w1w2w3w4 
+a/0 a/1 b/0 b/1 c/0 c/1 d/0 d/1 e/0 e/1 g/0 g/1 f /0 f /1
+√
+0000 
+√ √ √ √
+0001 
+√ √ √ √
+0010 
+√ √ √ √
+0011 
+√ √ √ √
+0100 
+√ √ √ √ √
+0101 
+√ √ √ √ √
+0110 
+√ √ √
+0111 
+√ √ √ √
+1000 
+√ √ √ √ √
+1001 
+√ √ √ √ √
+1010 
+√ √ √
+1011 
+√ √ √ √
+1100 
+√ √ √
+1101 
+√ √ √
+1110 
+√ √ √
+1111 
+A possible minimal test set consists of w1w2w3w4 = 0001, 0110, 1000, and 1001.
+11.3. The two functions differ only in the vertex x1x2x3x4 = 0111. Therefore, the circuits can be distinguished
+by applying this input valuation.
+11.4. Label the wires in the circuit of Figure P11.3 as follows:
+w a
+1
+d
+w
+2
+c
+f
+w
+3
+w b
+4 
+w e
+5 
+11-2
+
+--- Page Break ---
+
+Path w1 − a − d − f is sensitized with w2w3w4w5 = 111x
+Path w2 − a − d − f is sensitized with w1w3w4w5 = 111x
+Path w3 − b − c − d − f is sensitized with w1w2w4w5 = 0x11
+Path w3 − b − e − f is sensitized with w1w2w4w5 = 1110
+Path w4 − b − c − d − f is sensitized with w1w2w3w5 = 0x11
+Path w4 − b − e − f is sensitized with w1w2w3w5 = 1110
+Path w5 − e − f is sensitized with w1w2w3w4 = xx0x
+As an input signal to each path it is necessary to apply both 0 and 1 to give two tests. A possible test set is
+w1w2w3w4w5 = 01111, 11110, 1011x, 0x011, 11010, 0x101, and 11100
+11.5. The tests are w1w2w3w4 = 1111, 1110, 0111, and 1111.
+11.6. Test 0100 detects w1/1, c/1, d/1, w4/1, and f /1.
+Test 1010 detects b/0, d/0, w3/0, and f /0.
+Test 0011 detects f /0.
+Test 1111 detects f /0.
+Test 0110 detects w1/1, w2/0, b/1, c/1, d/1, w4/1, and f /1.
+Thus 11 different single faults can be detected using these four tests. Since the circuit has 8 wires, there can
+be 16 single s/0 or s/1 faults. Therefore, the tests cover 69% of single faults.
+11.7. Test 0100 detects w1/1, b/0, c/0, g/1, h/0, k/0, and f /1.
+est 1010 detects w2/1, w4/1, b/0, c/0, g/1, h/0, k/0, and f /1.
+Test 0011 detects w3/0, w4/0, b/0, c/1, g/0, h/1, and f /0.
+Test 0110 detects w1/1, w4/1, b/0, c/0, g/1, h/0, k/0, and f /1.
+Thus 15 different single faults can be detected using these four tests. Since the circuit has 10 wires, there
+can be 20 single s/0 or s/1 faults. Therefore, the tests cover 75% of single faults.
+11.8. Label the wires in the circuit of Figure 11.5 as follows:
+a
+w1
+b k
+w3
+c
+w4
+d
+w2
+e m
+w3 f
+g
+w4
+h
+w1
+i n
+w2
+j
+w3
+11-3
+
+--- Page Break ---
+
+Test 0100 detects a/1, g/1, j/1, k/1, m/1, n/1, and f /1.
+Test 1010 detects b/1, k/1, m/1, n/1,, and f /1.
+Test 0011 detects i/1, k/1, m/1, n/1, and f /1.
+Test 0110 detects h/0, i/0, j/0, n/0, and f /0.
+Thus 14 different single faults can be detected using these four tests. Since the circuit has 13 wires, there
+can be 26 single s/0 or s/1 faults. Therefore, the tests cover 54% of single faults.
+11.9. Cannot detect if the input wire w1 is stuck-at-1. The reason is that this circuit is highly redundant. It realizes
+the function f = w3(w1 + w2), which can be implemented with a simpler circuit.
+11.10. In a circuit in which all gates have a fan-out of 1 there exists a single path from any primary input to the
+output of the circuit. A test for a fault on a primary input sensitizes the path that leads from this input to the
+output of the circuit, thus testing for faults along this path. Therefore, a test set that tests all faults on the
+primary inputs, will also test all faults on the sensitized paths.
+11.11. Test set = {0000, 0111, 1111, 1000}. It would work with XORs implemented as shown in Figure 4.28c.
+For n bits, the same patterns can be used; thus
+Test set = {00 · · · 00, 011 · · · 1, 11 · · · 1, 100 · · · 0}.
+11.12. In the decoder circuit in Figure 6.16c the four AND gates are enabled only if the En signal is active. The
+required test set has to include all four valuations of w1 and w2 when En = 1. It is also necessary to test if
+the En wire is stuck at 1, which can be accomplished with the test w1w2En = 000. Therefore, a complete
+test set comprises w1w2En = 000, 001, 011, 101, and 111.
+11.13. Test 1100 detects w1/0, w2/0, b/1, c/0, g/0, k/1, and f /0.
+Test 0010 detects w4/1, b/0, c/0, g/1, h/0, k/0, and f /1.
+Test 0110 detects w1/1, w4/1, b/0, c/0, g/1, h/0, k/0, and f /1.
+11.14. Label the output wires of the top three AND gates in Figure 11.12 as a, b, and c, respectively. Then the paths
+in the combinational part of the circuit are sensitized as follows.
+Path y1 − a − Y1 is sensitized with w = 1 and y2 = 0.
+Path w − a − Y1 is sensitized with y1 = 0 and y2 = 0.
+Path w − b − Y1 is sensitized with y1 = 1 and y2 = 1.
+Path w − b − Y2 is sensitized with y1 = 0 and y2 = 1.
+Path y2 − b − Y1 is sensitized with w = 1 and y1 = 1.
+Path y2 − b − Y2 is sensitized with w = 1 and y1 = 0.
+Path w − c − Y2 is sensitized with y1 = 1 and y2 = 0 .
+Path y1 − c − Y2 is sensitized with w = 1 and y2 = 0.
+Path y1 = z is sensitized with y2 = 1.
+Path y2 = z is sensitized with y1 = 1.
+All 8 valuations of signals w, y1 and y2 have to be applied to sensitize these paths. It takes 26 clock cycles
+to perform the tests.
+11-4
+
+--- Page Break ---
+
+11.15. For simplicity, in the ASM chart it is assumed that testing begins one clock cycle after Resetn is de-asserted.
+States S2 to S6 depict the actions listed on page 666. We assume that external circuitry places the test data
+values on the Scan-in and w ports, and checks the generated results at Scan-out and z.
+Reset
+S1
+S2
+Normal/Scan = 1 (see Note 1)
+S3
+Normal/Scan = 1 (see Note 2)
+S4
+Normal/Scan = 0 (see Note 3)
+S5
+Normal/Scan = 1 (see Notes 1 and 4)
+S6
+Normal/Scan = 1 (see Notes 2 and 5)
+Notes
+0
+Note 1: Scan-in has test value for y
+2 Done?
+Note 2: Scan-in has test value for y1
+1
+Note 3: w has test value
+S7
+Note 4: Scan-out has test result for y2
+Normal/Scan = 0
+Note 5: Scan-out has test result for y1
+11-5
+
+--- Page Break ---
+
+11.16. Assume that the circuit has been reset by applying Resetn = 0. Then, let Resetn = 1 and observe the behavior
+indicated in the following table.
+Clock Normal/  Transition
+Scan-in Scan-out w z 
+cycle Scan tested
+1 1 0 0 x x Reset
+2 1 0 0 x x
+3 0 x x 0 0 A → A
+4 1 0 0 x x
+5 1 1 0 x x
+6 0 x x 0 0 B → A
+7 1 0 0 x x
+8 1 0 0 x x
+9 0 x x 1 0 A → B
+10 1 0 0 x x
+11 1 1 1 x x
+12 0 x x 1 0 B → C
+13 1 1 1 x x
+14 1 0 0 x x
+15 0 x x 0 0 C → A
+16 1 1 0 x x
+17 1 0 0 x x
+18 0 x x 1 0 C → D
+19 1 1 1 x x
+20 1 1 1 x x
+21 0 x x 0 1 D → A
+22 1 1 0 x x
+23 1 1 0 x x
+24 0 x x 1 1 D → D
+25 1 x 1 x x
+26 1 x 1 x x
+11-6
+
+--- Page Break ---
+
+11.17. The Verilog code for Figure 11.12 is
+module prob11 17 (w, scanin, norm scan, z, scanout, Resetn, Clock);
+input w, scanin, norm scan, Resetn, Clock;
+output z, scanout;
+reg z, scanout;
+reg [2:1] y, Y, D;
+// Define the combinational circuitry
+always @(w or y or scanin or norm scan)
+begin
+Y[1] = (w & ∼y[1]) | (w & y[2]);
+Y[2] = (w & y[2]) | (w & y[1]);
+z = y[1] & y[2];
+if (norm scan == 0)
+begin
+D[1] = Y[1];
+D[2] = Y[2];
+end
+else
+begin
+D[1] = scanin;
+D[2] = y[1];
+end
+scanout = y[2];
+end
+// Define the flip-flops
+always @(negedge Resetn or posedge Clock)
+if (Resetn == 0) y <= 0;
+else y <= D;
+endmodule
+11.18. For simplicity, it is assumed in the ASM chart that testing begins when the reset signal is de-asserted. The
+ASM chart corresponds to the first three steps listed on page 675; the other steps are similar and are not
+shown. In the ASM chart, B1M represents the two-bit signal M1M2 for BILBO1 and B2M represents
+M1M2 for BILBO2. Similarly, G/S1 and G/S2 represent the G/S signals for BILBO1 and BILBO2. As-
+sume that there are n flip-flops in each BILBO register and that k clock cycles are used when running each
+BILBO circuit as a PRBS generator.
+11-7
+
+--- Page Break ---
+
+Reset
+S1
+S2
+B2M = 01 B1M, = 00 G/S1, = 1 (see Note 1)
+0
+Done n? 
+1
+S3
+B2M = 10 B1M, = 00 G/S1, = 0
+0
+Done k? 
+1
+S4
+B1M = 00 G/S1 = 1, B2M, = 00 G/S2, = 1 (see Note 2)
+0
+Done n? 
+1
+S5
+B1M = 00 G/S1 = 1, B2M, = 00 G/S2, = 1 (see Note 3)
+Notes
+Note 1: Initial test data for CN1 placed on
+0
+Scan-in over n clock cycles Done n? 
+Note 2: Initial test data for CN2 placed on
+Scan-in over n clock cycles. Observe 1
+generated results for CN1 on Scan-out
+Note 3: BILBO1 is shifted into BILBO2 for
+n clock cycles and 0 is placed on Scan-in etc.
+11-8
