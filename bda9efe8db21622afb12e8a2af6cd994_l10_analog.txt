@@ -1,0 +1,917 @@
+1
+.
+and are used with permission
+ 
+sources
+ 
+, A/D, D/A), A/D, D/A)
+Introductory Digital Systems Laboratory
+OpAmpsOpAmps
+((
+L10: Analog Building BlocksL10: Analog Building Blocks
+ 
+Acknowledgement:Materials in this lecture are courtesy of the followingDave Wentzloff
+L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+2
+f
+Ω
+) in
+Ω 5
+V
+⋅
+)
+-20dB/decade
+f
+(
+a
+ 
+=
+ 
+  out
+V
+10Hz
+a(f) 5  
+Typically very high inputresistance ~ 300KHigh DC gain (~10Output resistance ~7510
+     
+  
+out
+v Introductory Digital Systems Laboratory
+Reprinted withpermission ofNationalSemiconductorCorporation.
++10 to +15V
+out
+R
+id
+v
+⋅
+ 
+ 
+a
+DC Model
+ in
+R
+Introduction to Operational AmplifiersIntroduction to Operational Amplifiers
+LM741 Pinout
+id
++ −
+v
+-10 to -15V
+Reprinted with permission of National Semiconductor Corporation.
+L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+3
+drive current
+provides large
+Output devices
+Output Stage
+ 
+OpAmpOpAmp
+ 
+AdditionalGain Stage
+Introductory Digital Systems Laboratory
+Current Sourcefor biasing
+Reprinted with permission of National Semiconductor Corporation.
+The Inside of a 741The Inside of a 741
+ 
+DifferentialInput Stage Gain is Sensitive to Operating Condition
+(e.g., Device, Temperature, Power supply voltage, etc.)
+Bipolar versionhas small inputBias currentMOS OpAmpshave ~ 0 inputcurrent L10: 6.111 Spring 2006
+Reprinted withpermission ofNationalSemiconductorCorporation.
+
+--- Page Break ---
+
+4
+out
++ -
+v
+id
+v CC
++V
+ 
++-
+V
+μ ε
+ 
+>
+ 
+= 10V
+    id
+= 100
+  + -
+v
+CC ε
+V id
+v
+Positive Saturation
+V
+out μ
+v
+OpAmpOpAmp -100
+out-
+  +
+v
+= -10V
+ 
+  CC
+CC
+-V
+-V  
+-
++ ε
+ 
+< -
+ 
+  id
++ -
+  v
+out id
++ -
+v v Introductory Digital Systems Laboratory
+Negative Saturation
+  CC out
++ -
+V v
+CC
+  CC
+id
+Simple Model for anSimple Model for an-V
+< V  
+ 
++ - av
+ 
+out
++-
+~ 0+ - ~ 0 < v
+ 
+   
+  -
+  + Reasonableapproximation
+id i
+i CC Small input range for “Open” loop Configuration
+-
+v Linear Mode+  
+id
+v
+If -V
+L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+5
+out
++ - ⎤ ⎥ ⎦
+v
+2
+1
+R
+id
++
+2
+av a
+R
+ 
++-
++
+1
+2 1 R
+ 
+R ⎡ ⎢ ⎣
+- +
+out )
+  a
+v 1
+id
+−
+v
+>>
+=
+1 a
+ in
+v R
+1
+R
+ if
+(
++-
+2 1
+R R
+in
+v −
+out a
+v
+≈
+ 
+= 2
+ 
+R
+  id
+v
++
+a 1
+ 
+2  R
+)
+R
+Introductory Digital Systems Laboratory
+a
+0
+ +
+=  
+1
+(
+out
+v id
+−
+ 
+v
+2 2 =
+R +
+R
+in
+out
+out v
+v = 0 if OpAmp is linear 
+v  
+  -
+- +
++
+The Power of (Negative) FeedbackThe Power of (Negative) Feedback
+= v
+id  
+ 1
+v +
+R 1
+v
+ 
++
+  R 
+-
++
+ in
+Overall (closed loop) gain does not depend on open loop gainTrade gain for robustnessEasier analysis approach: “virtual short circuit approach”
+v      
+ in   
+v
+L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+6
+dt
+in
+v
+∞
+in t ∫
+v −
+2
+1
+R RC
+1
++  R −
+ 
+1
+≈
+R  
+≈
+  out
+v
+out
+v
+Integrator
++ −
+Non-inverting
+CircuitsCircuits
+ 
+)
+1
+in
+v
+−
+OpAmpOpAmp 2
+   
+in
+ v Introductory Digital Systems Laboratory
+out
+(
+v 2 1
+R R
+ 
+≈
+ 
+in
+BasicBasic
+v  out
+v
+≈
+ 
+ 
++ -   out
+v
+in Differential Input
+v
+Voltage Follower (buffer)
+L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+7
+Introductory Digital Systems Laboratory
+Use With Open LoopUse With Open Loop
+ 
+LM311 is a single supplycomparator
+Is V+ > V- ?The Output is a DIGITAL signal
+Analog Comparator:
+L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+8
+in
+v
+ref
+V
+ref 4
+V 
+3
+ref 2
+11 V
+ 
+ref 4
+V
+10
+ 
+01 noise
+v
+  Binary code
+00 LSB
+  ref 4 ref 2 ref 4 0
+V V V
+3
+D/A Conversion
+Analog Output
+noise
+Quantization 
+ 
+ref +
+V −
+Introductory Digital Systems Laboratory
+ref 4
+V 
+3
+D/A
+ref 2
+V
+ref 4
+V Analog Input
+  code
+digital
+0
+   
+11 10 01 00
+A/D ConversionBinary Output
+A/D and D/A converters
+A/D  
+Data Conversion: Quantization NoiseData Conversion: Quantization Noise
+Quantization noise exists even withideal
+ 
+
+in
+v
+L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+9
+Ideal Non-
+monoticity
+Binary code
+Ideal
+Gainerror
+Binary code
+Analog   Analog
+Gain error – deviation of slope from ideal valueof 1
+Differential nonlinearity – the largest incrementin analog output for a 1-bit change
+Introductory Digital Systems Laboratory
+idealities in Data Conversionidealities in Data Conversion
+Ideal
+--
+Ideal
+ 
+Integral
+NonNon Binary code
+error
+Offset Binary code nonlinearity
+Analog
+Analog
+Offset – a constant voltage offset that appearsat the output when the digital input is 0Integral Nonlinearity – maximum deviation fromthe ideal analog output voltage
+L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+10
+-1
+Introductory Digital Systems Laboratory
+2R Ladder DAC Architecture2R Ladder DAC Architecture
+--
+ 
+RR
+Note that the driving point impedance (resistance) is the samefor each cell.R-2R Ladder achieves large current division ratios with onlytwo resistor values
+   
+ 
+L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+11
+s
+μ
+ 
+8-bit DACSingle Supply Operation: 5V to 15VIntegrates required references(bandgap voltage reference)Uses a R-2R resistor ladderSettling time 1Programmable output range from0V to 2.56V or 0V to 10VSimple Latch based interface
+             
+      
+Introductory Digital Systems Laboratory
+DAC (AD 558) SpecsDAC (AD 558) Specs  Used with permission.
+ 
+Image courtesy of Analog Devices.
+L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+12
+ Used with permission.
+CS
+ 
+LATCH CE
+Image courtesy of Analog Devices.
+Introductory Digital Systems Laboratory
+Outputs are noisywhen input bits settles,so it is best to have inputsstable before latchingthe input data
+D[7:0]
+ 
+Chip Architecture and InterfaceChip Architecture and Interface
+L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+13
+Very similar to anon-inverting ampStrap output fordifferent voltageranges
+Introductory Digital Systems Laboratory
+Setting the Voltage RangeSetting the Voltage Range
+ Used with permission.
+ 
+Convert data toOffset binary
+Image courtesy of Analog Devices. L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+14
+N
+AD9768
+Reference current source
+Weighted DACWeighted DAC
+--
+Switch binary-weightedcurrentsMSB to LSB current ratio is 2
+   
+ 
+out
+v
+)
+0
+b
+R
+1 8
+-
++
+Introductory Digital Systems Laboratory
++
+1
+0 b
+1 4
+b
++
+I 8 2
+  1
+b
+b  Used with permission.
+1 2
+ 
++
+I
+4  
+  2 3
+b  b
+(
+resistor between
+ 
+I
+2
+  3 IR
+Ω
+b  
+Another Approach: BinaryAnother Approach: Binary−
+ 
+I = Analog Devices AD9768uses two banks ofratioed currentsAdditional currentdivision performed by750the two banks
+ 
+   
+Image courtesy of Analog Devices.
+  out  
+v L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+15
+out
+v
+0 1 1 1
+       
+0 0 1 1
+R
+)
+       
+2
+0 0 0 1
+Thermometer T
+2 +
+          T 1
+0 1 0 1 T
++
+ 
+I
+0
+          1
+ 
+Binary0 0 1 1 T T
+(
+IR
+ 
+I −
+0
+T =
+ 
+out
+v
+I
+– 1 t
+ 
+N
+and Thermometer D/A
+and Thermometer D/A Introductory Digital Systems Laboratory
+ 
+100
+→
+ 
+GlitchingGlitching
+011
+out
+Glitching is caused whenswitching times in a D/A are notsynchronizedExample: Output changes from011 to 100 – MSB switch isdelayedFiltering reduces glitch butincreases the D/A settling timeOne solution is a thermometercode D/A – requires 2switches but no ratioedcurrents
+v
+       
+   
+L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+16
+< 3 LSB
+ 
+in
+V
+ 
+Approximation A/DApproximation A/D
+--
+Example: 3-bit A/D conversion, 2 LSB <
+Introductory Digital Systems Laboratory
+ 
+SuccessiveSuccessive
+−
+code
+D/A
+C
+ 
+out
+ 
++
+  in
+D to A generates analog voltage which is compared to the input voltageIf D to A voltage > input voltage then set that bit; otherwise, reset that bitThis type of A to D takes a fixed amount of time proportional to the bit lengthV
+D/A converters are typically compact and easier to design. Why not A/D convert
+        Comparator
+ using a D/A converter and a comparator?  
+L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+17
+Go
+Done
+)
+Data
+comp
+t
+ 
++
+ 
+D/A
+t
+Control (
+SuccessiveGenerator N
+ 
+Approximation
+Approximation A/DApproximation A/DN
+--
+- +
+Introductory Digital Systems Laboratory
+D/A  
+SuccessiveSuccessive
+Hold
+Converter
+Sample/
+in
+Serial conversion takes a time equal to
+v
+ 
+
+L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+18
+Bipolar (BPO =1)
+Unipolar (BPO =0)
+ Used with permission.
+Approximation A/DApproximation A/D
+-- (AD670)(AD670)
+Image courtesy of Analog Devices.
+Introductory Digital Systems Laboratory
+ 
+SuccessiveSuccessive
+s conversion time
+μ
+~10
+ 
+
+L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+19
+DT
+t
+Data Valid
+Read
+s (max)
+TD
+t μ
+ 
+c
+Write t
+Introductory Digital Systems Laboratory
+w
+t
+DC
+t
+(delay to start conversion) = 700ns (max)(Bus Access Time) = 250 (max)(Output Float Delay) = 150 (max)
+     
+(write/start pulse width) = 300ns (min)
+  (conversion time) = 10
+ 
+w DC c TD DT
+t t t t t  
+(see data sheet for other modes)(see data sheet for other modes)
+Valid
+Single Write, Single Read OperationSingle Write, Single Read Operation
+ 
+R/W
+Data
+Status
+CE, CS Control bits CE and CS can be wired to ground if A/D is the only chip driving the busSuggestion: tie CE and CS pins together and hardwire BPO and Format
+   
+ 
+L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+20
+AD670
+Figure by MIT OpenCourseWare.
+Data[7:0]
+CS CE R/W STATUS
+cs_b r_w_b
+status
+Introductory Digital Systems Laboratory
+dataavail
+D
+Simple A/D Interface FSMSimple A/D Interface FSM
+Q
+ 
+ 
+FSM
+clk
+reset
+sample Status should besynchronized: why?Courtesy of James Oey andCemal Akcaba
+L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+21
+2/5
+if (!reset) state <=IDLE;else state <=nextstate;
+InterfaceInterface
+ 
+status_d1 <= status;status_d2 <= status_d1;r_wbar <= r_wbar_int;cs_bar <=cs_bar_int;
+begin end
+parameter IDLE = 0;parameter CONV0 = 1;parameter CONV1 = 2;parameter CONV2 = 3;parameter WAITSTATUSHIGH = 4;parameter WAITSTATUSLOW = 5;parameter READDELAY0 = 6;parameter READDELAY1 = 7;parameter READCYCLE = 8;
+// State declarations. always @ (posedge clk or negedge reset)
+VerilogVerilog
+ 
+1/5
+Introductory Digital Systems Laboratory
+Example A/DExample A/D  
+ 
+// System Clkinput clk;// Global Reset signal, assume it is synchronizedinput reset;// User Interfaceinput sample;output dataavail;// A-D Interfaceinput status;reg status_d1, status_d2;output r_wbar, cs_bar;output [3:0] state;// internal statereg [3:0] state;reg [3:0] nextstate;reg r_wbar_int, r_wbar;reg cs_bar_int, cs_bar;reg dataavail;
+module AD670 (clk, reset, sample, dataavail,r_wbar, cs_bar, status, state);
+L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+22
+4/5
+r_wbar_int = 0;cs_bar_int = 0;nextstate = WAITSTATUSHIGH;cs_bar_int = 0;if (status_d2) nextstate = WAITSTATUSLOW;else nextstate = WAITSTATUSHIGH;cs_bar_int = 0;if (!status_d2) nextstate = READDELAY0;else nextstate = WAITSTATUSLOW;
+CONV2:begin end begin end begin end
+WAITSTATUSHIGH:WAITSTATUSLOW:
+Interface (cont.)Interface (cont.)
+ 
+3/5
+VerilogVerilog
+ 
+Introductory Digital Systems Laboratory
+ 
+r_wbar_int = 0;cs_bar_int = 0;nextstate = CONV1;r_wbar_int = 0;cs_bar_int = 0;nextstate = CONV2;
+begin end begin end
+Example A/DExample A/DIDLE: beginif(sample) nextstate = CONV0;else nextstate = IDLE;end CONV0: CONV1:
+// defaultsr_wbar_int = 1; cs_bar_int = 1; dataavail = 0;case (state)
+always @ (state or status_d2 or sample) begin
+L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+23
+.).)
+Interface(contInterface(cont
+ 
+5/5
+VerilogVerilog
+ 
+Introductory Digital Systems Laboratory
+ 
+cs_bar_int = 0;nextstate = READDELAY1;cs_bar_int = 0;nextstate = READCYCLE;cs_bar_int = 0;dataavail = 1;nextstate = IDLE;
+begin end begin end begin end
+READDELAY0:READDELAY1:READCYCLE: default: nextstate = IDLE;
+Example A/DExample A/D
+endcase // case(state)
+end // always @ (state or status_d2 or sample)
+endmodule // adcInterface
+L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+24
+s for status to go low
+μ
+Enable read flip-flop
+Wait for ~10
+SimulationSimulation
+r_w_b must stay low for at least 3 cycles (@ 100ns period)Status is synchronized – two register delays
+Introductory Digital Systems Laboratory
+Notice a one cycle delay since A/Dcontrol signal delayed through a register
+ 
+Sample pulse initiatesdata conversion
+On reset, present state goes to 0
+L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+25
+comparators)
+ 
+N 
+Brute-force A/D conversionSimultaneously compare theanalog value with everypossible reference valueFastest method of A/DconversionSize scales exponentiallywith precision(requires 2
+       
+   
+0 1
+b b
+Introductory Digital Systems Laboratory
+The rmom eter to binary
+Flash A/D ConverterFlash A/D Converter
+C C C
+ 
++ − + − + − Can be implemented as OpAmp in open loop
+in
+Comparators
+v
+  ref
+V
+R
+R R R
+L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+26
+ Used with permission.
+Image courtesy of Analog Devices.
+Flash Data ConverterFlash Data Converter
+  Introductory Digital Systems Laboratory
+––
+ 
+ 
+AD 775AD 775
+L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+27
+…
+2
+Amplifier
++
+−
+ 
+1-bit
+D/A
+Converter
+ 
+ 
+A/D
+Converter
+ 
+  [ISSCC 2003],Poulton et. al.20Gsample/sec,8-bit ADCfrom Agilent Labs
+Hold
+Sample/
+ 
+ 
+2 2 muxes
+  1MByte SRAM
+Amplifier
++
+8 Mem Controllers
+Introductory Digital Systems Laboratory
+ 
+−
+80 Slice Decimator
+ 
+ 
+ 
+80 Radix Converters
+1-bit
+D/A
+. Adapted from Poulten, Ken, et al. "A 20 GS/s 8b ADC with a 1MB Memory in 0.18um CMOS."
+Converter
+80 ADC Slices
+ 
+   
+80 T/Hs and V/Is
+High Performance Converters:High Performance Converters:
+Use Pipelining and Parallelism!Use Pipelining and Parallelism!A/D
+Converter CMOS ADC Chip
+DLL Clock Gen - 
+ 
+  0.18
+ 
+1 GHzClock
+Hold CMOS
+Sample/ Buffer Chip
+Figure by MIT OpenCourseWareIEEE International Solid-State Circuits Conference Paper 18.1, 2003.
+Pipelining (used in video rate, RF basestations, etc.)Parallelism (use many slower A/D’s in parallel to build veryhigh speed A/D converters)
+L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+28
+)
+!
+…)
+OpAmps!
+Courtesy of Prof. Harry Lee, ISSCC 2006. Used with permission.
+Introductory Digital Systems Laboratory
+ 
+New Trend: Eliminate OpAmpsNew Trend: Eliminate
+(Use Comparators, more digital…(Use Comparators, more digital
+Op amps must achieve highopen-loop gain and fastsettling time underfeedback.High gain becomesincreasingly difficultachieve due to low devicegain.Solution: Comparatorbased analog DesignDramatic power savingspossible
+       
+    L10: 6.111 Spring 2006
+
+--- Page Break ---
+
+29
+Introductory Digital Systems Laboratory
+Summary of Analog BlocksSummary of Analog Blocks
+ 
+Make sure you register critical signals (enables, R/W,etc.) Glitch free operation using codingParallelism and Pipelining!More advanced concepts such as calibration
+   
+Analog blocks are integral components of anysystem. Need data converters (analog to digitaland digital to analog), analog processing(OpAmps circuits, switched capacitors filters,etc.), power converters (e.g., DC-DCconversion), etc.We looked at example interfaces for A/D andD/A convertersAnalog design incorporate digital principles
+     
+  
+L10: 6.111 Spring 2006

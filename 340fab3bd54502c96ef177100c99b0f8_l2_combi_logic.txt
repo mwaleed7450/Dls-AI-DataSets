@@ -1,0 +1,1121 @@
+1
+.
+Pearson Education, 2005.
+Pentice-Hall/
+ 
+. 2nd ed.
+Integrated Circuits: A Design Perspective
+ 
+Digital
+ 
+the following sources and are used with permission.
+ 
+Introductory Digital Systems Laboratory
+courtesy of
+ 
+Contemporary Logic Design
+are  
+ 
+L2: Combinational Logic DesignL2: Combinational Logic Design
+ 
+(Construction and Boolean Algebra)(Construction and Boolean Algebra)
+in this lecture
+ 
+s
+Acknowledgements:MaterialProf. Randy Katz (Unified Microelectronics Corporation Distinguished Professor in ElectricalEngineering and Computer Science at the University of California, Berkeley) and Prof. GaetanoBorriello (University of Washington Department of Computer Science & Engineering) from Chapter 2of R. Katz, G. Borriello.J. Rabaey, A. Chandrakasan, B. Nikolic.Prentice Hall/Pearson, 2003.
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+2
+IH
+OL
+-V
+ 
+-V
+ 
+IL OH
+1 0
+OUT
+= V= V
+    L H
+   
+0 1
+IN
+Truth Table NMNM
+V(x)
+OH
+V
+  Slope = -1 IH
+V
+IL
+OUT Slope = -1
+V
+ 
+OL
+V
+Introductory Digital Systems Laboratory
+OH OL
+V(y)
+V V
+Review: Noise MarginReview: Noise Margin
+ 
+IN
+ 
+IL
+IH OL
+OH
+V
+V V
+V Region
+Undefined
+Large noise margins protect against various noise sources
+ 
+"1" "0" 
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+3
+T
+> V
+ 
+= 0.5V
+ 
+  NMOS
+T GS
+V R V
+D S
+ON
+G
+T
+< V
+ 
+  NMOS
+N+
+GS
+drain
+R
+V
+  Introductory Digital Systems Laboratory
+OFF
+gate   s
+V
+P-substrate
+NMOS ON when Switch Input is High
+ 
+MOS Technology: The NMOS SwitchMOS Technology: The NMOS Switch
+N+
+source
+SwitchModel
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+4
+2.5
+ 
+2
+VGS= 2.5 V VGS= 2.0 V VGS= 1.5 VVGS= 1.0 V
+Saturation
+ 
+ 
+1.5
+(V) 
+Resistive DS
+V
+ 
+1
+ 
+0.5
+-4
+MOS is a very non-linear.Switch-resistor model
+     
+x 10
+0
+(A)
+6 5 4 3   D 2 1 0
+I
+¾ ¾ sufficient for first order analysis.
+drain
++
+n
+gate oxide Introductory Digital Systems Laboratory
+polysilicon gate
+= 0.5V
++   D  
+n
+gate I T
+ 
+V
+ 
+D S
+p
++
+n
+NMOS Device CharacteristicsNMOS Device Characteristics
+source -
+ 
+inversion layer�channel
+ 
+GS
+ 
++ V
+   
+ 
+ 
++ n
+p
+body G
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+5
+T
+< V
+ 
+= -0.5V
+ 
+  PMOS
+T GS
+R
+V V
+S D
+ON
+G
+T
+> V
+ 
+  PMOS
+P+ GS
+drain
+R
+V
+ 
+Introductory Digital Systems Laboratory
+OFF
+gate
+  DD
+N-substrate
+V
+ 
+PMOS ON when Switch Input is Low
+PMOS: The Complementary SwitchPMOS: The Complementary Switch
+P+
+source
+SwitchModel
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+6
+OUT
+  PMOS   NMOS
+R R
+  DD
+V
+IN IN
+Switch Model
+OUT
+Introductory Digital Systems Laboratory
+ 
+S D D S
+The CMOS InverterThe CMOS Inverter  DD
+V
+G
+G
+ 
+ 
+Rail-to-rail Swing in CMOS
+IN
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+7
+= 0
+ 
+= 0.5 in
+  V
+= 1 in
+  out
+NMOS V
+in V
+V
+= 2
+ 
+= 2.5    in 2.5
+  in V
+V
+ 
+2
+= 1 
+  in
+= 1.5
+  V
+in
+V  
+1.5
+(V) 
+  in
+V
+ 
+1
+ 
+0.5
+= 1
+ 
+ 
+in = 1.5  0
+V 2 1 0
+in 2.5 1.5   out 0.5
+V (V)  V
+= 0
+ 
+= 0.5
+  in  
+V in
+V
+) 
+  D n
+I DD
+= 1.5
+  = 2 Introductory Digital Systems Laboratory
+in  
+V   in = 2.5
+ 
+PMOS V
+in
+V
+OUT
+S D D S
+Inverter VTC: Load Line AnalysisInverter VTC: Load Line Analysis  
+DD
+V
+G
+G
+Rail-to-rail swing (0V to VLarge noise margins“zero” static power dissipation
+       
+CMOS gates have:  
+IN
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+8
+1
+1 1 1 1
+       
+1 1 1 0 X NAND Y
+NOT (X AND Y)
+       
+1 1 0 1
+NOT X
+       
+1 1 0 0
+)        
+15 1 0 1 1 NOT Y
+–F
+0        
+1 0 1 0
+X = Y
+       
+1 0 0 1
+F        
+X NOR Y
+1 0 0 0
+functions of n inputs
+NOT (X OR Y)
+ 
+       
+0 1 1 1
+(2^n)
+         
+0 1 1 0  
+X OR Y
+       
+16 possible functions (F0 1 0 1
+X XOR Y
+        Introductory Digital Systems Laboratory
+0 1 0 0
+ 
+X Y Y
+       
+0 0 1 1
+         
+0 0 1 0 X
+       
+0 0 0 1
+       
+Possible Function of Two Inputs
+Possible Function of Two Inputs0 0 0 0  
+ 
+          0 X AND Y In general, there are 2
+Y 0 1 0 1
+         
+X 0 0 1 1
+There are 16 possible functions of 2 input variables:
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+9
+Z = X • Y Z = X • Y Z = X + Y
+Z = X + Y
+Expression
+ 
+Z 1 1 1 0 Z 0 0 0 1 Z 1 0 0 0 Z 0 1 1 1
+                                       
+Y 0 1 0 1 Y 0 1 0 1 Y 0 1 0 1 Y 0 1 0 1
+       
+X 0 0 1 1 X 0 0 1 1 X 0 0 1 1 X 0 0 1 1
+Truth-Table
+ 
+Z Z Z Z
+Introductory Digital Systems Laboratory
+Common Logic GatesCommon Logic GatesSymbol
+   
+X Y X Y
+X Y X Y
+ 
+ 
+   
+OR
+AND NOR
+NAND
+Gate
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+10
+("equality")
+Z = X Y + X Y Z = X Y + X Y
+X and Y the same
+X or Y but not both
+("inequality", "difference")
+Z 0 1 1 0
+Z 1 0 0 1
+         
+ 
+Y 0 1 0 1        
+Y 0 1 0 1
+ 
+ 
+X 0 0 1 1
+X 0 0 1 1
+Z
+Z
+Introductory Digital Systems Laboratory
+Exclusive (N)OR GateExclusive (N)OR Gate
+ 
+X Y
+X Y
+ 
+Y)
+  Y)
+ 
+⊕ Widely used in arithmetic structures such as adders and multipliers
+  ⊕
+ 
+XOR
+(X
+XNOR(X
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+11
+1 1 1 0
+O
+ 
+       
+0n0n0n0ff
+       
+0ff0ff0ff0n
+PDN PUN
+         
+Note: CMOS gatesresult in invertingfunctions!(easier to build NANDvs. AND) B 0 1 0 1
+ 
+       
+A 0 0 1 1
+) = 0 
+) = 1    n O
+n
+  L
+C
+PUN
+,…,A 
+,…,A  1
+  1
+) 
+n
+: make this connection
+,…,A  B
+: make this connection  1
+F(A Introductory Digital Systems Laboratory
+A B
+when we want F(A
+pullupwhen we want F(Apulldown
+PDN
+A
+Generic CMOS RecipeGeneric CMOS Recipe
+How do you build a 2-input NOR Gate?
+dd
+V
+ 
+...   ...
+A B
+  1   n
+...
+A A
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+12
+X • (X + Y) = X(X • Y) + Y = X + Y
+X • 1 = XX • 0 = 0X • X = XX • X = 0X • Y = Y • X(X • Y) • Z = X • (Y • Z)X + (Y • Z) = (X + Y) • (X + Z)(X + Y) • (X + Y) = X
+   
+               
+1D.2D.3D. 5D. 6D. 7D. 8D. 9D. 10D.11D.
+ 
+ 
+ 
+Introductory Digital Systems Laboratory
+ 
+ 
+ 
+       
+Theorems of Boolean Algebra (I)
+Theorems of Boolean Algebra (I)  
+X + 0 = XX + 1 = 1X + X = XX + X = 1X + Y = Y + X(X + Y) + Z = X + (Y + Z)X • (Y + Z) = (X • Y) + (X • Z)X • Y + X • Y = X
+               
+1. 2. 3. 4. (X) = X5. 6. 7. 8. 9. 10. X + X • Y = X11. (X + Y) • Y = X • Y
+Elementary Commutativity:Associativity:Distributivity:Uniting:Absorption:
+           
+     
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+13
+X + (Y • Z)
+(X + Y) • (X + Z)
+(X + Y) • (X + Z) =
+ 
+12D. 13D. (X + Y) • (Y + Z) • (X + Z) =
+14D. (X • Y • ...) = X + Y + ...
+ 
+ 
+f(X1,X2,...,Xn,1,0,•,+)
+ 
+⇔
+  Introductory Digital Systems Laboratory
+ 
+ 
+ 
+Y) + (X • Z) =X • Y + X • Z
+ 
+•
+ 
+Theorems of Boolean Algebra (II)Theorems of Boolean Algebra (II)  
+X • (Y + Z)
+12. (X 13. (X • Y) + (Y • Z) + (X • Z) =14. (X + Y + ...) = X • Y • ...15. f(X1,X2,...,Xn,0,1,+,•) = f(X1,X2,...,Xn,1,0,•,+)Dual of a Boolean expression is derived by replacing • by +, + by •, 0f (X1,X2,...,Xn,0,1,+,•)
+  by 1, and 1 by 0, and leaving variables unchanged 
+ 
+Factoring:Consensus:De Morgan's:Generalized De Morgan's:Duality
+         
+    
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+14
+S Cout
+ 
+A B
+Cin
+Sum-of-Products Canonical Form
+S = A B Cin + A B Cin + A B Cin + A B CinCout = A B Cin + A B Cin + A B Cin + A B Cin
+Introductory Digital Systems Laboratory
+0 0 0 1 0 1 1 1
+Cout
+ 
+S 0 1 1 0 1 0 0 1
+ 
+Simple Example: One Bit AdderSimple Example: One Bit Adder
+Cin 0 1 0 1 0 1 0 1  
+                 
+inputs: A, B, Carry-inoutputs: Sum, Carry-outB 0 0 1 1 0 0 1 1 ANDed product of literals – input combination for which outputis trueEach variable appears exactly once, in true or inverted form (butnot both)
+       
+   
+                 
+1-bit binary adder Product term (or minterm)
+  A 0 0 0 0 1 1 1 1  
+ 
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+15
+Introductory Digital Systems Laboratory
+B) Cin
+ 
+⊕
+ 
+Cin
+ 
+⊕
+ 
+Simplify Boolean ExpressionsSimplify Boolean Expressions
+B) Cin + (AB
+   
+ 
+⊕ ⊕
+= A B Cin + A B Cin + A B Cin + A B Cin= A B Cin + A B Cin + A B Cin + A B Cin + A B Cin + A B Cin= (A + A) B Cin + A (B + B) Cin + A B (Cin + Cin)= B Cin + A Cin + A B= (B + A) Cin + A B    
+=( A B + A B )Cin + (A B + A B) Cin=(A= A
+ 
+S = A B Cin + A B Cin + A B Cin + A B Cin
+Cout
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+16
+SumSum
+--
+ofof
+--
++ A B C+ A B C + A B C + ABC
+M(0,2,4)
+:  minimal form(A + B + C) (A + B + C)
+Π
+m(1,3,5,6,7)   ≠
+A B Cminimal form
+Σ   = = M0 • M2 • M4= (A + B + C) (A + B + C) (A + B + C)  = (A + B + C) (A + B + C) (A + B + C)= (A + B + C) (A + B + C)= (A + C) (B + C)
+    ≠
+= = m1 + m3 + m5 + m6 + m7  = A B C + A B C + AB C + ABC + ABC= (A B + A B + AB + AB)C + ABC= ((A + A)(B + B))C + ABC= C + ABC = ABC + C = AB + C
+   
+F =
+   
+F(A, B, C) F(A, B, C)
+F(A, B, C) F(A, B, C) F in canonical form:canonical form
+F in canonical formcanonical form
+Introductory Digital Systems Laboratory
+m0m1m2m3m4m5m6m7
+M0M1M2M3M4M5M6M7
+Products & ProductProducts & Product          
+     
+--                
+ofof
+--
+mintermsA B CA B CA B CA B CA B CA B CA B CA B C maxtermsA + B + CA + B + CA + B + CA + B + CA + B + CA + B+ CA + B +CA +B + C
+                           
+       
+C 0 1 0 1 0 1 0 1 C 0 1 0 1 0 1 0 1  
+SumSum
+                           
+       
+B 0 0 1 1 0 0 1 1 B 0 0 1 1 0 0 1 1
+           
+                       
+A 0 0 0 0 1 1 1 1 A 0 0 0 0 1 1 1 1
+Sum term (or maxterm) - ORed sum of literals – input combination for which output is false
+Product term (or minterm): ANDed product of literals – input combination for which output is true 
+short-hand notation form in terms of 3 variablesshort-hand notation for maxterms of 3 variables
+
+ 
+L2: 6.111 Spring 2006
+
+
+--- Page Break ---
+
+17
+m(0,1,2)M(3,4,5,6,7)M(3,4,5,6,7)
+Σ m(0,1,2)
+  Π Π
+    Σ
+ 
+=
+=
+F'(A,B,C) =
+F'(A,B,C) =
+M(0,1,2)
+Π
+ 
+m(3,4,5,6,7)    
+Σ
+ 
+   
+Introductory Digital Systems Laboratory
+m(3,4,5,6,7) = M(0,1,2) = m(3,4,5,6,7)M(0,1,2) m(3,4,5,6,7)M(0,1,2)
+Σ Π Σ Σ
+      Π    Π
+ 
+= =
+Mapping Between FormsMapping Between Forms
+in minterm shorthand form, list the indices not already used in FE.g., F(A,B,C) =rewrite in Maxterm form, using the same indices as FE.g., F(A,B,C) = 
+rewrite minterm shorthand using maxterm shorthandreplace minterm indices with the indices not already usedE.g., F(A,B,C) =rewrite maxterm shorthand using minterm shorthandreplace maxterm indices with the indices not already usedE.g., F(A,B,C) =
+Minterm to Maxterm conversion:
+Maxterm to Minterm conversion:Minterm expansion of F to Minterm expansion of F':Minterm expansion of F to Maxterm expansion of F':
+       
+1. 2. 3. 4.
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+18
+B has the same value in both on-set rows– B remainsA has a different value in the two rows– A is eliminated
+Introductory Digital Systems Laboratory
+F = A B +AB = (A +A)B = B
+The Uniting TheoremThe Uniting Theorem
+F 1 0 1 0
+         
+B 0 1 0 1
+           
+A 0 0 1 1
+Find two element subsets of the ON-set where only one variablechanges its value – this single varying variable can beeliminated and a single product term used to represent bothelements
+ 
+
+Key tool to simplification: A (B + B) = AEssence of simplification of two-level logic
+   
+ 
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+19
+1111 1101
+WXYZ
+1100
+1110
+1001
+1011
+2-cube
+XY 1000
+11 10
+1010
+4-cube
+0101
+X
+0111
+0110 0100
+Y
+01 00
+0001
+W X
+Z
+0011
+ 
+Y
+0010 0000
+Introductory Digital Systems Laboratory
+Boolean CubesBoolean Cubes
+1
+101
+X
+111
+XYZ
+ 
+100
+0 110
+001 3-cube
+X  
+011
+Z
+1-cube
+ 
+Y
+010 000
+Just another way to represent truth tableVisual technique for identifying when the uniting theoremcan be appliedn input variables = n-dimensional "cube"
+     
+  
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+20
+Cout = BCin+AB+ACin
+AB(Cin+Cin)
+A(B+B)Cin
+111 101
+ON-set = solid nodesOFF-set = empty nodes
+A varies within face, B does notthis face represents the literal B
+Circled group of the on-set is called theadjacency plane. Each adjacency planecorresponds to a product term.
+A
+ 
+C
+ 
+B
+000
+11 10
+(A+A)BCin Introductory Digital Systems Laboratory
+F
+A
+The on-set is completely covered by the combination (OR) of the subcubes oflower dimensionality - note that “111” is covered three times
+B
+01 00
+Cout0 0 0 1 0 1 1 1
+ 
+F 1 0 1 0
+         
+       
+Cin0 1 0 1 0 1 0 1
+         
+B 0 1 0 1
+         
+       
+B 0 0 1 1 0 0 1 1
+Mapping Truth Tables onto Boolean Cubes         
+Mapping Truth Tables onto Boolean Cubes
+A 0 0 1 1
+         
+Three variable example: Binary full-adder carry-out logic       
+Uniting theorem A 0 0 0 0 1 1 1 1
+ 
+ 
+
+
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+21
+– 2 dimensions
+ 
+m(4,5,6,7)
+Σ
+ 
+F(A,B,C) =on-set forms a squarei.e., a cube of dimension 2 (2-D adjacency plane)represents an expression in one variablei.e., 3 dimensionsA is asserted (true) and unchangedB and C vary
+This subcube represents the literal A
+Introductory Digital Systems Laboratory
+111 101
+Higher Dimension CubesHigher Dimension Cubes
+100
+110
+001
+ 
+A
+0-cube, i.e., a single node, yields a term in 3 literals1-cube, i.e., a line of two nodes, yields a term in 2 literals2-cube, i.e., a plane of four nodes, yields a term in 1 literal3-cube, i.e., a cube of eight nodes, yields a constant term "1"m-subcube within an n-cube (m < n) yields a term with n – mliterals
+         
+C
+      
+011 In a 3-cube (three variables):In general,
+B
+   
+000  
+010
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+22
+D
+K-map
+8 9 11 10 4-variable
+10
+A
+  12 13 15 14
+11
+B
+4 5 7 6
+ 
+F 1 0 1 0 01
+            0 1 3 2
+B 0 1 0 1
+00
+MapsMaps
+ 
+         
+A 0 0 1 1 AB 00 01 11 10
+CD
+C
+4 5
+10
+A   6 7 Introductory Digital Systems Laboratory
+1 1 0
+11
+2 3
+KarnaughKarnaugh
+    B
+0 1 0 2 3   2 3
+    1
+0 1 01
+A 0 1
+0 1
+    0 1
+B 0
+00
+A 0 1
+AB 0 1
+ 
+B
+C
+ 
+Guide to applying the uniting theorem - On-set elements with only onevariable changing value are adjacent unlike in a linear truth-table
+ 
+e.g., 00, 01, 11, 10 (only a single bit changes in code for adjacent map cells)K-map
+  
+K-map
+Alternative to truth-tables to help visualize adjacencies 2-variable
+Numbering scheme based on Gray–code3-variable
+ 
+ 
+
+
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+23
+10 1 1
+0 0
+10
+A
+ 
+1 1 A
+11
+ 
+1 0
+B 11
+ 
+0 0
+01 B
+  m(1,2,3,6)
+Σ
+1 1  
+  01
+0 0 F' =
+00
+0 1 0 1
+00
+AB
+F(A,B,C) =
+C
+0 1
+F'(A,B,C) =
+AB
+C
+F' simply replace 1's with 0's and vice versa
+Map ExamplesMap Examples
+-- Introductory Digital Systems Laboratory
+1 1
+KK 0 1 10
+10
+A
+A
+   
+1 1
+11 11 0 1
+m(0,4,5,7)
+B B Σ
+   
+ 
+0 1
+01 F =
+01 0 0
+     
+0 0
+00
+  00 1 0
+0 1 F(A,B,C) =
+A B  
+Cout =
+0 1
+Cin AB
+C
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+24
+ON-set
+MapMap
+ 
+Illustrated in the 4-Cube
+of the largest possibleK-map Corner Adjacency
+subcubes that cover the
+Find the smallest number
+1111 1101
+m(0,2,3,5,6,7,8,10,11,14,15) 1100
+1110
+Σ
+ 
+KarnaughKarnaugh
+ 
+1001
+1011
+1000
+F(A,B,C,D) =F = C + A B D + B D
+1010
+Introductory Digital Systems Laboratory
+D
+0101
+ 
+1 0 1 1 0111
+10
+0110 0100
+A
+ 
+       
+0 0 1 1
+11
+ 
+Four VariableFour Variable B 0001
+A B
+ 
+       
+0 1 1 1
+01
+0011 D  
+  C
+       
+1 0 1 1
+00 0010 0000
+ 
+AB 00 01 11 10
+CD C
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+25
+D
+0 1 0 0
+d(6,12,13) 10
+Σ
+ 
+A
+ 
+       
+0 0
+11 X X
+B
+ 
+w/o don't cares        
+w/ don't cares
+0 1 1 X
+01
+ 
+ 
+ 
+t Carest Cares        
+’’ 00 0 1 1 0
+m(1,3,5,7,9) +
+Σ
+  00 01 11 10
+AB
+CD
+C
+F = C D + A D
+F = A D + B C D
+By treating this DC as a "1", a 2-cubecan be formed rather than one 0-cube
+F(A,B,C,D) =
+D
+Introductory Digital Systems Laboratory
+0 1 0 0
+10
+A
+ 
+       
+0 0
+11 X X
+ 
+Map Example: DonMap Example: Don B
+ 
+--        
+0 1 1 X
+01
+KK
+ 
+       
+0 1 1 0
+00
+ 
+AB 00 01 11 10
+In PoS form: F = D (A + C)Equivalent answer as above,but fewer literals
+CD
+C
+Don't Cares can be treated as 1's or 0's if it is advantageous to do so
+Don't Cares can be treated as 1's or 0's if it is advantageous to do so
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+26
+.
+F
+1 2
+'00
+1 0
+10
+ 
+ 
+1 1
+11
+ 
+'00 '00
+0 1
+01
+Figure by MIT OpenCourseWare
+ 
+   
+0 0
+00
+ 
+ 
+0 1
+AB '00
+C
+Implemented with MSI gates:
+A C B
+F Glitch
+HazardsHazards
+ 
+Introductory Digital Systems Laboratory
+Gate delay
+F = A * C + B * C
+A = B = 1
+A C B
+ 
+C 1 2 F
+ 
+Static hazards: Consider this function:
+L2: 6.111 Spring 2006
+
+--- Page Break ---
+
+27
+.
+1 0
+10
+ 
+ 
+1 1
+11
+ 
+0 1
+01
+ 
+   
+0 0
+00
+ 
+AB 0 1
+Figure by MIT OpenCourseWare
+C
+F = A * C + B * C + A * B
+F
+Introductory Digital Systems Laboratory
+Fixing HazardsFixing Hazards
+ch is the result of timing differences
+t
+ 
+The gliin parallel data paths. It is associated with thefunction jumping between groupings or productterms on the K-map. To fix it, cover it up withanother grouping or product term!A C B
+ 
+In general, it is difficult to avoid hazards – need a robust
+  design methodology to deal with hazards.
+
+L2: 6.111 Spring 2006
